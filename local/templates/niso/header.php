@@ -164,24 +164,23 @@ $curPage = $APPLICATION->GetCurPage();
           </div>
           <?
           $APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"lw-top-multilevel", 
-	array(
-		"ROOT_MENU_TYPE" => "top",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_TIME" => "36000000",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MAX_LEVEL" => "2",
-		"CHILD_MENU_TYPE" => "left",
-		"USE_EXT" => "Y",
-		"ALLOW_MULTI_SELECT" => "N",
-		"COMPONENT_TEMPLATE" => "lw-top-multilevel",
-		"DELAY" => "N"
-	),
-	false
-);
+            "bitrix:menu",
+            "lw-top-multilevel",
+            array(
+              "ROOT_MENU_TYPE" => "top",
+              "MENU_CACHE_TYPE" => "N",
+              "MENU_CACHE_TIME" => "36000000",
+              "MENU_CACHE_USE_GROUPS" => "Y",
+              "MENU_CACHE_GET_VARS" => array(),
+              "MAX_LEVEL" => "2",
+              "CHILD_MENU_TYPE" => "left",
+              "USE_EXT" => "Y",
+              "ALLOW_MULTI_SELECT" => "N",
+              "COMPONENT_TEMPLATE" => "lw-top-multilevel",
+              "DELAY" => "N"
+            ),
+            false
+          );
           ?>
           <div class="mobile-menu__footer">
             <div class="info-block info-block--address">
@@ -305,7 +304,7 @@ $curPage = $APPLICATION->GetCurPage();
 
   <main id="workarea">
     <?
-    if ($curPage != '/') {
+    if ($curPage != '/' && !defined("ERROR_404")) {
       $APPLICATION->IncludeComponent(
         "bitrix:breadcrumb",
         "lw-breadcrumb",
