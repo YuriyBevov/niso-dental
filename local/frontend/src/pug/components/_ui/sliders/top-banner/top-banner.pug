@@ -1,0 +1,31 @@
+include ../../controls/buttons/main-btn/main-btn
+
+.swiper.top-banner-slider
+  .swiper-wrapper
+    .swiper-slide
+      .top-banner-wrapper
+        .top-banner
+          span.base-text.top-banner__headline Стоматологическая клиника “НИСО”
+          h1.main-title.top-banner__title Современная стоматология в&nbsp;Санкт-Петербурге
+          p.base-text.top-banner__text Современное оборудование и безболезненные методы лечения: <br>ваша улыбка в надежных руках! 
+
+          +main-btn({
+            tag: 'button',
+            text: 'Записаться на прием'
+          })
+    .swiper-slide
+      .top-banner-wrapper
+        .top-banner
+          span.base-text.top-banner__headline Стоматологическая клиника “НИСО”
+          h1.main-title.top-banner__title Мы предлашаем широкий выбор стоматологических услуг
+          p.base-text.top-banner__text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, excepturi iste? Quibusdam doloribus ipsum dolorum sed at animi nam vel? Dolore quibusdam harum excepturi vero, optio iusto architecto ipsam ab.
+
+          +main-btn({
+            tag: 'a',
+            href: 'services-main.html',
+            text: 'Выбрать услугу'
+          })
+
+  
+  include ../../controls/swiper-navigation/swiper-navigation 
+  

@@ -1,0 +1,48 @@
+extends ../../layouts/base-section/base-section.pug
+
+block variables
+  - sectionClass = 'reviews-preview'
+  - sectionContainerClass = ''
+  - sectionHeadline = 'Что о нас говорят'
+  - sectionTitle = 'Отзывы наших пациентов'
+  - sectionText = ''
+
+block content
+  include ../../components/_ui/controls/buttons/main-btn/main-btn
+  include ../../components/_ui/cards/review-card/review-card
+  include ../../components/_ui/sliders/reviews-slider/reviews-slider
+
+  .reviews-preview__grid
+    .reviews-preview__grid-item
+      <iframe src="https://yandex.ru/maps-reviews-widget/159276084724?comments"></iframe>
+    .reviews-preview__grid-item
+      +reviews-slider({
+        pagination: true,
+        items: [
+          {
+            rate: 2,
+            author: 'Константин Константинович Константинов',
+            content: 'Я была в этой клинике на профгигиене полости рта. Мне очень понравилось и удобное расположение клиники, и предупредительное отношение администратора, и качественное лечение стоматолога!!! Чистота, вежливость, безболезненность. Врач внимательно изучил мою анкету болезней и принимаемых лекарств. Потом удалил камни лазером, провел чистку air-flow и закончил шлифовкой. Дал рекомендации по дальнейшему лечению.'
+          },
+          {
+            rate: 5,
+            author: 'Константин Константинович Константинов',
+            content: 'Мне очень понравилось и удобное расположение клиники.'
+          },
+          {
+            rate: 2,
+            author: 'Константин Константинович Константинов',
+            content: 'Я была в этой клинике на профгигиене полости рта. Мне очень понравилось и удобное расположение клиники, и предупредительное отношение администратора, и качественное лечение стоматолога!!! Чистота, вежливость, безболезненность. Врач внимательно изучил мою анкету болезней и принимаемых лекарств. Потом удалил камни лазером, провел чистку air-flow и закончил шлифовкой. Дал рекомендации по дальнейшему лечению.'
+          },
+          {
+            rate: 5,
+            author: 'Константин Константинович Константинов',
+            content: 'Мне очень понравилось и удобное расположение клиники.'
+          }
+        ]
+      })
+
+      include ../../components/_ui/forms/review-form/review-form
+
+
+  include ../../components/_ui/modals/review-modal

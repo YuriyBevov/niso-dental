@@ -1,0 +1,39 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+.tizzers {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+
+	&-wrapper {
+		container: tizzers / inline-size;
+	}
+
+	@include container-up("tizzers", $mobile-width) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include container-up("tizzers", $tablet-lg-width) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	&__item {
+		@extend %flex-align;
+		gap: 12px;
+		padding: 16px;
+		background: rgba(234, 243, 250, 0.6);
+		box-shadow: none;
+		border-radius: var(--base-border-radius);
+
+		.base-subtitle {
+			font-size: 18px;
+		}
+
+		@include container-up("tizzers", $tablet-lg-width) {
+			box-shadow: var(--base-box-shadow);
+		}
+	}
+}

@@ -1,0 +1,6 @@
+mixin bottom-main-menu(data)
+  nav.bottom-main-menu(class= data.cls ? data.cls : null)
+    ul
+      each item in data
+        li
+          a(href= item.link)!= item.title

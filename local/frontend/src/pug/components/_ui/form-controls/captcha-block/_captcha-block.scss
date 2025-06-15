@@ -1,0 +1,50 @@
+@forward "@styles/_extends/flexbox.scss";
+/* purgecss start ignore */
+.captcha-block {
+	@extend %flex-center;
+	gap: 12px;
+	width: 100%;
+
+	.base-text {
+		width: 100%;
+		font-size: 16px;
+		text-align: left;
+		color: var(--dark);
+	}
+
+	&__img-wrapper {
+		@extend %flex-center;
+		min-height: 58px;
+		width: 40%;
+		border-radius: var(--base-border-radius);
+		box-shadow: var(--base-box-shadow);
+		border: 1px solid var(--light);
+		background-color: var(--lighter);
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&.invalid-fld {
+		.main-input-wrapper,
+		.main-input-wrapper input {
+			border-width: 1px;
+			border-color: var(--danger);
+
+			input::placeholder {
+				color: var(--danger);
+			}
+		}
+
+		.captcha-block__img-wrapper {
+			border-color: var(--danger);
+		}
+
+		animation: shaker var(--main-transition);
+	}
+}
+/* purgecss end ignore */

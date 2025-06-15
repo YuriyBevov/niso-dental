@@ -1,0 +1,15 @@
+mixin service-preview-card(data)
+  .service-preview-card-wrapper
+    .service-preview-card
+      .service-preview-card-header
+        if data.icon
+          img(loading="lazy" src=`./assets/img/services-preview/${data.icon}.png` alt= data.title width="40" height="40")
+
+        span.base-subtitle!= data.title
+      span.base-text!= data.text
+
+      if data.list
+        ul
+          each item in data.list
+            li
+              a(href="#")!= item.title 

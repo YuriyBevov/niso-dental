@@ -1,0 +1,50 @@
+@forward "@styles/_extends/flexbox.scss";
+/* purgecss start ignore */
+.pagination {
+	@extend %flex-center;
+	gap: 8px;
+	margin: 40px 0;
+
+	&-show-all-btn {
+		font-size: 14px;
+		font-weight: 400;
+		color: var(--primary);
+		text-decoration: underline;
+		text-underline-offset: 5px;
+		padding: 0 12px;
+	}
+
+	&__btn {
+		@extend %flex-center;
+		width: 40px;
+		height: 40px;
+		font-size: 16px;
+		line-height: 1;
+		font-weight: 600;
+		background-color: transparent;
+		color: var(--secondary);
+		border: 1px solid var(--secondary);
+		border-radius: 50%;
+
+		svg {
+			fill: var(--secondary);
+		}
+
+		&--prev {
+			transform: rotate(-180deg);
+		}
+
+		&--selected {
+			pointer-events: none;
+			border-color: var(--primary);
+			color: var(--primary);
+			opacity: 0.7;
+		}
+
+		&--disabled {
+			pointer-events: none;
+			opacity: 0.6;
+		}
+	}
+}
+/* purgecss end ignore */

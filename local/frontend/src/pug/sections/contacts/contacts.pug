@@ -1,0 +1,77 @@
+extends ../../layouts/base-section/base-section.pug
+
+block variables
+  - sectionClass = 'contacts'
+  - sectionContainerClass = ''
+  - sectionHeadline = ''
+  - sectionTitle = ''
+  - hideSectionHeader = true
+
+block content
+  include ../../components/_ui/sliders/main-slider/main-slider
+  include ../../components/blocks/info-block/info-block
+  include ../../components/blocks/social-block/social-block
+
+  .contacts__grid
+    .contacts__grid-item.contacts__grid-item--gallery
+      +main-slider({
+        navigation: true,
+        pagination: true,
+        items: [
+          { img: 'contacts-img'},
+          { img: 'contacts-img'}
+        ]
+      })
+    .contacts__grid-item.contacts__grid-item--info
+      .base-section__header
+        span.base-text.base-section__headline Как нас найти
+        h2.base-title Наши контакты
+        span.base-text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero explicabo necessitatibus sequi corrupti culpa est fuga hic similique ullam odit itaque id quia labore repellat obcaecati cum ratione, ipsa unde.
+
+      .contacts__field
+        .contacts__field-title
+          strong Адрес:
+        .contacts__field-content
+          svg(width='24' height='24' role='img' aria-hidden='true' focusable='false')
+            use(xlink:href=`./assets/sprite.svg#icon-pin`)
+          span.base-text г. Санкт-Петербург. ул. Профессора Попова д. 27
+      
+      .contacts__field
+        .contacts__field-title
+          strong График работы:
+        .contacts__field-content
+          svg(width='24' height='24' role='img' aria-hidden='true' focusable='false')
+            use(xlink:href=`./assets/sprite.svg#icon-info`)
+          span.base-text 09:00 - 21:00 ежедневно
+      
+      .contacts__field
+        .contacts__field-title
+          strong Телефон:
+        .contacts__field-content
+          svg(width='24' height='24' role='img' aria-hidden='true' focusable='false')
+            use(xlink:href=`./assets/sprite.svg#icon-phone`)
+          a(href="tel:89817685425").base-text 8 (981) 768-54-25
+      
+      .contacts__field
+        .contacts__field-title
+          strong Электронная почта:
+        .contacts__field-content
+          svg(width='24' height='24' role='img' aria-hidden='true' focusable='false')
+            use(xlink:href=`./assets/sprite.svg#icon-mail`)
+          a(href="mailto:info@niso-dental.ru").base-text info@niso-dental.ru
+
+      .contacts__field
+        .contacts__field-title
+          strong Соц.сети:
+        .contacts__field-content
+          +social-block([
+            {
+              icon: 'icon-tg.svg'
+            },
+            {
+              icon: 'icon-whatsapp.svg'
+            },
+          ])
+    .contacts__grid-item.contacts__grid-item--map 
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Af4acc6398dd3fa571604beb13d84149289436dfa88dae7d0b70d770bbcb295a8&amp;source=constructor" width="100%" height="600" frameborder="0"></iframe>
+

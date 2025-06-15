@@ -1,0 +1,29 @@
+extends ../../layouts/base-section/base-section.pug
+block variables
+  - sectionClass = 'sales'
+  - sectionContainerClass = ''
+  - sectionHeadline = 'Выгодные предложения для вас'
+  - sectionTitle = 'Специальные предложения'
+  - sectionText  = 'Следите за нашими акциями и экономьте на стоматологических услугах. Мы регулярно предлагаем специальные условия для новых и постоянных клиентов.'
+block content
+
+  include ../../components/_ui/cards/base-card/base-card
+
+  .grid-3cols
+    +base-card(
+      {
+        img: 'sale-mock-img',
+        headline: 'Действует до 31 января 2025г.',
+        title: 'Имплантация “Все-на-4” по лучшей цене в Москве',
+        text: 'В стоимость включено: диагностика, 4 имплантата + операция, хирургический набор, анестезия, временный адаптационный протез. В стоимость включено: диагностика, 4 имплантата + операция, хирургический набор, анестезия, временный адаптационный протез.',
+        link: {
+          tag: 'a',
+          href: 'sales.html',
+          text: 'Подробнее'
+        }
+      },
+    )
+  
+  include ../../components/_ui/pagination/pagination
+    
+      

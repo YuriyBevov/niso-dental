@@ -1,0 +1,55 @@
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/text-truncate" as *;
+
+.hero {
+	container: hero / inline-size;
+	padding: clamp(20px, 5vw, 80px) 0;
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+
+		@include container-up("hero", $tablet-lg-width) {
+			&:has(.hero__grid-item--side) {
+				grid-template-columns: 2fr 1fr;
+
+				.hero__grid-item--side {
+					order: 1;
+				}
+
+				.hero__grid-item--tizzers {
+					grid-column: -1 / 1;
+				}
+			}
+		}
+
+		&-item {
+			order: 1;
+
+			&--side {
+				order: 2;
+				.base-card {
+					padding: 40px clamp(10px, 3vw, 40px);
+					background-image: url("@img/hero-side-banner-bg.svg");
+					background-size: cover;
+					border-radius: var(--border-radius-lg);
+					box-shadow: none;
+					&__content {
+						.base-subtitle,
+						&__headline {
+							color: var(--primary);
+						}
+
+						.base-subtitle,
+						.base-text {
+							@include text-truncate(5);
+						}
+					}
+				}
+			}
+		}
+	}
+}

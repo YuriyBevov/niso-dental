@@ -1,0 +1,13 @@
+@use "@styles/_mixins/_font-face.scss" as *;
+
+@include font-face("SourceSans3", "SourceSans3-Light", 300, normal);
+@include font-face("SourceSans3", "SourceSans3-Regular", 400, normal);
+@include font-face("SourceSans3", "SourceSans3-Medium", 500, normal);
+@include font-face("SourceSans3", "SourceSans3-SemiBold", 600, normal);
+@include font-face("SourceSans3", "SourceSans3-Bold", 700, normal);
+
+@include font-face("Manrope", "Manrope-Light", 300, normal);
+@include font-face("Manrope", "Manrope-Regular", 400, normal);
+@include font-face("Manrope", "Manrope-Medium", 500, normal);
+@include font-face("Manrope", "Manrope-SemiBold", 600, normal);
+@include font-face("Manrope", "Manrope-Bold", 700, normal);

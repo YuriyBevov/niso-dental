@@ -1,0 +1,33 @@
+.swiper.main-slider {
+	width: 100%;
+	box-shadow: var(--base-box-shadow);
+	border-radius: var(--base-border-radius);
+
+	.swiper-slide {
+		width: 100% !important;
+		height: auto;
+		border-radius: var(--base-border-radius);
+		overflow: hidden;
+	}
+
+	.swiper-pagination {
+		padding: 10px 0;
+	}
+
+	.swiper-button {
+		position: absolute;
+		top: 50%;
+		background-color: var(--white);
+		z-index: 1;
+
+		&-next {
+			right: 35px;
+			transform: translateY(-50%);
+		}
+
+		&-prev {
+			left: 35px;
+			transform: translateY(-50%) rotate(180deg);
+		}
+	}
+}

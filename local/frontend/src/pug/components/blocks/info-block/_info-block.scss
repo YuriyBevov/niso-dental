@@ -1,0 +1,41 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.info-block {
+	display: grid;
+	grid-template-columns: 24px auto;
+	align-items: center;
+	gap: 10px;
+
+	svg {
+		width: 24px;
+		min-width: 24px;
+		height: auto;
+		object-fit: contain;
+		fill: var(--secondary);
+	}
+
+	&__content {
+		@extend %flex-column;
+		gap: 4px;
+		font-size: 16px;
+
+		a {
+			white-space: nowrap;
+		}
+
+		@include container-up("header", 1360px) {
+			font-size: 18px;
+		}
+	}
+}
+
+.worktime {
+	font-size: 14px;
+
+	@include container-up("header", 1360px) {
+		font-size: 16px;
+	}
+}

@@ -1,0 +1,99 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.swiper.top-banner-slider {
+	position: relative;
+	height: 100%;
+	background: linear-gradient(270deg, #44c6e9 -54.9%, #336cbc 100%);
+	border-radius: var(--border-radius-lg);
+	padding-bottom: 60px;
+
+	@include container-up("main", 480px) {
+		padding-bottom: 0;
+	}
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: calc(-40px - clamp(10px, 3vw, 40px));
+		transform: translateY(-50%);
+		content: "";
+		width: 100%;
+		max-width: 360px;
+		height: calc(100% - 40px);
+		background-image: url(/assets/img/top-banner-bg.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+	}
+
+	.swiper-slide {
+		width: 100% !important;
+		height: auto;
+	}
+
+	.swiper-navigation {
+		z-index: 11;
+
+		@include container-up("main", 480px) {
+			position: absolute;
+			bottom: 44px;
+			right: clamp(10px, 3vw, 40px);
+		}
+
+		.swiper-button {
+			border: 1px solid var(--primary);
+			background-color: #d4e4f4;
+
+			svg {
+				fill: var(--primary);
+			}
+		}
+	}
+}
+
+.top-banner {
+	@extend %flex-column;
+	gap: 20px;
+	padding: 40px clamp(10px, 3vw, 40px) 20px;
+	height: 100%;
+
+	@include container-up("main", 480px) {
+		padding: 40px clamp(10px, 3vw, 40px);
+	}
+
+	& * {
+		margin: 0;
+	}
+
+	& &__title,
+	& &__text,
+	& &__headline {
+		margin: 0;
+		color: var(--white);
+	}
+
+	&-wrapper {
+		height: 100%;
+		container: top-banner / inline-size;
+	}
+
+	.main-btn {
+		margin-top: auto;
+		width: 100%;
+
+		@include container-up("main", 480px) {
+			width: fit-content;
+		}
+	}
+
+	@include container-up("main", $tablet-width) {
+		&__title,
+		&__text {
+			margin-bottom: 20px;
+		}
+	}
+}

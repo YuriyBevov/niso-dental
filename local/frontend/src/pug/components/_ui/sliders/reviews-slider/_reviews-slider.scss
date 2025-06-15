@@ -1,0 +1,22 @@
+.swiper.reviews-slider {
+	width: 100%;
+	box-shadow: var(--base-box-shadow);
+	border-radius: var(--base-border-radius);
+
+	.swiper-slide {
+		width: 100% !important;
+		height: auto;
+	}
+
+	.swiper-pagination {
+		padding: 10px 0;
+	}
+
+	&:has(.swiper-pagination) {
+		&:not(:has(.swiper-pagination-lock)) {
+			.swiper-wrapper {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+include ../../controls/buttons/main-btn/main-btn
+
+mixin staff-preview-card(data)
+  .staff-preview-card-wrapper
+    .staff-preview-card
+      .staff-preview-card__header
+        .staff-preview-card__img-wrapper
+          img(src=`./assets/img/${data.img}.png` alt!= data.title width="" height="")
+
+      .staff-preview-card__content
+        span.base-subtitle!= data.title
+        span.base-text Врач стоматолог-ортодонт
+        .content
+          each section in data.content
+            != section
+      .staff-preview-card__footer
+        +main-btn({
+          tag: 'a',
+          href: '#',
+          text: 'Записаться на прием'
+        })
+        +main-btn({
+          tag: 'a',
+          href: 'staff-detail.html',
+          cls: 'main-btn--outlined',
+          text: 'Подробнее о специалисте'
+        })
+

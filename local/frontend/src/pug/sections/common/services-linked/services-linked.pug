@@ -1,0 +1,29 @@
+extends ../../../layouts/base-section/base-section.pug
+block variables
+  - sectionClass = 'services-linked'
+  - sectionContainerClass = ''
+  - sectionHeadline = 'Возможно, Вам будет интересно'
+  - sectionTitle = 'Похожие услуги'
+  - sectionText  = ''
+block content
+  .services-linked
+    .swiper.autofill-slider
+      .swiper-wrapper
+        .swiper-slide
+          .services-linked__item-container
+            a(href="#").services-linked__item
+              img(src="./assets/img/tooth-img.svg" alt="" width="40" height="40")
+              span.base-subtitle Комплексное лечение зубов
+              small.base-text Подробнее о услуге
+
+        .swiper-slide
+          .services-linked__item-container
+            a(href="#").services-linked__item
+              img(src="./assets/img/tooth-img.svg" alt="" width="40" height="40")
+              span.base-subtitle Комплексное лечение 3
+              small.base-text Подробнее о услуге
+
+      .swiper-pagination
+
+      //- include ../../../components/_ui/controls/swiper-navigation/swiper-navigation 
+          

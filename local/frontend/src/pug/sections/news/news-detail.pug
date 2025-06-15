@@ -1,0 +1,46 @@
+extends ../../layouts/base-section/base-section.pug
+block variables
+  - sectionClass = 'news-detail'
+  - sectionContainerClass = ''
+  - sectionHeadline = 'Блог'
+  - sectionTitle = 'Новая услуга: отбеливание зубов системой ZOOM'
+  - sectionText  = 'Читайте наши статьи, чтобы узнать больше о современных методах лечения, профилактике заболеваний и уходе за зубами.'
+block content
+  include ../../components/_ui/cards/base-card/base-card
+  .news-detail__grid
+    .news-detail__grid-item.news-detail__grid-item--content
+      include ../../components/blocks/content-block/content-block
+
+    .news-detail__grid-item.news-detail__grid-item--side
+      span.base-subtitle Рекомендованные статьи
+      +base-card(
+        {
+          img: 'sale-mock-img',
+          headline: '01 января 2025 г.',
+          title: 'Как ухаживать за зубами после отбеливания',
+          text: 'Узнайте, какие шаги помогут сохранить белизну вашей улыбки надолго. Узнайте, какие шаги помогут сохранить белизну вашей улыбки надолго.',
+          link: {
+            tag: 'a',
+            href: 'news-detail.html',
+            text: 'Читать далее'
+          }
+        },
+      )
+      +base-card(
+        {
+          img: 'sale-mock-img',
+          headline: '01 января 2025 г.',
+          title: 'Как ухаживать за зубами после отбеливания',
+          text: 'Узнайте, какие шаги помогут сохранить белизну вашей улыбки надолго. Узнайте, какие шаги помогут сохранить белизну вашей улыбки надолго.',
+          link: {
+            tag: 'a',
+            href: 'news-detail.html',
+            text: 'Читать далее'
+          }
+        },
+      )
+
+  //- include ../sales-preview/sales-preview
+
+    
+      

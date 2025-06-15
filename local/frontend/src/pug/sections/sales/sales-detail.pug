@@ -1,0 +1,34 @@
+extends ../../layouts/base-section/base-section.pug
+block variables
+  - sectionClass = 'sales-detail'
+  - sectionContainerClass = ''
+  - sectionHeadline = 'Выгодные предложения для вас'
+  - sectionTitle = 'Скидка 20% на профессиональную чистку зубов.'
+  - sectionText  = 'Мы заботимся о вашей улыбке! Участвуйте в акции и получите профессиональную чистку зубов со скидкой 20% только до 31 января.'
+block content
+  .sales-detail__grid
+    .sales-detail__grid-item
+      img(src="./assets/img/sale-mock.png" alt="title" width="800" height="500")
+    .sales-detail__grid-item.sales-detail__grid-item--side
+      small Действует до 01 января 2025 года
+      span.base-subtitle Условия:
+      span.base-text Скидка действует на услуги Air Flow и ультразвуковую чистку. Только для новых пациентов.
+      span.base-subtitle Сроки проведения:
+      span.base-text Акция доступна с 1 января по 31 января 2025 года.
+      span.base-subtitle Ограничения:
+      span.base-text Не суммируется с другими предложениями.
+
+      button(type="button").main-btn Оставить заявку
+    
+    .sales-detail__grid-item.sales-detail__grid-item--detail-text
+      .content-block
+        h2 title h2
+        p text p
+        span simple text
+        p text with <a href="#">link</a>
+
+
+
+
+    
+      

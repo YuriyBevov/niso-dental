@@ -1,0 +1,40 @@
+@forward "@styles/_extends/flexbox.scss";
+
+/* purgecss start ignore */
+.rate {
+	@extend %flex-align;
+	gap: 12px;
+	font-family: var(--site-base-font-family);
+	width: 100%;
+
+	.base-text {
+		font-size: 16px;
+		font-weight: 400;
+		text-align: left;
+		color: var(--dark);
+	}
+
+	&__wrapper {
+		@extend %flex-align;
+		gap: 2px;
+	}
+
+	label {
+		@extend %flex-center;
+		cursor: pointer;
+		input[type="radio"] {
+			display: none;
+		}
+
+		svg {
+			fill: var(--light);
+			transition: fill var(--main-transition);
+		}
+
+		&:has(input:checked) svg,
+		&.filled svg {
+			fill: var(--secondary);
+		}
+	}
+}
+/* purgecss end ignore */

@@ -1,0 +1,20 @@
+mixin sidemenu(data)
+  .sidemenu
+    ul.sidemenu__list
+      li.sidemenu__list-item
+        span Название раздела
+        svg(width='24' height='24' role='img' aria-hidden='true' focusable='false')
+          use(xlink:href='./assets/sprite.svg#icon-menu-arrow')
+        ul
+          li
+            a(href="#").selected ссылка активного раздела 
+      each item in data
+        li.sidemenu__list-item
+          span!= item.title
+          svg(width='24' height='24' role='img' aria-hidden='true' focusable='false')
+            use(xlink:href='./assets/sprite.svg#icon-menu-arrow')
+          if item.inner
+            ul
+              each inner in item.inner
+                li
+                  a(href="#")!= inner.title

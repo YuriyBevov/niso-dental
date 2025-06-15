@@ -1,0 +1,5 @@
+mixin social-block(data)
+  .social-block
+    each item in data
+      a(href="" aria-label="" rel="noopener nofollow norefferer").social-block__item
+        img(src=`./assets/img/${item.icon}` alt= item.title width="40" height="40")

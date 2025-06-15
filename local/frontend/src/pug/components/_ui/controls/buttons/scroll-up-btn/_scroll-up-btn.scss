@@ -1,0 +1,25 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.scroll-up-btn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	transform: translateY(150px);
+	@extend %flex-center;
+
+	width: 40px;
+	height: 40px;
+
+	padding: 5px;
+	border: none;
+	border-radius: 50%;
+	mix-blend-mode: multiply;
+
+	background-color: var(--secondary);
+	background-image: url("@img/icon-up.svg");
+	background-repeat: no-repeat;
+	background-size: 12px;
+	background-position: center;
+
+	z-index: 89;
+}

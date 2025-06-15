@@ -1,0 +1,25 @@
+@forward "@styles/_extends/resets.scss";
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+
+.bottom-menu {
+	@extend %flex-align;
+	width: 100%;
+
+	ul {
+		@extend %list-reset;
+		@extend %flex-column;
+		gap: 6px clamp(12px, 2.4vw, 20px);
+
+		li {
+			a {
+				@extend %flex-align;
+				padding: 5px 0;
+				font-size: clamp(18px, 2.4vw, 20px);
+				color: var(--dark);
+
+				@extend %hover-opacity;
+			}
+		}
+	}
+}

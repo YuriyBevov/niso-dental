@@ -1,0 +1,17 @@
+// stylelint-disable
+
+// down
+
+@mixin media-down($width) {
+  @media (max-width: calc($width - 1px)) {
+    @content;
+  }
+}
+
+// up
+
+@mixin media-up($width) {
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}

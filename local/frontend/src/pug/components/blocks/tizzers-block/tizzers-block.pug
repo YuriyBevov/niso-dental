@@ -1,0 +1,7 @@
+mixin tizzers-block(data)
+  .tizzers-wrapper
+    .tizzers
+      each item in data.items
+        .tizzers__item
+          img(src=`./assets/img/${item.img}.png` alt="Title" widh="60" height="60")
+          span.base-subtitle!= item.text

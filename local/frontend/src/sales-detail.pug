@@ -1,0 +1,13 @@
+extends ./pug/layouts/main-layout
+
+block variables
+  -
+    const title = "НИСО"
+    const description = "НИСО"
+    const keywords = ""
+    const styles = ['./styles/template-styles','./styles/index']
+
+block content
+  include ./pug/components/_ui/breadcrumbs/breadcrumbs
+  include ./pug/sections/sales/sales-detail
+  

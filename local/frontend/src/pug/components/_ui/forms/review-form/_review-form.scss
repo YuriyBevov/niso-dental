@@ -1,0 +1,41 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+@use "@pug/components/_ui/form-controls/rate/rate";
+
+.review-form {
+	border-radius: var(--border-radius-lg);
+	background: linear-gradient(
+		150.48deg,
+		rgba(240, 246, 249, 0.7) -0.74%,
+		rgba(68, 198, 233, 0.35) 116.94%
+	);
+	box-shadow: var(--base-box-shadow);
+
+	form {
+		position: relative;
+		@extend %flex-column;
+		align-items: center;
+		text-align: center;
+		gap: 16px;
+		width: 100%;
+		max-width: 700px;
+		padding: clamp(24px, 4vw, 60px);
+		margin: 0 auto;
+	}
+
+	&__header {
+		@extend %flex-column;
+		align-items: center;
+		text-align: center;
+		gap: 10px;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.main-checkbox-wrapper {
+		margin: 8px 0;
+	}
+}

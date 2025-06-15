@@ -1,0 +1,22 @@
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.portfolio-detail {
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px clamp(24px, 4vw, 80px);
+
+		@include media-up($tablet-width) {
+			grid-template-columns: 440px auto;
+		}
+	}
+
+	.content > *:first-child {
+		margin-top: 0;
+	}
+
+	.main-btn {
+		margin-top: 20px;
+	}
+}

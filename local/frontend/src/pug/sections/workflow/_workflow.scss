@@ -1,0 +1,46 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.workflow {
+	container: workflow / inline-size;
+	&__list {
+		@extend %list-reset;
+		@extend %flex-column;
+		gap: 20px;
+		padding: 24px 0;
+
+		@include container-up("workflow", $tablet-width) {
+			position: relative;
+			padding: 0;
+			padding-right: 40%;
+
+			&::after {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				content: "";
+				background-image: url("@img/workflow-img.png");
+				background-size: contain;
+				background-position: top;
+				background-repeat: no-repeat;
+				width: calc(40% - 32px);
+				height: 100%;
+			}
+		}
+
+		&-item {
+			@extend %flex-column;
+			gap: 20px;
+
+			&-header {
+				@extend %flex-align;
+				gap: 12px;
+			}
+		}
+	}
+}

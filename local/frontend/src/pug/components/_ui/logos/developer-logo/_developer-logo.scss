@@ -1,0 +1,17 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.developer-logo {
+	@extend %flex-column;
+	gap: 2px;
+
+	span {
+		font-size: 14px;
+	}
+
+	img {
+		width: 100%;
+		max-width: 120px;
+		height: auto;
+		object-fit: contain;
+	}
+}

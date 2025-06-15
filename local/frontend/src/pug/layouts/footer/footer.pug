@@ -1,0 +1,85 @@
+include ../../components/_ui/nav/bottom-menu/bottom-menu
+include ../../components/_ui/nav/bottom-main-menu/bottom-main-menu
+include ../../components/_ui/controls/buttons/main-btn/main-btn
+include ../../components/blocks/info-block/info-block
+include ../../components/blocks/social-block/social-block
+
+footer.footer
+  .container
+    .footer__section.footer__section--top
+      include ../../components/_ui/logos/main-logo/main-logo
+      
+      +main-btn({
+        tag: 'button',
+        text: 'Записаться на прием'
+      })
+
+      +bottom-menu([
+        { title: 'О нас', link: 'about.html'},
+        { title: 'Услуги', link: 'services-main.html'},
+        { title: 'Врачи', link: 'staff-main.html'},
+        { title: 'Акции', link: 'sale-main.html'},
+        { title: 'Контакты', link: 'contacts.html'},
+      ])
+
+      
+    .footer__section.footer__section--middle
+      .footer__section-field
+        +info-block({
+          icon: 'icon-pin',
+          cls: 'info-block--address',
+          items: [
+          '<address>г. Санкт-Петербург. ул. Профессора Попова д. 27</address>',
+          '<span class="worktime">09:00 - 21:00 ежедневно</span>',
+        ]})
+
+        +info-block({
+          icon: 'icon-info',
+          cls: 'info-block--contacts',
+          items: [
+          '<a href="mailto:info@niso-dental.ru">info@niso-dental.ru</a>',
+          '<a href="tel:89817685425">8 (981) 768-54-25</a>',
+        ]})
+
+        +social-block([
+          {
+            icon: 'icon-tg.svg'
+          },
+          {
+            icon: 'icon-whatsapp.svg'
+          },
+        ])
+      .footer__section-field
+        +bottom-main-menu([
+          { title: 'Лечение зубов', link: '#'},
+          { title: 'Протезирование', link: '#'},
+          { title: 'Отбеливание зубов', link: '#'},
+          { title: 'Имплантация', link: '#'},
+          { title: 'Гигиенические процедуры', link: '#'},
+          { title: 'Детская стоматология', link: '#'},
+          { title: 'Лечение зубов', link: '#'},
+          { title: 'Протезирование', link: '#'},
+          { title: 'Отбеливание зубов', link: '#'},
+          { title: 'Имплантация', link: '#'},
+          { title: 'Гигиенические процедуры', link: '#'},
+          { title: 'Детская стоматология', link: '#'},
+          { title: 'Экстренная помощь', link: '#'},
+          { title: 'Экстренная помощь', link: '#'},
+          { title: 'Лечение зубов', link: '#'},
+          { title: 'Протезирование', link: '#'},
+          { title: 'Отбеливание зубов', link: '#'},
+          { title: 'Имплантация', link: '#'},
+          { title: 'Гигиенические процедуры', link: '#'},
+          { title: 'Детская стоматология', link: '#'},
+          { title: 'Экстренная помощь', link: '#'},
+        ])
+    .footer__section.footer__section--bottom
+      .footer__section-field
+        span.base-text © 2025. Все&nbsp;права&nbsp;защищены.
+
+        a(href="#").base-text Лицензия на&nbsp;осуществление медицинской деятельности
+        a(href="#").base-text Политика&nbsp;конфиденциальности
+      .footer__section-field
+        include ../../components/_ui/logos/developer-logo/developer-logo
+
+include ../../components/_ui/modals/callback-modal

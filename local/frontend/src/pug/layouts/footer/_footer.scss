@@ -1,0 +1,124 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/effects.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.footer {
+	padding: 10px 20px;
+	border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+	background-color: var(--lighter);
+	container: footer / inline-size;
+
+	&__section {
+		@extend %flex-column;
+		gap: 20px;
+		padding: 20px 0;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid var(--light);
+		}
+
+		&--top {
+			.main-btn {
+				max-width: 240px;
+				margin-bottom: 20px;
+			}
+
+			@include container-down("footer", 440px) {
+				.main-btn {
+					width: 100%;
+					max-width: 100%;
+				}
+				.bottom-menu ul {
+					display: block;
+					width: 100%;
+					columns: 2;
+				}
+			}
+
+			@include container-up("footer", 440px) {
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				.main-btn {
+					max-width: fit-content;
+					margin-bottom: 0;
+				}
+
+				.bottom-menu ul {
+					width: 100%;
+					flex-direction: row;
+				}
+			}
+
+			@include container-up("footer", $tablet-width) {
+				.bottom-menu ul {
+					width: fit-content;
+					margin: 0 auto;
+				}
+			}
+
+			@include container-up("footer", $laptop-width) {
+				display: grid;
+				grid-template-columns: auto 1fr auto;
+
+				.main-btn {
+					order: 2;
+				}
+			}
+		}
+
+		&--middle {
+			.footer__section-field {
+				@extend %flex-column;
+				gap: 20px;
+			}
+
+			@include container-up("footer", 860px) {
+				display: grid;
+				grid-template-columns: 2fr 5fr;
+				gap: clamp(40px, 5vw, 120px);
+
+				.bottom-main-menu {
+					margin: 0;
+				}
+			}
+		}
+
+		&--bottom {
+			@extend %flex-column;
+
+			.footer__section-field {
+				@extend %flex-column;
+				gap: 6px;
+
+				&:first-child {
+					& > * {
+						font-size: 16px;
+						padding: 5px 0;
+						color: var(--primary);
+					}
+
+					@include container-up("footer", 1120px) {
+						flex-direction: row;
+						gap: 30px;
+						align-items: center;
+						justify-content: space-between;
+						flex-grow: 1;
+					}
+				}
+			}
+
+			@include container-up("footer", 560px) {
+				flex-direction: row;
+				justify-content: space-between;
+				gap: clamp(30px, 10vw, 120px);
+			}
+
+			a {
+				@extend %hover-opacity;
+			}
+		}
+	}
+}

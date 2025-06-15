@@ -1,0 +1,21 @@
+.staff {
+	&__header {
+		margin-bottom: 30px;
+	}
+	&__grid {
+		display: flex;
+		flex-direction: column;
+
+		&-item {
+			padding: clamp(24px, 3vw, 80px) 0;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid var(--muted);
+			}
+
+			&:first-child {
+				padding-top: 0;
+			}
+		}
+	}
+}

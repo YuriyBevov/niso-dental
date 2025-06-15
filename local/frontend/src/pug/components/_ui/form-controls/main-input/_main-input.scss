@@ -1,0 +1,59 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.main-input-wrapper {
+	@extend %flex-column;
+	gap: 8px;
+	width: 100%;
+
+	input {
+		width: 100%;
+		padding: 16px 20px;
+		font-family: var(--site-base-font-family);
+		font-size: 16px;
+		font-weight: 400;
+		outline: none;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		border: 2px solid var(--light);
+		border-radius: var(--base-border-radius);
+		background-color: var(--lighter);
+		box-shadow: var(--base-box-shadow);
+		color: var(--dark);
+
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover,
+		&:-webkit-autofill:focus,
+		&:-webkit-autofill:active {
+			-webkit-box-shadow: 0 0 0 30px var(--secondary) inset !important;
+		}
+
+		&::placeholder {
+			font-size: 16px;
+			line-height: 1;
+			font-weight: 400;
+			color: var(--dark);
+			width: 100%;
+		}
+
+		&[type="submit"] {
+			width: 100%;
+			min-width: 200px;
+			background-color: var(--secondary);
+			border-color: transparent;
+			color: var(--white);
+		}
+	}
+
+	/* purgecss start ignore */
+	&.invalid-fld {
+		input {
+			border: 1px solid var(--danger);
+			animation: shaker var(--main-transition);
+
+			&::placeholder {
+				color: var(--danger);
+			}
+		}
+	}
+	/* purgecss end ignore */
+}

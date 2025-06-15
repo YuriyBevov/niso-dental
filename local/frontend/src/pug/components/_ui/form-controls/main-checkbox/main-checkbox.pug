@@ -1,0 +1,5 @@
+mixin main-checkbox(data)
+  .main-checkbox-wrapper(class= data.isInvalid ? 'invalid-fld' : null)
+    input(type="checkbox" id= data.id name= data.name checked= data.checked ? 'true' : null)
+    label(for= data.id).main-checkbox
+      span!= data.label

@@ -1,0 +1,17 @@
+.swiper.base-cards-slider {
+	width: calc(100% + var(--container-offset) * 2);
+	padding: 20px var(--container-offset);
+	margin: -20px calc(-1 * var(--container-offset)) 0;
+
+	.swiper-slide {
+		height: auto;
+	}
+
+	&:has(.swiper-pagination) {
+		&:not(:has(.swiper-pagination-lock)) {
+			.swiper-wrapper {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

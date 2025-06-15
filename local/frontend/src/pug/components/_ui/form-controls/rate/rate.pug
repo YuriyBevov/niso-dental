@@ -1,0 +1,14 @@
+.rate
+  span.base-text Ваша оценка:
+  .rate__wrapper
+    each item in [1,2,3,4]
+      label
+        input(type="radio" name="rate" value= item checked)
+        svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+          use(xlink:href='./assets/sprite.svg#icon-star')
+
+    label
+      input(type="radio" name="rate" value= item)
+      svg(width='16' height='16' role='img' aria-hidden='true' focusable='false')
+        use(xlink:href='./assets/sprite.svg#icon-star')
+  

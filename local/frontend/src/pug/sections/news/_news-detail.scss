@@ -1,0 +1,35 @@
+@forward "@styles/_extends/flexbox.scss";
+
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.news-detail {
+	&__grid {
+		@extend %flex-wrap;
+		gap: clamp(32px, 4vw, 80px);
+	}
+
+	&__grid-item {
+		width: 100%;
+	}
+
+	&:has(.news-detail__grid-item--side) {
+		.news-detail__grid-item {
+			@include media-up(1240px) {
+				&--content {
+					width: calc(100% - 440px - clamp(32px, 4vw, 80px));
+				}
+			}
+
+			&--side {
+				@extend %flex-column;
+				gap: 24px;
+				height: fit-content;
+
+				@include media-up(1240px) {
+					width: 440px;
+				}
+			}
+		}
+	}
+}

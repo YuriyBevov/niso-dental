@@ -1,0 +1,4 @@
+mixin main-textarea(data)
+  .main-textarea-wrapper(class= data.isInvalid ? 'invalid-fld' : null)
+    label
+      textarea(id= data.id placeholder= data.placeholder name= data.name)

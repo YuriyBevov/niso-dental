@@ -1,0 +1,18 @@
+mixin review-card(data)
+  .review-card
+    .review-card__rate
+      - var active = 1;
+      while active <= data.rate
+        svg(width='16' height='16' role='img' aria-hidden='true' focusable='false' class="rate-item")
+          use(xlink:href='./assets/sprite.svg#icon-star')
+        - active++
+      
+      - var muted = data.rate
+      while muted < 5
+        svg(width='16' height='16' role='img' aria-hidden='true' focusable='false' class="rate-item rate-item--muted")
+          use(xlink:href='./assets/sprite.svg#icon-star')
+        - muted++
+    .review-card__author!= data.author
+    .review-card__content(data-collapsed-text="200" data-expanded-text!= data.content data-collapsed-btn-text="Читать далее...")!= data.content
+
+    //- button(type="button").review-card__more-btn Читать далее...

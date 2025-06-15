@@ -1,0 +1,14 @@
+include ../../cards/base-card/base-card
+mixin base-cards-slider(data)
+  .swiper.base-cards-slider(class= data.cls ? data.cls : null)
+    .swiper-wrapper
+      each item in data.items
+        .swiper-slide
+          +base-card(item)
+
+    if data.pagination
+      .swiper-pagination
+    
+    if data.navigation
+      .swiper-button-prev
+      .swiper-button-next

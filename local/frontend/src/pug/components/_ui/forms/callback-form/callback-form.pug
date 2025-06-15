@@ -1,0 +1,41 @@
+include ../../form-controls/main-input/main-input
+include ../../form-controls/main-checkbox/main-checkbox
+
+.callback-form
+  form(action="#")
+    .callback-form__header
+      span.callback-form__headline Свяжитесь с нами
+      span.callback-form__title Запишитесь на приём прямо сейчас
+
+    +main-input({
+      isInvalid: true,
+      id: 'callback-user-name',
+      placeholder: 'Ваше имя',
+      name: 'NAME'
+    })
+
+    +main-input({
+      isInvalid: true,
+      id: 'callback-user-phone',
+      type: 'tel',
+      placeholder: 'Телефон',
+      name: 'PHONE'
+    })
+
+    +main-input({
+      id: 'callback-user-mail',
+      placeholder: 'E-mail',
+      name: 'MAIL'
+    })
+
+    +main-checkbox({ 
+      isInvalid: true,
+      checked: true,
+      id: 'callback-user-accept',
+      label: `Согласен на <a href="#">обработку персональных данных</a>`
+    })
+
+    +main-input({
+      type: 'submit',
+      text: 'Записаться'
+    })

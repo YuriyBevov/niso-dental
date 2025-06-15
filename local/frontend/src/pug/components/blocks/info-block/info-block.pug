@@ -1,0 +1,9 @@
+mixin info-block(data)
+  .info-block(class= data.cls ? data.cls : null)
+    svg(width='24' height='24' role='img' aria-hidden='true' focusable='false')
+      use(xlink:href=`./assets/sprite.svg#${data.icon}`)
+
+    .info-block__content
+      each item in data.items
+        != item
+      

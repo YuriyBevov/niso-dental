@@ -1,0 +1,17 @@
+@forward "@styles/_extends/resets.scss";
+
+%column-list {
+	// @extend %list-reset;
+	columns: 200px;
+	gap: 10px;
+
+	// & + * {
+	// 	margin-top: var(--main-offset);
+	// }
+
+	& > li {
+		page-break-inside: avoid;
+		break-inside: avoid;
+		margin-bottom: 10px;
+	}
+}

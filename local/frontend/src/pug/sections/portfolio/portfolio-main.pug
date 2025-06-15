@@ -1,0 +1,17 @@
+extends ../../layouts/base-section/base-section.pug
+block variables
+  - sectionClass = 'portfolio'
+  - sectionContainerClass = ''
+  - sectionHeadline = 'Наше портфолио'
+  - sectionTitle = 'Примеры наших работ'
+  - sectionText  = 'Посмотрите, как мы меняем улыбки наших пациентов. Результаты, которые говорят сами за себя.'
+block content
+  .portfolio__grid
+    each item in [1,2,3,4,5,6,7]
+      .portfolio__grid-item
+        include ../../components/_ui/cards/portfolio-card/portfolio-card
+
+  
+  include ../../components/_ui/pagination/pagination
+    
+      

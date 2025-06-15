@@ -1,0 +1,53 @@
+@forward "@styles/_extends/flexbox.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_mixins/media-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+.sales-detail {
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 30px clamp(30px, 5vw, 60px);
+
+		@include media-up($tablet-width) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&-item {
+			@extend %flex-column;
+			gap: 10px;
+
+			&--side {
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				object-fit: contain;
+				border-radius: 15px;
+
+				@include media-up($tablet-width) {
+					position: sticky;
+					top: 120px;
+				}
+
+				@include media-up($tablet-lg-width) {
+					top: 165px;
+				}
+			}
+
+			.base-subtitle {
+				margin-top: 10px;
+			}
+
+			small {
+				font-size: clamp(14px, 3vw, 18px);
+				color: var(--primary);
+			}
+
+			.main-btn {
+				margin-top: 30px;
+			}
+		}
+	}
+}

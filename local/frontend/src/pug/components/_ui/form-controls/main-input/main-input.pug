@@ -1,0 +1,4 @@
+mixin main-input(data)
+  .main-input-wrapper(class= data.isInvalid ? 'invalid-fld' : null)
+    label
+      input(type= data.type ? data.type : 'text' id= data.id placeholder= data.placeholder name= data.name)

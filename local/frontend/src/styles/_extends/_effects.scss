@@ -1,0 +1,81 @@
+%hover-opacity {
+	transition: opacity 0.3s ease-in-out;
+	opacity: 1;
+
+	@media (hover: hover) {
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	&:focus {
+		opacity: 0.6;
+	}
+
+	&:active {
+		opacity: 0.4;
+	}
+}
+
+%primary-color-hover {
+	transition: color 0.3s ease-in-out;
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--primary);
+		}
+	}
+
+	&:focus {
+		color: var(--primary);
+	}
+
+	&:active {
+		color: var(--primary);
+		opacity: 0.4;
+	}
+}
+
+%secondary-color-hover {
+	transition: color 0.3s ease-in-out;
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--secondary);
+		}
+	}
+
+	&:focus {
+		color: var(--secondary);
+	}
+
+	&:active {
+		color: var(--secondary);
+		opacity: 0.4;
+	}
+}
+
+%main-btn-outlined-hover {
+	transition: background-color var(--main-transition),
+		color var(--main-transition), opacity var(--main-transition);
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--primary);
+			color: var(--white);
+		}
+	}
+
+	&:focus {
+		opacity: 0.6;
+	}
+
+	&:active {
+		opacity: 0.4;
+	}
+}
+
+%text-shadow {
+	text-shadow: 0px -3px 4px #ffffff, 0px 0px 10px #ffffff, 5px 3px 2px #ffffff,
+		2px 2px 10px #ffffff;
+}

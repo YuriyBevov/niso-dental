@@ -1,0 +1,13 @@
+extends ../../layouts/base-section/base-section.pug
+
+block variables
+  - sectionClass = 'callback'
+  - sectionContainerClass = ''
+  - sectionHeadline = 'Свяжитесь с нами'
+  - sectionTitle = 'Запишитесь на приём прямо сейчас'
+  - sectionText = ''
+  -hideSectionHeader = true
+
+block content
+
+  include ../../components/_ui/forms/callback-form/callback-form

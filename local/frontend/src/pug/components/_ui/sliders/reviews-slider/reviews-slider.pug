@@ -1,0 +1,13 @@
+include ../../cards/review-card/review-card
+mixin reviews-slider(data)
+  .swiper.reviews-slider(class= data.cls ? data.cls : null)
+    .swiper-wrapper
+      each item in data.items
+        .swiper-slide
+          +review-card(item)
+
+    if data.pagination
+      .swiper-pagination
+    
+    if data.navigation
+      include ../../controls/swiper-navigation/swiper-navigation 

@@ -1,0 +1,44 @@
+@forward "@styles/_extends/flexbox.scss";
+
+.swiper .swiper-pagination {
+	&-bullet {
+		background-color: var(--muted);
+
+		&-active {
+			background-color: var(--secondary);
+		}
+	}
+}
+
+.swiper-navigation {
+	@extend %flex-align;
+	gap: 12px;
+	justify-content: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	@extend %flex-center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid var(--secondary);
+	background-color: transparent;
+	transition: opacity var(--main-transition);
+
+	svg {
+		fill: var(--secondary);
+	}
+}
+
+.swiper-button-prev {
+	transform: rotate(180deg);
+}
+
+.swiper-button-disabled {
+	opacity: 0.4;
+}
+
+.swiper-button-lock {
+	display: none;
+}

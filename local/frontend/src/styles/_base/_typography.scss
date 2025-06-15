@@ -1,0 +1,39 @@
+.base-title {
+	display: block;
+	font-family: var(--secondary-font);
+	font-weight: 600;
+	font-size: clamp(28px, 4.4vw, 48px);
+	line-height: 1;
+	margin: 0;
+	color: var(--primary);
+	text-shadow: clamp(2px, 0.4vw, 5px) clamp(2px, 0.4vw, 5px) 0px var(--light);
+}
+
+.base-subtitle {
+	display: block;
+	font-family: var(--secondary-font);
+	font-weight: 700;
+	font-size: clamp(18px, 2.2vw, 20px);
+	margin: 0;
+	color: var(--accent);
+}
+
+.main-title {
+	display: block;
+	font-weight: 700;
+	font-size: clamp(28px, 3.8vw, 48px);
+	margin: 24px 0;
+	color: var(--primary);
+}
+
+.base-text {
+	display: inline-block;
+	font-size: clamp(16px, 2.4vw, 18px);
+	font-weight: 400;
+	margin: 0;
+	color: var(--site-base-text-color);
+
+	&--accent {
+		color: var(--accent);
+	}
+}

@@ -1,0 +1,36 @@
+include ../../cards/staff-preview-card/staff-preview-card
+mixin staff-preview-slider(data)
+  .swiper.staff-preview-slider(class= data.cls ? data.cls : null)
+    .swiper-wrapper
+      each item in data.items
+        .swiper-slide
+          +staff-preview-card(item)
+        .swiper-slide
+          +staff-preview-card(item)
+        .swiper-slide
+          +staff-preview-card(item)
+        .swiper-slide
+          +staff-preview-card(item)
+        .swiper-slide
+          +staff-preview-card(item)
+
+    if data.pagination
+      .swiper-pagination
+    
+    if data.navigation
+      include ../../controls/swiper-navigation/swiper-navigation 
+
+  .swiper.staff-preview-slider-thumbs
+    .swiper-wrapper
+      each item in data.items
+        .swiper-slide
+          img(src=`./assets/img/${item.img}.png` alt="")
+        .swiper-slide
+          img(src=`./assets/img/${item.img}.png` alt="")
+        .swiper-slide
+          img(src=`./assets/img/${item.img}.png` alt="")
+        .swiper-slide
+          img(src=`./assets/img/${item.img}.png` alt="")
+        .swiper-slide
+          img(src=`./assets/img/${item.img}.png` alt="")
+

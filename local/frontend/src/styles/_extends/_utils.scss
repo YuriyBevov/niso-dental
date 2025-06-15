@@ -1,0 +1,11 @@
+@forward "@styles/_extends/resets.scss";
+
+%base-card-styles {
+	@extend %flex-column;
+	row-gap: clamp(12px, 2.4vw, 20px);
+	height: 100%;
+	padding: 20px;
+	border-radius: var(--base-border-radius);
+	box-shadow: var(--base-box-shadow);
+	background: rgba(255, 249, 253, 0.6);
+}

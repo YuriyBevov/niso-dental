@@ -1,0 +1,552 @@
+RawFormData:
+Array
+(
+    [ID] => 63
+    [TIMESTAMP_X] => 09.04.2025 19:59:32
+    [DATE_CREATE] => 09.04.2025 19:59:32
+    [STATUS_ID] => 2
+    [FORM_ID] => 2
+    [USER_ID] => 1
+    [USER_AUTH] => Y
+    [STAT_GUEST_ID] => 0
+    [STAT_SESSION_ID] => 0
+    [SENT_TO_CRM] => N
+    [IMAGE_ID] => 
+    [DESCRIPTION] => 
+    [DESCRIPTION_TYPE] => text
+    [SHOW_RESULT_TEMPLATE] => 
+    [PRINT_RESULT_TEMPLATE] => 
+    [EDIT_RESULT_TEMPLATE] => 
+    [NAME] => Оставить отзыв
+    [SID] => REVIEWS_FORM
+    [VARNAME] => REVIEWS_FORM
+    [STATUS_TITLE] => Скрыто на сайте
+    [STATUS_DESCRIPTION] => 
+    [STATUS_CSS] => statusgreen
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 63
+    [FIELD_ID] => 7
+    [SID] => RATE
+    [VARNAME] => RATE
+    [TITLE] => Оценка*
+    [TITLE_TYPE] => text
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 11
+    [ANSWER_TEXT] => 5
+    [MESSAGE] => 5
+    [ANSWER_VALUE] => 5
+    [VALUE] => 5
+    [USER_TEXT] => 
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => radio
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => 
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 63
+    [FIELD_ID] => 5
+    [SID] => NAME
+    [VARNAME] => NAME
+    [TITLE] => Ваше имя*
+    [TITLE_TYPE] => text
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 5
+    [ANSWER_TEXT] => 
+    [MESSAGE] =>  
+    [ANSWER_VALUE] => 
+    [VALUE] => 
+    [USER_TEXT] => b
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => text
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => placeholder="Имя" 
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 63
+    [FIELD_ID] => 6
+    [SID] => COMMENT
+    [VARNAME] => COMMENT
+    [TITLE] => Текст отзыва*
+    [TITLE_TYPE] => text
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 6
+    [ANSWER_TEXT] => 
+    [MESSAGE] =>  
+    [ANSWER_VALUE] => 
+    [VALUE] => 
+    [USER_TEXT] => bb
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => textarea
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => placeholder="Тeкст отзыва"
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 63
+    [FIELD_ID] => 8
+    [SID] => ACCEPT
+    [VARNAME] => ACCEPT
+    [TITLE] => Соглашаюсь на <a href="#">обработку персональных данных</a>*
+    [TITLE_TYPE] => html
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 12
+    [ANSWER_TEXT] => 
+    [MESSAGE] =>  
+    [ANSWER_VALUE] => Да
+    [VALUE] => Да
+    [USER_TEXT] => 
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => checkbox
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => checked
+)
+
+
+PreparedAnswers:
+Array
+(
+    [RATE] => 
+    [NAME] => b
+    [COMMENT] => bb
+    [ACCEPT] => 
+)
+
+
+IBlockInsertData:
+Array
+(
+    [IBLOCK_ID] => 10
+    [NAME] => b
+    [ACTIVE] => Y
+    [PREVIEW_TEXT] => bb
+    [PROPERTY_VALUES] => Array
+        (
+            [RATE] => 
+        )
+
+)
+
+
+Success:
+Array
+(
+    [AddedElementID] => 55
+)
+
+
+RawFormData:
+Array
+(
+    [ID] => 64
+    [TIMESTAMP_X] => 09.04.2025 20:01:29
+    [DATE_CREATE] => 09.04.2025 20:01:29
+    [STATUS_ID] => 2
+    [FORM_ID] => 2
+    [USER_ID] => 1
+    [USER_AUTH] => Y
+    [STAT_GUEST_ID] => 0
+    [STAT_SESSION_ID] => 0
+    [SENT_TO_CRM] => N
+    [IMAGE_ID] => 
+    [DESCRIPTION] => 
+    [DESCRIPTION_TYPE] => text
+    [SHOW_RESULT_TEMPLATE] => 
+    [PRINT_RESULT_TEMPLATE] => 
+    [EDIT_RESULT_TEMPLATE] => 
+    [NAME] => Оставить отзыв
+    [SID] => REVIEWS_FORM
+    [VARNAME] => REVIEWS_FORM
+    [STATUS_TITLE] => Скрыто на сайте
+    [STATUS_DESCRIPTION] => 
+    [STATUS_CSS] => statusgreen
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 64
+    [FIELD_ID] => 7
+    [SID] => RATE
+    [VARNAME] => RATE
+    [TITLE] => Оценка*
+    [TITLE_TYPE] => text
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 10
+    [ANSWER_TEXT] => 4
+    [MESSAGE] => 4
+    [ANSWER_VALUE] => 4
+    [VALUE] => 4
+    [USER_TEXT] => 
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => radio
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => 
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 64
+    [FIELD_ID] => 5
+    [SID] => NAME
+    [VARNAME] => NAME
+    [TITLE] => Ваше имя*
+    [TITLE_TYPE] => text
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 5
+    [ANSWER_TEXT] => 
+    [MESSAGE] =>  
+    [ANSWER_VALUE] => 
+    [VALUE] => 
+    [USER_TEXT] => c
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => text
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => placeholder="Имя" 
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 64
+    [FIELD_ID] => 6
+    [SID] => COMMENT
+    [VARNAME] => COMMENT
+    [TITLE] => Текст отзыва*
+    [TITLE_TYPE] => text
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 6
+    [ANSWER_TEXT] => 
+    [MESSAGE] =>  
+    [ANSWER_VALUE] => 
+    [VALUE] => 
+    [USER_TEXT] => cc
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => textarea
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => placeholder="Тeкст отзыва"
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 64
+    [FIELD_ID] => 8
+    [SID] => ACCEPT
+    [VARNAME] => ACCEPT
+    [TITLE] => Соглашаюсь на <a href="#">обработку персональных данных</a>*
+    [TITLE_TYPE] => html
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 12
+    [ANSWER_TEXT] => 
+    [MESSAGE] =>  
+    [ANSWER_VALUE] => Да
+    [VALUE] => Да
+    [USER_TEXT] => 
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => checkbox
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => checked
+)
+
+
+PreparedAnswers:
+Array
+(
+    [RATE] => 4
+    [NAME] => c
+    [COMMENT] => cc
+    [ACCEPT] => 
+)
+
+
+IBlockInsertData:
+Array
+(
+    [IBLOCK_ID] => 10
+    [NAME] => c
+    [ACTIVE] => Y
+    [PREVIEW_TEXT] => cc
+    [PROPERTY_VALUES] => Array
+        (
+            [RATE] => 4
+        )
+
+)
+
+
+Success:
+Array
+(
+    [AddedElementID] => 56
+)
+
+
+RawFormData:
+Array
+(
+    [ID] => 65
+    [TIMESTAMP_X] => 09.04.2025 20:03:29
+    [DATE_CREATE] => 09.04.2025 20:03:29
+    [STATUS_ID] => 2
+    [FORM_ID] => 2
+    [USER_ID] => 1
+    [USER_AUTH] => Y
+    [STAT_GUEST_ID] => 0
+    [STAT_SESSION_ID] => 0
+    [SENT_TO_CRM] => N
+    [IMAGE_ID] => 
+    [DESCRIPTION] => 
+    [DESCRIPTION_TYPE] => text
+    [SHOW_RESULT_TEMPLATE] => 
+    [PRINT_RESULT_TEMPLATE] => 
+    [EDIT_RESULT_TEMPLATE] => 
+    [NAME] => Оставить отзыв
+    [SID] => REVIEWS_FORM
+    [VARNAME] => REVIEWS_FORM
+    [STATUS_TITLE] => DEFAULT
+    [STATUS_DESCRIPTION] => 
+    [STATUS_CSS] => statusgreen
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 65
+    [FIELD_ID] => 7
+    [SID] => RATE
+    [VARNAME] => RATE
+    [TITLE] => Оценка*
+    [TITLE_TYPE] => text
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 10
+    [ANSWER_TEXT] => 4
+    [MESSAGE] => 4
+    [ANSWER_VALUE] => 4
+    [VALUE] => 4
+    [USER_TEXT] => 
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => radio
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => 
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 65
+    [FIELD_ID] => 5
+    [SID] => NAME
+    [VARNAME] => NAME
+    [TITLE] => Ваше имя*
+    [TITLE_TYPE] => text
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 5
+    [ANSWER_TEXT] => 
+    [MESSAGE] =>  
+    [ANSWER_VALUE] => 
+    [VALUE] => 
+    [USER_TEXT] => Константин Константинов
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => text
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => placeholder="Имя" 
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 65
+    [FIELD_ID] => 6
+    [SID] => COMMENT
+    [VARNAME] => COMMENT
+    [TITLE] => Текст отзыва*
+    [TITLE_TYPE] => text
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 6
+    [ANSWER_TEXT] => 
+    [MESSAGE] =>  
+    [ANSWER_VALUE] => 
+    [VALUE] => 
+    [USER_TEXT] => Очень понравидлось! Все отлично!
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => textarea
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => placeholder="Тeкст отзыва"
+)
+
+
+FIELD::
+Array
+(
+    [RESULT_ID] => 65
+    [FIELD_ID] => 8
+    [SID] => ACCEPT
+    [VARNAME] => ACCEPT
+    [TITLE] => Соглашаюсь на <a href="#">обработку персональных данных</a>*
+    [TITLE_TYPE] => html
+    [FILTER_TITLE] => 
+    [RESULTS_TABLE_TITLE] => 
+    [ANSWER_ID] => 12
+    [ANSWER_TEXT] => 
+    [MESSAGE] =>  
+    [ANSWER_VALUE] => Да
+    [VALUE] => Да
+    [USER_TEXT] => 
+    [USER_DATE] => 
+    [USER_FILE_ID] => 
+    [USER_FILE_NAME] => 
+    [USER_FILE_IS_IMAGE] => 
+    [USER_FILE_HASH] => 
+    [USER_FILE_SUFFIX] => 
+    [USER_FILE_SIZE] => 
+    [FIELD_TYPE] => checkbox
+    [FIELD_WIDTH] => 0
+    [FIELD_HEIGHT] => 0
+    [FIELD_PARAM] => checked
+)
+
+
+PreparedAnswers:
+Array
+(
+    [RATE] => 4
+    [NAME] => Константин Константинов
+    [COMMENT] => Очень понравидлось! Все отлично!
+    [ACCEPT] => 
+)
+
+
+IBlockInsertData:
+Array
+(
+    [IBLOCK_ID] => 10
+    [NAME] => Константин Константинов
+    [ACTIVE] => N
+    [PREVIEW_TEXT] => Очень понравидлось! Все отлично!
+    [PROPERTY_VALUES] => Array
+        (
+            [RATE] => 4
+        )
+
+)
+
+
+Success:
+Array
+(
+    [AddedElementID] => 57
+)
+
+

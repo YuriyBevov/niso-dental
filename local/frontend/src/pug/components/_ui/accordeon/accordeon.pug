@@ -1,0 +1,11 @@
+mixin accordeon(data)
+  .accordeon
+    each item in data
+      .accordeon-item(class= item.cls ? item.cls : null)
+        .accordeon-header
+          span.base-subtitle!= item.text
+          .accordeon-opener
+            svg(width='24' height='24' role='img' aria-hidden='true' focusable='false')
+              use(xlink:href='./assets/sprite.svg#icon-plus')
+        .accordeon-body
+          .content-block!= item.content

@@ -1,0 +1,39 @@
+@forward "@styles/_extends/flexbox.scss";
+@forward "@styles/_extends/resets.scss";
+@use "@styles/_mixins/container-queries" as *;
+@use "@styles/_vars/scoped" as *;
+
+/* purgecss start ignore */
+.breadcrumbs {
+	width: 100%;
+	margin: 20px 0 0;
+	display: none;
+
+	@include container-up("main", $tablet-width) {
+		display: block;
+	}
+
+	@include container-up("main", $tablet-lg-width) {
+		margin: 50px 0 0;
+	}
+
+	&__list {
+		@extend %list-reset;
+		@extend %flex-align;
+	}
+
+	&__list-item {
+		font-size: 14px;
+		text-transform: uppercase;
+
+		a,
+		a span {
+			color: var(--primary);
+		}
+
+		span {
+			color: var(--info);
+		}
+	}
+}
+/* purgecss end ignore */
