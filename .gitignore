@@ -1,0 +1,25 @@
+# Bitrix files
+/bitrix/*
+/bitrix/cache/
+/bitrix/managed_cache/
+/bitrix/stack_cache/
+/bitrix/backup/
+/bitrix/updates/
+/bitrix/restore.php
+/upload/
+/local/logs/
+/local/php_interface/dbconn.php
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# frontend
+
+/local/frontend/node_modules/ 
