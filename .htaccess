@@ -3,6 +3,7 @@ ErrorDocument 404 /404.php
 
 php_value max_input_vars 10000
 php_value allow_url_fopen Off
+php_value mail.add_x_header Off
 
 <IfModule mod_rewrite.c>
 	Options +FollowSymLinks
