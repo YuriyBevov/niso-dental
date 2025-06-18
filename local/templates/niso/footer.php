@@ -255,7 +255,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 						"COMPONENT_TEMPLATE" => "callback-inline",
 						"VARIABLE_ALIASES" => array(
 							"WEB_FORM_ID" => "WEB_FORM_ID",
-							"RESULT_ID" => "RESULT_ID",
+							"RESULT_ID" => "",
 						),
 					),
 					$component
