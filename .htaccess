@@ -5,6 +5,10 @@ php_value max_input_vars 10000
 php_value allow_url_fopen Off
 php_value mail.add_x_header Off
 
+RewriteCond %{THE_REQUEST} //
+	# Проверяем, повторяется ли слеш (//) более двух раз.
+RewriteRule .* /$0 [R=301,L]
+
 <IfModule mod_rewrite.c>
 	Options +FollowSymLinks
 	RewriteEngine On
@@ -15,9 +19,6 @@ php_value mail.add_x_header Off
 	RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
 	RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
 
-	RewriteCond %{THE_REQUEST} //
-	 # Проверяем, повторяется ли слеш (//) более двух раз.
-	RewriteRule .* /$0 [R=301,L]
 	# Исключаем все лишние слеши.
 	RewriteCond %{REQUEST_METHOD} =GET
 	# Выявляем GET запрос в URL (не POST).
