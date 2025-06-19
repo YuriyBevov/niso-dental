@@ -19,13 +19,13 @@
 					</svg>
 					<ul>
 					<? else: ?>
-						<li><a class="<?= ($arItem["SELECTED"] ? 'selected' : null) ?>" href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>
-					<? endif ?>
+						<li><a class="<?= ($arItem["SELECTED"] ? 'initial selected' : null) ?>" href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>
+					<? endif; ?>
 					<? $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
-				<? endforeach ?>
+				<? endforeach; ?>
 
 				<? if ($previousLevel > 1): ?>
 					<?= str_repeat("</ul></li>", ($previousLevel - 1)); ?>
-				<? endif ?>
+				<? endif; ?>
 					</ul>
 </div>

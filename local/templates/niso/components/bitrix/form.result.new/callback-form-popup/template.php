@@ -89,7 +89,7 @@
 		BX.UserConsent.loadFromForms();
 		var fields = document.querySelectorAll('[data-type="tel"]');
 		var options = {
-			mask: '+{7}(000)000-00-00'
+			mask: '+{7}(000) 000-00-00'
 		};
 
 		fields.forEach(field => {

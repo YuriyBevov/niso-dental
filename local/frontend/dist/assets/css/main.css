@@ -325,7 +325,7 @@ img{
           flex-direction:column;
 }
 
-.modal-closer, .social-block__item, .captcha-block, .captcha-block__img-wrapper, .accordeon-opener, .main-logo, .burger-btn, .main-btn, .swiper-button-next,
+.modal-closer, .social-block__item, .captcha-block, .captcha-block__img-wrapper, .accordeon-opener, .main-logo, .scroll-up-btn, .burger-btn, .main-btn, .swiper-button-next,
 .swiper-button-prev{
   display:-webkit-box;
   display:-ms-flexbox;
@@ -1609,6 +1609,16 @@ img{
   .top-menu ul .top-menu__inner-wrapper .top-menu__inner-wrapper a{
     color:var(--secondary);
   }
+  .top-menu ul li.expanded > a > .top-menu-inner-opener svg, .top-menu ul li.expanded > span > svg{
+    -webkit-transform:rotate(90deg);
+        -ms-transform:rotate(90deg);
+            transform:rotate(90deg);
+  }
+  .top-menu ul li.expanded > .top-menu__inner-wrapper{
+    display:block;
+    -webkit-animation:fadeIn var(--main-transition);
+            animation:fadeIn var(--main-transition);
+  }
 }
 @container header (min-width: 960px ){
   .top-menu ul:has(li.dropdown-menu) li.dropdown-menu{
@@ -2837,12 +2847,12 @@ img{
 .sidemenu ul li ul li a.selected{
   color:var(--secondary);
 }
-.sidemenu ul li:has(.selected) svg{
+.sidemenu ul li:has(.initial) svg, .sidemenu ul li.expanded svg{
   -webkit-transform:rotate(90deg);
       -ms-transform:rotate(90deg);
           transform:rotate(90deg);
 }
-.sidemenu ul li:has(.selected) ul{
+.sidemenu ul li:has(.initial) ul, .sidemenu ul li.expanded ul{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;

@@ -81,12 +81,12 @@
 .sidemenu ul li ul li a.selected{
   color:var(--secondary);
 }
-.sidemenu ul li:has(.selected) svg{
+.sidemenu ul li:has(.initial) svg, .sidemenu ul li.expanded svg{
   -webkit-transform:rotate(90deg);
       -ms-transform:rotate(90deg);
           transform:rotate(90deg);
 }
-.sidemenu ul li:has(.selected) ul{
+.sidemenu ul li:has(.initial) ul, .sidemenu ul li.expanded ul{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;

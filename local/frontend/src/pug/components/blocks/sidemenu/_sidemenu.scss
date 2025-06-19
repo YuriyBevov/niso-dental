@@ -59,7 +59,7 @@
 				}
 			}
 
-			&:has(.selected),
+			&:has(.initial),
 			&.expanded {
 				svg {
 					transform: rotate(90deg);

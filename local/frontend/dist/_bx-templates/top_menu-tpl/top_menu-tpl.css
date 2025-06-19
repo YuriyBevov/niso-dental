@@ -115,6 +115,16 @@
   .top-menu ul .top-menu__inner-wrapper .top-menu__inner-wrapper a{
     color:var(--secondary);
   }
+  .top-menu ul li.expanded > a > .top-menu-inner-opener svg, .top-menu ul li.expanded > span > svg{
+    -webkit-transform:rotate(90deg);
+        -ms-transform:rotate(90deg);
+            transform:rotate(90deg);
+  }
+  .top-menu ul li.expanded > .top-menu__inner-wrapper{
+    display:block;
+    -webkit-animation:fadeIn var(--main-transition);
+            animation:fadeIn var(--main-transition);
+  }
 }
 @container header (min-width: 960px ){
   .top-menu ul:has(li.dropdown-menu) li.dropdown-menu{
