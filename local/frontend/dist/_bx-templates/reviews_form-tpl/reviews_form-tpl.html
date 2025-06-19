@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" crossorigin href="./_bx-templates/reviews_form-tpl/reviews_form-tpl.css">
+  </head>
+  <body> 
+    <main>
+      <div class="review-form">
+        <form action="#">
+          <div class="review-form__header"><span class="base-title">Оставить отзыв</span></div>
+          <div class="rate"><span class="base-text">Ваша оценка:</span>
+            <div class="rate__wrapper">
+              <label>
+                <input type="radio" name="rate" value="1" checked>
+                <svg width="16" height="16" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="./assets/sprite.svg#icon-star"></use>
+                </svg>
+              </label>
+              <label>
+                <input type="radio" name="rate" value="2" checked>
+                <svg width="16" height="16" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="./assets/sprite.svg#icon-star"></use>
+                </svg>
+              </label>
+              <label>
+                <input type="radio" name="rate" value="3" checked>
+                <svg width="16" height="16" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="./assets/sprite.svg#icon-star"></use>
+                </svg>
+              </label>
+              <label>
+                <input type="radio" name="rate" value="4" checked>
+                <svg width="16" height="16" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="./assets/sprite.svg#icon-star"></use>
+                </svg>
+              </label>
+              <label>
+                <input type="radio" name="rate">
+                <svg width="16" height="16" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="./assets/sprite.svg#icon-star"></use>
+                </svg>
+              </label>
+            </div>
+          </div>
+                <div class="main-input-wrapper">
+                  <label>
+                    <input type="text" id="review-user-name" placeholder="Ваше имя" name="NAME">
+                  </label>
+                </div>
+                <div class="main-textarea-wrapper invalid-fld">
+                  <label>
+                    <textarea id="review-user-text" placeholder="Текст отзыва" name="TEXT"></textarea>
+                  </label>
+                </div><div class="captcha-block invalid-fld">
+<input type="hidden" name="captcha_sid" value="" />
+<div class="main-input-wrapper">
+<input type="text" placeholder="Введите символы с картинки" name="captcha_word" size="30" maxlength="50" value="" class="inputtext" />
+</div>
+<div class="captcha-block__img-wrapper">
+<img src="./assets/img/captcha.jpeg" width="180" height="40" alt="" />
+</div>
+</div>
+                <div class="main-checkbox-wrapper invalid-fld">
+                  <input type="checkbox" id="review-user-accept" checked="true">
+                  <label class="main-checkbox" for="review-user-accept"><span>Согласен на <a href="#">обработку персональных данных</a></span></label>
+                </div>
+                <div class="main-input-wrapper">
+                  <label>
+                    <input type="submit" data-type="submit">
+                  </label>
+                </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.faq-preview{
+  position:relative;
+  z-index:2;
+  container:faq-preview/inline-size;
+}
+@container faq-preview (min-width: 534px ){
+  .faq-preview > .container{
+    position:relative;
+  }
+  .faq-preview > .container::after{
+    position:absolute;
+    top:-80px;
+    right:-25px;
+    content:"";
+    width:500px;
+    height:500px;
+    background-image:url("../../assets/img/faq-bg.svg");
+    background-repeat:no-repeat;
+    background-size:contain;
+    z-index:-1;
+  }
+}
+@container faq-preview (min-width: 960px ){
+  .faq-preview > .container{
+    display:grid;
+    grid-template-columns:4fr 5fr;
+    gap:30px clamp(40px, 3vw, 80px);
+  }
+}

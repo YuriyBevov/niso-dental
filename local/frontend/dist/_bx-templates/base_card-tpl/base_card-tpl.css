@@ -1,0 +1,91 @@
+@charset "UTF-8";
+.base-card, .base-card__content{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+}
+
+.base-card{
+  gap:20px 30px;
+  height:inherit;
+  padding:clamp(12px, 2.2vw, 20px);
+  border-radius:var(--border-radius-sm);
+  -webkit-box-shadow:var(--base-box-shadow);
+          box-shadow:var(--base-box-shadow);
+  background-color:var(--white);
+}
+.base-card-wrapper{
+  height:100%;
+  container:base-card/inline-size;
+}
+.base-card__content{
+  -webkit-box-flex:1;
+      -ms-flex-positive:1;
+          flex-grow:1;
+  gap:20px;
+}
+.base-card__content .base-subtitle,
+.base-card__content .base-text{
+  -webkit-line-clamp:3;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.base-card__headline{
+  font-size:16px;
+  font-weight:400;
+  color:var(--accent);
+}
+.base-card img{
+  width:100%;
+  height:auto;
+  -o-object-fit:cover;
+     object-fit:cover;
+  -o-object-position:left;
+     object-position:left;
+  aspect-ratio:2/1;
+  border-radius:var(--border-radius-sm);
+}
+.base-card .main-btn{
+  width:100%;
+  margin-top:auto;
+}
+.base-card .price-badge{
+  padding:3px 0;
+  width:-webkit-fit-content;
+  width:-moz-fit-content;
+  width:fit-content;
+  text-align:center;
+  margin-top:auto;
+  border-bottom:4px solid var(--warning);
+}
+.base-card .price-badge span{
+  color:var(--primary);
+  font-weight:600;
+  font-size:20px;
+}
+@container base-card (min-width: 880px ){
+  .base-card{
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:row;
+            flex-direction:row;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+  }
+  .base-card img{
+    width:50%;
+    max-width:480;
+    max-height:240px;
+  }
+  .base-card .main-btn{
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
+    width:fit-content;
+  }
+}

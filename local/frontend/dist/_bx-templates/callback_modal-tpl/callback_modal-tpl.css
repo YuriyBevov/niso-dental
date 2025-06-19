@@ -1,0 +1,10 @@
+.callback-modal .modal-wrapper{
+  background-color:transparent;
+}
+.callback-modal .modal-content{
+  padding:0;
+  max-height:90svh;
+}
+.callback-modal .callback-form{
+  border-radius:0;
+}
