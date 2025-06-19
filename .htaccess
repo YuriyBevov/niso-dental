@@ -14,7 +14,23 @@ php_value mail.add_x_header Off
 	RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
 	RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
 	RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+	RewriteCond %{THE_REQUEST} //
+	 # Проверяем, повторяется ли слеш (//) более двух раз.
+	RewriteRule .* /$0 [R=301,L]
+	# Исключаем все лишние слеши.
+	RewriteCond %{REQUEST_METHOD} =GET
+	# Выявляем GET запрос в URL (не POST).
+	RewriteCond %{REQUEST_URI} ^(.*)/index\.php$
+	# URL cодержит index.php в конце.
+	RewriteRule ^(.*)$ %1/ [R=301,L]
+	# Удалить index.php из URL.
+	RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+   # Проверяем, содержит ли домен www (в начале URL).
+	RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+   # Перенаправляем URL на домен без www.
 </IfModule>
+
 
 <IfModule mod_dir.c>
 	DirectoryIndex index.php index.html
