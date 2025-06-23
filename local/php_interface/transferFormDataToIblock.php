@@ -1,4 +1,5 @@
 <?php
+// В этом коде, мы передаем данные из веб-формы отзывов в инфоблок
 
 use Bitrix\Main\EventManager;
 // use Bitrix\Main\Diag\Debug;

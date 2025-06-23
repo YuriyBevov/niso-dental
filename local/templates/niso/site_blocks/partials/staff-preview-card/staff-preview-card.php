@@ -28,7 +28,7 @@
       <? endif; ?>
     </div>
     <div class="staff-preview-card__footer">
-      <button class="main-btn" data-modal-opener="callback-modal">
+      <button class="main-btn" data-modal-opener="callback-modal" data-doctor="<?= $arItem["NAME"] ?>">
         <span>Записаться на прием</span>
       </button>
       <a class="main-btn main-btn--outlined" href="<?= $arItem["DETAIL_PAGE_URL"] ?>">

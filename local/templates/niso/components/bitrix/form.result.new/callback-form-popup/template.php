@@ -19,16 +19,11 @@
 		</div>
 
 		<? foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
-			<!-- в работе -->
-			<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "hidden"): ?>
 
-				<? if ($FIELD_SID == "DOCTOR"): ?>
-					<input type="hidden" name="form_hidden_18" data-staff-name-field value="<?= $GLOBALS['DOCTOR_NAME'] ?>">
-				<? else: ?>
-					<?= $arQuestion["HTML_CODE"] ?>
-				<? endif; ?>
+			<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "hidden"): ?>
+				<?= $arQuestion["HTML_CODE"] ?>
 			<? endif; ?>
-			<!-- в работе -->
+
 			<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "text"): ?>
 				<div class="main-input-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
 					<label>

@@ -23,9 +23,11 @@ $curPage = $APPLICATION->GetCurPage();
   // 	$APPLICATION->SetAdditionalCSS("/include/main-page/hero-block/style.css", false);
   // }
   // Подключение css
-  $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/main.css", true);
+  // $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/main.css", true);
+  $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/custom.css", true);
   // Для подключения скриптов
   $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/assets/build.js");
+  $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/assets/custom.js");
   ?>
 </head>
 

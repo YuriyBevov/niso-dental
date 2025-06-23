@@ -32,7 +32,7 @@ $this->setFrameMode(true); ?>
 						<?= $arField["SUB_VALUES"]["DESCR_CONTENT"]["~VALUE"]["TEXT"] ?>
 					<? endforeach; ?>
 				<? endif; ?>
-				<button class="main-btn" data-modal-opener="callback-modal">
+				<button class="main-btn" data-modal-opener="callback-modal" data-doctor="<?= $arResult["NAME"] ?>">
 					<span>Записаться на прием</span>
 				</button>
 
