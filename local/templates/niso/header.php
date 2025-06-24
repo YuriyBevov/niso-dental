@@ -11,7 +11,7 @@ $curPage = $APPLICATION->GetCurPage();
   <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"/> -->
   <? $APPLICATION->ShowHead(); ?>
   <title><? $APPLICATION->ShowTitle() ?></title>
-  <? $APPLICATION->ShowMeta("description") ?>
+
 
   <?
   // Подключение мета тегов или сторонних файлов
@@ -29,6 +29,7 @@ $curPage = $APPLICATION->GetCurPage();
   $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/assets/build.js");
   $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/assets/custom.js");
   ?>
+  <meta name="yandex-verification" content="de1ec18da1a2ca85" />
 </head>
 
 <body>
