@@ -1,3 +1,9 @@
+<Limit GET POST>
+    order allow,deny
+    deny from 45.141.215.220	
+    allow from all
+</Limit>
+
 Options -Indexes 
 ErrorDocument 404 /404.php
 

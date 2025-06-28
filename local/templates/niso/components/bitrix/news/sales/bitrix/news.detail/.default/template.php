@@ -44,7 +44,7 @@ $this->setFrameMode(true);
 					<span class="base-text"><?= $arResult["DISPLAY_PROPERTIES"]["RESTRICTIONS"]["~VALUE"] ?></span>
 				<? endif; ?>
 
-				<button class="main-btn" type="button">Оставить заявку</button>
+				<button class="main-btn" type="button" data-modal-opener="callback-modal">Оставить заявку</button>
 			</div>
 
 			<div class="sales-detail__grid-item sales-detail__grid-item--detail-text">
