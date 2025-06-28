@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 				);
 				?>
 			</span>
-			<h2 class="base-title"><?= $arResult["NAME"] ?></h2>
+			<h1 class="base-title"><?= $arResult["NAME"] ?></h1>
 		</div>
 		<div class="news-detail__grid">
 			<div class="news-detail__grid-item news-detail__grid-item--content">
