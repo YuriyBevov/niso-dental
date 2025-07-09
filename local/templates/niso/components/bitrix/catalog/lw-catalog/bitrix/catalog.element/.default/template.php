@@ -61,6 +61,7 @@ $itemIds = array(
 				"bitrix:news.list",
 				"top-banner",
 				array(
+					"LW_IS_INNER" => "Y",
 					"ACTIVE_DATE_FORMAT" => "d.m.Y",
 					"ADD_SECTIONS_CHAIN" => "N",
 					"AJAX_MODE" => "N",
@@ -190,9 +191,9 @@ $itemIds = array(
 				</div>
 			</div>
 			<div class="service-detail__grid-item service-detail__grid-item--content">
-				<h2 class="base-title">
+				<h1 class="base-title">
 					<?= $arResult["NAME"] ?>
-				</h2>
+				</h1>
 				<div class="content">
 					<? if (!empty($arResult["PROPERTIES"]["DETAIL_TEXT_TOP"]["~VALUE"]["TEXT"])): ?>
 						<?= $arResult["PROPERTIES"]["DETAIL_TEXT_TOP"]["~VALUE"]["TEXT"] ?>

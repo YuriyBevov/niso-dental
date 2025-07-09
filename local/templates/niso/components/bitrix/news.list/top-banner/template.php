@@ -24,7 +24,7 @@ $this->setFrameMode(true);
               <span class="base-text top-banner__headline">
                 <?= $arItem["PREVIEW_TEXT"] ?>
               </span>
-              <? if ($arItem["PROPERTIES"]["H1_TITLE"]["VALUE"] == "Y"): ?>
+              <? if ($arItem["PROPERTIES"]["H1_TITLE"]["VALUE"] == "Y" && $arParams["LW_IS_INNER"] !== "Y"): ?>
                 <h1 class="main-title top-banner__title"><?= $arItem["NAME"] ?></h1>
               <? else: ?>
                 <span class="main-title top-banner__title"><?= $arItem["NAME"] ?></span>

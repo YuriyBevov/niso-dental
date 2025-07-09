@@ -11,6 +11,7 @@ php_value max_input_vars 10000
 php_value allow_url_fopen Off
 php_value mail.add_x_header Off
 
+
 RewriteCond %{THE_REQUEST} //
 	# Проверяем, повторяется ли слеш (//) более двух раз.
 RewriteRule .* /$0 [R=301,L]

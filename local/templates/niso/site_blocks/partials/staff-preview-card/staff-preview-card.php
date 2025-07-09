@@ -1,4 +1,11 @@
-<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/site_blocks/partials/staff-preview-card/style.css" />
+<?php
+global $stylesIncluded;
+
+if (!isset($stylesIncluded['staff-preview-card'])) {
+  echo '<link rel="stylesheet" href="/local/templates/niso/site_blocks/partials/staff-preview-card/style.css">';
+  $stylesIncluded['staff-preview-card'] = true;
+}
+?>
 
 <div class="staff-preview-card-wrapper">
   <div class="staff-preview-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">

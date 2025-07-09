@@ -17,7 +17,11 @@ $curPage = $APPLICATION->GetCurPage();
 					);
 					?>
 				</span>
-				<h2 class="base-title"><?= $arResult["NAME"] ?></h2>
+				<? if ($curPage === '/'): ?>
+					<h2 class="base-title"><?= $arResult["NAME"] ?></h2>
+				<? else: ?>
+					<h1 class="base-title"><?= $arResult["NAME"] ?></h1>
+				<? endif; ?>
 				<p class="base-text"><?= $arResult["DESCRIPTION"] ?></p>
 			</div>
 			<div class="services-preview__grid <?= ($curPage == '/services/' ? 'grid-2cols' : '') ?>">

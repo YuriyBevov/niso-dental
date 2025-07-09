@@ -1,5 +1,11 @@
-<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/site_blocks/partials/review-card/style.css" />
+<?php
+global $stylesIncluded;
 
+if (!isset($stylesIncluded['review-card'])) {
+  echo '<link rel="stylesheet" href="/local/templates/niso/site_blocks/partials/review-card/style.css">';
+  $stylesIncluded['review-card'] = true;
+}
+?>
 
 <div class="review-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
   <div class="review-card__rate">

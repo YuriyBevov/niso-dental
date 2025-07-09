@@ -1,4 +1,11 @@
-<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/site_blocks/partials/image-comparison-slider/style.css" />
+<?php
+global $stylesIncluded;
+
+if (!isset($stylesIncluded['image-comparison-slider'])) {
+  echo '<link rel="stylesheet" href="/local/templates/niso/site_blocks/partials/image-comparison-slider/style.css">';
+  $stylesIncluded['image-comparison-slider'] = true;
+}
+?>
 
 <div class="image-comparison" data-component="image-comparison-slider">
   <div class="image-comparison__slider-wrapper">
