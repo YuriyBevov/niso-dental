@@ -18,7 +18,12 @@ $this->setFrameMode(true);
 						?>
 					</span>
 				<? endif; ?>
-				<h2 class="base-title"><?= $arParams["CUSTOM_TITLE"] ? $arParams["CUSTOM_TITLE"] : $arResult["NAME"] ?></h2>
+				<?if($arParams["CUSTOM_TITLE"]):?>
+					<h2 class="base-title"><?= $arParams["CUSTOM_TITLE"] ?></h2>
+				<?else:?>
+					<h1 class="base-title"><?= $arResult["NAME"] ?></h1>
+				<?endif;?>
+
 				<span class="base-text">
 					<?= $arResult["DESCRIPTION"] ?>
 				</span>

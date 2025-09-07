@@ -32,6 +32,9 @@ $curPage = $APPLICATION->GetCurPage();
   ?>
   <meta name="yandex-verification" content="de1ec18da1a2ca85" />
 
+
+
+  <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m, e, t, r, i, k, a) {
       m[i] = m[i] || function() {
@@ -44,22 +47,22 @@ $curPage = $APPLICATION->GetCurPage();
         }
       }
       k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-    })
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
 
-    ym(98000599, "init", {
+    ym(102970436, 'init', {
+      webvisor: true,
       clickmap: true,
-      trackLinks: true,
+      ecommerce: "dataLayer",
       accurateTrackBounce: true,
-      webvisor: true
+      trackLinks: true
     });
   </script>
-
+  <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
   <noscript>
-    <div><img src="https://mc.yandex.ru/watch/98000599" style="position:absolute; left:-9999px;" alt="" /></div>
+    <div><img src="https://mc.yandex.ru/watch/102970436" style="position:absolute; left:-9999px;" alt="" /></div>
   </noscript>
   <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
 

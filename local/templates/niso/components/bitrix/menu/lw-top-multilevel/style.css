@@ -212,6 +212,18 @@
 		border-radius: var(--base-border-radius);
 		background-color: var(--lighter);
 	}
+
+	.top-menu
+		ul:has(li.lw-dropdown-menu)
+		li.lw-dropdown-menu
+		.top-menu__inner-wrapper
+		.top-menu__inner-wrapper
+		> ul {
+		height: fit-content;
+		max-height: 320px;
+		overflow: hidden;
+		overflow-y: auto;
+	}
 	.top-menu
 		ul:has(li.lw-dropdown-menu)
 		li.lw-dropdown-menu:focus

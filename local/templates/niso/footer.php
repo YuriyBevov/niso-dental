@@ -234,8 +234,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				<?
 				$APPLICATION->IncludeComponent(
 					"bitrix:form.result.new",
-					"callback-form-popup",
-					array(
+					"callback-form",
+					[
 						"IS_MODAL" => "Y",
 						"AJAX_MODE" => "Y",
 						"AJAX_OPTION_JUMP" => "N",
@@ -252,12 +252,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 						"SUCCESS_URL" => "",
 						"USE_EXTENDED_ERRORS" => "Y",
 						"WEB_FORM_ID" => "3",
-						"COMPONENT_TEMPLATE" => "callback-inline",
-						"VARIABLE_ALIASES" => array(
+						"COMPONENT_TEMPLATE" => "callback-form",
+						"VARIABLE_ALIASES" => [
 							"WEB_FORM_ID" => "WEB_FORM_ID",
 							"RESULT_ID" => "",
-						),
-					),
+						]
+					],
 					$component
 				); ?>
 			</div>
