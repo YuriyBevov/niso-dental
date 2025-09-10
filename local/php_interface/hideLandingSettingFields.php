@@ -37,12 +37,17 @@ function HideLandingSettingFields()
           }
         });
       }
-
+      // ОБЩИЕ НАСТРОЙКИ
       if (elementID === 416) {
-        fillSettingsFields(['54', '55']);
+        fillSettingsFields(['54', '55', '62', '63', '76', '77', '79']);
       }
+      // ПРЕИМУЩЕСТВА
       if (elementID === 417) {
-        fillSettingsFields(['58', '59']);
+        fillSettingsFields(['69', '72', '73', '74', '75']);
+      }
+      // ВЕРХНИЙ БАННЕР
+      if (elementID === 425) {
+        fillSettingsFields(['61', '64', '65', '66', '67', '68', '70', '71']);
       }
     });
   </script>

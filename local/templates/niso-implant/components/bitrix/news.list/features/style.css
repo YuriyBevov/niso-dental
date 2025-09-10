@@ -1,0 +1,50 @@
+.features .grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--grid-gap);
+	width: 100%;
+	margin: 0 auto;
+}
+
+.feature-card {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: clamp(16px, 3.4vw, 24px);
+	flex: 1 0 20%;
+	min-width: 240px;
+
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.feature-card.--align-center {
+	align-items: center;
+	text-align: center;
+}
+
+.feature-card.--bordered {
+	border: var(--border);
+}
+
+.feature-card.--rounded {
+	border-radius: var(--current-border-radius);
+}
+
+.feature-card:has(.text) .subtitle.--underlined {
+	position: relative;
+	padding-bottom: 10px;
+}
+.feature-card:has(.text) .subtitle.--underlined::after {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 2px;
+	content: "";
+	background-color: var(--primary-color);
+}

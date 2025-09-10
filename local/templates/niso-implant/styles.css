@@ -1,3 +1,434 @@
+@font-face {
+	font-family: "Montserrat";
+	src: url("./assets/fonts/Montserrat-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("./assets/fonts/Montserrat-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("./assets/fonts/Montserrat-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("./assets/fonts/Montserrat-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("./assets/fonts/Montserrat-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("./assets/fonts/Inter-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("./assets/fonts/Inter-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("./assets/fonts/Inter-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("./assets/fonts/Inter-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("./assets/fonts/Inter-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("./assets/fonts/Roboto-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("./assets/fonts/Roboto-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("./assets/fonts/Roboto-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("./assets/fonts/Roboto-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("./assets/fonts/Roboto-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Manrope";
+	src: url("./assets/fonts/Manrope-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Manrope";
+	src: url("./assets/fonts/Manrope-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Manrope";
+	src: url("./assets/fonts/Manrope-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Manrope";
+	src: url("./assets/fonts/Manrope-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-display: swap;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Manrope";
+	src: url("./assets/fonts/Manrope-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+
 :root {
-	--primary-color: red;
+	--montserrat-font: "Montserrat", sans-serif;
+	--inter-font: "Inter", sans-serif;
+	--roboto-font: "Roboto", sans-serif;
+	--manrope-font: "Manrope", sans-serif;
+
+	--content-width: 1440px;
+	--container-offset: clamp(10px, 2vw, 60px);
+	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+	--content-fluid-width: 1920px;
+	--container-fluid-offset: 0;
+	--container-fluid-width: calc(
+		var(--content-fluid-width) + (var(--container-offset) * 2)
+	);
+
+	--black-color: #000000;
+	--white-color: #ffffff;
+	/* --primary-color: var(--success);
+	--secondary-color: var(--light); */
+	--warning: #ffd83a;
+	--danger: #fc482d;
+	--success: #669900;
+	--info: #fff8db;
+	--dark-color: #333333;
+	--light: #f8f8f8;
+	--gray-800: #888888;
+	--gray-600: #cccccc;
+	--gray-500: #f5f5f5;
+
+	--scrollbar-color: var(--secondary-color);
+	--scrollbar-width: 10px;
+	--scrollbar-height: 6px;
+	--scrollbar-border-radius: 0;
+	--scrollbar-thumb-color: var(--primary-color);
+	--scrollbar-thumb-border-radius: 8px;
+
+	--site-base-font-family: var(--montserrat-font);
+	--site-base-font-weight: 400;
+	--site-base-font-size: clamp(16px, 2.2vw, 18px);
+	--site-base-line-height: 1.5;
+	--site-base-letter-spacing: 0.001em;
+	--site-base-text-color: var(--dark-color);
+	--site-bg-color: var(--white-color);
+
+	--main-transition: 0.15s linear;
+
+	/* gaps */
+
+	--grid-gap: clamp(18px, 3.4vw, 32px);
+
+	/* dynamic */
+	--border: var(--current-border-width) solid var(--primary-color);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	min-height: 100vh;
+	min-height: 100dvh;
+	text-size-adjust: none;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+.section {
+	margin: clamp(24px, 4vw, 48px) 0;
+}
+
+.section-header {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: clamp(24px, 4vw, 36px);
+	line-height: 1.2;
+}
+
+.section-header > * {
+	margin: 0;
+}
+
+.section-header.--align-center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.section-header.--limited-width {
+	width: 100%;
+	max-width: 768px;
+}
+
+.section-title {
+	margin-bottom: 16px;
+}
+
+.section-title.--underlined {
+	position: relative;
+	padding-bottom: 16px;
+}
+
+.section-title.--underlined::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 40%;
+	max-width: 200px;
+	height: 3px;
+	content: "";
+	background-color: var(--primary-color);
+}
+
+.section-header.--align-center .section-title.--underlined::after {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.subtitle {
+	font-size: clamp(18px, 3.2vw, 24px);
+	font-weight: 600;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: var(--container-width);
+	margin: 0 auto;
+	padding: 0 var(--container-offset);
+}
+
+*::-webkit-scrollbar {
+	background-color: var(--scrollbar-color);
+	width: var(--scrollbar-width);
+	border-radius: var(--scrollbar-border-radius);
+	height: var(--scrollbar-height);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-thumb-color);
+	border-radius: var(--scrollbar-thumb-border-radius);
+}
+
+body {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	font-family: var(--site-base-font-family);
+	font-weight: var(--site-base-font-weight);
+	font-size: var(--site-base-font-size);
+	line-height: var(--site-base-line-height);
+	letter-spacing: var(--site-base-letter-spacing);
+	color: var(--site-base-text-color);
+	background-color: var(--site-bg-color);
+	overflow-x: hidden !important;
+	-webkit-font-smoothing: antialiased;
+	scrollbar-gutter: stable;
+}
+
+body.body-locked {
+	overflow: hidden;
+}
+
+footer {
+	margin-top: auto;
+}
+
+a,
+button,
+[data-fancybox],
+input[type="submit"] {
+	cursor: pointer;
+}
+
+input[type="number"] {
+	appearance: none;
+	-moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.--overlayed-light {
+	position: relative;
+}
+.--overlayed-light::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgba(245, 245, 245, 0.5);
+	z-index: 0;
+}
+.--overlayed-light > * {
+	color: var(--dark-color);
+	z-index: 20;
+}
+.--overlayed-dark {
+	position: relative;
+}
+.--overlayed-dark::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 0;
+}
+.--overlayed-dark > * {
+	color: var(--white-color);
+	z-index: 20;
+}
+
+.--overlayed-blured {
+	position: relative;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+.--overlayed-blured::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 0;
+}
+.--overlayed-blured > * {
+	color: var(--white-color);
+	z-index: 20;
+}
+
+.main-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	width: fit-content;
+	min-width: 180px;
+	min-height: 48px;
+	font-size: clamp(18px, 2.4vw, 22px);
+	line-height: 1;
+	font-weight: 600;
+	padding: 12px 24px;
+	border: 2px solid transparent;
+	border-radius: var(--current-border-radius);
+	transition: opacity var(--main-transition);
+	background-color: var(--primary-color);
+	color: var(--white-color);
+	margin: 10px;
+}
+
+.main-btn:focus {
+	opacity: 0.6;
+}
+
+@media (hover: hover) {
+	.main-btn:hover {
+		opacity: 0.6;
+	}
+}
+
+h1 {
+	font-size: clamp(24px, 4.4vw, 56px);
+	margin-bottom: 0.5em;
+}
+
+h2 {
+	font-size: calc(clamp(24px, 4.4vw, 48px) / 1.2);
+	margin-top: 0;
+	margin-bottom: 0.3em;
 }
