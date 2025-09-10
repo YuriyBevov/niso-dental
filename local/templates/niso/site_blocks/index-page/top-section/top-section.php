@@ -147,7 +147,8 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/site_blocks/index-page/top-s
           "COMPONENT_TEMPLATE" => "side-sales"
         ),
         false
-      ); ?>
+      );
+      ?>
 
       <!-- tizzers-list -->
       <div class="hero__grid-item hero__grid-item--tizzers">
