@@ -1,0 +1,35 @@
+.tag-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 16px 0;
+}
+
+.tag {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	padding: 6px 8px 4px;
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--secondary);
+	border-radius: 8px;
+	border: 1px solid #d4e4f4;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.tag:focus,
+.tag:hover {
+	opacity: 0.6;
+}
+
+.sidemenu ul li ul li a {
+	font-weight: 400;
+	color: var(--info);
+}
+
+.top-banner__title {
+	max-width: 1140px;
+}
