@@ -46,7 +46,6 @@
 	flex-direction: column;
 	gap: 12px;
 	height: fit-content;
-	/* max-height: calc(100% - var(--container-offset) * 2); */
 	margin: auto;
 	padding: clamp(20px, 3vw, 40px);
 	border-radius: var(--current-border-radius);
@@ -57,7 +56,7 @@
 	border: var(--current-border-width) solid var(--primary-color);
 }
 
-.--align-text-center .top-banner__content {
+.top-banner.--align-center .top-banner__content {
 	text-align: center;
 	justify-content: center;
 	align-items: center;

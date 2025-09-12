@@ -39,7 +39,7 @@ function HideLandingSettingFields()
       }
       // ОБЩИЕ НАСТРОЙКИ
       if (elementID === 416) {
-        fillSettingsFields(['54', '55', '62', '63', '76', '77', '79']);
+        fillSettingsFields(['54', '55', '62', '63', '76', '77', '79', '85', '87']);
       }
       // ПРЕИМУЩЕСТВА
       if (elementID === 417) {
@@ -47,7 +47,15 @@ function HideLandingSettingFields()
       }
       // ВЕРХНИЙ БАННЕР
       if (elementID === 425) {
-        fillSettingsFields(['61', '64', '65', '66', '67', '68', '70', '71']);
+        fillSettingsFields(['61', '64', '65', '88', '67', '68', '70', '71']);
+      }
+      // СОТРУДНИКИ
+      if (elementID === 435) {
+        fillSettingsFields(['80', '81', '82', '83', '84', '86']);
+      }
+      // КОНТАКТЫ
+      if (elementID === 441) {
+        fillSettingsFields(['89', '90', '91', '92', '93']);
       }
     });
   </script>

@@ -1,6 +1,6 @@
 <?php
 if (\Bitrix\Main\Loader::includeModule("iblock")) {
-  $elementIds = [416, 417, 425];
+  $elementIds = [416, 417, 425, 435, 441];
   $jsSettings = [];
   $globalSettings = [];
 
@@ -20,13 +20,17 @@ if (\Bitrix\Main\Loader::includeModule("iblock")) {
           continue;
         }
 
+        // if ($prop["CODE"] === "GLOBAL_CONTACTS_PHONES") {
+        //   debug($prop);
+        // }
+
         $code = $prop["CODE"];
 
         // Проверяем, начинается ли код свойства с "GLOBAL"
         if (strncmp($code, 'GLOBAL', 6) === 0) {
-          $globalSettings[$code] = $prop["VALUE_XML_ID"];
+          $globalSettings[$code] = $prop["VALUE_XML_ID"] ? $prop["VALUE_XML_ID"] : $prop["~VALUE"];
         } else {
-          $jsSettings[$code] = $prop["VALUE"];
+          $jsSettings[$code] = $prop["~VALUE"];
         }
       }
     }
