@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 					$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 				?>
 					<div class="license" id="<?=$this->GetEditAreaId($arItem["ID"]);?>">
-						<img data-fancybox="gallery" class="license__image" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arItem["NAME"]?>">
+						<img data-fancybox="gallery" class="license__image" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arItem["NAME"]?>" width="500" height="700">
 					</div>
 				<?endforeach;?>
 			</div>
