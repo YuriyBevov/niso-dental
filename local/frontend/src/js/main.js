@@ -15,3 +15,4 @@ import "../pug/components/_ui/sliders/autofill-slider/autofill-slider";
 import "../pug/components/_ui/sliders/main-slider/main-slider";
 import "../pug/components/_ui/sliders/portfolio-slider/portfolio-slider";
 import "./modules/modal";
+import "./modules/fancy";
