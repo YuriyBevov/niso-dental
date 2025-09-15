@@ -4,7 +4,7 @@ $APPLICATION->SetPageProperty("description", "Важная информация 
 $APPLICATION->SetPageProperty("title", "Важная информация стоматологическая клиника НИСО");
 $APPLICATION->SetTitle("Информация");
 ?><section class="base-section">
-  <div class="container">
+  <div class="container test">
     <div class="base-section__header">
       <h1 class="base-title"><?= $APPLICATION->GetTitle() ?></h1>
       <div class="tag-list">
