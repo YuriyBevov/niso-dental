@@ -1,0 +1,11 @@
+.social {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.social__item img {
+	width: 24px;
+	height: auto;
+	object-fit: contain;
+}

@@ -2,7 +2,7 @@
 $this->setFrameMode(true);
 ?>
 
-<section class="section staff  <?= $GLOBALS['TEMPLATE_SETTINGS']["GLOBAL_STAFF_GRID_TYPE"] ?>">
+<section id="staff" class="section staff  <?= $GLOBALS['TEMPLATE_SETTINGS']["GLOBAL_STAFF_GRID_TYPE"] ?>">
   <div class="container">
     <?
     $APPLICATION->IncludeFile(

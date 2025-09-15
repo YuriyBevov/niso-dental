@@ -39,7 +39,7 @@ if (\Bitrix\Main\Loader::includeModule("iblock")) {
   $GLOBALS['TEMPLATE_SETTINGS'] = $globalSettings;
 
   // debug($jsSettings);
-  debug($GLOBALS['TEMPLATE_SETTINGS']);
+  // debug($GLOBALS['TEMPLATE_SETTINGS']);
 }
 ?>
 

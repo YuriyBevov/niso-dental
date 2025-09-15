@@ -39,7 +39,7 @@ function HideLandingSettingFields()
       }
       // ОБЩИЕ НАСТРОЙКИ
       if (elementID === 416) {
-        fillSettingsFields(['54', '55', '62', '63', '76', '77', '79', '85', '87']);
+        fillSettingsFields(['54', '55', '62', '63', '76', '77', '79', '85', '87', '94']);
       }
       // ПРЕИМУЩЕСТВА
       if (elementID === 417) {
