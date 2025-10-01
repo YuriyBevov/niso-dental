@@ -24,39 +24,6 @@ $this->setFrameMode(true);
 
 				</div>
 			</div>
-			<?if($arResult['AUTHOR']):?>
-				<div class="news-detail__author">
-					<img class="news-detail__author-photo" src="<?=($arResult['AUTHOR']['PREVIEW_PICTURE'])?>" alt="" width="300" height="300">
-					<div class="news-detail__author-content">
-						<p class="news-detail__author-about">
-							<span class="news-detail__author-name"><?=$arResult['AUTHOR']['NAME']?> - </span>
-							<span class="news-detail__author-job-title"><?=$arResult['AUTHOR']['JOB_TITLE']?></span>
-						</p>
-						<p class="news-detail__author-description"><?=$arResult['AUTHOR']['DESCRIPTION']?></p>
-						<span class="news-detail__author-company"><?=$arResult['AUTHOR']['COMPANY']?></span>
-						<div class="news-detail__author-links">
-							<?if ($arResult['AUTHOR']['DETAIL_PAGE_URL']):?>
-								<a class="main-btn main-btn--outlined" href="<?=$arResult['AUTHOR']['DETAIL_PAGE_URL']?>">Подробнее о специалисте</a>
-							<?endif;?>
-							<?if ($arResult['AUTHOR']['SOCIALS']):?>
-								<div class="social-block">
-									<?foreach ($arResult['AUTHOR']['SOCIALS'] as $arItem):?>
-										<? if (strtolower($arItem['NAME']) ==='email'):?>
-											<a class="social-block__item" href="mailto:<?=$arItem['LINK']?>" aria-label="<?=$arItem['NAME']?>" rel="noopener nofollow norefferer" target="_blank">
-												<img src="<?=$arItem['ICON']?>" alt="<?=$arItem['NAME']?>" width="16" height="16">
-											</a>
-										<?else:?>
-											<a class="social-block__item" href="<?=$arItem['LINK']?>" aria-label="<?=$arItem['NAME']?>" rel="noopener nofollow norefferer" target="_blank">
-												<img src="<?=$arItem['ICON']?>" alt="<?=$arItem['NAME']?>" width="16" height="16">
-											</a>
-										<?endif;?>
-									<?endforeach;?>
-								</div>
-							<?endif;?>
-						</div>
-					</div>
-				</div>
-			<?endif?>
 			<? if (!empty($arResult['PROPERTIES']['LINKED']['VALUE'])): ?>
 				<div class="news-detail__grid-item news-detail__grid-item--side">
 					<span class="base-subtitle">Похожие новости</span>

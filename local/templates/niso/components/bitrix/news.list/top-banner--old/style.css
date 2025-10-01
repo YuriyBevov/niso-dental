@@ -9,20 +9,33 @@
     color-stop(-54.9%, #44c6e9),
     to(#336cbc)
   );
-  background:
-    url("/img/tooth-banner-bg-paddings.png"),
-    linear-gradient(270deg, #44c6e9 -54.9%, #336cbc 100%);
-  background-size: contain, auto;
+  background: linear-gradient(270deg, #44c6e9 -54.9%, #336cbc 100%);
+
   background-repeat: no-repeat;
   background-position: top right;
 }
 
+/* .top-banner::after {
+  position: absolute;
+  top: 50%;
+  right: calc(-40px - clamp(10px, 3vw, 40px));
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: "";
+  width: 100%;
+  max-width: 360px;
+  height: calc(100% - 40px);
+  background: url("../../../../../../frontend/src/assets/img/top-banner-bg.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+} */
+
 .swiper.top-banner-slider {
   position: relative;
   height: 100%;
-  /* padding-bottom: 60px; */
+  padding-bottom: 60px;
 }
-
 @container main (min-width: 480px ) {
   .swiper.top-banner-slider {
     padding-bottom: 0;
@@ -37,13 +50,11 @@
   overflow: hidden;
 }
 .swiper.top-banner-slider .swiper-navigation {
-  display: none;
   z-index: 11;
 }
 @container main (min-width: 480px ) {
   .swiper.top-banner-slider .swiper-navigation {
     position: absolute;
-    display: flex;
     bottom: 44px;
     right: clamp(10px, 3vw, 40px);
   }
@@ -61,11 +72,22 @@
   }
 }
 
+.top-banner .content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.top-banner * {
+  margin: 0;
+}
+
 .top-banner .top-banner__title {
   line-height: 1.5;
 }
 
 .top-banner .top-banner__title,
+.top-banner .top-banner__text,
 .top-banner .top-banner__headline {
   margin: 0;
   color: var(--white);
@@ -87,13 +109,20 @@
 }
 @container main (min-width: 768px ) {
   .top-banner__title,
-  .top-banner__content-block {
+  .top-banner__text {
     margin-bottom: 20px;
   }
 }
 
-.top-banner * {
-  margin: 0;
+.top-banner__content-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.top-banner__text {
+  width: 100%;
+  max-width: 760px;
 }
 
 .top-banner__content {
@@ -106,19 +135,8 @@
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 20px;
-  width: 100%;
-  max-width: 960px;
   height: 100%;
   z-index: 2;
-}
-
-.top-banner__content-block {
-  width: 100%;
-  max-width: 760px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  color: var(--white);
 }
 
 .--overlay-light::after {
@@ -156,39 +174,4 @@
 
   backdrop-filter: blur(20px);
   background-color: rgba(0, 0, 0, 0.4);
-}
-
-.top-banner ul {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-.top-banner ul li {
-  display: flex;
-  align-items: top;
-  gap: 6px;
-}
-
-.top-banner ul li::before {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background-image: url("/img/tooth_marker.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.swiper-slide:nth-child(2) .top-banner {
-  background-image: none !important;
-}
-
-@container main (min-width: 780px) {
-  .swiper-slide:nth-child(2) .top-banner {
-    background-image: url("/img/girl.png") !important;
-  }
 }

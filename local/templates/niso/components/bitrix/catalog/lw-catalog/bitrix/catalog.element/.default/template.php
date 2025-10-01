@@ -346,12 +346,18 @@ unset($GLOBALS['arLinkedServicesFilter']);
 ?>
 
 <!-- features -->
-<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/features/features.php"); ?>
+<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/features/features.php");  ?>
 <!-- features -->
 
 <!-- staff-preview -->
-<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/staff-preview/staff-preview.php"); ?>
+<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/staff-preview/staff-preview.php");  ?>
 <!-- staff-preview -->
+
+<? if ($USER->isAdmin()): ?>
+	<!-- reviews-preview -->
+	<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/reviews-preview/reviews-preview.php"); ?>
+	<!-- reviews-preview -->
+<? endif; ?>
 
 <?
 $GLOBALS['arFaqFilter'] = array('ID' => $arResult['PROPERTIES']['FAQ']['VALUE']);

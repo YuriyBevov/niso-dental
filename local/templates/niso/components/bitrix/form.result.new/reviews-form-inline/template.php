@@ -51,7 +51,7 @@
 
 				<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "checkbox"): ?>
 					<div class="main-checkbox-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
-						<input type="checkbox" checked id="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>" name="form_checkbox_<?= $FIELD_SID ?>[]" value="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
+						<input type="checkbox" id="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>" name="form_checkbox_<?= $FIELD_SID ?>[]" value="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
 						<label class="main-checkbox" for="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
 							<span><?= $arQuestion["CAPTION"] ?></span>
 						</label>
@@ -72,7 +72,7 @@
 			</div>
 		<? endif; ?>
 
-		<? $APPLICATION->IncludeComponent(
+		<?/* $APPLICATION->IncludeComponent(
 			"bitrix:main.userconsent.request",
 			"user-consent",
 			array(
@@ -85,7 +85,7 @@
 				"COMPONENT_TEMPLATE" => "user-consent"
 			),
 			$component
-		); ?>
+		); */?>
 
 		<div class="main-input-wrapper">
 			<label>
@@ -102,7 +102,7 @@
 	// !!! Переменная ajaxSuccessHandlerAdded проверяет, был ли уже добавлен обработчик.
 	// !!! Обработчик добавляется только один раз.
 	if (!window.ajaxSuccessHandlerAdded) {
-		BX.UserConsent.loadFromForms();
+		// BX.UserConsent.loadFromForms();
 		BX.addCustomEvent("onAjaxSuccess", function() {
 			// Переинициализация скриптов
 			const items = document.querySelectorAll(".rate__wrapper input");

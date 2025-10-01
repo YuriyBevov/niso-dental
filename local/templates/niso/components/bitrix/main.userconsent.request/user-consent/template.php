@@ -52,8 +52,8 @@ if ($arResult['URL']) {
 						</div>
 					</div>
 					<div class="main-user-consent-request-popup-buttons">
-						<button data-bx-btn-accept="" class="main-btn">Y</button>
-						<button data-bx-btn-reject="" class="main-btn main-btn--outlined">N</button>
+						<button data-bx-btn-accept="" type="button" class="main-btn">Y</button>
+						<button data-bx-btn-reject="" type="button" class="main-btn main-btn--outlined">N</button>
 					</div>
 				</div>
 			</div>

@@ -20,35 +20,62 @@ $this->setFrameMode(true);
       ?>
         <div class="swiper-slide" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
           <div class="top-banner-wrapper">
-            <div class="top-banner">
-              <span class="base-text top-banner__headline">
-                <?= $arItem["PREVIEW_TEXT"] ?>
-              </span>
-              <? if ($arItem["PROPERTIES"]["H1_TITLE"]["VALUE"] == "Y" && $arParams["LW_IS_INNER"] !== "Y"): ?>
-                <h1 class="main-title top-banner__title"><?= $arItem["NAME"] ?></h1>
-              <? else: ?>
-                <span class="main-title top-banner__title"><?= $arItem["NAME"] ?></span>
-              <? endif; ?>
+            <div class="top-banner <?=$arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"]?>"
+            style="
+              <?php if (!empty($arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"])): ?>
+                background-color: <?=$arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"]?>;
+              <?php endif; ?>
+              <?php if (!empty($arItem["PREVIEW_PICTURE"]["SRC"])): ?>
+                background-image: url('<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>');
+              <?php endif; ?>
+              <?php if (!empty($arItem["PROPERTIES"]["TEXT_OUTLINE"]["VALUE"])): ?>
+                text-shadow: <?=$arItem["PROPERTIES"]["TEXT_OUTLINE"]["VALUE"]?>
+              <?php endif; ?>
+            ">
 
-              <p class="base-text top-banner__text">
-                <?= $arItem["DETAIL_TEXT"] ?>
-              </p>
+              <div class="top-banner__content">
 
-              <? if (!empty($arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"])): ?>
-                <a class="main-btn" href="<?= $arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"] ?>">
-                  <span>
-                    <?= $arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_TITLE"]["VALUE"] ?>
+                <?if ($arItem["PREVIEW_TEXT"]):?>
+                  <span class="base-text top-banner__headline">
+                    <?= $arItem["PREVIEW_TEXT"] ?>
                   </span>
-                </a>
-              <? endif; ?>
+                <?endif;?>
 
-              <? if (empty($arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"]) && !empty($arItem["PROPERTIES"]["FORM_BUTTON"]["VALUE"]["SUB_VALUES"]["BUTTON_TITLE"]["VALUE"])): ?>
-                <button class="main-btn" type="button" data-modal-opener="<?= $formID ?>">
-                  <span>
-                    <?= $arItem["PROPERTIES"]["FORM_BUTTON"]["VALUE"]["SUB_VALUES"]["BUTTON_TITLE"]["VALUE"] ?>
-                  </span>
-                </button>
-              <? endif; ?>
+                <? if ($arItem["PROPERTIES"]["H1_TITLE"]["VALUE"] == "Y" && $arParams["LW_IS_INNER"] !== "Y"): ?>
+                  <h1 class="main-title top-banner__title"><?= $arItem["~NAME"] ?></h1>
+                <? else: ?>
+                  <span class="main-title top-banner__title"><?= $arItem["~NAME"] ?></span>
+                <? endif; ?>
+
+
+                <?if ($arItem["DETAIL_TEXT"]):?>
+                  <div class="top-banner__content-block">
+                    <?= $arItem["DETAIL_TEXT"] ?>
+                  </div>
+                <?endif;?>
+
+
+                <? if (!empty($arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"])): ?>
+                  <a class="main-btn" href="<?= $arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"] ?>">
+                    <span>
+                      <?= $arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_TITLE"]["VALUE"] ?>
+                    </span>
+                  </a>
+                <? endif; ?>
+
+                <? if (empty($arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"]) && !empty($arItem["PROPERTIES"]["FORM_BUTTON"]["VALUE"]["SUB_VALUES"]["BUTTON_TITLE"]["VALUE"])): ?>
+                  <button class="main-btn" type="button" data-modal-opener="<?= $formID ?>" style="background-color:<?=$arItem["PROPERTIES"]["BUTTON_COLOR"]["VALUE_XML_ID"]?>">
+                    <span>
+                      <?= $arItem["PROPERTIES"]["FORM_BUTTON"]["VALUE"]["SUB_VALUES"]["BUTTON_TITLE"]["VALUE"] ?>
+                    </span>
+                  </button>
+                <? endif; ?>
+
+                <!-- <?if ($arItem["PREVIEW_PICTURE"]["SRC"]):?> -->
+                    <!-- <img class="top-banner__content-img" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?$arItem["NAME"]?>" width="602" height="550"> -->
+                <!-- <?endif;?> -->
+              </div>
+
 
             </div>
           </div>

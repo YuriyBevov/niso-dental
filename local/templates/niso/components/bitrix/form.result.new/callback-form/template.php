@@ -7,14 +7,18 @@
 
 		<div class="callback-form">
 			<?= $arResult["FORM_HEADER"] ?>
-			<div class="callback-form__header">
-				<span class="callback-form__headline"><?= $arResult["FORM_TITLE"] ?></span>
-				<span class="callback-form__title"><?= $arResult["FORM_DESCRIPTION"] ?></span>
-			</div>
+
 
 			<? if ($arResult["FORM_NOTE"]): ?>
-				<p>Спасибо! Мы скоро свяжемся с Вами!</p>
+				<div class="callback-form__header">
+					<span class="callback-form__title">Заявка отправлена успешно!</span>
+					<p>Спасибо, мы скоро свяжемся с Вами!</p>
+				</div>
 			<? else: ?>
+				<div class="callback-form__header">
+					<span class="callback-form__headline"><?= $arResult["FORM_TITLE"] ?></span>
+					<span class="callback-form__title"><?= $arResult["FORM_DESCRIPTION"] ?></span>
+				</div>
 				<? foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
 					<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "text"): ?>
 						<div class="main-input-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
@@ -25,7 +29,7 @@
 					<? endif; ?>
 					<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "checkbox"): ?>
 						<div class="main-checkbox-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
-							<input type="checkbox" checked id="<?= $arQuestion["STRUCTURE"][0]["ID"] . ($arParams["IS_MODAL"] ? '_modal' : null) ?>" name="form_checkbox_<?= $FIELD_SID ?>[]" value="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
+							<input type="checkbox" id="<?= $arQuestion["STRUCTURE"][0]["ID"] . ($arParams["IS_MODAL"] ? '_modal' : null) ?>" name="form_checkbox_<?= $FIELD_SID ?>[]" value="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
 							<label class="main-checkbox" for="<?= $arQuestion["STRUCTURE"][0]["ID"] . ($arParams["IS_MODAL"] ? '_modal' : null) ?>">
 								<span><?= $arQuestion["CAPTION"] ?><?= ($arQuestion["REQUIRED"] == "Y" ? '*' : '') ?></span>
 							</label>
@@ -45,20 +49,20 @@
 					</div>
 				<? endif; ?>
 
-				<? $APPLICATION->IncludeComponent(
+				<?/* $APPLICATION->IncludeComponent(
 					"bitrix:main.userconsent.request",
 					"user-consent",
 					array(
-						"AUTO_SAVE" => "Y",
+						"AUTO_SAVE" => "N",
 						"COMPOSITE_FRAME_MODE" => "A",
 						"COMPOSITE_FRAME_TYPE" => "AUTO",
 						"ID" => "1",
-						"IS_CHECKED" => "Y",
+						"IS_CHECKED" => "N",
 						"IS_LOADED" => "Y",
 						"COMPONENT_TEMPLATE" => "user-consent"
 					),
 					$component
-				); ?>
+				); */?>
 
 				<div class="main-input-wrapper">
 					<input
@@ -78,7 +82,7 @@
 <? if ($_REQUEST['AJAX_CALL'] == 'Y'): ?>
 	<script src="https://unpkg.com/imask"></script>
 	<script>
-		BX.UserConsent.loadFromForms();
+		// BX.UserConsent.loadFromForms();
 		var fields = document.querySelectorAll('[data-type="tel"]');
 		var options = {
 			mask: '+{7}(000) 000-00-00'
