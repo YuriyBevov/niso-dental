@@ -43,7 +43,9 @@ if ($authorID) {
             'COMPANY' => $arProps['COMPANY']['VALUE'] ?? '',
             'SOCIAL' => $arProps['SOCIAL']['VALUE'] ?? [],
             'DETAIL_PAGE_URL' => $arProps['AUTHOR_PAGE']['VALUE'] ?? '#',
+            'EMAIL' =>  $arProps['EMAIL']['VALUE'],
             'SOCIALS'  => $socials,
         ];
     }
 }
+

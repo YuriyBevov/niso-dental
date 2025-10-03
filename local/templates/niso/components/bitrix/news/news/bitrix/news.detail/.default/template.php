@@ -19,44 +19,45 @@ $this->setFrameMode(true);
 		<div class="news-detail__grid">
 			<div class="news-detail__grid-item news-detail__grid-item--content">
 				<div class="content">
-
 					<?= $arResult["DETAIL_TEXT"] ?>
-
 				</div>
-			</div>
-			<?if($arResult['AUTHOR']):?>
-				<div class="news-detail__author">
-					<img class="news-detail__author-photo" src="<?=($arResult['AUTHOR']['PREVIEW_PICTURE'])?>" alt="" width="300" height="300">
-					<div class="news-detail__author-content">
-						<p class="news-detail__author-about">
-							<span class="news-detail__author-name"><?=$arResult['AUTHOR']['NAME']?> - </span>
-							<span class="news-detail__author-job-title"><?=$arResult['AUTHOR']['JOB_TITLE']?></span>
-						</p>
-						<p class="news-detail__author-description"><?=$arResult['AUTHOR']['DESCRIPTION']?></p>
-						<span class="news-detail__author-company"><?=$arResult['AUTHOR']['COMPANY']?></span>
-						<div class="news-detail__author-links">
+				<?if($arResult['AUTHOR']):?>
+					<div class="news-detail__author" itemscope itemtype="https://schema.org/Person">
+						<img class="news-detail__author-photo" src="<?=($arResult['AUTHOR']['PREVIEW_PICTURE'])?>" alt="<?=$arResult['AUTHOR']['NAME']?>" width="300" height="300" itemprop="image">
+						<div class="news-detail__author-content">
+							<p class="news-detail__author-about">
+								<span class="news-detail__author-name" itemprop="name"><?=$arResult['AUTHOR']['NAME']?></span>
+								<span class="news-detail__author-job-title" itemprop="jobTitle"><?=$arResult['AUTHOR']['JOB_TITLE']?></span>
+							</p>
+							<p class="news-detail__author-description" itemprop="description"><?=$arResult['AUTHOR']['DESCRIPTION']?></p>
+							<span class="news-detail__author-company" itemprop="affiliation" itemscope itemtype="https://schema.org/Organization">
+								 <span itemprop="name"><?=$arResult['AUTHOR']['COMPANY']?></span>
+							</span>
 							<?if ($arResult['AUTHOR']['DETAIL_PAGE_URL']):?>
 								<a class="main-btn main-btn--outlined" href="<?=$arResult['AUTHOR']['DETAIL_PAGE_URL']?>">Подробнее о специалисте</a>
 							<?endif;?>
-							<?if ($arResult['AUTHOR']['SOCIALS']):?>
+							<?if ($arResult['AUTHOR']['EMAIL']):?>
+								<span class="news-detail__author-email"  itemscope itemtype="https://schema.org/ContactPoint" itemprop="contactPoint">
+									<meta itemprop="contactType" content="personal">
+									<a href="mailto:<?=$arResult['AUTHOR']['EMAIL']?>" aria-label="Написать автору по email" rel="noopener noreferrer" target="_blank"  itemprop="email"><?=$arResult['AUTHOR']['EMAIL']?></a>
+								</span>
+							<?endif;?>
+							<?if (!empty($arResult['AUTHOR']['SOCIALS'])):?>
 								<div class="social-block">
 									<?foreach ($arResult['AUTHOR']['SOCIALS'] as $arItem):?>
-										<? if (strtolower($arItem['NAME']) ==='email'):?>
-											<a class="social-block__item" href="mailto:<?=$arItem['LINK']?>" aria-label="<?=$arItem['NAME']?>" rel="noopener nofollow norefferer" target="_blank">
+										<div itemscope itemtype="https://schema.org/ContactPoint" itemprop="contactPoint">
+											<meta itemprop="contactType" content="personal">
+											<a class="social-block__item" href="<?=$arItem['LINK']?>" aria-label="Написать автору в <?=$arItem['NAME']?>" rel="noopener nofollow noreferrer" target="_blank"  itemprop="url">
 												<img src="<?=$arItem['ICON']?>" alt="<?=$arItem['NAME']?>" width="16" height="16">
 											</a>
-										<?else:?>
-											<a class="social-block__item" href="<?=$arItem['LINK']?>" aria-label="<?=$arItem['NAME']?>" rel="noopener nofollow norefferer" target="_blank">
-												<img src="<?=$arItem['ICON']?>" alt="<?=$arItem['NAME']?>" width="16" height="16">
-											</a>
-										<?endif;?>
+										</div>
 									<?endforeach;?>
 								</div>
 							<?endif;?>
 						</div>
 					</div>
-				</div>
-			<?endif?>
+				<?endif?>
+			</div>
 			<? if (!empty($arResult['PROPERTIES']['LINKED']['VALUE'])): ?>
 				<div class="news-detail__grid-item news-detail__grid-item--side">
 					<span class="base-subtitle">Похожие новости</span>
