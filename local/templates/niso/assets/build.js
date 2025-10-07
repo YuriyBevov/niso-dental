@@ -6360,9 +6360,13 @@ if (slider$1) {
   const btnNext = slider$1.querySelector(".swiper-button-next");
   const btnPrev = slider$1.querySelector(".swiper-button-prev");
   new Swiper(slider$1, {
-    modules: [Navigation],
+    modules: [Navigation, Autoplay],
     slidesPerView: 1,
     spaceBetween: 20,
+    autoplay: {
+      delay: 4e3,
+      disableOnInteraction: false,
+    },
     navigation: {
       nextEl: btnNext ? btnNext : null,
       prevEl: btnPrev ? btnPrev : null,
@@ -24359,7 +24363,6 @@ class Oe extends g {
     writable: true,
     value: /* @__PURE__ */ new Map(),
   }));
-
 const fancy = document.querySelectorAll("[data-fancybox]");
 if (fancy.length) {
   Oe.bind("[data-fancybox]", {});

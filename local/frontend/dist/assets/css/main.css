@@ -1171,13 +1171,13 @@ img{
 .content h4,
 .content h5,
 .content h6{
-  margin:20px 0;
+  margin:10px 0;
 }
 .content > p, .content > span{
-  margin:15px 0;
+  margin:8px 0;
 }
 .content ul{
-  margin:15px 0;
+  margin:8px 0;
   padding-left:30px;
 }
 .content * > a{
@@ -1188,7 +1188,7 @@ img{
   overflow:hidden;
   width:100%;
   overflow-x:auto;
-  margin:40px 0;
+  margin:20px 0;
 }
 .content table{
   border-collapse:collapse;
@@ -1218,7 +1218,7 @@ img{
 .content blockquote{
   position:relative;
   padding:5px 24px;
-  margin:40px 0;
+  margin:20px 0;
 }
 .content blockquote::before{
   position:absolute;
