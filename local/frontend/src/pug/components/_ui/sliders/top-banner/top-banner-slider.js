@@ -9,7 +9,7 @@ if (slider) {
   const btnNext = slider.querySelector(".swiper-button-next");
   const btnPrev = slider.querySelector(".swiper-button-prev");
 
-  new Swiper(slider, {
+  const swiper = new Swiper(slider, {
     modules: [Navigation, Autoplay],
     slidesPerView: 1,
     spaceBetween: 20,
@@ -23,5 +23,9 @@ if (slider) {
       nextEl: btnNext ? btnNext : null,
       prevEl: btnPrev ? btnPrev : null,
     },
+  });
+
+  swiper.el.addEventListener("click", (evt) => {
+    swiper.autoplay.stop();
   });
 }

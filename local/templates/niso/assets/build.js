@@ -5833,7 +5833,7 @@ function Autoplay(_ref) {
     }
     const delay = autoplayTimeLeft || swiper.params.autoplay.delay;
     autoplayTimeLeft =
-      delay - /* @__PURE__ */ (new Date().getTime() - autoplayStartTime);
+      delay - (/* @__PURE__ */ new Date().getTime() - autoplayStartTime);
     if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop) return;
     if (autoplayTimeLeft < 0) autoplayTimeLeft = 0;
     proceed();
@@ -6359,7 +6359,7 @@ const slider$1 = document.querySelector(".top-banner-slider");
 if (slider$1) {
   const btnNext = slider$1.querySelector(".swiper-button-next");
   const btnPrev = slider$1.querySelector(".swiper-button-prev");
-  new Swiper(slider$1, {
+  const swiper = new Swiper(slider$1, {
     modules: [Navigation, Autoplay],
     slidesPerView: 1,
     spaceBetween: 20,
@@ -6371,6 +6371,9 @@ if (slider$1) {
       nextEl: btnNext ? btnNext : null,
       prevEl: btnPrev ? btnPrev : null,
     },
+  });
+  swiper.el.addEventListener("click", (evt) => {
+    swiper.autoplay.stop();
   });
 }
 const sliders$3 = document.querySelectorAll(".base-cards-slider");
