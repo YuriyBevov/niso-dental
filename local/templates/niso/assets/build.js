@@ -6375,6 +6375,9 @@ if (slider$1) {
   swiper.el.addEventListener("click", (evt) => {
     swiper.autoplay.stop();
   });
+  swiper.on("touchStart", () => {
+    swiper.autoplay.stop();
+  });
 }
 const sliders$3 = document.querySelectorAll(".base-cards-slider");
 if (sliders$3.length) {

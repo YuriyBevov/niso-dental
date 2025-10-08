@@ -28,4 +28,8 @@ if (slider) {
   swiper.el.addEventListener("click", (evt) => {
     swiper.autoplay.stop();
   });
+
+  swiper.on("touchStart", () => {
+    swiper.autoplay.stop();
+  });
 }
