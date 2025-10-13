@@ -353,11 +353,11 @@ unset($GLOBALS['arLinkedServicesFilter']);
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/staff-preview/staff-preview.php");  ?>
 <!-- staff-preview -->
 
-<? if ($USER->isAdmin()): ?>
+<? /*if ($USER->isAdmin()): ?>
 	<!-- reviews-preview -->
 	<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/reviews-preview/reviews-preview.php"); ?>
 	<!-- reviews-preview -->
-<? endif; ?>
+<? endif; */ ?>
 
 <?
 $GLOBALS['arFaqFilter'] = array('ID' => $arResult['PROPERTIES']['FAQ']['VALUE']);
