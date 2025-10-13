@@ -208,7 +208,7 @@ $itemIds = array(
 								<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["VALUE"]["TEXT"] ?>
 							</div>
 						<? endif ?>
-						<table>
+						<table class="price-table">
 							<thead>
 								<tr>
 									<td>Наименование услуги</td>
