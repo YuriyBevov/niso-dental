@@ -352,6 +352,7 @@ unset($GLOBALS['arLinkedServicesFilter']);
 			"bitrix:news.list",
 			"portfolio-list",
 			Array(
+				"CUSTOM_IS_SLIDER_VIEW" => "Y",
 				"ACTIVE_DATE_FORMAT" => "d.m.Y",
 				"ADD_SECTIONS_CHAIN" => "N",
 				"AJAX_MODE" => "N",
@@ -365,7 +366,7 @@ unset($GLOBALS['arLinkedServicesFilter']);
 				"CACHE_TYPE" => "A",
 				"CHECK_DATES" => "Y",
 				"COMPONENT_TEMPLATE" => "portfolio-list",
-				"DETAIL_URL" => "",
+				"DETAIL_URL" => "#SITE_DIR#/portfolio/#ELEMENT_CODE#/",
 				"DISPLAY_BOTTOM_PAGER" => "Y",
 				"DISPLAY_DATE" => "Y",
 				"DISPLAY_NAME" => "Y",
@@ -404,7 +405,8 @@ unset($GLOBALS['arLinkedServicesFilter']);
 				"SORT_ORDER1" => "DESC",
 				"SORT_ORDER2" => "ASC",
 				"STRICT_SECTION_CHECK" => "N"
-			)
+			),
+			$component
 		);
 	}
 

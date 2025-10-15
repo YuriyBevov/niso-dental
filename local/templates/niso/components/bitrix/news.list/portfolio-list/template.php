@@ -27,30 +27,75 @@ $this->setFrameMode(true);
 				<span class="base-text">
 					<?= $arResult["DESCRIPTION"] ?>
 				</span>
+				<?if ($arParams["CUSTOM_IS_SLIDER_VIEW"] === "Y"): ?>
+					<a class="main-btn main-btn--outlined portfolio_show-all portfolio_show-all--desktop" href="/portfolio/">Все работы</a>
+				<?endif;?>
 			</div>
 
-			<div class="portfolio__grid">
-				<?
-				foreach ($arResult["ITEMS"] as $arItem):
-					$pathBefore = CFile::GetPath($arItem["PROPERTIES"]["IMAGE_BEFORE"]["VALUE"]);
-					$pathAfter = CFile::GetPath($arItem["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
-				?>
-					<? if ($pathBefore && $pathAfter): ?>
-						<div class="portfolio__grid-item">
-							<div class="portfolio-card-wrapper">
-								<div class="portfolio-card">
-									<? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/partials/image-comparison-slider/index.php"); ?>
-									<div class="portfolio-card__content">
-										<span class="base-subtitle"><?= $arItem["NAME"] ?></span>
-										<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="main-btn main-btn--outlined">Подробнее</a>
+			<?if ($arParams["CUSTOM_IS_SLIDER_VIEW"] === "Y"): ?>
+
+				<div class="portfolio__slider-wrapper">
+					<div class="swiper autofill-slider">
+						<div class="swiper-wrapper">
+							<?
+								foreach ($arResult["ITEMS"] as $arItem):
+									$pathBefore = CFile::GetPath($arItem["PROPERTIES"]["IMAGE_BEFORE"]["VALUE"]);
+									$pathAfter = CFile::GetPath($arItem["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
+							 ?>
+								<? if ($pathBefore && $pathAfter): ?>
+									<div class="swiper-slide">
+										<div class="portfolio-card">
+											<? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/partials/image-comparison-slider/index.php"); ?>
+											<div class="portfolio-card__content">
+												<span class="base-subtitle"><?= $arItem["NAME"] ?></span>
+												<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="main-btn main-btn--outlined">Подробнее</a>
+											</div>
+										</div>
+									</div>
+								<? endif; ?>
+							<? endforeach; ?>
+						</div>
+						<div class="swiper-pagination"></div>
+						<div class="swiper-navigation">
+							<div class="swiper-button-prev">
+							<svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
+								<use xlink:href="/local/templates/niso/assets/sprite.svg#icon-arrow"></use>
+							</svg>
+						</div>
+						<div class="swiper-button-next">
+							<svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
+								<use xlink:href="/local/templates/niso/assets/sprite.svg#icon-arrow"></use>
+							</svg>
+						</div>
+						</div>
+
+					</div>
+				</div>
+				<a class="main-btn main-btn--outlined portfolio_show-all portfolio_show-all--mobile" href="/portfolio/">Все работы</a>
+			<? else :?>
+				<div class="portfolio__grid">
+					<?
+					foreach ($arResult["ITEMS"] as $arItem):
+						$pathBefore = CFile::GetPath($arItem["PROPERTIES"]["IMAGE_BEFORE"]["VALUE"]);
+						$pathAfter = CFile::GetPath($arItem["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
+					?>
+						<? if ($pathBefore && $pathAfter): ?>
+							<div class="portfolio__grid-item">
+								<div class="portfolio-card-wrapper">
+									<div class="portfolio-card">
+										<? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/partials/image-comparison-slider/index.php"); ?>
+										<div class="portfolio-card__content">
+											<span class="base-subtitle"><?= $arItem["NAME"] ?></span>
+											<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="main-btn main-btn--outlined">Подробнее</a>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					<? endif; ?>
-				<? endforeach; ?>
+						<? endif; ?>
+					<? endforeach; ?>
 
-			</div>
+				</div>
+			<? endif; ?>
 		</div>
 	</section>
 
