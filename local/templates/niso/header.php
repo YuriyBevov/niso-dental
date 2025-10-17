@@ -77,29 +77,96 @@ $curPage = $APPLICATION->GetCurPage();
         <a class="main-logo" href="/" aria-label="Стоматологическая клиника “НИСО”">
           <img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/logo.svg" alt="Логотип" width="180" height="40">
         </a>
-        <div class="info-block info-block--address">
-          <svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
-            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-pin"></use>
-          </svg>
-          <div class="info-block__content">
-            <address>
-              <?
-              $APPLICATION->IncludeFile(
-                SITE_DIR . 'include/address.php',
-                array(),
-                array('MODE' => 'html', 'NAME' => 'адрес', 'SHOW_BORDER' => true)
-              );
-              ?>
-            </address>
-            <span class="worktime">
-              <?
-              $APPLICATION->IncludeFile(
-                SITE_DIR . 'include/schedule.php',
-                array(),
-                array('MODE' => 'html', 'NAME' => 'время работы', 'SHOW_BORDER' => true)
-              );
-              ?>
-            </span>
+        <div class="header__block header__block--column-2">
+          <div class="info-block info-block--address">
+            <svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
+              <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-pin"></use>
+            </svg>
+            <div class="info-block__content">
+              <address>
+                <?
+                $APPLICATION->IncludeFile(
+                  SITE_DIR . 'include/address.php',
+                  array(),
+                  array('MODE' => 'html', 'NAME' => 'адрес', 'SHOW_BORDER' => true)
+                );
+                ?>
+              </address>
+              <span class="worktime">
+                <?
+                $APPLICATION->IncludeFile(
+                  SITE_DIR . 'include/schedule.php',
+                  array(),
+                  array('MODE' => 'html', 'NAME' => 'время работы', 'SHOW_BORDER' => true)
+                );
+                ?>
+              </span>
+            </div>
+          </div>
+          <div class="search">
+            <div class="search__wrapper">
+              <?$APPLICATION->IncludeComponent(
+                "bitrix:search.title",
+                ".default",
+                Array(
+                  "AJAX_MODE" => "N",
+                  "AJAX_OPTION_ADDITIONAL" => "",
+                  "AJAX_OPTION_HISTORY" => "N",
+                  "AJAX_OPTION_JUMP" => "N",
+                  "AJAX_OPTION_STYLE" => "Y",
+                  "CACHE_TIME" => "3600",
+                  "CACHE_TYPE" => "A",
+                  "CATEGORY_0" => [0=>"iblock_site_content",],
+                  "CATEGORY_0_TITLE" => "",
+                  "CATEGORY_0_iblock_cldoc" => [0=>"all",],
+                  "CATEGORY_0_iblock_impression_catalog" => [0=>"all",],
+                  "CATEGORY_0_iblock_site_content" => [0=>"6",1=>"9",2=>"14",3=>"15",],
+                  "CATEGORY_OTHERS_TITLE" => "",
+                  "CHECK_DATES" => "Y",
+                  "COMPONENT_TEMPLATE" => ".default",
+                  "CONTAINER_ID" => "title-search",
+                  "DEFAULT_SORT" => "rank",
+                  "DISPLAY_BOTTOM_PAGER" => "Y",
+                  "DISPLAY_TOP_PAGER" => "N",
+                  "FILTER_NAME" => "",
+                  "INPUT_ID" => "title-search-input",
+                  "NO_WORD_LOGIC" => "Y",
+                  "NUM_CATEGORIES" => "1",
+                  "ORDER" => "date",
+                  "PAGE" => "#SITE_DIR#search/index.php",
+                  "PAGER_SHOW_ALWAYS" => "N",
+                  "PAGER_TEMPLATE" => "",
+                  "PAGER_TITLE" => "Результаты поиска",
+                  "PAGE_RESULT_COUNT" => "50",
+                  "PATH_TO_USER_PROFILE" => "",
+                  "PREVIEW_HEIGHT" => "75",
+                  "PREVIEW_TRUNCATE_LEN" => "",
+                  "PREVIEW_WIDTH" => "75",
+                  "PRICE_CODE" => "",
+                  "PRICE_VAT_INCLUDE" => "Y",
+                  "RATING_TYPE" => "",
+                  "RESTART" => "Y",
+                  "SHOW_INPUT" => "Y",
+                  "SHOW_OTHERS" => "N",
+                  "SHOW_PREVIEW" => "Y",
+                  "SHOW_RATING" => "",
+                  "SHOW_WHEN" => "N",
+                  "SHOW_WHERE" => "N",
+                  "TEMPLATE_THEME" => "blue",
+                  "TOP_COUNT" => "10",
+                  "USE_LANGUAGE_GUESS" => "Y",
+                  "USE_SUGGEST" => "N",
+                  "USE_TITLE_RANK" => "Y",
+                  "arrFILTER" => [0=>"iblock_cldoc",],
+                  "arrFILTER_iblock_cldoc" => [0=>"52",1=>"all",]
+                )
+              );?>
+              <button class="search-btn search-btn--close">
+                <svg width="16" height="16" viewBox="0 0 16 16" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="/img/cross.svg"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <div class="info-block info-block--contacts">
@@ -123,72 +190,80 @@ $curPage = $APPLICATION->GetCurPage();
             ?>
           </div>
         </div>
+
         <!-- social -->
-        <? $APPLICATION->IncludeComponent(
-          "bitrix:news.list",
-          "social",
-          array(
-            "ACTIVE_DATE_FORMAT" => "d.m.Y",
-            "ADD_SECTIONS_CHAIN" => "N",
-            "AJAX_MODE" => "N",
-            "AJAX_OPTION_ADDITIONAL" => "",
-            "AJAX_OPTION_HISTORY" => "N",
-            "AJAX_OPTION_JUMP" => "N",
-            "AJAX_OPTION_STYLE" => "Y",
-            "CACHE_FILTER" => "N",
-            "CACHE_GROUPS" => "Y",
-            "CACHE_TIME" => "36000000",
-            "CACHE_TYPE" => "A",
-            "CHECK_DATES" => "Y",
-            "DETAIL_URL" => "",
-            "DISPLAY_BOTTOM_PAGER" => "N",
-            "DISPLAY_DATE" => "N",
-            "DISPLAY_NAME" => "N",
-            "DISPLAY_PICTURE" => "N",
-            "DISPLAY_PREVIEW_TEXT" => "N",
-            "DISPLAY_TOP_PAGER" => "N",
-            "FIELD_CODE" => array(
-              0 => "",
-              1 => "",
+        <div class="header__block header__block--column-4">
+          <button class="search-btn search-btn--open">
+            <svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+              <use xlink:href="/img/search.svg"></use>
+            </svg>
+          </button>
+          <? $APPLICATION->IncludeComponent(
+            "bitrix:news.list",
+            "social",
+            array(
+              "ACTIVE_DATE_FORMAT" => "d.m.Y",
+              "ADD_SECTIONS_CHAIN" => "N",
+              "AJAX_MODE" => "N",
+              "AJAX_OPTION_ADDITIONAL" => "",
+              "AJAX_OPTION_HISTORY" => "N",
+              "AJAX_OPTION_JUMP" => "N",
+              "AJAX_OPTION_STYLE" => "Y",
+              "CACHE_FILTER" => "N",
+              "CACHE_GROUPS" => "Y",
+              "CACHE_TIME" => "36000000",
+              "CACHE_TYPE" => "A",
+              "CHECK_DATES" => "Y",
+              "DETAIL_URL" => "",
+              "DISPLAY_BOTTOM_PAGER" => "N",
+              "DISPLAY_DATE" => "N",
+              "DISPLAY_NAME" => "N",
+              "DISPLAY_PICTURE" => "N",
+              "DISPLAY_PREVIEW_TEXT" => "N",
+              "DISPLAY_TOP_PAGER" => "N",
+              "FIELD_CODE" => array(
+                0 => "",
+                1 => "",
+              ),
+              "FILTER_NAME" => "",
+              "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+              "IBLOCK_ID" => "5",
+              "IBLOCK_TYPE" => "site_content",
+              "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+              "INCLUDE_SUBSECTIONS" => "N",
+              "MESSAGE_404" => "",
+              "NEWS_COUNT" => "20",
+              "PAGER_BASE_LINK_ENABLE" => "N",
+              "PAGER_DESC_NUMBERING" => "N",
+              "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+              "PAGER_SHOW_ALL" => "N",
+              "PAGER_SHOW_ALWAYS" => "N",
+              "PAGER_TEMPLATE" => ".default",
+              "PAGER_TITLE" => "Новости",
+              "PARENT_SECTION" => "",
+              "PARENT_SECTION_CODE" => "",
+              "PREVIEW_TRUNCATE_LEN" => "",
+              "PROPERTY_CODE" => array(
+                0 => "LINK",
+                1 => "ICON",
+              ),
+              "SET_BROWSER_TITLE" => "N",
+              "SET_LAST_MODIFIED" => "N",
+              "SET_META_DESCRIPTION" => "N",
+              "SET_META_KEYWORDS" => "N",
+              "SET_STATUS_404" => "N",
+              "SET_TITLE" => "N",
+              "SHOW_404" => "N",
+              "SORT_BY1" => "ACTIVE_FROM",
+              "SORT_BY2" => "SORT",
+              "SORT_ORDER1" => "DESC",
+              "SORT_ORDER2" => "ASC",
+              "STRICT_SECTION_CHECK" => "N",
+              "COMPONENT_TEMPLATE" => "social"
             ),
-            "FILTER_NAME" => "",
-            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-            "IBLOCK_ID" => "5",
-            "IBLOCK_TYPE" => "site_content",
-            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-            "INCLUDE_SUBSECTIONS" => "N",
-            "MESSAGE_404" => "",
-            "NEWS_COUNT" => "20",
-            "PAGER_BASE_LINK_ENABLE" => "N",
-            "PAGER_DESC_NUMBERING" => "N",
-            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-            "PAGER_SHOW_ALL" => "N",
-            "PAGER_SHOW_ALWAYS" => "N",
-            "PAGER_TEMPLATE" => ".default",
-            "PAGER_TITLE" => "Новости",
-            "PARENT_SECTION" => "",
-            "PARENT_SECTION_CODE" => "",
-            "PREVIEW_TRUNCATE_LEN" => "",
-            "PROPERTY_CODE" => array(
-              0 => "LINK",
-              1 => "ICON",
-            ),
-            "SET_BROWSER_TITLE" => "N",
-            "SET_LAST_MODIFIED" => "N",
-            "SET_META_DESCRIPTION" => "N",
-            "SET_META_KEYWORDS" => "N",
-            "SET_STATUS_404" => "N",
-            "SET_TITLE" => "N",
-            "SHOW_404" => "N",
-            "SORT_BY1" => "ACTIVE_FROM",
-            "SORT_BY2" => "SORT",
-            "SORT_ORDER1" => "DESC",
-            "SORT_ORDER2" => "ASC",
-            "STRICT_SECTION_CHECK" => "N",
-            "COMPONENT_TEMPLATE" => "social"
-          ),
-          false
-        ); ?>
+            false
+          ); ?>
+        </div>
         <!-- social -->
 
         <button class="main-btn" type="button" data-modal-opener="callback-modal">

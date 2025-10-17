@@ -69,4 +69,5 @@ $APPLICATION->SetTitle("Цены");
 );?>
 </div>
 </div>
- </section> <br><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+ </section> <br>
+ <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
