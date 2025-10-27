@@ -108,7 +108,7 @@ $curPage = $APPLICATION->GetCurPage();
               <?$APPLICATION->IncludeComponent(
                 "bitrix:search.title",
                 ".default",
-                Array(
+                [
                   "AJAX_MODE" => "N",
                   "AJAX_OPTION_ADDITIONAL" => "",
                   "AJAX_OPTION_HISTORY" => "N",
@@ -116,11 +116,19 @@ $curPage = $APPLICATION->GetCurPage();
                   "AJAX_OPTION_STYLE" => "Y",
                   "CACHE_TIME" => "3600",
                   "CACHE_TYPE" => "A",
-                  "CATEGORY_0" => [0=>"iblock_site_content",],
+                  "CATEGORY_0" => [
+                    0 => "iblock_site_content",
+                  ],
                   "CATEGORY_0_TITLE" => "",
-                  "CATEGORY_0_iblock_cldoc" => [0=>"all",],
-                  "CATEGORY_0_iblock_impression_catalog" => [0=>"all",],
-                  "CATEGORY_0_iblock_site_content" => [0=>"6",1=>"9",2=>"14",3=>"15",],
+                  "CATEGORY_0_iblock_cldoc" => [
+                    0 => "all",
+                  ],
+                  "CATEGORY_0_iblock_impression_catalog" => [
+                    0 => "all",
+                  ],
+                  "CATEGORY_0_iblock_site_content" => [
+                    0 => "6",
+                  ],
                   "CATEGORY_OTHERS_TITLE" => "",
                   "CHECK_DATES" => "Y",
                   "COMPONENT_TEMPLATE" => ".default",
@@ -157,14 +165,18 @@ $curPage = $APPLICATION->GetCurPage();
                   "USE_LANGUAGE_GUESS" => "Y",
                   "USE_SUGGEST" => "N",
                   "USE_TITLE_RANK" => "Y",
-                  "arrFILTER" => [0=>"iblock_cldoc",],
-                  "arrFILTER_iblock_cldoc" => [0=>"52",1=>"all",]
-                )
+                  "arrFILTER" => [
+                    0 => "iblock_cldoc",
+                  ],
+                  "arrFILTER_iblock_cldoc" => [
+                    0 => "52",
+                    1 => "all",
+                  ]
+                ],
+                false
               );?>
               <button class="search-btn search-btn--close">
-                <svg width="16" height="16" viewBox="0 0 16 16" role="img" aria-hidden="true" focusable="false">
-                  <use xlink:href="/img/cross.svg"></use>
-                </svg>
+                <img src="/img/cross.svg" alt="Закрыть" width="24" height="24">
               </button>
             </div>
           </div>
@@ -194,9 +206,7 @@ $curPage = $APPLICATION->GetCurPage();
         <!-- social -->
         <div class="header__block header__block--column-4">
           <button class="search-btn search-btn--open">
-            <svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-              <use xlink:href="/img/search.svg"></use>
-            </svg>
+            <img src="/img/search.svg" alt="Искать на странице" width="24" height="24">
           </button>
           <? $APPLICATION->IncludeComponent(
             "bitrix:news.list",
@@ -269,7 +279,9 @@ $curPage = $APPLICATION->GetCurPage();
         <button class="main-btn" type="button" data-modal-opener="callback-modal">
           <span>Записаться на прием</span>
         </button>
-        <div class="burger-btn mobile-menu-opener" aria-label="Кнопка открытия меню"><span class="burger-btn-line burger-btn-line--top" aria-hidden="true"></span><span class="burger-btn-line burger-btn-line--middle" aria-hidden="true"></span><span class="burger-btn-line burger-btn-line--bottom" aria-hidden="true"></span></div>
+        <div class="burger-btn mobile-menu-opener">
+          <img src="/img/burger.svg" alt="Открыть меню" width="24" height="24">
+        </div>
       </div>
       <div class="header__section header__section--bottom mobile-menu">
         <div class="mobile-menu__wrapper">

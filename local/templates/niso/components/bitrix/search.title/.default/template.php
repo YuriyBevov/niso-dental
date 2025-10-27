@@ -35,9 +35,7 @@ if ($arParams['SHOW_INPUT'] !== 'N'):?>
 		<form class="search-form" action="<?php echo $arResult['FORM_ACTION']?>">
 			<input class="search-form__input" id="<?php echo $INPUT_ID?>" type="text" name="q" value="" size="40" maxlength="50" autocomplete="off" placeholder="Поиск" />
 			<button class="search-form__submit-btn" type="submit">
-				<svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-					<use xlink:href="/img/search.svg"></use>
-				</svg>
+				<img src="/img/search.svg" alt="Искать на странице" width="24" height="24">
 			</button>
 		</form>
 	</div>

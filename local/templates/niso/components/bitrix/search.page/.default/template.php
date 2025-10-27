@@ -20,15 +20,14 @@
 		<form class="search-form" action="" method="get">
 			<input class="search-form__input" type="text" name="q" value="<?=$arResult['REQUEST']['QUERY']?>" size="40" />
 			<button class="search-form__submit-btn" type="submit">
-				<svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-					<use xlink:href="/img/search.svg"></use>
-				</svg>
+				<img src="/img/search.svg" alt="Искать на странице" width="24" height="24">
 			</button>
-			<input type="hidden" name="how" value="<?php echo $arResult['REQUEST']['HOW'] == 'd' ? 'd' : 'r'?>" />
+			<input type="hidden" name="how" value="<? echo $arResult['REQUEST']['HOW'] == 'd' ? 'd' : 'r'?>" />
 		</form>
 
-		<?php if ($arResult['REQUEST']['QUERY'] === false && $arResult['REQUEST']['TAGS'] === false):?>
-
+		<? if ($arResult['REQUEST']['QUERY'] === false && $arResult['REQUEST']['TAGS'] === false):?>
+		<? elseif ($arResult['ERROR_CODE'] != 0):?>
+			<p class="search-page__error-text">К сожалению, по вашему запросу ничего не найдено</p>
 		<? elseif (count($arResult['SEARCH']) > 0):?>
 			<p>По вашему запросу найдено:</p>
 			<ul class="search-page__list">

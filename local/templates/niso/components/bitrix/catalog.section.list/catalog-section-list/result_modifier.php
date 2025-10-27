@@ -18,8 +18,6 @@ if ($iblock) {
 	$arResult["NAME"] = 'Популярные услуги';
 }
 
-// debug(\Bitrix\Iblock\Iblock::wakeUp(6)->getEntityDataClass());
-
 $elements = \Bitrix\Iblock\Elements\ElementCatalogTable::getList([
 	'select' => ['IBLOCK_SECTION_ID', 'NAME', 'CODE'],
 	'filter' => ['=ACTIVE' => 'Y'],
@@ -29,7 +27,6 @@ foreach ($arResult['SECTIONS'] as $key => $arSection) {
 	foreach ($elements as $element) {
 		if ($element['IBLOCK_SECTION_ID'] == $arSection["ID"]) {
 			$element["DETAIL_PAGE_URL"] = "/services/" . $element["CODE"] . '/';
-			debug($_REQUEST["ELEMENT_ID"]);
 			$arResult['SECTIONS'][$key]['ELEMENTS'][] = $element;
 		}
 	}

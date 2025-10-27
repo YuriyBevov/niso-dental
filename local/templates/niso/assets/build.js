@@ -6360,16 +6360,22 @@ if (slider$1) {
   const btnNext = slider$1.querySelector(".swiper-button-next");
   const btnPrev = slider$1.querySelector(".swiper-button-prev");
   const swiper = new Swiper(slider$1, {
-    modules: [Navigation, Autoplay],
+    modules: [Navigation, Pagination, Autoplay],
     slidesPerView: 1,
     spaceBetween: 20,
     autoplay: {
       delay: 4e3,
       disableOnInteraction: false,
     },
+    loop: true,
     navigation: {
       nextEl: btnNext ? btnNext : null,
       prevEl: btnPrev ? btnPrev : null,
+    },
+    pagination: {
+      dynamicBullets: true,
+      el: ".top-banner-slider .swiper-pagination",
+      clickable: true,
     },
   });
   swiper.el.addEventListener("click", (evt) => {

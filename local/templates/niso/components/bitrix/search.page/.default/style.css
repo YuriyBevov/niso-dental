@@ -40,6 +40,9 @@
   top: 50%;
   transform: translateY(-50%);
   left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 24px;
   height: 24px;
   padding: 0;
@@ -47,7 +50,7 @@
   border: none;
 }
 
-.search-form__submit-btn svg {
+.search-form__submit-btn img {
   object-fit: contain;
 }
 

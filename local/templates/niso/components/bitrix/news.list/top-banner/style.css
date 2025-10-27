@@ -1,99 +1,48 @@
-.top-banner {
-  height: 100%;
-  position: relative;
-  padding: 40px clamp(10px, 3vw, 40px) 20px;
-  background: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    color-stop(-54.9%, #44c6e9),
-    to(#336cbc)
-  );
-  background:
-    url("/img/tooth-banner-bg-paddings.png"),
-    linear-gradient(270deg, #44c6e9 -54.9%, #336cbc 100%);
-  background-size: contain, auto;
-  background-repeat: no-repeat;
-  background-position: top right;
-}
-
-.swiper.top-banner-slider {
-  position: relative;
-  height: 100%;
-  /* padding-bottom: 60px; */
-}
-
-@container main (min-width: 480px ) {
-  .swiper.top-banner-slider {
-    padding-bottom: 0;
-  }
-}
-
-.swiper.top-banner-slider .swiper-slide {
-  width: 100% !important;
-  height: auto;
-  border-radius: var(--border-radius-lg);
-  color: var(--white);
-  overflow: hidden;
-}
-.swiper.top-banner-slider .swiper-navigation {
-  display: none;
-  z-index: 11;
-}
-@container main (min-width: 480px ) {
-  .swiper.top-banner-slider .swiper-navigation {
-    position: absolute;
-    display: flex;
-    bottom: 44px;
-    right: clamp(10px, 3vw, 40px);
-  }
-}
-.swiper.top-banner-slider .swiper-navigation .swiper-button {
-  border: 1px solid var(--primary);
-  background-color: #d4e4f4;
-}
-.swiper.top-banner-slider .swiper-navigation .swiper-button svg {
-  fill: var(--primary);
-}
-@container main (min-width: 480px ) {
-  .top-banner {
-    padding: 40px clamp(10px, 3vw, 40px);
-  }
-}
-
-.top-banner .top-banner__title {
-  line-height: 1.5;
-}
-
-.top-banner .top-banner__title,
-.top-banner .top-banner__headline {
-  margin: 0;
-  color: var(--white);
-}
 .top-banner-wrapper {
   height: 100%;
   container: top-banner/inline-size;
 }
-.top-banner .main-btn {
-  margin-top: auto;
-  width: 100%;
+
+.top-banner {
+  height: 100%;
+  position: relative;
+  padding: 40px clamp(10px, 3vw, 40px) 40px;
+  background:
+    url("/img/main-banner_bg-img.jpg"),
+    linear-gradient(90deg, #44c6e9 -55%, #336cbc 100%);
+  background-size: cover, cover;
+  background-repeat: no-repeat;
+  background-position: top right;
 }
-@container main (min-width: 480px ) {
-  .top-banner .main-btn {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-}
-@container main (min-width: 768px ) {
-  .top-banner__title,
-  .top-banner__content-block {
-    margin-bottom: 20px;
+
+@container main (min-width: 1280px ) {
+  .top-banner {
+    padding-bottom: 60px;
   }
 }
 
 .top-banner * {
   margin: 0;
+}
+
+.top-banner .top-banner__title {
+  margin: 0;
+  font-size: clamp(24px, 3.8vw, 32px);
+  line-height: 1.5;
+  color: var(--white);
+}
+
+@container main (min-width: 768px ) {
+  .top-banner__title {
+    margin-bottom: 20px;
+  }
+}
+
+.top-banner__price {
+  padding: 0 10px;
+  background-color: #d40303;
+  border-radius: 5px;
+  white-space: nowrap;
 }
 
 .top-banner__content {
@@ -112,6 +61,11 @@
   z-index: 2;
 }
 
+.top-banner .top-banner__headline {
+  margin: 0;
+  color: var(--white);
+}
+
 .top-banner__content-block {
   width: 100%;
   max-width: 760px;
@@ -121,6 +75,150 @@
   color: var(--white);
 }
 
+@container main (min-width: 768px ) {
+  .top-banner__content-block {
+    margin-bottom: 20px;
+  }
+}
+
+.top-banner__content-block ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.top-banner__content-block ul li {
+  display: flex;
+  align-items: start;
+  gap: 6px;
+}
+
+.top-banner__content-block ul li::before {
+  content: "";
+  display: inline-block;
+  min-width: 1em;
+  min-height: 1em;
+  background-image: url("/img/tooth_marker.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.top-banner__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  margin-top: auto;
+}
+
+.top-banner__buttons .main-btn {
+  width: 100%;
+}
+
+@container top-banner (min-width: 480px ) {
+  .top-banner__buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .top-banner__buttons .main-btn {
+    width: fit-content;
+  }
+}
+
+.top-banner__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  object-fit: contain;
+  object-position: top right;
+}
+
+.swiper.top-banner-slider {
+  position: relative;
+  height: 100%;
+}
+
+@container main (min-width: 480px ) {
+  .swiper.top-banner-slider {
+    padding-bottom: 0;
+  }
+}
+
+.swiper.top-banner-slider .swiper-slide {
+  width: 100% !important;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.swiper.top-banner-slider .swiper-navigation {
+  display: none;
+  z-index: 11;
+}
+
+.swiper.top-banner-slider .swiper-navigation .swiper-button {
+  border: 1px solid var(--white);
+  background-color: transparent;
+}
+
+.swiper.top-banner-slider .swiper-navigation .swiper-button svg {
+  fill: var(--white);
+}
+
+.swiper.top-banner-slider .swiper-pagination-bullet-active {
+  background-color: var(--white);
+}
+
+.swiper-navigation {
+  display: none;
+}
+
+@container main (min-width: 1280px ) {
+  .swiper.top-banner-slider .swiper-navigation {
+    display: flex;
+    position: static;
+  }
+}
+
+.swiper__navigation-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+}
+
+.swiper__navigation-wrapper
+  .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  position: static;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+@container main (min-width: 1280px ) {
+  .swiper__navigation-wrapper {
+    bottom: 10px;
+  }
+}
+
+/* Подложка */
+
 .--overlay-light::after {
   content: "";
   position: absolute;
@@ -129,7 +227,6 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-
   background-color: rgba(245, 245, 245, 0.4);
 }
 
@@ -141,7 +238,6 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -153,42 +249,30 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-
   backdrop-filter: blur(20px);
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.top-banner ul {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-.top-banner ul li {
-  display: flex;
-  align-items: top;
-  gap: 6px;
-}
-
-.top-banner ul li::before {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  background-image: url("/img/tooth_marker.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.swiper-slide:nth-child(2) .top-banner {
-  background-image: none !important;
-}
-
-@container main (min-width: 780px) {
-  .swiper-slide:nth-child(2) .top-banner {
-    background-image: url("/img/girl.png") !important;
+@container top-banner (min-width: 1280px ) {
+  .--overlay-light::after,
+  .--overlay-dark::after,
+  .--overlay-blured::after {
+    display: none;
   }
+}
+
+/* Обводка */
+
+.--text-outline-dark p,
+.--text-outline-dark span,
+.--text-outline-dark h1,
+.--text-outline-dark ul li {
+  text-shadow: 1px 1px 0 var(--black);
+}
+
+.--text-outline-white p,
+.--text-outline-white span,
+.--text-outline-white h1,
+.--text-outline-white ul li {
+  text-shadow: 1px 1px 0 var(--white);
 }

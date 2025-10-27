@@ -32,6 +32,5 @@ if (searchOpenButton && search) {
 
   if (searchCloseButton) {
     searchCloseButton.addEventListener("click", closeModal);
-    console.log("test");
   }
 }

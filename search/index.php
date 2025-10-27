@@ -4,9 +4,9 @@ $APPLICATION->SetPageProperty("description", "");
 $APPLICATION->SetPageProperty("title", "");
 $APPLICATION->SetTitle("Результаты поиска");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:search.page",
-	"",
-	Array(
+	"bitrix:search.page", 
+	".default", 
+	[
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
@@ -33,8 +33,16 @@ $APPLICATION->SetTitle("Результаты поиска");
 		"USE_LANGUAGE_GUESS" => "Y",
 		"USE_SUGGEST" => "N",
 		"USE_TITLE_RANK" => "N",
-		"arrFILTER" => array(),
-		"arrWHERE" => array()
-	)
+		"arrFILTER" => [
+			0 => "iblock_site_content",
+		],
+		"arrWHERE" => [
+		],
+		"COMPONENT_TEMPLATE" => ".default",
+		"arrFILTER_iblock_site_content" => [
+			0 => "6",
+		]
+	],
+	false
 );?>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

@@ -18,20 +18,13 @@ $this->setFrameMode(true);
           $formID = 'review-modal';
         }
       ?>
+
         <div class="swiper-slide" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
           <div class="top-banner-wrapper">
-            <div class="top-banner <?=$arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"]?>"
-            style="
-              <?php if (!empty($arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"])): ?>
-                background-color: <?=$arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"]?>;
-              <?php endif; ?>
-              <?php if (!empty($arItem["PREVIEW_PICTURE"]["SRC"])): ?>
-                background-image: url('<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>');
-              <?php endif; ?>
-              <?php if (!empty($arItem["PROPERTIES"]["TEXT_OUTLINE"]["VALUE"])): ?>
-                text-shadow: <?=$arItem["PROPERTIES"]["TEXT_OUTLINE"]["VALUE"]?>
-              <?php endif; ?>
-            ">
+            <div class="top-banner <?=$arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"]?> <?= $arItem["PROPERTIES"]["TEXT_OUTLINE"]["VALUE_XML_ID"] ?>"
+            <?php if (!empty($arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"])): ?>
+                style="background-color: <?= $arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"] ?>;"
+            <?php endif; ?>>
 
               <div class="top-banner__content">
 
@@ -42,9 +35,16 @@ $this->setFrameMode(true);
                 <?endif;?>
 
                 <? if ($arItem["PROPERTIES"]["H1_TITLE"]["VALUE"] == "Y" && $arParams["LW_IS_INNER"] !== "Y"): ?>
-                  <h1 class="main-title top-banner__title"><?= $arItem["~NAME"] ?></h1>
+                  <h1 class="main-title top-banner__title"><?= $arItem["~NAME"] ?>
+                    <? if ($arItem["PROPERTIES"]["PRICE"]["VALUE"]) :?>
+                      <span class="top-banner__price"><?=$arItem["PROPERTIES"]["PRICE"]["VALUE"]?></span>
+                    <? endif; ?>
+                </h1>
                 <? else: ?>
-                  <span class="main-title top-banner__title"><?= $arItem["~NAME"] ?></span>
+                  <span class="main-title top-banner__title"><?= $arItem["~NAME"] ?>
+                    <? if ($arItem["PROPERTIES"]["PRICE"]["VALUE"]) :?>
+                      <span class="top-banner__price"><?=$arItem["PROPERTIES"]["PRICE"]["VALUE"]?></span>
+                    <? endif; ?>  </span>
                 <? endif; ?>
 
 
@@ -54,45 +54,53 @@ $this->setFrameMode(true);
                   </div>
                 <?endif;?>
 
+                <div class="top-banner__buttons">
+                  <? if (!empty($arItem["PROPERTIES"]["FORM_BUTTON"]["VALUE"]["SUB_VALUES"]["BUTTON_TITLE"]["VALUE"])): ?>
+                    <button class="main-btn" type="button" data-modal-opener="<?= $formID ?>"
+                      <? if (!empty($arItem["PROPERTIES"]["BUTTON_COLOR"]["VALUE_XML_ID"])): ?>
+                        style= "background-color: <?=$arItem["PROPERTIES"]["BUTTON_COLOR"]["VALUE_XML_ID"] ?>;"
+                        <?endif; ?>>
+                      <span>
+                        <?= $arItem["PROPERTIES"]["FORM_BUTTON"]["VALUE"]["SUB_VALUES"]["BUTTON_TITLE"]["VALUE"] ?>
+                      </span>
+                    </button>
+                  <? endif; ?>
 
-                <? if (!empty($arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"])): ?>
-                  <a class="main-btn" href="<?= $arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"] ?>">
-                    <span>
-                      <?= $arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_TITLE"]["VALUE"] ?>
-                    </span>
-                  </a>
-                <? endif; ?>
-
-                <? if (empty($arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"]) && !empty($arItem["PROPERTIES"]["FORM_BUTTON"]["VALUE"]["SUB_VALUES"]["BUTTON_TITLE"]["VALUE"])): ?>
-                  <button class="main-btn" type="button" data-modal-opener="<?= $formID ?>" style="background-color:<?=$arItem["PROPERTIES"]["BUTTON_COLOR"]["VALUE_XML_ID"]?>">
-                    <span>
-                      <?= $arItem["PROPERTIES"]["FORM_BUTTON"]["VALUE"]["SUB_VALUES"]["BUTTON_TITLE"]["VALUE"] ?>
-                    </span>
-                  </button>
-                <? endif; ?>
-
-                <!-- <?if ($arItem["PREVIEW_PICTURE"]["SRC"]):?> -->
-                    <!-- <img class="top-banner__content-img" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?$arItem["NAME"]?>" width="602" height="550"> -->
-                <!-- <?endif;?> -->
+                  <? if (!empty($arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"])): ?>
+                    <a class="main-btn main-btn--outlined main-btn--white" href="<?= $arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_URL"]["VALUE"] ?>">
+                      <span>
+                        <?= $arItem["PROPERTIES"]["LINK"]["VALUE"]["SUB_VALUES"]["LINK_TITLE"]["VALUE"] ?>
+                      </span>
+                    </a>
+                  <? endif; ?>
+                </div>
               </div>
 
-
+              <img class="top-banner__img"
+                src="<?=($arItem["PREVIEW_PICTURE"]["SRC"] ? $arItem["PREVIEW_PICTURE"]["SRC"] : '/img/tooth-banner-bg-paddings.png' )?>"
+                alt="<?$arItem["NAME"]?>" width="602" height="550">
             </div>
           </div>
         </div>
       <? endforeach; ?>
     </div>
-    <div class="swiper-navigation">
-      <button class="swiper-button swiper-button-prev" type="button" aria-label="Назад">
-        <svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
-          <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
-        </svg>
-      </button>
-      <button class="swiper-button swiper-button-next" type="button" aria-label="Вперед">
-        <svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
-          <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
-        </svg>
-      </button>
+    <div class="swiper__navigation-wrapper">
+      <div class="swiper-pagination"></div>
+      <div class="swiper-navigation">
+        <button class="swiper-button swiper-button-prev" type="button" aria-label="Назад">
+          <svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
+          </svg>
+        </button>
+        <button class="swiper-button swiper-button-next" type="button" aria-label="Вперед">
+          <svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
+            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
+
+
+
 <? endif; ?>
