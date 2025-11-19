@@ -22,12 +22,11 @@
 			<button class="search-form__submit-btn" type="submit">
 				<img src="/img/search.svg" alt="Искать на странице" width="24" height="24">
 			</button>
-			<input type="hidden" name="how" value="<? echo $arResult['REQUEST']['HOW'] == 'd' ? 'd' : 'r'?>" />
+			<input type="hidden" name="how" value="<?php echo $arResult['REQUEST']['HOW'] == 'd' ? 'd' : 'r'?>" />
 		</form>
 
-		<? if ($arResult['REQUEST']['QUERY'] === false && $arResult['REQUEST']['TAGS'] === false):?>
-		<? elseif ($arResult['ERROR_CODE'] != 0):?>
-			<p class="search-page__error-text">К сожалению, по вашему запросу ничего не найдено</p>
+		<?php if ($arResult['REQUEST']['QUERY'] === false && $arResult['REQUEST']['TAGS'] === false):?>
+
 		<? elseif (count($arResult['SEARCH']) > 0):?>
 			<p>По вашему запросу найдено:</p>
 			<ul class="search-page__list">
@@ -48,7 +47,7 @@
 			<? endif; ?>
 
 		<? else:?>
-			<? ShowNote(GetMessage('SEARCH_NOTHING_TO_FOUND'));?>
+			<p><?=GetMessage('SEARCH_NOTHING_TO_FOUND');?></p>
 		<? endif; ?>
 	</div>
 </section>
