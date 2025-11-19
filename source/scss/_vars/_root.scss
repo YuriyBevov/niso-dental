@@ -1,0 +1,75 @@
+// fonts
+:root {
+	--primary-font: "SourceSans3", sans-serif;
+	--secondary-font: "Manrope", sans-serif;
+}
+
+// colors
+:root {
+	--white: #ffffff;
+	--black: #000000;
+
+	--primary: #00296d;
+	--secondary: #44c6e9;
+	--accent: #336cbc;
+	--warning: #fba9a8;
+	--danger: #c9706f;
+	--success: green;
+	--dark: #252525;
+	--light: #d4e4f4;
+	--lighter: #ecf4fb;
+	--info: #666666;
+	--muted: #d9d9d9;
+	--mint: #f2f5f7;
+}
+
+// containers
+:root {
+	--content-width: 1440px;
+	--container-offset: clamp(10px, 2vw, 60px);
+	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+	--content-fluid-width: 1920px;
+	--container-fluid-offset: 0;
+	--container-fluid-width: calc(
+		var(--content-fluid-width) + (var(--container-offset) * 2)
+	);
+}
+
+// transitions
+:root {
+	--main-transition: 0.15s linear;
+}
+
+// site-base-options
+:root {
+	--site-base-font-family: var(--primary-font);
+	--site-base-font-weight: 400;
+	--site-base-font-size: clamp(16px, 2.2vw, 18px);
+	--site-base-line-height: 1.2;
+	--site-base-letter-spacing: 0.001em;
+	--site-base-text-color: var(--info);
+	--site-bg-color: var(--white);
+}
+
+// scrollbar
+:root {
+	--scrollbar-color: var(--light);
+	--scrollbar-width: 8px;
+	--scrollbar-height: 6px;
+	--scrollbar-border-radius: 8px;
+	--scrollbar-thumb-color: var(--secondary);
+	--scrollbar-thumb-border-radius: 8px;
+}
+
+// offsets
+:root {
+	--base-grid-offset: clamp(20px, 3.2vw, 40px);
+}
+
+// utils
+:root {
+	--base-border-radius: 15px;
+	--border-radius-sm: 10px;
+	--border-radius-lg: 30px;
+	--base-box-shadow: 5px 5px 20px #d4e4f4;
+}

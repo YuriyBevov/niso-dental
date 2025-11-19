@@ -1,0 +1,21 @@
+import "./modules/top-banner-slider";
+import "./modules/base-cards-slider";
+import "./modules/collapsed-text";
+import "./modules/reviews-slider";
+import "./modules/staff-preview-slider";
+import "./modules/accordeon";
+import "./modules/top-menu";
+import "./modules/scroll-up-btn";
+import "./modules/input-number-mask";
+import "./modules/sort-slider";
+import "./modules/sidemenu";
+import "./modules/table-wrapper";
+import "./modules/rate";
+import "./modules/autofill-slider";
+import "./modules/main-slider";
+import "./modules/portfolio-slider";
+import "./modules/modal";
+import "./modules/fancy";
+import "./modules/menu-scroll";
+
+import "./modules/custom-select";

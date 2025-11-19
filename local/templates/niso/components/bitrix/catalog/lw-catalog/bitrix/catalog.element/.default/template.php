@@ -194,6 +194,7 @@ $itemIds = array(
 				<h1 class="base-title">
 					<?= $arResult["NAME"] ?>
 				</h1>
+
 				<div class="content">
 					<? if (!empty($arResult["PROPERTIES"]["DETAIL_TEXT_TOP"]["~VALUE"]["TEXT"])): ?>
 						<?= $arResult["PROPERTIES"]["DETAIL_TEXT_TOP"]["~VALUE"]["TEXT"] ?>
@@ -230,6 +231,36 @@ $itemIds = array(
 							</div>
 						<? endif ?>
 					<? endif; ?>
+
+					 <?/* $APPLICATION->IncludeComponent(
+						"bitrix:form.result.new",
+						"service-form",
+						[
+							"CUSTOM_FORM_TITLE" => $arResult['PROPERTIES']['FORM_TITLE']['VALUE'],
+							"CUSTOM_SERVICE_TITLE" => $arResult["NAME"],
+							"AJAX_MODE" => "Y",
+							"AJAX_OPTION_JUMP" => "N",
+							"AJAX_OPTION_STYLE" => "N",
+							"AJAX_OPTION_HISTORY" => "N",
+							"CACHE_TIME" => "3600",
+							"CACHE_TYPE" => "N",
+							"CHAIN_ITEM_LINK" => "",
+							"CHAIN_ITEM_TEXT" => "",
+							"EDIT_URL" => "",
+							"IGNORE_CUSTOM_TEMPLATE" => "N",
+							"LIST_URL" => "",
+							"SEF_MODE" => "N",
+							"SUCCESS_URL" => "",
+							"USE_EXTENDED_ERRORS" => "Y",
+							"WEB_FORM_ID" => "4",
+							"COMPONENT_TEMPLATE" => "service-form",
+							"VARIABLE_ALIASES" => [
+								"WEB_FORM_ID" => "WEB_FORM_ID",
+								"RESULT_ID" => "RESULT_ID",
+							]
+						],
+						$component
+					); */ ?>
 
 					<? if (!empty($arResult["PROPERTIES"]["DETAIL_TEXT_BOTTOM"]["~VALUE"]["TEXT"])): ?>
 						<br>
@@ -345,72 +376,72 @@ $APPLICATION->IncludeComponent(
 unset($GLOBALS['arLinkedServicesFilter']);
 ?>
 
-<? if(!empty($arResult['PROPERTIES']['LINKED_EXAMPLES'])) {
+<? if (!empty($arResult['PROPERTIES']['LINKED_EXAMPLES'])) {
 
-		$GLOBALS['arLinkedExamplesFilter'] = array('ID' => $arResult['PROPERTIES']['LINKED_EXAMPLES']['VALUE']);
-		$APPLICATION->IncludeComponent(
-			"bitrix:news.list",
-			"portfolio-list",
-			Array(
-				"CUSTOM_IS_SLIDER_VIEW" => "Y",
-				"ACTIVE_DATE_FORMAT" => "d.m.Y",
-				"ADD_SECTIONS_CHAIN" => "N",
-				"AJAX_MODE" => "N",
-				"AJAX_OPTION_ADDITIONAL" => "",
-				"AJAX_OPTION_HISTORY" => "N",
-				"AJAX_OPTION_JUMP" => "N",
-				"AJAX_OPTION_STYLE" => "Y",
-				"CACHE_FILTER" => "N",
-				"CACHE_GROUPS" => "Y",
-				"CACHE_TIME" => "36000000",
-				"CACHE_TYPE" => "A",
-				"CHECK_DATES" => "Y",
-				"COMPONENT_TEMPLATE" => "portfolio-list",
-				"DETAIL_URL" => "#SITE_DIR#/portfolio/#ELEMENT_CODE#/",
-				"DISPLAY_BOTTOM_PAGER" => "Y",
-				"DISPLAY_DATE" => "Y",
-				"DISPLAY_NAME" => "Y",
-				"DISPLAY_PICTURE" => "Y",
-				"DISPLAY_PREVIEW_TEXT" => "Y",
-				"DISPLAY_TOP_PAGER" => "N",
-				"FIELD_CODE" => [0=>"",1=>"",],
-				"FILTER_NAME" => "arLinkedExamplesFilter",
-				"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-				"IBLOCK_ID" => "13",
-				"IBLOCK_TYPE" => "site_content",
-				"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-				"INCLUDE_SUBSECTIONS" => "N",
-				"MESSAGE_404" => "",
-				"NEWS_COUNT" => "20",
-				"PAGER_BASE_LINK_ENABLE" => "N",
-				"PAGER_DESC_NUMBERING" => "N",
-				"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-				"PAGER_SHOW_ALL" => "N",
-				"PAGER_SHOW_ALWAYS" => "N",
-				"PAGER_TEMPLATE" => "lw-page-navigation",
-				"PAGER_TITLE" => "Новости",
-				"PARENT_SECTION" => "",
-				"PARENT_SECTION_CODE" => "",
-				"PREVIEW_TRUNCATE_LEN" => "",
-				"PROPERTY_CODE" => [0=>"",1=>"IMAGE_BEFORE",2=>"IMAGE_AFTER",],
-				"SET_BROWSER_TITLE" => "N",
-				"SET_LAST_MODIFIED" => "N",
-				"SET_META_DESCRIPTION" => "N",
-				"SET_META_KEYWORDS" => "N",
-				"SET_STATUS_404" => "N",
-				"SET_TITLE" => "N",
-				"SHOW_404" => "N",
-				"SORT_BY1" => "ACTIVE_FROM",
-				"SORT_BY2" => "SORT",
-				"SORT_ORDER1" => "DESC",
-				"SORT_ORDER2" => "ASC",
-				"STRICT_SECTION_CHECK" => "N"
-			),
-			$component
-		);
-	}
+	$GLOBALS['arLinkedExamplesFilter'] = array('ID' => $arResult['PROPERTIES']['LINKED_EXAMPLES']['VALUE']);
+	$APPLICATION->IncludeComponent(
+		"bitrix:news.list",
+		"portfolio-list",
+		array(
+			"CUSTOM_IS_SLIDER_VIEW" => "Y",
+			"ACTIVE_DATE_FORMAT" => "d.m.Y",
+			"ADD_SECTIONS_CHAIN" => "N",
+			"AJAX_MODE" => "N",
+			"AJAX_OPTION_ADDITIONAL" => "",
+			"AJAX_OPTION_HISTORY" => "N",
+			"AJAX_OPTION_JUMP" => "N",
+			"AJAX_OPTION_STYLE" => "Y",
+			"CACHE_FILTER" => "N",
+			"CACHE_GROUPS" => "Y",
+			"CACHE_TIME" => "36000000",
+			"CACHE_TYPE" => "A",
+			"CHECK_DATES" => "Y",
+			"COMPONENT_TEMPLATE" => "portfolio-list",
+			"DETAIL_URL" => "#SITE_DIR#/portfolio/#ELEMENT_CODE#/",
+			"DISPLAY_BOTTOM_PAGER" => "Y",
+			"DISPLAY_DATE" => "Y",
+			"DISPLAY_NAME" => "Y",
+			"DISPLAY_PICTURE" => "Y",
+			"DISPLAY_PREVIEW_TEXT" => "Y",
+			"DISPLAY_TOP_PAGER" => "N",
+			"FIELD_CODE" => [0 => "", 1 => "",],
+			"FILTER_NAME" => "arLinkedExamplesFilter",
+			"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+			"IBLOCK_ID" => "13",
+			"IBLOCK_TYPE" => "site_content",
+			"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+			"INCLUDE_SUBSECTIONS" => "N",
+			"MESSAGE_404" => "",
+			"NEWS_COUNT" => "20",
+			"PAGER_BASE_LINK_ENABLE" => "N",
+			"PAGER_DESC_NUMBERING" => "N",
+			"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+			"PAGER_SHOW_ALL" => "N",
+			"PAGER_SHOW_ALWAYS" => "N",
+			"PAGER_TEMPLATE" => "lw-page-navigation",
+			"PAGER_TITLE" => "Новости",
+			"PARENT_SECTION" => "",
+			"PARENT_SECTION_CODE" => "",
+			"PREVIEW_TRUNCATE_LEN" => "",
+			"PROPERTY_CODE" => [0 => "", 1 => "IMAGE_BEFORE", 2 => "IMAGE_AFTER",],
+			"SET_BROWSER_TITLE" => "N",
+			"SET_LAST_MODIFIED" => "N",
+			"SET_META_DESCRIPTION" => "N",
+			"SET_META_KEYWORDS" => "N",
+			"SET_STATUS_404" => "N",
+			"SET_TITLE" => "N",
+			"SHOW_404" => "N",
+			"SORT_BY1" => "ACTIVE_FROM",
+			"SORT_BY2" => "SORT",
+			"SORT_ORDER1" => "DESC",
+			"SORT_ORDER2" => "ASC",
+			"STRICT_SECTION_CHECK" => "N"
+		),
+		$component
+	);
+}
 
-	unset($GLOBALS['arLinkedExamplesFilter']);
+unset($GLOBALS['arLinkedExamplesFilter']);
 ?>
 
 <!-- features -->
@@ -420,12 +451,6 @@ unset($GLOBALS['arLinkedServicesFilter']);
 <!-- staff-preview -->
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/staff-preview/staff-preview.php");  ?>
 <!-- staff-preview -->
-
-<? /*if ($USER->isAdmin()): ?>
-	<!-- reviews-preview -->
-	<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/reviews-preview/reviews-preview.php"); ?>
-	<!-- reviews-preview -->
-<? endif; */ ?>
 
 <?
 $GLOBALS['arFaqFilter'] = array('ID' => $arResult['PROPERTIES']['FAQ']['VALUE']);

@@ -31,44 +31,13 @@ $curPage = $APPLICATION->GetCurPage();
   // $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/main.css", true);
   $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/assets/custom.css", true);
   // Для подключения скриптов
-  $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/assets/build.js");
+  $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/script.js");
   $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/assets/custom.js");
-
   ?>
-  <meta name="yandex-verification" content="de1ec18da1a2ca85" />
-
-
-
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function(m, e, t, r, i, k, a) {
-      m[i] = m[i] || function() {
-        (m[i].a = m[i].a || []).push(arguments)
-      };
-      m[i].l = 1 * new Date();
-      for (var j = 0; j < document.scripts.length; j++) {
-        if (document.scripts[j].src === r) {
-          return;
-        }
-      }
-      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
-
-    ym(102970436, 'init', {
-      webvisor: true,
-      clickmap: true,
-      ecommerce: "dataLayer",
-      accurateTrackBounce: true,
-      trackLinks: true
-    });
-  </script>
-  <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
-  <noscript>
-    <div><img src="https://mc.yandex.ru/watch/102970436" style="position:absolute; left:-9999px;" alt="" /></div>
-  </noscript>
+
   <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
 
   <header class="header">
@@ -105,7 +74,7 @@ $curPage = $APPLICATION->GetCurPage();
           </div>
           <div class="search">
             <div class="search__wrapper">
-              <?$APPLICATION->IncludeComponent(
+              <? $APPLICATION->IncludeComponent(
                 "bitrix:search.title",
                 ".default",
                 [
@@ -174,7 +143,7 @@ $curPage = $APPLICATION->GetCurPage();
                   ]
                 ],
                 false
-              );?>
+              ); ?>
               <button class="search-btn search-btn--close">
                 <img src="/img/cross.svg" alt="Закрыть" width="24" height="24">
               </button>

@@ -283,3 +283,13 @@ p img {
   align-items: center;
   padding: 0;
 }
+
+.medflex-round-widget__button {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.medflex-round-widget .medflex-round-widget__button::before,
+.medflex-round-widget .medflex-round-widget__button::after {
+  background-color: var(--secondary);
+}

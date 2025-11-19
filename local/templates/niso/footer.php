@@ -175,24 +175,191 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				); ?>
 			</div>
 			<div class="footer__section-field">
-				<? $APPLICATION->IncludeComponent(
-					"bitrix:menu",
-					"bottom-main-menu",
-					array(
-						"ALLOW_MULTI_SELECT" => "N",
-						"CHILD_MENU_TYPE" => "left",
-						"DELAY" => "N",
-						"MAX_LEVEL" => "1",
-						"MENU_CACHE_GET_VARS" => array(),
-						"MENU_CACHE_TIME" => "3600",
-						"MENU_CACHE_TYPE" => "N",
-						"MENU_CACHE_USE_GROUPS" => "Y",
-						"ROOT_MENU_TYPE" => "bottom_main",
-						"USE_EXT" => "N",
-						"COMPONENT_TEMPLATE" => "bottom-main-menu"
-					),
-					false
-				); ?>
+				<nav class="footer__nav">
+					<div class="footer__nav-col">
+						<span>
+							<? $APPLICATION->IncludeFile(
+								SITE_DIR . 'include/bottom-main-menu/title-1.php',
+								array(),
+								array('MODE' => 'html', 'NAME' => 'заголовок меню', 'SHOW_BORDER' => true)
+							); ?>
+						</span>
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:menu",
+							"bottom-menu-column",
+							array(
+								"ALLOW_MULTI_SELECT" => "N",
+								"CHILD_MENU_TYPE" => "left",
+								"DELAY" => "N",
+								"MAX_LEVEL" => "1",
+								"MENU_CACHE_GET_VARS" => array(),
+								"MENU_CACHE_TIME" => "3600",
+								"MENU_CACHE_TYPE" => "N",
+								"MENU_CACHE_USE_GROUPS" => "Y",
+								"ROOT_MENU_TYPE" => "bottom_main_1",
+								"USE_EXT" => "N",
+								"COMPONENT_TEMPLATE" => "bottom-menu-column"
+							),
+							false
+						); ?>
+					</div>
+					<div class="footer__nav-col">
+						<span>
+							<? $APPLICATION->IncludeFile(
+								SITE_DIR . 'include/bottom-main-menu/title-2.php',
+								array(),
+								array('MODE' => 'html', 'NAME' => 'заголовок меню', 'SHOW_BORDER' => true)
+							); ?></span>
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:menu",
+							"bottom-menu-column",
+							array(
+								"ALLOW_MULTI_SELECT" => "N",
+								"CHILD_MENU_TYPE" => "left",
+								"DELAY" => "N",
+								"MAX_LEVEL" => "1",
+								"MENU_CACHE_GET_VARS" => array(),
+								"MENU_CACHE_TIME" => "3600",
+								"MENU_CACHE_TYPE" => "N",
+								"MENU_CACHE_USE_GROUPS" => "Y",
+								"ROOT_MENU_TYPE" => "bottom_main_2",
+								"USE_EXT" => "N",
+								"COMPONENT_TEMPLATE" => "bottom-menu-column"
+							),
+							false
+						); ?>
+					</div>
+					<div class="footer__nav-col">
+						<span>
+							<? $APPLICATION->IncludeFile(
+								SITE_DIR . 'include/bottom-main-menu/title-3.php',
+								array(),
+								array('MODE' => 'html', 'NAME' => 'заголовок меню', 'SHOW_BORDER' => true)
+							); ?></span>
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:menu",
+							"bottom-menu-column",
+							array(
+								"ALLOW_MULTI_SELECT" => "N",
+								"CHILD_MENU_TYPE" => "left",
+								"DELAY" => "N",
+								"MAX_LEVEL" => "1",
+								"MENU_CACHE_GET_VARS" => array(),
+								"MENU_CACHE_TIME" => "3600",
+								"MENU_CACHE_TYPE" => "N",
+								"MENU_CACHE_USE_GROUPS" => "Y",
+								"ROOT_MENU_TYPE" => "bottom_main_3",
+								"USE_EXT" => "N",
+								"COMPONENT_TEMPLATE" => "bottom-menu-column"
+							),
+							false
+						); ?>
+					</div>
+					<div class="footer__nav-col">
+						<span>
+							<? $APPLICATION->IncludeFile(
+								SITE_DIR . 'include/bottom-main-menu/title-4.php',
+								array(),
+								array('MODE' => 'html', 'NAME' => 'заголовок меню', 'SHOW_BORDER' => true)
+							); ?></span>
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:menu",
+							"bottom-menu-column",
+							array(
+								"ALLOW_MULTI_SELECT" => "N",
+								"CHILD_MENU_TYPE" => "left",
+								"DELAY" => "N",
+								"MAX_LEVEL" => "1",
+								"MENU_CACHE_GET_VARS" => array(),
+								"MENU_CACHE_TIME" => "3600",
+								"MENU_CACHE_TYPE" => "N",
+								"MENU_CACHE_USE_GROUPS" => "Y",
+								"ROOT_MENU_TYPE" => "bottom_main_4",
+								"USE_EXT" => "N",
+								"COMPONENT_TEMPLATE" => "bottom-menu-column"
+							),
+							false
+						); ?>
+					</div>
+					<div class="footer__nav-col">
+						<span>
+							<? $APPLICATION->IncludeFile(
+								SITE_DIR . 'include/bottom-main-menu/title-5.php',
+								array(),
+								array('MODE' => 'html', 'NAME' => 'заголовок меню', 'SHOW_BORDER' => true)
+							); ?></span>
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:menu",
+							"bottom-menu-column",
+							array(
+								"ALLOW_MULTI_SELECT" => "N",
+								"CHILD_MENU_TYPE" => "left",
+								"DELAY" => "N",
+								"MAX_LEVEL" => "1",
+								"MENU_CACHE_GET_VARS" => array(),
+								"MENU_CACHE_TIME" => "3600",
+								"MENU_CACHE_TYPE" => "N",
+								"MENU_CACHE_USE_GROUPS" => "Y",
+								"ROOT_MENU_TYPE" => "bottom_main_5",
+								"USE_EXT" => "N",
+								"COMPONENT_TEMPLATE" => "bottom-menu-column"
+							),
+							false
+						); ?>
+					</div>
+					<div class="footer__nav-col">
+						<span>
+							<? $APPLICATION->IncludeFile(
+								SITE_DIR . 'include/bottom-main-menu/title-6.php',
+								array(),
+								array('MODE' => 'html', 'NAME' => 'заголовок меню', 'SHOW_BORDER' => true)
+							); ?></span>
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:menu",
+							"bottom-menu-column",
+							array(
+								"ALLOW_MULTI_SELECT" => "N",
+								"CHILD_MENU_TYPE" => "left",
+								"DELAY" => "N",
+								"MAX_LEVEL" => "1",
+								"MENU_CACHE_GET_VARS" => array(),
+								"MENU_CACHE_TIME" => "3600",
+								"MENU_CACHE_TYPE" => "N",
+								"MENU_CACHE_USE_GROUPS" => "Y",
+								"ROOT_MENU_TYPE" => "bottom_main_6",
+								"USE_EXT" => "N",
+								"COMPONENT_TEMPLATE" => "bottom-menu-column"
+							),
+							false
+						); ?>
+					</div>
+					<div class="footer__nav-col">
+						<span>
+							<? $APPLICATION->IncludeFile(
+								SITE_DIR . 'include/bottom-main-menu/title-7.php',
+								array(),
+								array('MODE' => 'html', 'NAME' => 'заголовок меню', 'SHOW_BORDER' => true)
+							); ?></span>
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:menu",
+							"bottom-menu-column",
+							array(
+								"ALLOW_MULTI_SELECT" => "N",
+								"CHILD_MENU_TYPE" => "left",
+								"DELAY" => "N",
+								"MAX_LEVEL" => "1",
+								"MENU_CACHE_GET_VARS" => array(),
+								"MENU_CACHE_TIME" => "3600",
+								"MENU_CACHE_TYPE" => "N",
+								"MENU_CACHE_USE_GROUPS" => "Y",
+								"ROOT_MENU_TYPE" => "bottom_main_7",
+								"USE_EXT" => "N",
+								"COMPONENT_TEMPLATE" => "bottom-menu-column"
+							),
+							false
+						); ?>
+					</div>
+				</nav>
 			</div>
 		</div>
 		<div class="footer__section footer__section--bottom">
@@ -272,6 +439,37 @@ $APPLICATION->IncludeFile(
 	array("MODE" => "html", "SHOW_BORDER" => false)
 );
 */ ?>
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+	(function(m, e, t, r, i, k, a) {
+		m[i] = m[i] || function() {
+			(m[i].a = m[i].a || []).push(arguments)
+		};
+		m[i].l = 1 * new Date();
+		for (var j = 0; j < document.scripts.length; j++) {
+			if (document.scripts[j].src === r) {
+				return;
+			}
+		}
+		k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+	})(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+	ym(102970436, 'init', {
+		webvisor: true,
+		clickmap: true,
+		ecommerce: "dataLayer",
+		accurateTrackBounce: true,
+		trackLinks: true
+	});
+</script>
+<!-- /Yandex.Metrika counter -->
+<noscript>
+	<div><img src="https://mc.yandex.ru/watch/102970436" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
+	<div id="medflexRoundWidgetData" data-src="https://booking.medflex.ru?user=ed4c174e0bba04115ad77ca30f6a0ad8&isRoundWidget=true"></div>
+	<script defer src="https://booking.medflex.ru/components/round/round_widget_button.js" charset="utf-8"></script>
 </body>
 
 </html>

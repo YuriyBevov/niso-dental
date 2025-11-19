@@ -1,0 +1,75 @@
+@forward "@scss-root/_extends/flexbox.scss";
+@forward "@scss-root/_extends/effects.scss";
+@forward "@scss-root/_extends/resets.scss";
+@use "@scss-root/_mixins/container-queries" as *;
+@use "@scss-root/_vars/scoped" as *;
+
+.sidemenu {
+  width: 100%;
+
+  & > ul {
+    border: 1px solid var(--mint);
+
+    & > li {
+      padding: 20px;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    & > li:not(:last-child) {
+      border-bottom: 1px solid var(--mint);
+    }
+  }
+
+  ul {
+    @extend %list-reset;
+    @extend %flex-column;
+
+    li {
+      @extend %flex-wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 16px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--secondary);
+        transform: rotate(-90deg);
+        transition: transform var(--main-transition);
+        pointer-events: none;
+      }
+
+      ul {
+        display: none;
+        width: 100%;
+
+        li a {
+          display: flex;
+          width: 100%;
+          padding: 6px 20px;
+          color: var(--muted);
+          @extend %hover-opacity;
+
+          &.selected {
+            color: var(--secondary);
+          }
+        }
+      }
+
+      &:has(.initial),
+      &.expanded {
+        svg {
+          transform: rotate(90deg);
+        }
+
+        ul {
+          display: flex;
+          padding-top: 12px;
+        }
+      }
+    }
+  }
+}

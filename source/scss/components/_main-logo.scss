@@ -1,0 +1,23 @@
+@forward "@scss-root/_extends/flexbox.scss";
+@forward "@scss-root/_extends/effects.scss";
+@use "@scss-root/_mixins/container-queries" as *;
+@use "@scss-root/_vars/scoped" as *;
+
+.main-logo {
+  @extend %flex-center;
+  @extend %hover-opacity;
+
+  width: 100%;
+  max-width: 200px;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+  }
+
+  @include container-up("header", 620px) {
+    max-width: 240px;
+  }
+}
