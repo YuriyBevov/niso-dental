@@ -13,7 +13,7 @@ $this->setFrameMode(true); ?>
 				);
 				?>
 			</span>
-			<h2 class="base-title"><?= $arResult["NAME"] ?></h2>
+			<h1 class="base-title"><?= $arResult["NAME"] ?></h1>
 		</div>
 		<div class="staff-detail__grid">
 			<div class="staff-detail__grid-item staff-detail__grid-item--side">
@@ -32,7 +32,7 @@ $this->setFrameMode(true); ?>
 						<?= $arField["SUB_VALUES"]["DESCR_CONTENT"]["~VALUE"]["TEXT"] ?>
 					<? endforeach; ?>
 				<? endif; ?>
-				<button class="main-btn" data-modal-opener="callback-modal" data-doctor="<?= $arResult["NAME"] ?>">
+				<button class="main-btn" data-modal-opener="callback-modal" data-doctor-name="<?= $arResult["NAME"] ?>">
 					<span>Записаться на прием</span>
 				</button>
 

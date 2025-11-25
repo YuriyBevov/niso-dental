@@ -35,6 +35,9 @@
 							</label>
 						</div>
 					<? endif; ?>
+					<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "hidden"): ?>
+						<?= $arQuestion["HTML_CODE"] ?>
+					<? endif; ?>
 				<? endforeach; ?>
 
 				<? if ($arResult["isUseCaptcha"] == "Y"): ?>

@@ -17,5 +17,4 @@ import "./modules/portfolio-slider";
 import "./modules/modal";
 import "./modules/fancy";
 import "./modules/menu-scroll";
-
 import "./modules/custom-select";

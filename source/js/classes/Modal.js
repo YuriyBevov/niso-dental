@@ -1,38 +1,38 @@
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 
 export class Modal {
   constructor(modal, options = {}) {
     this.preventBodyLock = options.preventBodyLock ? true : false;
     this.modal = modal;
     this.overlay = this.modal.parentNode;
-    this.close = this.modal.querySelector('.modal-closer');
+    this.close = this.modal.querySelector(".modal-closer");
 
-    this.id = this.modal.getAttribute('id');
+    this.id = this.modal.getAttribute("id");
     this.openers = document.querySelectorAll(
       '[data-modal-opener="' + this.id + '"]'
     );
     this.isInited = false;
 
     this.focusableElements = [
-      'a[href]',
-      'input',
-      'select',
-      'textarea',
-      'button',
-      'iframe',
-      '[contenteditable]',
+      "a[href]",
+      "input",
+      "select",
+      "textarea",
+      "button",
+      "iframe",
+      "[contenteditable]",
       '[tabindex]:not([tabindex^="-"])',
     ];
     this.init();
   }
 
   bodyLocker = (bool) => {
-    const body = document.querySelector('body');
+    const body = document.querySelector("body");
 
     if (bool) {
-      body.style.overflow = 'hidden';
+      body.style.overflow = "hidden";
     } else {
-      body.style.overflow = 'auto';
+      body.style.overflow = "auto";
     }
   };
 
@@ -47,10 +47,10 @@ export class Modal {
 
     if (focusableContent.length) {
       const onBtnClickHandler = (evt) => {
-        const isTabPressed = evt.key === 'Tab' || evt.key === 9;
+        const isTabPressed = evt.key === "Tab" || evt.key === 9;
 
-        if (evt.key === 'Escape') {
-          document.removeEventListener('keydown', onBtnClickHandler);
+        if (evt.key === "Escape") {
+          document.removeEventListener("keydown", onBtnClickHandler);
         }
 
         if (!isTabPressed) {
@@ -70,7 +70,7 @@ export class Modal {
         }
       };
 
-      document.addEventListener('keydown', onBtnClickHandler);
+      document.addEventListener("keydown", onBtnClickHandler);
 
       firstFocusableElement.focus();
     }
@@ -79,37 +79,37 @@ export class Modal {
   addListeners = () => {
     if (this.openers) {
       this.openers.forEach((opener) => {
-        opener.removeEventListener('click', this.openModal);
+        opener.removeEventListener("click", this.openModal);
       });
     }
 
-    document.addEventListener('click', this.closeByOverlayClick);
-    document.addEventListener('keydown', this.closeByEscBtn);
+    document.addEventListener("click", this.closeByOverlayClick);
+    document.addEventListener("keydown", this.closeByEscBtn);
 
     if (this.close) {
-      this.close.addEventListener('click', this.closeByBtnClick);
+      this.close.addEventListener("click", this.closeByBtnClick);
     }
   };
 
   refresh = () => {
-    document.removeEventListener('click', this.closeByOverlayClick);
-    document.removeEventListener('keydown', this.closeByEscBtn);
+    document.removeEventListener("click", this.closeByOverlayClick);
+    document.removeEventListener("keydown", this.closeByEscBtn);
 
     if (this.close) {
-      this.close.removeEventListener('click', this.closeByBtnClick);
+      this.close.removeEventListener("click", this.closeByBtnClick);
     }
 
     gsap.fromTo(
       this.overlay,
-      { display: 'flex' },
+      { display: "flex" },
       {
         opacity: 0,
-        display: 'none',
+        display: "none",
         duration: 0.6,
-        ease: 'ease-in',
+        ease: "ease-in",
         onComplete: () => {
           //если в модалке есть форма, при закрытии обнуляю поля
-          this.modal.querySelectorAll('form').forEach((f) => f.reset());
+          this.modal.querySelectorAll("form").forEach((f) => f.reset());
         },
       }
     );
@@ -120,7 +120,7 @@ export class Modal {
 
     if (this.openers) {
       this.openers.forEach((opener) => {
-        opener.addEventListener('click', this.openModal);
+        opener.addEventListener("click", this.openModal);
       });
     }
   };
@@ -132,7 +132,7 @@ export class Modal {
   };
 
   closeByEscBtn = (evt) => {
-    if (evt.key === 'Escape') {
+    if (evt.key === "Escape") {
       this.refresh();
     }
   };
@@ -144,15 +144,36 @@ export class Modal {
   openModal = (evt) => {
     evt.preventDefault();
 
+    const opener = evt.currentTarget;
+    const dataset = opener.dataset;
+
+    const dataFormFields = this.modal.querySelectorAll(
+      "input[data-field-name]"
+    );
+
+    dataFormFields.forEach((input) => {
+      const fieldKey = input.dataset.fieldName;
+
+      const fieldKeyCamelCase = fieldKey.replace(/-([a-z])/g, (_, letter) =>
+        letter.toUpperCase()
+      );
+
+      const value = dataset[fieldKeyCamelCase];
+
+      if (value !== undefined) {
+        input.value = value;
+      }
+    });
+
     this.bodyLocker(true);
     gsap.fromTo(
       this.overlay,
-      { display: 'none', opacity: 0 },
+      { display: "none", opacity: 0 },
       {
-        display: 'flex',
+        display: "flex",
         opacity: 1,
         duration: 0.6,
-        ease: 'ease-in',
+        ease: "ease-in",
         onComplete: () => {
           this.addListeners();
           this.focusTrap();
@@ -165,12 +186,12 @@ export class Modal {
     this.bodyLocker(true);
     gsap.fromTo(
       this.overlay,
-      { display: 'none', opacity: 0 },
+      { display: "none", opacity: 0 },
       {
-        display: 'flex',
+        display: "flex",
         opacity: 1,
         duration: 0.6,
-        ease: 'ease-in',
+        ease: "ease-in",
         onComplete: () => {
           this.addListeners();
           this.focusTrap();
@@ -183,11 +204,11 @@ export class Modal {
     if (this.openers) {
       this.isInited = true;
       this.openers.forEach((opener) => {
-        opener.addEventListener('click', this.openModal);
+        opener.addEventListener("click", this.openModal);
       });
     } else {
       console.error(
-        'Не добавлена кнопка открытия модального окна, либо в ней не прописан аттр-т: data-modal-opener={modal-id} '
+        "Не добавлена кнопка открытия модального окна, либо в ней не прописан аттр-т: data-modal-opener={modal-id} "
       );
     }
   }

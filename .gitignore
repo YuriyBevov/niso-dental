@@ -9,6 +9,7 @@
 /upload/
 /local/logs/
 /local/php_interface/dbconn.php
+/node_modules/
 
 # System files
 .DS_Store

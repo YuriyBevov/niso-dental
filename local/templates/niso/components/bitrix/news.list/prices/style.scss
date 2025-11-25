@@ -1,0 +1,107 @@
+@use "@scss-root/_mixins/container-queries" as *;
+@use "@scss-root/_vars/scoped" as *;
+
+.prices {
+  .accordeon {
+    gap: 10px;
+
+    container: prices-accordeon-container / inline-size;
+
+    &-item {
+      border-radius: var(--base-border-radius);
+      box-shadow: none;
+      border: 1px solid #f2f5f7;
+      overflow: hidden;
+
+      &.expanded {
+        .accordeon-opener {
+          transform: rotate(180deg);
+        }
+
+        .accordeon-body {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-header {
+      background-color: #f2f5f7;
+      padding: clamp(16px, 1.5vw, 20px) clamp(20px, 2.4vw, 40px);
+    }
+
+    &-opener {
+      border-radius: 0;
+      background-color: transparent;
+
+      svg {
+        width: 40px;
+        height: 40px;
+        fill: var(--primary);
+      }
+    }
+
+    &-body {
+      padding: 0;
+
+      & > .content-block > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .content-block {
+    font-size: 20px;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px clamp(20px, 3.5vw, 40px);
+
+      @include container-up("prices-accordeon-container", $tablet-width) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #f2f5f7;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @include container-up("prices-accordeon-container", $tablet-width) {
+        justify-content: flex-end;
+        max-width: 225px;
+      }
+
+      @include container-up("prices-accordeon-container", $laptop-width) {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        min-width: 450px;
+      }
+    }
+
+    strong {
+      color: var(--primary);
+
+      @include container-up("prices-accordeon-container", $laptop-width) {
+        max-width: 200px;
+      }
+    }
+  }
+
+  .main-btn {
+    width: 225px;
+    min-height: 40px;
+    padding: 6px 20px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}

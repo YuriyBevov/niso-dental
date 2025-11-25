@@ -11,6 +11,7 @@ const COMPONENTS_PATH = `${TEMPLATE_PATH}/components/bitrix`;
 const componentConfigs = {
   searchTitle: `${COMPONENTS_PATH}/search.title/.default`,
   serviceForm: `${COMPONENTS_PATH}/form.result.new/service-form`,
+  prices: `${COMPONENTS_PATH}/news.list/prices`,
 };
 
 // Создаем пути компонентов
@@ -83,6 +84,7 @@ export default defineConfig({
       output: {
         entryFileNames: (assetInfo) => {
           if (assetInfo.name === "script") {
+            console.log("test");
             return `${TEMPLATE_PATH}/script.js`;
           }
           return "[name].js";

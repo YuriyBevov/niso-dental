@@ -1,6 +1,0 @@
-mixin main-btn(data)
-  #{data.tag}.main-btn(type= data.href ? null : "button" data-modal-opener= data.modal ? data.modal : null href= data.href ? data.href : null class= data.cls ? data.cls : null)
-    if data.icon
-      img(src=`./assets/img/${data.icon}` alt= data.title width="40" height="40")
-    if data.text
-      span!= data.text

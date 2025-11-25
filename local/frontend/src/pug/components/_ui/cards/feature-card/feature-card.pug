@@ -1,8 +1,0 @@
-mixin feature-card(data)
-  .feature-card-wrapper
-    .feature-card
-      if data.icon
-        img(loading="lazy" src=`./assets/img/${data.icon}.png` alt= data.title width="80" height="80")
-      
-      span.base-subtitle!= data.title
-      span.base-text!= data.text
