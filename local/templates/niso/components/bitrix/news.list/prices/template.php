@@ -7,7 +7,7 @@ $this->setFrameMode(true);
 		<div class="base-section__header">
 			<span class="base-text base-section__headline">
 			</span>
-			<h2 class="base-title"><?= $arResult["NAME"] ?></h2>
+			<h1 class="base-title"><?= $arResult["NAME"] ?></h1>
 			<?if (!empty($arResult['DESCRIPTION'])) :?>
 				<?if ($arResult['DESCRIPTION_TYPE'] == 'html') :?>
 					<div class="content"><?= $arResult["DESCRIPTION"]?></div>
@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 				<?endif;?>
 			<?endif;?>
 		</div>
-		<div class="accordeon">
+		<div class="accordeon --first-item-expanded">
 			<? foreach ($arResult['SECTIONS'] as $arSection):
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], CIBlock::GetArrayByID($arSection["IBLOCK_ID"], "ELEMENT_EDIT"));
 				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], CIBlock::GetArrayByID($arSection["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
@@ -36,7 +36,6 @@ $this->setFrameMode(true);
 								<? foreach ($arSection['ITEMS'] as $arItem): ?>
 									<div class="content-block__item">
 										<span><?=$arItem['NAME']?></span>
-
 										<div class="content-block__wrapper">
 											<strong><?=$arItem['PROPERTIES']['SERVICE_PRICE']['VALUE']?></strong>
 											<button class="main-btn" data-modal-opener="callback-modal" data-service-name="<?=$arItem['NAME'], $arItem['PROPERTIES']['SERVICE_PRICE']['VALUE']?>">Записаться на прием</button>

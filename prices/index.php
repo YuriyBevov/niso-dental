@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("description", "Цены на услуги стоматологической клиники НИСО. Запись на бесплатную консультацию осуществляется по телефону: +7 (812) 327-51-54");
 $APPLICATION->SetPageProperty("title", "Цены на услуги стоматологической клиники НИСО");
-$APPLICATION->SetTitle("Цены");
+$APPLICATION->SetTitle("Цены на услуги");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"prices", 
@@ -10,7 +10,7 @@ $APPLICATION->SetTitle("Цены");
 		"COMPONENT_TEMPLATE" => "prices",
 		"IBLOCK_TYPE" => "site_content",
 		"IBLOCK_ID" => "24",
-		"NEWS_COUNT" => "100",
+		"NEWS_COUNT" => "400",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
@@ -21,7 +21,7 @@ $APPLICATION->SetTitle("Цены");
 			1 => "",
 		],
 		"PROPERTY_CODE" => [
-			0 => "",
+			0 => "SERVICE_PRICE",
 			1 => "",
 		],
 		"CHECK_DATES" => "Y",
@@ -51,7 +51,7 @@ $APPLICATION->SetTitle("Цены");
 		"STRICT_SECTION_CHECK" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"DISPLAY_TOP_PAGER" => "N",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_BOTTOM_PAGER" => "N",
 		"PAGER_TITLE" => "Новости",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
