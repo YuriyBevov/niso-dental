@@ -12,6 +12,7 @@ const componentConfigs = {
   searchTitle: `${COMPONENTS_PATH}/search.title/.default`,
   serviceForm: `${COMPONENTS_PATH}/form.result.new/service-form`,
   prices: `${COMPONENTS_PATH}/news.list/prices`,
+  catalogSectionList: `${COMPONENTS_PATH}/catalog.section.list/catalog-section-list`,
 };
 
 // Создаем пути компонентов

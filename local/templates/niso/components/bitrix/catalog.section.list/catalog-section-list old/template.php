@@ -37,7 +37,7 @@ $curPage = $APPLICATION->GetCurPage();
 								<div class="service-preview-card" id="<?= $this->GetEditAreaId($arSection['ID']); ?>">
 									<div class="service-preview-card-header">
 										<? if ($arSection["PICTURE"]["SRC"]): ?>
-											<img loading="lazy" src="<?= $arSection["PICTURE"]["SRC"] ?>" alt="<?= $arSection["NAME"] ?>" width="240" height="96">
+											<img loading="lazy" src="<?= $arSection["PICTURE"]["SRC"] ?>" alt="<?= $arSection["NAME"] ?>" width="40" height="40">
 										<? endif; ?>
 										<span class="base-subtitle">
 											<?= $arSection["NAME"] ?>
