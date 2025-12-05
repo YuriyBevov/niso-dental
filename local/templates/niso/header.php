@@ -34,26 +34,6 @@ $curPage = $APPLICATION->GetCurPage();
   $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/script.js");
   $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/assets/custom.js");
   ?>
-  <!-- <script>
-    (function(w, d, s, o){
-      var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
-        if (document.readyState !== 'loading') Marquiz.init(o);
-        else document.addEventListener("DOMContentLoaded", function() {
-          Marquiz.init(o);
-        });
-      };
-      d.head.insertBefore(j, d.head.firstElementChild);
-    })(window, document, 'script', {
-        host: '//quiz.marquiz.ru',
-        region: 'ru',
-        id: '66cc82a624dfa8002664bda8',
-        autoOpen: 200,
-        autoOpenFreq: 'once',
-        openOnExit: false,
-        disableOnMobile: true
-      }
-    );
-  </script> -->
 
 </head>
 
