@@ -18,6 +18,8 @@ if ($iblock) {
 	$arResult["NAME"] = 'Популярные услуги';
 }
 
+// debug(\Bitrix\Iblock\Iblock::wakeUp(6)->getEntityDataClass());
+
 $elements = \Bitrix\Iblock\Elements\ElementCatalogTable::getList([
 	'select' => ['IBLOCK_SECTION_ID', 'NAME', 'CODE'],
 	'filter' => ['=ACTIVE' => 'Y'],
