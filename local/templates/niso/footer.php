@@ -470,6 +470,7 @@ $APPLICATION->IncludeFile(
 </noscript>
 	<div id="medflexRoundWidgetData" data-src="https://booking.medflex.ru?user=ed4c174e0bba04115ad77ca30f6a0ad8&isRoundWidget=true"></div>
 	<script defer src="https://booking.medflex.ru/components/round/round_widget_button.js" charset="utf-8"></script>
+	<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/cookie/template.php"); ?>
 </body>
 
 </html>

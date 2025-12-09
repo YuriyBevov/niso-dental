@@ -284,6 +284,10 @@ p img {
   padding: 0;
 }
 
+.medflex-round-widget {
+  z-index: 500;
+}
+
 .medflex-round-widget__button {
   left: 50%;
   transform: translate(-50%, 0);
