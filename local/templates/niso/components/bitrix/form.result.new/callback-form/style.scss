@@ -1,0 +1,110 @@
+@use "@scss-root/_mixins/container-queries" as *;
+
+.callback {
+  container: callback / inline-size;
+
+  &-form {
+    border-radius: var(--border-radius-lg);
+    background: linear-gradient(150.48deg, #f0f6f9b3 -0.74%, #44c6e959 116.94%);
+
+    @include container-up("callback", 960px) {
+      padding-left: 40%;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 110%;
+        content: "";
+        background-image: url("/source/img/callback-bg-form.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+      }
+    }
+
+    .main-checkbox-wrapper {
+      margin: 12px 0;
+    }
+
+    form {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      position: relative;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      width: 100%;
+      max-width: 700px;
+      padding: clamp(24px, 4vw, 60px);
+      margin: 0 auto;
+      z-index: 3;
+
+      @include container-up("callback", 960px) {
+        margin-left: auto;
+      }
+    }
+
+    &__header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &__headline {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    &__title {
+      font-size: clamp(24px, 3vw, 40px);
+      font-weight: 600;
+      text-shadow: 5px 5px 0px var(--lighter);
+      color: var(--primary);
+    }
+
+    .main-checkbox-wrapper label {
+      @media (max-width: 500px) {
+        gap: 20px;
+      }
+    }
+  }
+
+  &-modal {
+    .modal-wrapper {
+      background-color: transparent;
+    }
+
+    .modal-content {
+      padding: 0;
+      max-height: 90svh;
+    }
+
+    .callback-form {
+      border-radius: 0;
+      background-color: var(--white);
+    }
+  }
+}
