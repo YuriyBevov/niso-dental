@@ -1,7 +1,7 @@
 :root {
-  --cookie-link-color: #000000;
+  --cookie-link-color: var(--primary);
   --cookie-text-color: #000000;
-  --cookie-bg-color: #ffffff;
+  --cookie-bg-color: rgba(255, 255, 255, 0.85);
   --cookie-offset-size: 24px 0;
   --cookie-btn-offset-size: 8px 32px;
 }
@@ -15,6 +15,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  max-height: 175px;
   background-color: var(--cookie-bg-color);
   color: var(--cookie-text-color);
   padding: var(--cookie-offset-size);
