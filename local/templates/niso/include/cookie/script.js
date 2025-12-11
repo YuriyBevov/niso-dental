@@ -8,9 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("cookie-consent-banner");
   banner.style.display = "none";
 
-  if (!document.cookie.includes("NISODENTAL_COOKIE_CONSENT=ACCEPTED")) {
+  const showCookieBanner = () => {
     banner.style.display = "grid";
-  }
+  };
+
+  const showCookieBannerIfNotAccepted = () => {
+    if (!document.cookie.includes("NISODENTAL_COOKIE_CONSENT=ACCEPTED")) {
+      setTimeout(showCookieBanner, 3000);
+    }
+  };
+
+  showCookieBannerIfNotAccepted();
+
   const button = document.getElementById("cookie-consent-button");
 
   button.addEventListener("click", () => {
