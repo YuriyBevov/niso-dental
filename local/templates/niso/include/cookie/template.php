@@ -6,7 +6,7 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/include/cookie/styles.css");
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/include/cookie/script.js");
 ?>
 
-<div id="cookie-consent-banner">
+<div id="cookie-consent-banner" style="display:none;">
   <div class="container">
     <p>
       Продолжая пользоваться сайтом, Вы соглашаетесь с <a href="/policy/" target="_blank">политикой использования файлов cookie</a>.

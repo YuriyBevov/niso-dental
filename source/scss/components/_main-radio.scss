@@ -1,0 +1,73 @@
+@forward "@scss-root/_extends/flexbox.scss";
+@forward "@scss-root/_extends/effects.scss";
+
+.main-radio-wrapper {
+  background-color: var(--white);
+
+  label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--site-base-font-family);
+    font-size: clamp(16px, 2.2vw, 18px);
+    width: 100%;
+    color: var(--dark);
+    cursor: pointer;
+
+    span {
+      &:first-of-type {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid var(--light);
+      }
+
+      &:last-of-type {
+        font-size: 16px;
+        line-height: 1;
+        text-align: left;
+        color: var(--dark);
+      }
+    }
+
+    a {
+      font-weight: 400;
+      text-decoration: underline;
+      color: var(--primary);
+
+      @extend %hover-opacity;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  &:has(input:checked) label span:first-of-type::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--light);
+  }
+
+  /* purgecss start ignore */
+  &.invalid-fld {
+    label {
+      span:first-of-type {
+        border-color: var(--danger);
+      }
+      span:last-of-type {
+        color: var(--danger);
+      }
+    }
+
+    animation: shaker var(--main-transition);
+  }
+  /* purgecss end ignore */
+}

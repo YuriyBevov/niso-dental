@@ -17,6 +17,10 @@ $APPLICATION->SetTitle("Стоматологическая клиника “Н�
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/catalog-preview/catalog-preview.php");  ?>
 <!-- catalog-preview -->
 
+<!-- quiz -->
+<? /*include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/quiz/quiz.php");  */?>
+<!-- quiz -->
+
 <!-- sales-preview -->
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/sales-preview/sales-preview.php");  ?>
 <!-- sales-preview -->

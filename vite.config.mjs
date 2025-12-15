@@ -14,6 +14,7 @@ const componentConfigs = {
   prices: `${COMPONENTS_PATH}/news.list/prices`,
   catalogSectionList: `${COMPONENTS_PATH}/catalog.section.list/catalog-section-list`,
   callbackForm: `${COMPONENTS_PATH}/form.result.new/callback-form`,
+  quizForm: `${COMPONENTS_PATH}/form.result.new/quiz-form`,
 };
 
 // Создаем пути компонентов

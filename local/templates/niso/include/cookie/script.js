@@ -6,7 +6,6 @@ function deleteCookie(name) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("cookie-consent-banner");
-  banner.style.display = "none";
 
   const showCookieBanner = () => {
     banner.style.display = "grid";

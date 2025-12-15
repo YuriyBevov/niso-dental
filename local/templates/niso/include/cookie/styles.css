@@ -8,10 +8,11 @@
 
 #cookie-consent-banner {
   position: fixed;
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
+  max-width: 700px;
+  bottom: 10px;
+  left: 10px;
+  border-radius: var(--border-radius-sm);
+  width: calc(100% - 20px);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -33,7 +34,7 @@
 
   display: grid;
   -ms-grid-columns: auto 32px 120px;
-  grid-template-columns: auto 120px;
+  grid-template-columns: auto 160px;
   gap: 16px 32px;
   -webkit-box-align: center;
   -ms-flex-align: center;

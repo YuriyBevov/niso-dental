@@ -201,108 +201,119 @@ $itemIds = array(
 					<? endif; ?>
 
 
-						<? if ($arResult["PROPERTIES"]["PRICE_LIST_CUSTOM_TITLE"]["VALUE"]): ?>
-							<h2><strong><?= $arResult["PROPERTIES"]["PRICE_LIST_CUSTOM_TITLE"]["VALUE"] ?></strong></h2>
-						<? endif; ?>
-						<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["VALUE"]["TEXT"])): ?>
-							<div class="content">
-								<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["VALUE"]["TEXT"] ?>
-							</div>
-						<? endif ?>
+					<? if ($arResult["PROPERTIES"]["PRICE_LIST_CUSTOM_TITLE"]["VALUE"]): ?>
+						<h2><strong><?= $arResult["PROPERTIES"]["PRICE_LIST_CUSTOM_TITLE"]["VALUE"] ?></strong></h2>
+					<? endif; ?>
+					<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["VALUE"]["TEXT"])): ?>
+						<div class="content">
+							<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["VALUE"]["TEXT"] ?>
+						</div>
+					<? endif ?>
 
-						<? if ($arResult["PROPERTIES"]["PRICE_LIST"]["VALUE"]): ?>
-							<table class="price-table">
-								<thead>
+					<? if ($arResult["PROPERTIES"]["PRICE_LIST"]["VALUE"]): ?>
+						<table class="price-table">
+							<thead>
+								<tr>
+									<td>Наименование услуги</td>
+									<td>Цена</td>
+								</tr>
+							</thead>
+							<tbody>
+								<? foreach ($arResult["PROPERTIES"]["PRICE_LIST"]["VALUE"] as $arItem): ?>
 									<tr>
-										<td>Наименование услуги</td>
-										<td>Цена</td>
+										<td><?= $arItem["SUB_VALUES"]["PRICE_LIST_TITLE"]["VALUE"] ?></td>
+										<td><strong><?= $arItem["SUB_VALUES"]["PRICE_LIST_PRICE"]["VALUE"] ?></strong></td>
 									</tr>
-								</thead>
-								<tbody>
-									<? foreach ($arResult["PROPERTIES"]["PRICE_LIST"]["VALUE"] as $arItem): ?>
-										<tr>
-											<td><?= $arItem["SUB_VALUES"]["PRICE_LIST_TITLE"]["VALUE"] ?></td>
-											<td><strong><?= $arItem["SUB_VALUES"]["PRICE_LIST_PRICE"]["VALUE"] ?></strong></td>
-										</tr>
-									<? endforeach; ?>
-								</tbody>
-							</table>
+								<? endforeach; ?>
+							</tbody>
+						</table>
+					<? endif; ?>
+
+					<? if (!empty($arResult['PROPERTIES']['LINKED_PRICES']['VALUE'])) : ?>
+						<?
+						$GLOBALS['arLinkedPricesFilter'] = array('ID' => $arResult['PROPERTIES']['LINKED_PRICES']['VALUE']);
+						$APPLICATION->IncludeComponent(
+							"bitrix:news.list",
+							"service-price-table",
+							array(
+								"ACTIVE_DATE_FORMAT" => "d.m.Y",
+								"ADD_SECTIONS_CHAIN" => "Y",
+								"AJAX_MODE" => "N",
+								"AJAX_OPTION_ADDITIONAL" => "",
+								"AJAX_OPTION_HISTORY" => "N",
+								"AJAX_OPTION_JUMP" => "N",
+								"AJAX_OPTION_STYLE" => "Y",
+								"CACHE_FILTER" => "N",
+								"CACHE_GROUPS" => "Y",
+								"CACHE_TIME" => "36000000",
+								"CACHE_TYPE" => "A",
+								"CHECK_DATES" => "Y",
+								"COMPONENT_TEMPLATE" => "service-price-table",
+								"DETAIL_URL" => "",
+								"DISPLAY_BOTTOM_PAGER" => "Y",
+								"DISPLAY_DATE" => "Y",
+								"DISPLAY_NAME" => "Y",
+								"DISPLAY_PICTURE" => "Y",
+								"DISPLAY_PREVIEW_TEXT" => "Y",
+								"DISPLAY_TOP_PAGER" => "N",
+								"FIELD_CODE" => [0 => "", 1 => "",],
+								"FILTER_NAME" => "arLinkedPricesFilter",
+								"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+								"IBLOCK_ID" => "24",
+								"IBLOCK_TYPE" => "site_content",
+								"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+								"INCLUDE_SUBSECTIONS" => "Y",
+								"MESSAGE_404" => "",
+								"NEWS_COUNT" => "50",
+								"PAGER_BASE_LINK_ENABLE" => "N",
+								"PAGER_DESC_NUMBERING" => "N",
+								"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+								"PAGER_SHOW_ALL" => "N",
+								"PAGER_SHOW_ALWAYS" => "N",
+								"PAGER_TEMPLATE" => ".default",
+								"PAGER_TITLE" => "Новости",
+								"PARENT_SECTION" => "",
+								"PARENT_SECTION_CODE" => "",
+								"PREVIEW_TRUNCATE_LEN" => "",
+								"PROPERTY_CODE" => [0 => "SERVICE_PRICE", 1 => "",],
+								"SET_BROWSER_TITLE" => "N",
+								"SET_LAST_MODIFIED" => "N",
+								"SET_META_DESCRIPTION" => "N",
+								"SET_META_KEYWORDS" => "N",
+								"SET_STATUS_404" => "N",
+								"SET_TITLE" => "N",
+								"SHOW_404" => "N",
+								"SORT_BY1" => "ACTIVE_FROM",
+								"SORT_BY2" => "SORT",
+								"SORT_ORDER1" => "DESC",
+								"SORT_ORDER2" => "ASC",
+								"STRICT_SECTION_CHECK" => "N"
+							),
+							$component
+						);
+						unset($GLOBALS['arLinkedPricesFilter']);
+						?>
+					<? endif; ?>
+
+					<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["VALUE"]["TEXT"])): ?>
+						<div class="content">
+							<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["VALUE"]["TEXT"] ?>
+						</div>
+					<? endif; ?>
+
+					<? if ($USER->isAdmin()): ?>
+						<? if ($arResult["PROPERTIES"]["ACCORDEON"]["VALUE"]): ?>
+							<? foreach ($arResult["PROPERTIES"]["ACCORDEON"]["VALUE"] as $arValue): ?>
+								<? if ($arValue["SUB_VALUES"]["TITLE"]["VALUE"] && $arValue["SUB_VALUES"]["CONTENT"]["~VALUE"]["TEXT"]): ?>
+									<? debug($arValue["SUB_VALUES"]["TITLE"]["VALUE"]) ?>
+									<? debug($arValue["SUB_VALUES"]["CONTENT"]["~VALUE"]["TEXT"]) ?>
+								<? endif; ?>
+							<? endforeach; ?>
 						<? endif; ?>
-
-						<?if (!empty($arResult['PROPERTIES']['LINKED_PRICES']['VALUE'])) :?>
-							<?
-								$GLOBALS['arLinkedPricesFilter'] = array('ID' => $arResult['PROPERTIES']['LINKED_PRICES']['VALUE']);
-								$APPLICATION->IncludeComponent(
-									"bitrix:news.list",
-									"service-price-table",
-									Array(
-										"ACTIVE_DATE_FORMAT" => "d.m.Y",
-										"ADD_SECTIONS_CHAIN" => "Y",
-										"AJAX_MODE" => "N",
-										"AJAX_OPTION_ADDITIONAL" => "",
-										"AJAX_OPTION_HISTORY" => "N",
-										"AJAX_OPTION_JUMP" => "N",
-										"AJAX_OPTION_STYLE" => "Y",
-										"CACHE_FILTER" => "N",
-										"CACHE_GROUPS" => "Y",
-										"CACHE_TIME" => "36000000",
-										"CACHE_TYPE" => "A",
-										"CHECK_DATES" => "Y",
-										"COMPONENT_TEMPLATE" => "service-price-table",
-										"DETAIL_URL" => "",
-										"DISPLAY_BOTTOM_PAGER" => "Y",
-										"DISPLAY_DATE" => "Y",
-										"DISPLAY_NAME" => "Y",
-										"DISPLAY_PICTURE" => "Y",
-										"DISPLAY_PREVIEW_TEXT" => "Y",
-										"DISPLAY_TOP_PAGER" => "N",
-										"FIELD_CODE" => [0=>"",1=>"",],
-										"FILTER_NAME" => "arLinkedPricesFilter",
-										"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-										"IBLOCK_ID" => "24",
-										"IBLOCK_TYPE" => "site_content",
-										"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-										"INCLUDE_SUBSECTIONS" => "Y",
-										"MESSAGE_404" => "",
-										"NEWS_COUNT" => "50",
-										"PAGER_BASE_LINK_ENABLE" => "N",
-										"PAGER_DESC_NUMBERING" => "N",
-										"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-										"PAGER_SHOW_ALL" => "N",
-										"PAGER_SHOW_ALWAYS" => "N",
-										"PAGER_TEMPLATE" => ".default",
-										"PAGER_TITLE" => "Новости",
-										"PARENT_SECTION" => "",
-										"PARENT_SECTION_CODE" => "",
-										"PREVIEW_TRUNCATE_LEN" => "",
-										"PROPERTY_CODE" => [0=>"SERVICE_PRICE",1=>"",],
-										"SET_BROWSER_TITLE" => "N",
-										"SET_LAST_MODIFIED" => "N",
-										"SET_META_DESCRIPTION" => "N",
-										"SET_META_KEYWORDS" => "N",
-										"SET_STATUS_404" => "N",
-										"SET_TITLE" => "N",
-										"SHOW_404" => "N",
-										"SORT_BY1" => "ACTIVE_FROM",
-										"SORT_BY2" => "SORT",
-										"SORT_ORDER1" => "DESC",
-										"SORT_ORDER2" => "ASC",
-										"STRICT_SECTION_CHECK" => "N"
-									),
-									$component
-								);
-								unset($GLOBALS['arLinkedPricesFilter']);
-							?>
-						<? endif ;?>
-
-						<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["VALUE"]["TEXT"])): ?>
-							<div class="content">
-								<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["VALUE"]["TEXT"] ?>
-							</div>
-						<? endif ;?>
+					<? endif; ?>
 
 
-					 <?/* $APPLICATION->IncludeComponent(
+					<?/* $APPLICATION->IncludeComponent(
 						"bitrix:form.result.new",
 						"service-form",
 						[
@@ -519,9 +530,9 @@ unset($GLOBALS['arLinkedExamplesFilter']);
 <!-- features -->
 
 <!-- staff-preview -->
-<? if (!empty($arResult['PROPERTIES']['LINKED_STAFF']['VALUE'])) :?>
+<? if (!empty($arResult['PROPERTIES']['LINKED_STAFF']['VALUE'])) : ?>
 	<? $GLOBALS['arLinkedStaffFilter'] = array('ID' => $arResult['PROPERTIES']['LINKED_STAFF']['VALUE']);
-		$APPLICATION->IncludeComponent(
+	$APPLICATION->IncludeComponent(
 		"bitrix:news.list",
 		"staff-preview",
 		array(
@@ -590,14 +601,14 @@ unset($GLOBALS['arLinkedExamplesFilter']);
 			"SORT_ORDER2" => "ASC",
 			"STRICT_SECTION_CHECK" => "N",
 			"COMPONENT_TEMPLATE" => "staff-preview"
-			),
-			$component
-		);
-		unset($GLOBALS['arLinkedStaffFilter']);
+		),
+		$component
+	);
+	unset($GLOBALS['arLinkedStaffFilter']);
 	?>
-	<? else :?>
-		<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/staff-preview/staff-preview.php");  ?>
-<? endif ;?>
+<? else : ?>
+	<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/staff-preview/staff-preview.php");  ?>
+<? endif; ?>
 <!-- staff-preview -->
 
 <?
@@ -665,5 +676,5 @@ unset($GLOBALS['arFaqFilter']);
 ?>
 
 <!-- map -->
- <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/sections/map/map.php");  ?>
+<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/sections/map/map.php");  ?>
 <!-- map -->
