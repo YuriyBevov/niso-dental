@@ -1030,6 +1030,12 @@ button.swiper-pagination-bullet {
   content: "";
   border-radius: 2px;
 }
+.content .bg-rounded {
+  background-color: var(--lighter);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
 .developer-logo {
   gap: 2px;
 }

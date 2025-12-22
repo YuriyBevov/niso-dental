@@ -103,5 +103,12 @@
       border-radius: 2px;
     }
   }
+
+  .bg-rounded {
+    background-color: var(--lighter);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+  }
 }
 /* purgecss end ignore */

@@ -200,36 +200,55 @@ $itemIds = array(
 						<?= $arResult["PROPERTIES"]["DETAIL_TEXT_TOP"]["~VALUE"]["TEXT"] ?>
 					<? endif; ?>
 
+					<!-- Цены старые -->
 
-					<? if ($arResult["PROPERTIES"]["PRICE_LIST_CUSTOM_TITLE"]["VALUE"]): ?>
-						<h2><strong><?= $arResult["PROPERTIES"]["PRICE_LIST_CUSTOM_TITLE"]["VALUE"] ?></strong></h2>
-					<? endif; ?>
-					<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["VALUE"]["TEXT"])): ?>
-						<div class="content">
-							<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["VALUE"]["TEXT"] ?>
-						</div>
-					<? endif ?>
-
-					<? if ($arResult["PROPERTIES"]["PRICE_LIST"]["VALUE"]): ?>
-						<table class="price-table">
-							<thead>
-								<tr>
-									<td>Наименование услуги</td>
-									<td>Цена</td>
-								</tr>
-							</thead>
-							<tbody>
-								<? foreach ($arResult["PROPERTIES"]["PRICE_LIST"]["VALUE"] as $arItem): ?>
+					<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST"]["VALUE"]) && empty($arResult['PROPERTIES']['LINKED_PRICES']['VALUE'])): ?>
+						<? if ($arResult["PROPERTIES"]["PRICE_LIST_CUSTOM_TITLE"]["VALUE"]): ?>
+							<h2><strong><?= $arResult["PROPERTIES"]["PRICE_LIST_CUSTOM_TITLE"]["VALUE"] ?></strong></h2>
+						<? endif; ?>
+						<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["~VALUE"]["TEXT"])): ?>
+							<div class="content">
+								<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["~VALUE"]["TEXT"] ?>
+							</div>
+						<? endif; ?>
+						<? if ($arResult["PROPERTIES"]["PRICE_LIST"]["VALUE"]): ?>
+							<table class="price-table">
+								<thead>
 									<tr>
-										<td><?= $arItem["SUB_VALUES"]["PRICE_LIST_TITLE"]["VALUE"] ?></td>
-										<td><strong><?= $arItem["SUB_VALUES"]["PRICE_LIST_PRICE"]["VALUE"] ?></strong></td>
+										<td>Наименование услуги</td>
+										<td>Цена</td>
 									</tr>
-								<? endforeach; ?>
-							</tbody>
-						</table>
+								</thead>
+								<tbody>
+									<? foreach ($arResult["PROPERTIES"]["PRICE_LIST"]["VALUE"] as $arItem): ?>
+										<tr>
+											<td><?= $arItem["SUB_VALUES"]["PRICE_LIST_TITLE"]["VALUE"] ?></td>
+											<td><strong><?= $arItem["SUB_VALUES"]["PRICE_LIST_PRICE"]["VALUE"] ?></strong></td>
+										</tr>
+									<? endforeach; ?>
+								</tbody>
+							</table>
+						<? endif; ?>
+						<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["~VALUE"]["TEXT"])): ?>
+							<div class="content">
+								<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["~VALUE"]["TEXT"] ?>
+							</div>
+						<? endif; ?>
 					<? endif; ?>
+
+					<!-- Цены старые -->
+
+					<!-- Цены новые -->
 
 					<? if (!empty($arResult['PROPERTIES']['LINKED_PRICES']['VALUE'])) : ?>
+						<? if ($arResult["PROPERTIES"]["PRICE_LIST_CUSTOM_TITLE"]["VALUE"]): ?>
+							<h2><strong><?= $arResult["PROPERTIES"]["PRICE_LIST_CUSTOM_TITLE"]["VALUE"] ?></strong></h2>
+						<? endif; ?>
+						<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["~VALUE"]["TEXT"])): ?>
+							<div class="content">
+								<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_BEFORE"]["~VALUE"]["TEXT"] ?>
+							</div>
+						<? endif; ?>
 						<?
 						$GLOBALS['arLinkedPricesFilter'] = array('ID' => $arResult['PROPERTIES']['LINKED_PRICES']['VALUE']);
 						$APPLICATION->IncludeComponent(
@@ -293,13 +312,14 @@ $itemIds = array(
 						);
 						unset($GLOBALS['arLinkedPricesFilter']);
 						?>
+						<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["~VALUE"]["TEXT"])): ?>
+							<div class="content">
+								<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["~VALUE"]["TEXT"] ?>
+							</div>
+						<? endif; ?>
 					<? endif; ?>
 
-					<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["VALUE"]["TEXT"])): ?>
-						<div class="content">
-							<?= $arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["VALUE"]["TEXT"] ?>
-						</div>
-					<? endif; ?>
+					<!-- Цены новые -->
 
 					<? if ($USER->isAdmin()): ?>
 						<? if ($arResult["PROPERTIES"]["ACCORDEON"]["VALUE"]): ?>
