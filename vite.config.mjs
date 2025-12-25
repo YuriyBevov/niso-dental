@@ -15,6 +15,7 @@ const componentConfigs = {
   catalogSectionList: `${COMPONENTS_PATH}/catalog.section.list/catalog-section-list`,
   callbackForm: `${COMPONENTS_PATH}/form.result.new/callback-form`,
   quizForm: `${COMPONENTS_PATH}/form.result.new/quiz-form`,
+  catalogDetailPage: `${COMPONENTS_PATH}/catalog/lw-catalog/bitrix/catalog.element/.default`,
 };
 
 // Создаем пути компонентов

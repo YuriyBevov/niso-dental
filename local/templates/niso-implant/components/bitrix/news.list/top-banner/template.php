@@ -1,30 +1,34 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+$this->setFrameMode(true);
+?>
 
-$arItem = $arResult["ITEMS"][0];
-$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-
-if ($arItem): ?>
-  <section
-    class="top-banner 
-    <?= $GLOBALS['TEMPLATE_SETTINGS']["GLOBAL_BANNER_MIN_HEIGHT"] ?>
-    <?= $GLOBALS['TEMPLATE_SETTINGS']["GLOBAL_BANNER_TYPE"] ?>
-    <?= $GLOBALS['TEMPLATE_SETTINGS']["GLOBAL_BANNER_CONTENT_ALIGN"] ?>
-    <?= $GLOBALS['TEMPLATE_SETTINGS']["GLOBAL_BANNER_UNDERLAY_TYPE"] ?>
-    <?= $GLOBALS['TEMPLATE_SETTINGS']["GLOBAL_BANNER_BORDERED"] ?>
-    
-    "
-    style="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ? 'background-image:url(' . $arItem["PREVIEW_PICTURE"]["SRC"] . ')' : null ?>">
+<? if ($arResult["ITEMS"]):
+  $arItem = $arResult["ITEMS"][0];
+  $bg = CFile::GetPath($arResult["PICTURE"]);
+?>
+  <section class="section top-banner" style="background-image: url('<?= $bg ? $bg : "" ?>')">
     <div class="container">
-      <div
-        class="top-banner__content 
-        <?= $GLOBALS['TEMPLATE_SETTINGS']["GLOBAL_BANNER_CONTENT_BORDERED"] ?>
-        <?= $GLOBALS['TEMPLATE_SETTINGS']["GLOBAL_BANNER_CONTENT_UNDERLAY_TYPE"] ?>
-        ">
-        <h1><?= $arItem["NAME"] ?></h1>
-        <?= $arItem["PREVIEW_TEXT"] ?>
-        <button class="main-btn">Заказать обратный звонок</button>
+
+      <div class="top-banner__content">
+        <h2 class="title"><?= $arItem["NAME"] ?></h2>
+        <p class="base-text"><?= $arItem["PREVIEW_TEXT"] ?></p>
+
+        <button class="btn" data-form-id="10">Узнать стоимость</button>
       </div>
+
+      <div class="top-banner__side">
+        <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="Врач проводящий процедуру" width="570" height="600">
+
+        <div class="label label--left">
+          <img src="<?= SITE_TEMPLATE_PATH . '/assets/images/label.png' ?>" alt="Рейтинг на врача" width="220" height="110">
+        </div>
+
+        <div class="label label--right">
+          <?= $arItem["DETAIL_TEXT"] ?>
+        </div>
+      </div>
+
     </div>
   </section>
+
 <? endif; ?>

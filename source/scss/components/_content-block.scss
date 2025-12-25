@@ -88,20 +88,13 @@
   }
 
   blockquote {
-    position: relative;
-    padding: 5px 24px;
-    margin: 20px 0;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background-color: var(--secondary);
-      content: "";
-      border-radius: 2px;
-    }
+    margin: 10px 0;
+    background-image: url("/source/img/blockquote_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    padding: clamp(10px, 2.4vw, 20px);
+    border-left: 4px solid var(--accent);
   }
 
   .bg-rounded {

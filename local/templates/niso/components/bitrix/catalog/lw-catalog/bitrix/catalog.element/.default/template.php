@@ -200,6 +200,55 @@ $itemIds = array(
 						<?= $arResult["PROPERTIES"]["DETAIL_TEXT_TOP"]["~VALUE"]["TEXT"] ?>
 					<? endif; ?>
 
+					<!-- Изображения -->
+
+					<?
+					$mainImg = $arResult['PROPERTIES']['MAIN_IMG']['VALUE'] ?? [];
+					$mainImgId = $mainImg['SUB_VALUES']['MAIN_IMG_FILE']['VALUE'] ?? null;
+					$mainImgAlt = $mainImg['SUB_VALUES']['MAIN_IMG_TITLE']['VALUE'] ?? '';
+
+					$sideImages = [];
+					foreach ($arResult['PROPERTIES']['SIDE_IMG']['VALUE'] ?? [] as $arsideImg) {
+						$id = $arsideImg['SUB_VALUES']['SIDE_IMG_FILE']['VALUE'] ?? null;
+						$alt = $arsideImg['SUB_VALUES']['SIDE_IMG_TITLE']['VALUE'] ?? '';
+
+						if ($id) {
+							$sideImages[] = [
+								'ID' => $id,
+								'ALT' => $alt
+							];
+						}
+					}
+					?>
+					<? if ($mainImgId && count($sideImages) === 2): ?>
+						<div class="service-detail__gallery">
+							<?
+							$desktop = CFile::ResizeImageGet($mainImgId, ['width' => 800, 'height' => 400], BX_RESIZE_IMAGE_EXACT, true);
+							$tablet = CFile::ResizeImageGet($mainImgId, ['width' => 700, 'height' => 350], BX_RESIZE_IMAGE_EXACT, true);
+							$mobile = CFile::ResizeImageGet($mainImgId, ['width' => 480, 'height' => 240], BX_RESIZE_IMAGE_EXACT, true);
+							?>
+							<picture>
+								<source media="(min-width: 960px)" srcset="<?= $desktop['src'] ?>" width="<?= $desktop['width'] ?>" height="<?= $desktop['height'] ?>">
+								<source media="(min-width: 650px)" srcset="<?= $tablet['src'] ?>" width="<?= $tablet['width'] ?>" height="<?= $tablet['height'] ?>">
+								<img src="<?= $mobile['src'] ?>" alt="<?= $mainImgAlt ?>" loading="lazy" width="<?= $mobile['width'] ?>" height="<?= $mobile['height'] ?>">
+							</picture>
+
+							<? foreach ($sideImages as $sideImage) : ?>
+								<?
+								$desktop = CFile::ResizeImageGet($sideImage['ID'], ['width' => 300, 'height' => 200], BX_RESIZE_IMAGE_EXACT, true);
+								$tablet = CFile::ResizeImageGet($sideImage['ID'], ['width' => 270, 'height' => 180], BX_RESIZE_IMAGE_EXACT, true);
+								$mobile = CFile::ResizeImageGet($sideImage['ID'], ['width' => 240, 'height' => 160], BX_RESIZE_IMAGE_EXACT, true); ?>
+								<picture>
+									<source media="(min-width: 960px)" srcset="<?= $desktop['src'] ?>" width="<?= $desktop['width'] ?>" height="<?= $desktop['height'] ?>">
+									<source media="(min-width: 650px)" srcset="<?= $tablet['src'] ?>" width="<?= $tablet['width'] ?>" height="<?= $tablet['height'] ?>">
+									<img src="<?= $mobile['src'] ?>" alt="<?= $sideImage['ALT'] ?>" loading="lazy" width="<?= $mobile['width'] ?>" height="<?= $mobile['height'] ?>">
+								</picture>
+							<? endforeach; ?>
+						</div>
+					<? endif; ?>
+
+					<!-- Изображения -->
+
 					<!-- Цены старые -->
 
 					<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST"]["VALUE"]) && empty($arResult['PROPERTIES']['LINKED_PRICES']['VALUE'])): ?>
@@ -321,17 +370,33 @@ $itemIds = array(
 
 					<!-- Цены новые -->
 
-					<? if ($USER->isAdmin()): ?>
-						<? if ($arResult["PROPERTIES"]["ACCORDEON"]["VALUE"]): ?>
+					<!-- Аккордеон -->
+
+					<? if ($arResult["PROPERTIES"]["ACCORDEON"]["VALUE"]): ?>
+						<div class="accordeon">
 							<? foreach ($arResult["PROPERTIES"]["ACCORDEON"]["VALUE"] as $arValue): ?>
 								<? if ($arValue["SUB_VALUES"]["TITLE"]["VALUE"] && $arValue["SUB_VALUES"]["CONTENT"]["~VALUE"]["TEXT"]): ?>
-									<? debug($arValue["SUB_VALUES"]["TITLE"]["VALUE"]) ?>
-									<? debug($arValue["SUB_VALUES"]["CONTENT"]["~VALUE"]["TEXT"]) ?>
+									<div class="accordeon-item">
+										<div class="accordeon-header">
+											<h2><strong><?= $arValue["SUB_VALUES"]["TITLE"]["VALUE"] ?></strong></h2>
+											<div class="accordeon-opener">
+												<svg width="26" height="26" role="img" aria-hidden="true" focusable="false">
+													<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-cross"></use>
+												</svg>
+											</div>
+										</div>
+										<div class="accordeon-body">
+											<div class="content-block">
+												<?= $arValue["SUB_VALUES"]["CONTENT"]["~VALUE"]["TEXT"] ?>
+											</div>
+										</div>
+									</div>
 								<? endif; ?>
 							<? endforeach; ?>
-						<? endif; ?>
+						</div>
 					<? endif; ?>
 
+					<!-- Аккордеон -->
 
 					<?/* $APPLICATION->IncludeComponent(
 						"bitrix:form.result.new",
@@ -364,7 +429,6 @@ $itemIds = array(
 					); */ ?>
 
 					<? if (!empty($arResult["PROPERTIES"]["DETAIL_TEXT_BOTTOM"]["~VALUE"]["TEXT"])): ?>
-						<br>
 						<?= $arResult["PROPERTIES"]["DETAIL_TEXT_BOTTOM"]["~VALUE"]["TEXT"] ?>
 					<? endif; ?>
 				</div>
