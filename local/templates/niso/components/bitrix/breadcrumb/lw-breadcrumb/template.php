@@ -30,12 +30,13 @@ for ($index = 0; $index < $itemSize; $index++) {
 				<a href="' . $arResult[$index]["LINK"] . '" title="' . $title . '" itemprop="item">
 					<span itemprop="name">' . $title . '&nbsp;&mdash;&nbsp;</span>
 				</a>
-				<meta itemprop="position" content="' . ($index + 2) . '" />
+				<meta itemprop="position" content="' . ($index + 1) . '" />
 			</li>';
 	} else {
 		$strReturn .= '
-			<li class="breadcrumbs__list-item">
-				<span>' . $title . '</span>
+			<li class="breadcrumbs__list-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+				<span itemprop="item" itemprop="name">' . $title . '</span>
+				<meta itemprop="position" content="' . $itemSize . '" />
 			</li>';
 	}
 }
