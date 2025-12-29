@@ -16,6 +16,8 @@ const componentConfigs = {
   callbackForm: `${COMPONENTS_PATH}/form.result.new/callback-form`,
   quizForm: `${COMPONENTS_PATH}/form.result.new/quiz-form`,
   catalogDetailPage: `${COMPONENTS_PATH}/catalog/lw-catalog/bitrix/catalog.element/.default`,
+  reviewsProDoctorov: `${COMPONENTS_PATH}/news.list/staff-reviews/`,
+  staffDetailPage: `${COMPONENTS_PATH}/news/staff/bitrix/news.detail/.default`,
 };
 
 // Создаем пути компонентов

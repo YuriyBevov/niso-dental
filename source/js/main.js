@@ -18,3 +18,5 @@ import "./modules/modal";
 import "./modules/fancy";
 import "./modules/menu-scroll";
 import "./modules/custom-select";
+import "./modules/staff-reviews-slider";
+import "./modules/staff-docs-slider";
