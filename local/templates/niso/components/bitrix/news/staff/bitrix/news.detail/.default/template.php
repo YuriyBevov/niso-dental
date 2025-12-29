@@ -51,6 +51,7 @@ $this->setFrameMode(true); ?>
 						"bitrix:news.list",
 						"staff-reviews",
 						array(
+							"CUSTOM_LINK" => $arResult['PROPERTIES']['PROFILE_LINK_PRODOCTOROV']['VALUE'],
 							"ACTIVE_DATE_FORMAT" => "j F Y",
 							"ADD_SECTIONS_CHAIN" => "N",
 							"AJAX_MODE" => "N",
@@ -103,7 +104,8 @@ $this->setFrameMode(true); ?>
 							"SORT_ORDER1" => "DESC",
 							"SORT_ORDER2" => "ASC",
 							"STRICT_SECTION_CHECK" => "N"
-						)
+						),
+						$component
 					);
 					unset($GLOBALS['arLinkedServicesFilter']);
 					?>
