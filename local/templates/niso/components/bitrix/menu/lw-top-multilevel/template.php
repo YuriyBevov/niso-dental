@@ -55,7 +55,7 @@
                             </li>
                           <? else: ?>
                             <li>
-                              <a test4 href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
+                              <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
                             </li>
                           <? endif ?>
 
