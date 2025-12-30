@@ -126,7 +126,7 @@ $this->setFrameMode(true); ?>
 									?>
 									<div class="swiper-slide">
 										<? $fileId = (int)$arItem['SUB_VALUES']['DOC_FILE']['VALUE']; ?>
-										<img src="<?= CFile::GetPath($fileId); ?>" alt="<?= $arItem['SUB_VALUES']['DOC_TITLE']['VALUE'] ?>" width="200" height="300" loading="lazy" data-fancybox="certificates">
+										<img src="<?= CFile::GetPath($fileId); ?>" alt="<?= $arItem['SUB_VALUES']['DOC_TITLE']['VALUE'] ?>" width="400" height="300" loading="lazy" data-fancybox="certificates">
 									</div>
 								<? endforeach; ?>
 							</div>

@@ -52,7 +52,7 @@ $this->setFrameMode(true);
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
-	<a class="main-btn" href="<?= $arParams['CUSTOM_LINK'] ?>">Отзывы на ПроДокторов</a>
+	<a class="main-btn" href="<?= $arParams['CUSTOM_LINK'] ?>" rel="nofollow noreferrer noopener" target="_blank">Отзывы на ПроДокторов</a>
 </section>
 <div class="modal-overlay">
 	<div class="modal main-modal review-modal" id="review-modal">

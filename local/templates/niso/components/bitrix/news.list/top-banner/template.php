@@ -21,45 +21,46 @@ $this->setFrameMode(true);
 
         <div class="swiper-slide" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
           <div class="top-banner-wrapper">
-            <div class="top-banner <?=$arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"]?> <?= $arItem["PROPERTIES"]["TEXT_OUTLINE"]["VALUE_XML_ID"] ?>"
-            <?php if (!empty($arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"])): ?>
-                style="background-color: <?= $arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"] ?>;"
-            <?php endif; ?>>
+            <div class="top-banner
+            <?= ($arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"]) ? $arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"] : '--overlay-dark' ?> <?= $arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"] ?> <?= $arItem["PROPERTIES"]["TEXT_OUTLINE"]["VALUE_XML_ID"] ?>"
+              <?php if (!empty($arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"])): ?>
+              style="background-color: <?= $arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"] ?>;"
+              <?php endif; ?>>
 
               <div class="top-banner__content">
 
-                <?if ($arItem["PREVIEW_TEXT"]):?>
+                <? if ($arItem["PREVIEW_TEXT"]): ?>
                   <span class="base-text top-banner__headline">
                     <?= $arItem["PREVIEW_TEXT"] ?>
                   </span>
-                <?endif;?>
+                <? endif; ?>
 
                 <? if ($arItem["PROPERTIES"]["H1_TITLE"]["VALUE"] == "Y" && $arParams["LW_IS_INNER"] !== "Y"): ?>
                   <h1 class="main-title top-banner__title"><?= $arItem["~NAME"] ?>
-                    <? if ($arItem["PROPERTIES"]["PRICE"]["VALUE"]) :?>
-                      <span class="top-banner__price"><?=$arItem["PROPERTIES"]["PRICE"]["VALUE"]?></span>
+                    <? if ($arItem["PROPERTIES"]["PRICE"]["VALUE"]) : ?>
+                      <span class="top-banner__price"><?= $arItem["PROPERTIES"]["PRICE"]["VALUE"] ?></span>
                     <? endif; ?>
-                </h1>
+                  </h1>
                 <? else: ?>
                   <span class="main-title top-banner__title"><?= $arItem["~NAME"] ?>
-                    <? if ($arItem["PROPERTIES"]["PRICE"]["VALUE"]) :?>
-                      <span class="top-banner__price"><?=$arItem["PROPERTIES"]["PRICE"]["VALUE"]?></span>
-                    <? endif; ?>  </span>
+                    <? if ($arItem["PROPERTIES"]["PRICE"]["VALUE"]) : ?>
+                      <span class="top-banner__price"><?= $arItem["PROPERTIES"]["PRICE"]["VALUE"] ?></span>
+                    <? endif; ?> </span>
                 <? endif; ?>
 
 
-                <?if ($arItem["DETAIL_TEXT"]):?>
+                <? if ($arItem["DETAIL_TEXT"]): ?>
                   <div class="top-banner__content-block">
                     <?= $arItem["DETAIL_TEXT"] ?>
                   </div>
-                <?endif;?>
+                <? endif; ?>
 
                 <div class="top-banner__buttons">
                   <? if (!empty($arItem["PROPERTIES"]["FORM_BUTTON"]["VALUE"]["SUB_VALUES"]["BUTTON_TITLE"]["VALUE"])): ?>
                     <button class="main-btn" type="button" data-modal-opener="<?= $formID ?>"
                       <? if (!empty($arItem["PROPERTIES"]["BUTTON_COLOR"]["VALUE_XML_ID"])): ?>
-                        style= "background-color: <?=$arItem["PROPERTIES"]["BUTTON_COLOR"]["VALUE_XML_ID"] ?>;"
-                        <?endif; ?>>
+                      style="background-color: <?= $arItem["PROPERTIES"]["BUTTON_COLOR"]["VALUE_XML_ID"] ?>;"
+                      <? endif; ?>>
                       <span>
                         <?= $arItem["PROPERTIES"]["FORM_BUTTON"]["VALUE"]["SUB_VALUES"]["BUTTON_TITLE"]["VALUE"] ?>
                       </span>
@@ -77,8 +78,8 @@ $this->setFrameMode(true);
               </div>
 
               <img class="top-banner__img"
-                src="<?=($arItem["PREVIEW_PICTURE"]["SRC"] ? $arItem["PREVIEW_PICTURE"]["SRC"] : '/img/tooth-banner-bg-paddings.png' )?>"
-                alt="<?$arItem["NAME"]?>" width="602" height="550">
+                src="<?= ($arItem["PREVIEW_PICTURE"]["SRC"] ? $arItem["PREVIEW_PICTURE"]["SRC"] : '/img/tooth-banner-bg-paddings.png') ?>"
+                alt="<? $arItem["NAME"] ?>" width="602" height="550">
             </div>
           </div>
         </div>
