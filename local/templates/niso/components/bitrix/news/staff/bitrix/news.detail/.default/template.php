@@ -87,7 +87,7 @@ $this->setFrameMode(true); ?>
 							"PAGER_SHOW_ALL" => "N",
 							"PAGER_SHOW_ALWAYS" => "N",
 							"PAGER_TEMPLATE" => ".default",
-							"PAGER_TITLE" => "Новости",
+							"PAGER_TITLE" => "",
 							"PARENT_SECTION" => "",
 							"PARENT_SECTION_CODE" => "",
 							"PREVIEW_TRUNCATE_LEN" => "",

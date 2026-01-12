@@ -25,7 +25,7 @@ $this->setFrameMode(true);
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 				?>
 				<div class="swiper-slide">
-					<div class="review-card">
+					<div class="review-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 						<div class="review-card-header">
 							<img src="<?= $templateFolder ?>/img/logo_prodoctorov.svg" alt="Логотип ПроДокторов." width="132" height="27">
 							<div class="review-card__rate">
@@ -52,7 +52,9 @@ $this->setFrameMode(true);
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
-	<a class="main-btn" href="<?= $arParams['CUSTOM_LINK'] ?>" rel="nofollow noreferrer noopener" target="_blank">Отзывы на ПроДокторов</a>
+	<? if ($arParams['CUSTOM_LINK']) : ?>
+		<a class="main-btn" href="<?= $arParams['CUSTOM_LINK'] ?>" rel="nofollow noreferrer noopener" target="_blank">Отзывы на ПроДокторов</a>
+	<? endif; ?>
 </section>
 <div class="modal-overlay">
 	<div class="modal main-modal review-modal" id="review-modal">
