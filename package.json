@@ -1,5 +1,5 @@
 {
-	"name": "niso-dental-dev.ru",
+	"name": "niso",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
@@ -21,8 +21,8 @@
 	"dependencies": {
 		"@fancyapps/ui": "^5.0.36",
 		"custom-select": "^1.1.15",
-		"gsap": "^3.13.0",
+		"gsap": "^3.14.2",
 		"imask": "^7.6.1",
-		"swiper": "^11.1.14"
+		"swiper": "^11.2.10"
 	}
 }

@@ -139,3 +139,7 @@
   width: 20px;
   height: 20px;
 }
+
+.news-detail__grid .faq-preview .container {
+  padding: 0;
+}

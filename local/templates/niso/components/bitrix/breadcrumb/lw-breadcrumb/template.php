@@ -26,16 +26,16 @@ for ($index = 0; $index < $itemSize; $index++) {
 
 	if ($arResult[$index]["LINK"] <> "" && $index != $itemSize - 1) {
 		$strReturn .= '
-			<li class="breadcrumbs__list-item" id="bx_breadcrumb_' . ($index + 1) . '" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			<li class="breadcrumbs__list-item" id="bx_breadcrumb_' . ($index + 1) . '" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 				<a href="' . $arResult[$index]["LINK"] . '" title="' . $title . '" itemprop="item">
-					<span itemprop="name">' . $title . '&nbsp;&mdash;&nbsp;</span>
+					<span itemprop="name">' . $title . '</span>
 				</a>
 				<meta itemprop="position" content="' . ($index + 1) . '" />
 			</li>';
 	} else {
 		$strReturn .= '
-			<li class="breadcrumbs__list-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-				<span itemprop="item" itemprop="name">' . $title . '</span>
+			<li class="breadcrumbs__list-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+				<span itemprop="name">' . $title . '</span>
 				<meta itemprop="position" content="' . $itemSize . '" />
 			</li>';
 	}
