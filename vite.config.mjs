@@ -18,6 +18,8 @@ const componentConfigs = {
   catalogDetailPage: `${COMPONENTS_PATH}/catalog/lw-catalog/bitrix/catalog.element/.default`,
   reviewsProDoctorov: `${COMPONENTS_PATH}/news.list/staff-reviews/`,
   staffDetailPage: `${COMPONENTS_PATH}/news/staff/bitrix/news.detail/.default`,
+  gallery: `${COMPONENTS_PATH}/news.list/gallery/`,
+  licensesSlider: `${COMPONENTS_PATH}/news.list/licenses-slider/`,
 };
 
 // Создаем пути компонентов

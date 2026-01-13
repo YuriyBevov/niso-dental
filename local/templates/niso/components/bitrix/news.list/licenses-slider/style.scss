@@ -1,0 +1,32 @@
+.licenses {
+  .swiper {
+    margin-left: 0;
+    margin-right: 0;
+
+    &-slide {
+      width: fit-content;
+      max-width: 450px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      padding: 20px;
+      border-radius: 20px;
+      background-color: var(--light-grey);
+
+      img {
+        width: 100%;
+        height: auto;
+        max-height: 280px;
+      }
+    }
+
+    .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic {
+      position: static;
+      margin: 0 auto;
+      padding: 20px;
+      transform: none;
+    }
+  }
+}

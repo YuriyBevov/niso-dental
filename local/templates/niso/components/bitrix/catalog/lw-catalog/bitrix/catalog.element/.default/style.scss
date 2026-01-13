@@ -131,6 +131,10 @@
 
     &-body {
       padding: 0;
+
+      .content-block {
+        padding: 0 10px;
+      }
     }
 
     &-opener {
