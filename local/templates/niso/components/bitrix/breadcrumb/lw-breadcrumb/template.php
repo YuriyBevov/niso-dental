@@ -14,7 +14,7 @@ if (empty($arResult))
 $strReturn = '';
 
 $strReturn .= '
-	<div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+	<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
 		<div class="container">
 		<ul class="breadcrumbs__list">
 	';
@@ -35,6 +35,7 @@ for ($index = 0; $index < $itemSize; $index++) {
 	} else {
 		$strReturn .= '
 			<li class="breadcrumbs__list-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+				<link href="' . $APPLICATION->GetCurPage() . '" itemprop="item">
 				<span itemprop="name">' . $title . '</span>
 				<meta itemprop="position" content="' . $itemSize . '" />
 			</li>';

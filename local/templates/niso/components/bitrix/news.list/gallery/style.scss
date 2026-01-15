@@ -1,8 +1,9 @@
 .gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
   &-static {
     display: grid;
@@ -47,7 +48,7 @@
     .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic {
       position: static;
       margin: 0 auto;
-      padding: 25px;
+      padding: 25px 0;
       transform: none;
     }
   }
