@@ -1,11 +1,19 @@
 import IMask from "imask";
 
-const phoneFields = document.querySelectorAll('[data-type="tel"]');
+export function initImask() {
+  const phoneFields = document.querySelectorAll(
+    '[data-type="phone"], [data-type="tel"]',
+  );
 
-const maskOptions = {
-	mask: "+{7}(000) 000-00-00",
-};
+  const maskOptions = {
+    mask: "+{7}(000) 000-00-00",
+  };
 
-phoneFields.forEach((field) => {
-	IMask(field, maskOptions);
-});
+  phoneFields.forEach((field) => {
+    IMask(field, maskOptions);
+  });
+}
+
+initImask();
+
+window.initImask = initImask;

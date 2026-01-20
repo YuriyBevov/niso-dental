@@ -1,0 +1,131 @@
+.popup-review-form {
+  form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .rate {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--site-base-font-family);
+    width: 100%;
+
+    label {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      cursor: pointer;
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      svg {
+        fill: var(--light);
+        -webkit-transition: fill var(--main-transition);
+        transition: fill var(--main-transition);
+      }
+
+      &:has(input:checked) svg,
+      &.filled svg {
+        fill: var(--secondary);
+      }
+    }
+
+    .base-text {
+      font-size: 16px;
+      font-weight: 400;
+      text-align: left;
+      color: var(--dark);
+    }
+
+    &__wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      gap: 2px;
+    }
+  }
+
+  .main-checkbox-wrapper {
+    margin: 8px 0;
+  }
+
+  .captcha-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .captcha-block .base-text {
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    color: var(--dark);
+  }
+
+  .captcha-block__img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 58px;
+    width: 40%;
+    border-radius: 15px;
+    box-shadow: var(--base-box-shadow);
+    border: 2px solid var(--light);
+    background-color: var(--lighter);
+    overflow: hidden;
+  }
+
+  .captcha-block__img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

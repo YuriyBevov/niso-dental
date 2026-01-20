@@ -18,6 +18,7 @@ $curPage = $APPLICATION->GetCurPage();
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
+
   <?
   // Подключение мета тегов или сторонних файлов
   //$APPLICATION->AddHeadString("name='<meta name='yandex-verification' content='62be9ea1' />'");
@@ -33,22 +34,42 @@ $curPage = $APPLICATION->GetCurPage();
   // Для подключения скриптов
   $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/script.js");
   $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/assets/custom.js");
+
+  // подключаю для работы попапов на сайте
+  \CJSCore::Init(['popup']);
   ?>
 
   <!-- Top.Mail.Ru counter -->
   <script type="text/javascript">
     var _tmr = window._tmr || (window._tmr = []);
-    _tmr.push({id: "3725296", type: "pageView", start: (new Date()).getTime()});
-    (function (d, w, id) {
+    _tmr.push({
+      id: "3725296",
+      type: "pageView",
+      start: (new Date()).getTime()
+    });
+    (function(d, w, id) {
       if (d.getElementById(id)) return;
-      var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+      var ts = d.createElement("script");
+      ts.type = "text/javascript";
+      ts.async = true;
+      ts.id = id;
       ts.src = "https://top-fwz1.mail.ru/js/code.js";
-      var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-      if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+      var f = function() {
+        var s = d.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ts, s);
+      };
+      if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+      } else {
+        f();
+      }
     })(document, window, "tmr-code");
   </script>
-  <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3725296;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
+  <noscript>
+    <div><img src="https://top-fwz1.mail.ru/counter?id=3725296;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div>
+  </noscript>
   <!-- /Top.Mail.Ru counter -->
+  <meta name="yandex-verification" content="de1ec18da1a2ca85" />
 
 </head>
 
@@ -271,7 +292,11 @@ $curPage = $APPLICATION->GetCurPage();
       <div class="header__section header__section--bottom mobile-menu">
         <div class="mobile-menu__wrapper">
           <div class="mobile-menu__header"><a class="main-logo" href="/" aria-label="Название сайта для скринридера"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/logo.svg" alt="Название сайта" width="180" height="40"></a>
-            <div class="burger-btn mobile-menu-closer active" aria-label="Кнопка открытия меню"><span class="burger-btn-line burger-btn-line--top" aria-hidden="true"></span><span class="burger-btn-line burger-btn-line--middle" aria-hidden="true"></span><span class="burger-btn-line burger-btn-line--bottom" aria-hidden="true"></span></div>
+            <div class="burger-btn mobile-menu-closer active" aria-label="Кнопка открытия меню">
+              <svg width="20" height="20" viewBox="0 0 20 20" role="img" aria-hidden="true" focusable="false">
+                <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-cross"></use>
+              </svg>
+            </div>
           </div>
           <?
           $APPLICATION->IncludeComponent(
