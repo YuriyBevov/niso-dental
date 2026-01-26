@@ -2,16 +2,19 @@
 
 <div class="popup-review-form">
 	<?= $arResult["FORM_HEADER"] ?>
-	<div class="popup-review-form__header">
-		<span class="base-title"><?= $arResult["FORM_TITLE"] ?></span>
-		<? if ($arResult["FORM_DESCRIPTION"]): ?>
-			<p class="base-text"><?= $arResult["FORM_DESCRIPTION"] ?></p>
-		<? endif; ?>
-	</div>
 
 	<? if ($arResult["FORM_NOTE"]): ?>
-		<p>Спасибо! Мы скоро свяжемся с Вами!</p>
+		<div class="callback-form__header">
+			<span class="popup-review-form__title">Спасибо!</span>
+			<span>Ваше сообщение важно для нас!</span>
+		</div>
 	<? else: ?>
+		<div class="popup-review-form__header">
+			<span class="base-title"><?= $arResult["FORM_TITLE"] ?></span>
+			<? if ($arResult["FORM_DESCRIPTION"]): ?>
+				<p class="base-text"><?= $arResult["FORM_DESCRIPTION"] ?></p>
+			<? endif; ?>
+		</div>
 		<? foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
 			<? if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden'): ?>
 				<?= $arQuestion["HTML_CODE"] ?>

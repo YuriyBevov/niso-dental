@@ -5,15 +5,25 @@
 		<div class="container">
 		<? endif; ?>
 
-		<div class="callback-form">
+		<div class="callback-form ">
 			<?= $arResult["FORM_HEADER"] ?>
-
 
 			<? if ($arResult["FORM_NOTE"]): ?>
 				<div class="callback-form__header">
 					<span class="callback-form__title">Заявка отправлена успешно!</span>
 					<p>Спасибо, мы скоро свяжемся с Вами!</p>
 				</div>
+
+				<? if ($arParams["IS_MODAL"] == "Y"): ?>
+					<script>
+						yaCounter102970436.reachGoal('form_popup');
+					</script>
+				<? else: ?>
+					<script>
+						yaCounter102970436.reachGoal('form_bottom');
+					</script>
+				<? endif; ?>
+
 			<? else: ?>
 				<div class="callback-form__header">
 					<span class="callback-form__headline"><?= $arResult["FORM_TITLE"] ?></span>
@@ -65,7 +75,7 @@
 						"COMPONENT_TEMPLATE" => "user-consent"
 					),
 					$component
-				); */?>
+				); */ ?>
 
 				<div class="main-input-wrapper">
 					<input

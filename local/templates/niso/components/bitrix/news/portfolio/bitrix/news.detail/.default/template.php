@@ -16,7 +16,7 @@ $pathAfter = CFile::GetPath($arResult["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
 				);
 				?>
 			</span>
-			<h2 class="base-title"><?= $arResult["NAME"] ?></h2>
+			<h1 class="base-title"><?= $arResult["NAME"] ?></h1>
 		</div>
 		<div class="portfolio-detail__grid">
 			<div class="portfolio-detail__grid-item">

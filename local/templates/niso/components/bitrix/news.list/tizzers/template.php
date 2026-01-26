@@ -11,7 +11,11 @@ $this->setFrameMode(true);
 			?>
 				<div class="tizzers__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 					<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="60" height="60">
-					<span class="base-subtitle"><?= $arItem["NAME"] ?></span>
+					<? if ($arItem["CODE"]): ?>
+						<a href="<?= $arItem["CODE"] ?>" class="base-subtitle"><?= $arItem["NAME"] ?></a>
+					<? else: ?>
+						<span class="base-subtitle"><?= $arItem["NAME"] ?></span>
+					<? endif; ?>
 				</div>
 			<? endforeach; ?>
 		</div>

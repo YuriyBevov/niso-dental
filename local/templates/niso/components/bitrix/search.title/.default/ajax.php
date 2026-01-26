@@ -16,8 +16,8 @@ if (!empty($arResult['CATEGORIES']) && $arResult['CATEGORIES_ITEMS_EXISTS']):?>
         </ul>
     <?php endif; ?>
 
-    <? if (!empty($arResult['CATEGORIES']['all']['ITEMS'][0])): ?>
+    <?php if (!empty($arResult['CATEGORIES']['all']['ITEMS'][0])): ?>
        <a class="search-result__all main-btn main-btn--outlined" href="<?= $arResult['CATEGORIES']['all']['ITEMS'][0]['URL'] ?>"><?= $arResult['CATEGORIES']['all']['ITEMS'][0]['NAME'] ?></a>
-    <? endif; ?>
+    <?php endif; ?>
 </div>
 <? endif; ?>

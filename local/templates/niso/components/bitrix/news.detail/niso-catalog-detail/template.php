@@ -26,6 +26,7 @@ if ($arElement = $rsElement->GetNext()) {
 
 <section class="base-section service-detail">
 	<div class="container">
+
 		<?
 		if ($arResult["PROPERTIES"]["BANNERS"]["VALUE"]):
 			$GLOBALS["arBannersFilter"] = array("ID" => $arResult["PROPERTIES"]["BANNERS"]["VALUE"]);
@@ -190,6 +191,8 @@ if ($arElement = $rsElement->GetNext()) {
 							</tbody>
 						</table>
 					<? endif; ?>
+
+test
 
 					<? if (!empty($arResult["PROPERTIES"]["DETAIL_TEXT_BOTTOM"]["~VALUE"]["TEXT"])): ?>
 						<?= $arResult["PROPERTIES"]["DETAIL_TEXT_BOTTOM"]["~VALUE"]["TEXT"] ?>

@@ -5,7 +5,7 @@ $this->setFrameMode(true);
 <section class="base-section news">
 	<div class="container">
 		<div class="base-section__header">
-			<h2 class="base-title"><?= $arResult["NAME"] ?></h2>
+			<h1 class="base-title"><?= $arResult["NAME"] ?></h1>
 			<? if ($arResult["DESCRIPTION"]): ?>
 				<span class="base-text"><?= $arResult["DESCRIPTION"] ?></span>
 			<? endif; ?>

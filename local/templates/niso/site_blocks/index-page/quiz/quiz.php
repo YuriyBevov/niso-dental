@@ -16,7 +16,7 @@
 		"SEF_MODE" => "N",
 		"SUCCESS_URL" => "",
 		"USE_EXTENDED_ERRORS" => "N",
-		"WEB_FORM_ID" => "5",
+		"WEB_FORM_ID" => "12",
 		"COMPONENT_TEMPLATE" => "quiz-form",
 		"VARIABLE_ALIASES" => [
 			"WEB_FORM_ID" => "WEB_FORM_ID",

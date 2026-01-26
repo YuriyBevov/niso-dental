@@ -26,12 +26,20 @@
     border-color: var(--secondary);
     color: var(--secondary);
     background-color: transparent;
+
+    svg {
+      fill: var(--secondary);
+    }
   }
 
   @media (hover: hover) {
     &.main-btn--outlined:hover {
       color: var(--white);
       background-color: var(--secondary);
+
+      svg {
+        fill: var(--white);
+      }
     }
 
     &:hover {
@@ -42,6 +50,10 @@
   &.main-btn--outlined:focus {
     color: var(--white);
     background-color: var(--secondary);
+
+    svg {
+      fill: var(--white);
+    }
   }
 
   &:focus {

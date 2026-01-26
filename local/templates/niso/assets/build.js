@@ -5833,7 +5833,7 @@ function Autoplay(_ref) {
     }
     const delay = autoplayTimeLeft || swiper.params.autoplay.delay;
     autoplayTimeLeft =
-      delay - (/* @__PURE__ */ new Date().getTime() - autoplayStartTime);
+      delay - /* @__PURE__ */ (new Date().getTime() - autoplayStartTime);
     if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop) return;
     if (autoplayTimeLeft < 0) autoplayTimeLeft = 0;
     proceed();
@@ -6367,7 +6367,6 @@ if (slider$1) {
       delay: 4e3,
       disableOnInteraction: false,
     },
-    loop: true,
     navigation: {
       nextEl: btnNext ? btnNext : null,
       prevEl: btnPrev ? btnPrev : null,

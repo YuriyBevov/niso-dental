@@ -20,6 +20,8 @@ const componentConfigs = {
   staffDetailPage: `${COMPONENTS_PATH}/news/staff/bitrix/news.detail/.default`,
   gallery: `${COMPONENTS_PATH}/news.list/gallery/`,
   licensesSlider: `${COMPONENTS_PATH}/news.list/licenses-slider/`,
+  videoReviews: `${COMPONENTS_PATH}/news.list/video-reviews-new/`,
+  reviewsPreview: `${COMPONENTS_PATH}/news.list/reviews-preview/`,
 };
 
 // Создаем пути компонентов
@@ -32,7 +34,7 @@ const componentPaths = {
         input: `${componentPath}/style.scss`,
         output: `${componentPath}/style.css`,
       },
-    ])
+    ]),
   ),
 };
 
@@ -43,7 +45,7 @@ const rollupInput = {
   ...Object.fromEntries(
     Object.entries(componentPaths)
       .filter(([key]) => key !== "template")
-      .map(([key, { input }]) => [key, input])
+      .map(([key, { input }]) => [key, input]),
   ),
 };
 

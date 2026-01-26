@@ -150,6 +150,14 @@
         }
       }
     }
+
+    &-closer {
+      svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--secondary);
+      }
+    }
   }
 
   @include container-up("header", $tablet-lg-width) {

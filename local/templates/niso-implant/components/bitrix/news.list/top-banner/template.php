@@ -13,7 +13,7 @@ $this->setFrameMode(true);
         <h2 class="title"><?= $arItem["NAME"] ?></h2>
         <p class="base-text"><?= $arItem["PREVIEW_TEXT"] ?></p>
 
-        <button class="btn" data-form-id="10">Узнать стоимость</button>
+        <button class="btn" data-form-id="6">Узнать стоимость</button>
       </div>
 
       <div class="top-banner__side">

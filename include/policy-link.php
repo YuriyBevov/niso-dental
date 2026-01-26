@@ -1,0 +1,1 @@
+<a class="base-text" href="/policy/">Политика&nbsp;конфиденциальности</a>

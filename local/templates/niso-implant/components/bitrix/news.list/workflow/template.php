@@ -3,7 +3,7 @@ $this->setFrameMode(true);
 ?>
 
 <? if ($arResult["ITEMS"]): ?>
-  <div class="section workflow">
+  <section id="workflow" class="section workflow">
     <div class="container">
       <div class="section__header">
         <h2 class="title"><?= $arResult["NAME"] ?></h2>
@@ -26,10 +26,10 @@ $this->setFrameMode(true);
         array(
           'TITLE' => 'Запишитесь на консультацию — бесплатно&nbsp;сегодня',
           'BUTTON_TEXT' => '',
-          'FORM_ID' => '11',
+          'FORM_ID' => '6',
         ),
         array('MODE' => 'html', 'SHOW_BORDER' => false)
       ); ?>
     </div>
-  </div>
+  </section>
 <? endif; ?>

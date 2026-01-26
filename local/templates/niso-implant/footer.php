@@ -2,12 +2,14 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 ?>
 
+
 <? $APPLICATION->IncludeComponent(
 	"bitrix:form.result.new",
 	"inline",
-	array(
+	[
+		"CUSTOM_TITLE" => "Получите консультацию с КТ-снимком за 0 ₽",
 		"FORM_COLOR_TYPE" => "dark",
-		"AJAX_MODE" => "Y", // включаем AJAX-режим
+		"AJAX_MODE" => "Y",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
 		"AJAX_OPTION_HISTORY" => "N",
@@ -21,13 +23,19 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 		"SEF_MODE" => "N",
 		"SUCCESS_URL" => "",
 		"USE_EXTENDED_ERRORS" => "Y",
-		"VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
-		"WEB_FORM_ID" => 8
-	)
+		"WEB_FORM_ID" => "6",
+		"COMPONENT_TEMPLATE" => "inline",
+		"CACHE_TIME" => "3600",
+		"VARIABLE_ALIASES" => [
+			"WEB_FORM_ID" => "WEB_FORM_ID",
+			"RESULT_ID" => "RESULT_ID",
+		]
+	],
+	false
 );
 ?>
 
-<section class="section contacts">
+<section id="contacts" class="section contacts">
 	<div class="container">
 		<div class="section__header">
 			<h2 class="title">Контакты</h2>
@@ -97,7 +105,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 		"SUCCESS_URL" => "",
 		"USE_EXTENDED_ERRORS" => "Y",
 		"VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
-		"WEB_FORM_ID" => 7
+		"WEB_FORM_ID" => 6
 	)
 );
 ?>
@@ -167,21 +175,21 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 			<div class="footer__top-section footer__top-section--nav">
 				<ul class="bottom-menu">
-					<li><a href="#">Преимущества</a></li>
-					<li><a href="#">Этапы</a></li>
-					<li><a href="#">Цены</a></li>
-					<li><a href="#">Врачи</a></li>
-					<li><a href="#">Работы</a></li>
-					<li><a href="#">Отзывы</a></li>
-					<li><a href="#">Контакты</a></li>
+					<li><a href="#advantages">Преимущества</a></li>
+					<li><a href="#workflow">Этапы</a></li>
+					<li><a href="#services">Цены</a></li>
+					<li><a href="#staff">Врачи</a></li>
+					<li><a href="#cases">Работы</a></li>
+					<li><a href="#reviews">Отзывы</a></li>
+					<li><a href="#contacts">Контакты</a></li>
 				</ul>
 			</div>
 
 		</div>
 
 		<div class="footer__bottom">
-			<a href="#" class="base-text">Лицензия на осуществление медицинской деятельности.</a>
-			<a href="#" class="base-text">Политика конфиденциальности.</a>
+			<a href="https://niso-dental.ru/policy/" target="_blank" class="base-text">Лицензия на осуществление медицинской деятельности.</a>
+			<a href="https://niso-dental.ru/license/" class="base-text" target="_blank">Политика конфиденциальности.</a>
 		</div>
 		<div class="footer__dev">
 			<a class="developer" href="https://t.me/+79062723744" aria-label="LittleWeb.ru - Разработка и продвижение сайтов под ключ" rel="nopener nofollow norefferer" target="_blank">

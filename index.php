@@ -18,7 +18,7 @@ $APPLICATION->SetTitle("Стоматологическая клиника “Н�
 <!-- catalog-preview -->
 
 <!-- quiz -->
-<? /*include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/quiz/quiz.php");  */?>
+<? /*include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/quiz/quiz.php");  */ ?>
 <!-- quiz -->
 
 <!-- sales-preview -->
@@ -38,9 +38,7 @@ $APPLICATION->SetTitle("Стоматологическая клиника “Н�
 <!-- faq-preview -->
 
 <!-- map -->
- <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/sections/map/map.php");  ?>
+<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/sections/map/map.php");  ?>
 <!-- map -->
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
-
-

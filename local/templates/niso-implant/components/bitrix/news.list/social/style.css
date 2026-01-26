@@ -1,11 +1,1 @@
-.social {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-}
-
-.social__item img {
-	width: 24px;
-	height: auto;
-	object-fit: contain;
-}
+.social-list__item a{transition:opacity .3s ease-in-out;opacity:1}@media(hover:hover){.social-list__item a:hover{opacity:.6}}.social-list__item a:focus{opacity:.6}.social-list__item a:active{opacity:.4}.social-list{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:10px}.social-list__item a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;padding:8px;background-color:var(--primary)}.social-list__item a img{display:flex;width:18px;height:18px}

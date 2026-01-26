@@ -1,0 +1,29 @@
+.video-reviews-container {
+	container: video-reviews / inline-size;
+}
+.video-reviews {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 16px;
+}
+
+.video-reviews__item {
+	display: flex;
+}
+
+.reviews-preview__grid-item .video-reviews__item iframe {
+	aspect-ratio: 3/5;
+	min-height: initial;
+}
+
+@container video-reviews (min-width: 320px ) {
+	.video-reviews {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@container video-reviews (min-width: 574px ) {
+	.video-reviews {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

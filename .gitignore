@@ -11,6 +11,10 @@
 /local/php_interface/dbconn.php
 /node_modules/
 
+/local/templates/niso-implant/
+/local/templates/niso/template_styles.css
+/local/templates/niso/script.js
+
 # System files
 .DS_Store
 Thumbs.db

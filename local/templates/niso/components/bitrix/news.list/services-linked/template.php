@@ -20,7 +20,7 @@ $this->setFrameMode(true);
 						?>
 							<div class="swiper-slide">
 								<div class="services-linked__item-container" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-									<a class="services-linked__item" href="/services/<?= $arItem["DETAIL_PAGE_URL"] ?>">
+									<a class="services-linked__item" href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
 										<img src="/img/tooth-img.svg" alt="Иконка" width="40" height="40">
 										<span class="base-subtitle"><?= $arItem["NAME"] ?></span>
 										<small class="base-text">Подробнее о услуге</small>
