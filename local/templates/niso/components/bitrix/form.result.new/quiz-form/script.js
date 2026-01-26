@@ -1,4 +1,4 @@
-const quizInline = document.querySelector(".quiz-new .swiper");
+const quizInline = document.querySelector(".quiz-form .swiper");
 
 if (quizInline) {
   const prevBtn = quizInline.querySelector(".swiper-button-prev");

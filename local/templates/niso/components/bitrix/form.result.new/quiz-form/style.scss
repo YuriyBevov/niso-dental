@@ -1,9 +1,9 @@
 @use "@scss-root/_mixins/container-queries" as *;
 
-.quiz-new {
+.quiz-form {
 
   &__wrapper {
-    container: quiz-new-container / inline-size;
+    container: quiz-form-container / inline-size;
   }
 
   form {
@@ -19,11 +19,11 @@
     border-radius: var(--base-border-radius);
     overflow: hidden;
 
-    @include container-up("quiz-new-container", 1000px) {
+    @include container-up("quiz-form-container", 1000px) {
       min-height: 380px;
     }
 
-    .quiz-new__screen {
+    .quiz-form__screen {
       padding: clamp(20px, 2.5vw, 36px) clamp(20px, 4vw, 60px);
       flex-grow: 1;
     }
@@ -42,7 +42,7 @@
     align-items: center;
     padding: clamp(20px, 2.5vw, 36px) clamp(20px, 4vw, 60px) 0;
 
-    @include container-up("quiz-new-container", 1000px) {
+    @include container-up("quiz-form-container", 1000px) {
       padding-bottom: 110px;
 
       &::after {
@@ -60,7 +60,7 @@
     }
 
     &--question {
-      @include container-up("quiz-new-container", 1000px) {
+      @include container-up("quiz-form-container", 1000px) {
         &::after {
           background-image: url("./img/question-bg.png");
         }
@@ -68,7 +68,7 @@
     }
 
     &--last-step {
-      @include container-up("quiz-new-container", 1000px) {
+      @include container-up("quiz-form-container", 1000px) {
         &::after {
           background-image: url("./img/last-screen-bg.png");
         }
@@ -87,7 +87,7 @@
     gap: clamp(20px, 1.6vw, 24px);
     z-index: 2;
 
-    @include container-up("quiz-new-container", 1000px) {
+    @include container-up("quiz-form-container", 1000px) {
       margin-right: auto;
       align-items: flex-start;
       text-align: left;
@@ -99,7 +99,7 @@
     max-width: 100%;
     margin: 0 auto;
 
-    @include container-up("quiz-new-container", 1000px) {
+    @include container-up("quiz-form-container", 1000px) {
       margin: 0;
     }
 
@@ -155,7 +155,7 @@
     font-weight: 600;
     width: 100%;
 
-    @include container-up("quiz-new-container", 1000px) {
+    @include container-up("quiz-form-container", 1000px) {
       // display: none;
       background-color: var(--white);
       max-width: 280px;
@@ -170,7 +170,7 @@
       background-size: contain;
       background-position: center;
 
-      @include container-up("quiz-new-container", 1000px) {
+      @include container-up("quiz-form-container", 1000px) {
         display: none;
       }
     }
@@ -185,7 +185,7 @@
     padding: clamp(20px, 2.5vw, 36px) clamp(20px, 4vw, 60px);
     padding-top: 0;
 
-    @include container-up("quiz-new-container", 1000px) {
+    @include container-up("quiz-form-container", 1000px) {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -202,7 +202,7 @@
     width: 100%;
     max-width: 700px;
 
-    @include container-up("quiz-new-container", 1000px) {
+    @include container-up("quiz-form-container", 1000px) {
       max-width: 100%;
       flex-direction: row;
       align-items: flex-start;
@@ -217,7 +217,7 @@
     &-wrapper {
       margin-bottom: 20px;
 
-      @include container-up("quiz-new-container", 1000px) {
+      @include container-up("quiz-form-container", 1000px) {
         margin-bottom: 0;
       }
     }
@@ -232,7 +232,7 @@
       width: 100%;
       justify-content: space-between;
 
-      @include container-up("quiz-new-container", 1000px) {
+      @include container-up("quiz-form-container", 1000px) {
         justify-content: flex-start;
       }
 
@@ -248,7 +248,7 @@
         min-height: 44px;
         font-weight: 500;
 
-        @include container-up("quiz-new-container", 360px) {
+        @include container-up("quiz-form-container", 360px) {
           max-width: 200px;
 
           &-next {
@@ -261,7 +261,7 @@
           font-weight: 500;
           display: none;
 
-          @include container-up("quiz-new-container", 360px) {
+          @include container-up("quiz-form-container", 360px) {
             display: block;
           }
         }
@@ -296,7 +296,7 @@
     margin: 0;
     width: 100%;
 
-    @include container-up("quiz-new-container", 600px) {
+    @include container-up("quiz-form-container", 600px) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -312,6 +312,17 @@
     label {
       padding: 14px 18px;
     }
+
+    &:has(input:checked) label span:first-of-type {
+      border-color: var(--secondary);
+    }
+    
+
+    &:has(input:checked) label span:first-of-type::after {
+       background-color: var(--secondary);
+
+    }
+
   }
 
   .main-input-wrapper {

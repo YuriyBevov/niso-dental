@@ -8,23 +8,23 @@ $length = count($arResult["QUIZ_QUESTIONS"]) + 2 ?>
 	<?= $arResult["FORM_ERRORS_TEXT"]; ?>
 <? endif; ?>
 
-<section class="base-section quiz-new">
+<section class="base-section quiz-form">
 	<div class="container">
-		<div class="quiz-new__wrapper">
+		<div class="quiz-form__wrapper">
 			<? if ($arResult["FORM_NOTE"]): ?>
-				<div class="quiz-new__note">
-					<div class="quiz-new__screen quiz-new__screen--last-step">
-						<div class="quiz-new__content">
-							<div class="quiz-new__status-line">
+				<div class="quiz-form__note">
+					<div class="quiz-form__screen quiz-form__screen--last-step">
+						<div class="quiz-form__content">
+							<div class="quiz-form__status-line">
 								<?
 								for ($i = 1; $i <= $length; $i++) : ?>
 									<span class="active"></span>
 								<? endfor; ?>
 							</div>
-							<svg class="quiz-new__success" width="48" height="48" viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
+							<svg class="quiz-form__success" width="48" height="48" viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
 								<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-success-circle"></use>
 							</svg>
-							<span class="quiz-new__success">Готово! Вы прошли опрос.</span>
+							<span class="quiz-form__success">Готово! Вы прошли опрос.</span>
 							<span>Наш менеджер уже получил ваши данные и скоро свяжется с вами.</span>
 						</div>
 					</div>
@@ -42,10 +42,10 @@ $length = count($arResult["QUIZ_QUESTIONS"]) + 2 ?>
 					<div class="swiper-wrapper">
 						<? foreach ($arResult["QUIZ_QUESTIONS"] as $arQuestion): ?>
 							<div class="swiper-slide">
-								<div class="quiz-new__screen quiz-new__screen--question">
-									<div class="quiz-new__content">
+								<div class="quiz-form__screen quiz-form__screen--question">
+									<div class="quiz-form__content">
 
-										<div class="quiz-new__status-line">
+										<div class="quiz-form__status-line">
 											<?
 											for ($i = 1; $i <= $length; $i++) : ?>
 												<span class="<?= ($i <= $step) ? 'active' : ''; ?>"></span>
@@ -62,9 +62,9 @@ $length = count($arResult["QUIZ_QUESTIONS"]) + 2 ?>
 						<? endforeach; ?>
 
 						<div class="swiper-slide">
-							<div class="quiz-new__screen quiz-new__screen--last-step">
-								<div class="quiz-new__content">
-									<div class="quiz-new__status-line">
+							<div class="quiz-form__screen quiz-form__screen--last-step">
+								<div class="quiz-form__content">
+									<div class="quiz-form__status-line">
 										<?
 										for ($i = 1; $i <= $length; $i++) : ?>
 											<span class="<?= ($i <= $length - 1) ? 'active' : ''; ?>"></span>
@@ -105,8 +105,8 @@ $length = count($arResult["QUIZ_QUESTIONS"]) + 2 ?>
 						</div>
 					</div>
 
-					<div class="quiz-new__footer">
-						<div class="quiz-new__footer-content">
+					<div class="quiz-form__footer">
+						<div class="quiz-form__footer-content">
 							<div class="swiper-navigation">
 								<button class="swiper-button swiper-button-prev main-btn main-btn--outlined" type="button" aria-label="Назад">
 									<svg width="20" height="20" viewBox="0 0 20 20" role="img" aria-hidden="true" focusable="false">
@@ -122,7 +122,7 @@ $length = count($arResult["QUIZ_QUESTIONS"]) + 2 ?>
 								</button>
 
 							</div>
-							<div class="quiz-new__gift">
+							<div class="quiz-form__gift">
 								 <?
 									$APPLICATION->IncludeFile(
 										SITE_DIR . 'include/quiz/index.php',
