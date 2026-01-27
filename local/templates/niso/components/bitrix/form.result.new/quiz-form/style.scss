@@ -169,6 +169,7 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
+      animation: bounce 3.8s linear infinite;
 
       @include container-up("quiz-form-container", 1000px) {
         display: none;
@@ -284,6 +285,10 @@
   .base-title {
     font-size: clamp(28px, 3.5vw, 38px);
     letter-spacing: 0.02em;
+  }
+
+  .base-text {
+    font-size: clamp(14px, 2.4vw, 16px);
   }
 
   fieldset {

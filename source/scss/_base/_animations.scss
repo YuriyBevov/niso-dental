@@ -25,3 +25,24 @@
     opacity: 1;
   }
 }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  15% {
+    transform: translateY(-6px) scale(1.04);
+  }
+  30% {
+    transform: translateY(2px) scale(0.96);
+  }
+  45% {
+    transform: translateY(-4px) scale(1.02);
+  }
+  60% {
+    transform: translateY(-1px) scale(1.01);
+  }
+  75%, 100% {
+    transform: translateY(0) scale(1);
+  }
+}

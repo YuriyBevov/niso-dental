@@ -70,7 +70,8 @@ $length = count($arResult["QUIZ_QUESTIONS"]) + 2 ?>
 											<span class="<?= ($i <= $length - 1) ? 'active' : ''; ?>"></span>
 										<? endfor; ?>
 									</div>
-									<span class="base-title">Как хотите получить расчёт?</span>
+									<span class="base-title">Получите бесплатный расчёт лечения и снимок КТ в подарок!</span>
+									<span class="base-text">На основе ваших ответов врач подготовит предварительный план лечения</span>
 
 									<? foreach ($arResult["USER_DATA"] as $FIELD_SID => $arQuestion): ?>
 
