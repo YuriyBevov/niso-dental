@@ -7,6 +7,7 @@ CHTTP::SetStatus("404 Not Found");
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 
 $APPLICATION->SetTitle("404 Not Found");
+$APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 ?>
 
 <section class="base-section nfp" style="
