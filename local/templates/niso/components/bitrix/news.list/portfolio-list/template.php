@@ -18,30 +18,32 @@ $this->setFrameMode(true);
 						?>
 					</span>
 				<? endif; ?>
-				<?if($arParams["CUSTOM_TITLE"]):?>
+				<? if ($arParams["CUSTOM_TITLE"]): ?>
 					<h2 class="base-title"><?= $arParams["CUSTOM_TITLE"] ?></h2>
-				<?else:?>
+				<? elseif (!empty($arParams["FILTER_NAME"])): ?>
+					<h2 class="base-title"><?= $arResult["NAME"] ?></h2>
+				<? else: ?>
 					<h1 class="base-title"><?= $arResult["NAME"] ?></h1>
-				<?endif;?>
+				<? endif; ?>
 
 				<span class="base-text">
 					<?= $arResult["DESCRIPTION"] ?>
 				</span>
-				<?if ($arParams["CUSTOM_IS_SLIDER_VIEW"] === "Y"): ?>
+				<? if ($arParams["CUSTOM_IS_SLIDER_VIEW"] === "Y"): ?>
 					<a class="main-btn main-btn--outlined portfolio_show-all portfolio_show-all--desktop" href="/portfolio/">Все работы</a>
-				<?endif;?>
+				<? endif; ?>
 			</div>
 
-			<?if ($arParams["CUSTOM_IS_SLIDER_VIEW"] === "Y"): ?>
+			<? if ($arParams["CUSTOM_IS_SLIDER_VIEW"] === "Y"): ?>
 
 				<div class="portfolio__slider-wrapper">
 					<div class="swiper autofill-slider">
 						<div class="swiper-wrapper">
 							<?
-								foreach ($arResult["ITEMS"] as $arItem):
-									$pathBefore = CFile::GetPath($arItem["PROPERTIES"]["IMAGE_BEFORE"]["VALUE"]);
-									$pathAfter = CFile::GetPath($arItem["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
-							 ?>
+							foreach ($arResult["ITEMS"] as $arItem):
+								$pathBefore = CFile::GetPath($arItem["PROPERTIES"]["IMAGE_BEFORE"]["VALUE"]);
+								$pathAfter = CFile::GetPath($arItem["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
+							?>
 								<? if ($pathBefore && $pathAfter): ?>
 									<div class="swiper-slide">
 										<div class="portfolio-card">
@@ -58,21 +60,21 @@ $this->setFrameMode(true);
 						<div class="swiper-pagination"></div>
 						<div class="swiper-navigation">
 							<div class="swiper-button-prev">
-							<svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
-								<use xlink:href="/local/templates/niso/assets/sprite.svg#icon-arrow"></use>
-							</svg>
-						</div>
-						<div class="swiper-button-next">
-							<svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
-								<use xlink:href="/local/templates/niso/assets/sprite.svg#icon-arrow"></use>
-							</svg>
-						</div>
+								<svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
+									<use xlink:href="/local/templates/niso/assets/sprite.svg#icon-arrow"></use>
+								</svg>
+							</div>
+							<div class="swiper-button-next">
+								<svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
+									<use xlink:href="/local/templates/niso/assets/sprite.svg#icon-arrow"></use>
+								</svg>
+							</div>
 						</div>
 
 					</div>
 				</div>
 				<a class="main-btn main-btn--outlined portfolio_show-all portfolio_show-all--mobile" href="/portfolio/">Все работы</a>
-			<? else :?>
+			<? else : ?>
 				<div class="portfolio__grid">
 					<?
 					foreach ($arResult["ITEMS"] as $arItem):
