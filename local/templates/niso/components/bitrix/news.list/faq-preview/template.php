@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 					?>
 				</span>
 				<h2 class="base-title"><?= $arResult["NAME"] ?></h2>
-				<span class="base-text"><?= $arResult["DESCRIPTION"] ?></span>
+				<span class="base-text"><?= (!empty($arParams["CUSTOM_DESC"]) ? $arParams["CUSTOM_DESC"] : $arResult["DESCRIPTION"]) ?></span>
 			</div>
 
 			<div class="accordeon">

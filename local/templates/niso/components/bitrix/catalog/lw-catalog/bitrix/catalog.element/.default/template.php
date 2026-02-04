@@ -763,6 +763,7 @@ unset($GLOBALS['arLinkedStaffFilter']);
 ?>
 <!-- staff-preview -->
 
+<!-- faq -->
 <?
 $GLOBALS['arFaqFilter'] = array('ID' => $arResult['PROPERTIES']['FAQ']['VALUE']);
 
@@ -770,6 +771,7 @@ $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"faq-preview",
 	array(
+		"CUSTOM_DESC" => $arResult["PROPERTIES"]["FAQ_DESC"]["VALUE"],
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -826,6 +828,7 @@ $APPLICATION->IncludeComponent(
 );
 unset($GLOBALS['arFaqFilter']);
 ?>
+<!-- faq -->
 
 <!-- map -->
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/sections/map/map.php");  ?>
