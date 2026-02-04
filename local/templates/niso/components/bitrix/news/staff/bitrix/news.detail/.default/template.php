@@ -21,29 +21,28 @@ $this->setFrameMode(true); ?>
 					<img src="<?= $arResult["DETAIL_PICTURE"]["SRC"] ?>" alt="<?= $arResult["NAME"] ?>" width="500" height="500">
 				</div>
 			</div>
-			<div class="staff-detail__grid-item content">
-				<? if ($arResult["PROPERTIES"]["POSITION"]["VALUE"]): ?>
-					<strong>Должность</strong>
-					<span><?= $arResult["PROPERTIES"]["POSITION"]["VALUE"] ?></span>
-				<? endif; ?>
-				<? if (!empty($arResult["PROPERTIES"]["DESCR_FIELD"]["~VALUE"])): ?>
-					<? foreach ($arResult["PROPERTIES"]["DESCR_FIELD"]["~VALUE"] as $arField): ?>
-						<strong><?= $arField["SUB_VALUES"]["DESCR_TITLE"]["~VALUE"] ?></strong>
-						<?= $arField["SUB_VALUES"]["DESCR_CONTENT"]["~VALUE"]["TEXT"] ?>
-					<? endforeach; ?>
-				<? endif; ?>
-				<button class="main-btn" data-modal-opener="callback-modal" data-doctor-name="<?= $arResult["NAME"] ?>">
-					<span>Записаться на прием</span>
-				</button>
+			<div class="staff-detail__grid-item">
+				<div class="content">
+					<? if ($arResult["PROPERTIES"]["POSITION"]["VALUE"]): ?>
+						<strong>Должность</strong>
+						<span><?= $arResult["PROPERTIES"]["POSITION"]["VALUE"] ?></span>
+					<? endif; ?>
+					<? if (!empty($arResult["PROPERTIES"]["DESCR_FIELD"]["~VALUE"])): ?>
+						<? foreach ($arResult["PROPERTIES"]["DESCR_FIELD"]["~VALUE"] as $arField): ?>
+							<strong><?= $arField["SUB_VALUES"]["DESCR_TITLE"]["~VALUE"] ?></strong>
+							<?= $arField["SUB_VALUES"]["DESCR_CONTENT"]["~VALUE"]["TEXT"] ?>
+						<? endforeach; ?>
+					<? endif; ?>
+					<button class="main-btn" data-modal-opener="callback-modal" data-doctor-name="<?= $arResult["NAME"] ?>">
+						<span>Записаться на прием</span>
+					</button>
 
-				<? if ($arResult["DETAIL_TEXT"]): ?>
-					<div class="content">
+					<? if ($arResult["DETAIL_TEXT"]): ?>
 						<?= $arResult["DETAIL_TEXT"] ?>
-					</div>
-				<? endif; ?>
+					<? endif; ?>
 
-
-
+				</div>
+				<!-- Отзывы ПроДокторов -->
 				<? if ($arResult['PROPERTIES']['REVIEWS_PRODOCTOROV']['VALUE']): ?>
 					<?
 					$GLOBALS['arLinkedRewiesFilter'] = array('ID' => $arResult['PROPERTIES']['REVIEWS_PRODOCTOROV']['VALUE']);
@@ -110,6 +109,8 @@ $this->setFrameMode(true); ?>
 					unset($GLOBALS['arLinkedServicesFilter']);
 					?>
 				<? endif; ?>
+				<!-- Отзывы ПроДокторов -->
+
 				<!-- Документы -->
 
 				<? if (!empty($arResult["PROPERTIES"]["DOCS"]["VALUE"])): ?>
@@ -136,6 +137,7 @@ $this->setFrameMode(true); ?>
 				<? endif; ?>
 
 				<!-- Документы -->
+
 
 			</div>
 		</div>
