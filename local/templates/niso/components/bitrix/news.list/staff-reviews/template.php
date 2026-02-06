@@ -40,7 +40,7 @@ $this->setFrameMode(true);
 							</span>
 						</div>
 						<div
-							class="review-card__content"
+							class="content"
 							data-collapsed-text="200"
 							data-expanded-text="<?= $arItem["DETAIL_TEXT"] ?>"
 							data-collapsed-btn-text="Читать далее...">
