@@ -32,7 +32,7 @@ $this->setFrameMode(true);
 							data-type="html5video"
 							class="video-review">
 							<? if (!empty($arItem["PREVIEW_PICTURE"]["SRC"])): ?>
-								<img class="video-review__poster" src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="Видео-превью" width="330" height="420" loading="" lazy>
+								<img class="video-review__poster" src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="Видео-превью" width="330" height="420" loading="lazy">
 							<? endif; ?>
 							<h3><?= $arItem["NAME"] ?></h3>
 							<span class="main-btn">
