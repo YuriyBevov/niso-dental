@@ -100,8 +100,9 @@ $this->setFrameMode(true);
         </button>
       </div>
     </div>
+    <? if ($arParams["SHOW_YANDEX_REWARD"] === "Y"): ?>
+      <img class="top-banner__pin" src="/img/yandex-award.png" alt="Хорошее место в 2026 году по версии Яндекс" width="65" height="140">
+    <? endif; ?>
   </div>
-
-
 
 <? endif; ?>

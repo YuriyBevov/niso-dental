@@ -217,6 +217,23 @@
   }
 }
 
+.top-banner__pin {
+  display: none;
+}
+
+@container main (min-width: 1150px) {
+  .top-banner__pin {
+    display: block;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 100%;
+    max-width: 65px;
+    height: auto;
+    z-index: 2;
+  }
+}
+
 /* Подложка */
 
 .--overlay-light::after {
