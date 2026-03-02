@@ -50,7 +50,7 @@ $itemIds = array(
 	'TABS_PANEL_ID' => $mainId . '_tabs_panel'
 ); ?>
 
-<section class="base-section service-detail">
+<section class="base-section service-detail" itemscope itemtype="https://schema.org/MedicalProcedure">
 	<div class="container">
 		<?
 		if ($arResult["PROPERTIES"]["BANNERS"]["VALUE"]):
@@ -191,7 +191,7 @@ $itemIds = array(
 				</div>
 			</div>
 			<div class="service-detail__grid-item service-detail__grid-item--content">
-				<h1 class="base-title">
+				<h1 class="base-title" itemprop="name">
 					<?= (!empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) ? $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'] : $arResult["NAME"]) ?>
 				</h1>
 
@@ -230,7 +230,7 @@ $itemIds = array(
 							<picture>
 								<source media="(min-width: 960px)" srcset="<?= $desktop['src'] ?>" width="<?= $desktop['width'] ?>" height="<?= $desktop['height'] ?>">
 								<source media="(min-width: 650px)" srcset="<?= $tablet['src'] ?>" width="<?= $tablet['width'] ?>" height="<?= $tablet['height'] ?>">
-								<img src="<?= $mobile['src'] ?>" alt="<?= $mainImgAlt ?>" loading="lazy" width="<?= $mobile['width'] ?>" height="<?= $mobile['height'] ?>">
+								<img itemprop="image" src="<?= $mobile['src'] ?>" alt="<?= $mainImgAlt ?>" loading="lazy" width="<?= $mobile['width'] ?>" height="<?= $mobile['height'] ?>">
 							</picture>
 
 							<? foreach ($sideImages as $sideImage) : ?>
