@@ -1,8 +1,4 @@
 .video-reviews {
-  &.base-section {
-    padding-bottom: 0;
-  }
-
   .swiper {
     &-slide {
       max-width: 330px;
@@ -28,7 +24,8 @@
 
   &__poster {
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
   }
 
   h3 {

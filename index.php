@@ -33,6 +33,10 @@ $APPLICATION->SetTitle("Стоматологическая клиника “Н�
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/reviews-preview/reviews-preview.php");  ?>
 <!-- reviews-preview -->
 
+<!-- video-reviews -->
+<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/video-reviews/video-reviews.php");  ?>
+<!-- rvideo-reviews -->
+
 <!-- faq-preview -->
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/faq-preview/faq-preview.php");  ?>
 <!-- faq-preview -->
