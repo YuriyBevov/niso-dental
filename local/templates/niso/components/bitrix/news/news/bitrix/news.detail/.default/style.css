@@ -32,6 +32,8 @@
   .news-detail:has(.news-detail__grid-item--side)
     .news-detail__grid-item--side {
     width: 440px;
+    position: sticky;
+    top: 230px;
   }
 }
 
