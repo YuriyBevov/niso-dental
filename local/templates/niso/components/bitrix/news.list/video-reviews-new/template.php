@@ -37,7 +37,7 @@ $this->setFrameMode(true);
 								<? if (!empty($arItem["PREVIEW_PICTURE"]["SRC"])): ?>
 									<img class="video-review__poster" src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="Видео-превью" width="330" height="420" loading="lazy">
 								<? endif; ?>
-								<h3><?= $arItem["NAME"] ?></h3>
+								<h3><span><?= $arItem["NAME"] ?></span></h3>
 								<span class="main-btn">
 									<svg width="40" height="40" viewBox="0 0 40 40" role="img" aria-hidden="true" focusable="false">
 										<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-play-arrow"></use>
