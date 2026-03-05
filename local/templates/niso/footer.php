@@ -173,7 +173,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 					),
 					false
 				); ?>
-				<img class="yandex-award" src="/source/img/yandex-award-horizontal.jpg" alt="Награда Хорошее место от компании Яндекс." width="213" height="40">
+				<div class="yandex-award">
+					<img src="/source/img/yandex-award-small.png" alt="Награда Хорошее место от компании Яндекс." width="23" height="32">
+					<span>Хорошее место 2026</span>
+				</div>
 			</div>
 			<div class="footer__section-field">
 				<nav class="footer__nav">

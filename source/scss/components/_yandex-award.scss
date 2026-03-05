@@ -1,7 +1,19 @@
 .yandex-award {
-  width: 213px;
-  height: 40px;
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px;
+  color: var(--info);
+  background-color: var(--white);
+  font-size: 18px;
   border-radius: 5px;
   box-shadow: var(--base-box-shadow);
+  width: fit-content;
+  max-width: 215px;
+
+  img {
+    width: 23px;
+    height: 32px;
+    object-fit: contain;
+  }
 }
