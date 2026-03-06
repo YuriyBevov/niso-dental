@@ -4,7 +4,7 @@ $pathBefore = CFile::GetPath($arResult["PROPERTIES"]["IMAGE_BEFORE"]["VALUE"]);
 $pathAfter = CFile::GetPath($arResult["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
 ?>
 
-<section class="base-section staff-detail">
+<section class="base-section portfolio">
 	<div class="container">
 		<div class="base-section__header">
 			<span class="base-text base-section__headline">
@@ -58,6 +58,27 @@ $pathAfter = CFile::GetPath($arResult["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
 				</div>
 			</div>
 		</div>
+
+		<? if ($arResult['PROPERTIES']['MORE_IMAGE']['VALUE']): ?>
+			<div class="swiper autofill-slider">
+				<div class="swiper-wrapper">
+					<? foreach ($arResult['PROPERTIES']['MORE_IMAGE']['VALUE'] as $fileId) : ?>
+						<? $arFile = CFile::GetFileArray($fileId); ?>
+						<? $imgSrc = $arFile['SRC'] ?>
+						<div class="swiper-slide">
+							<figure class="portfolio-detail__more-img">
+								<img src="<?= $imgSrc ?>" alt="<?= $arItem["NAME"] ?>, <?= $arImage['SUB_VALUES']['MORE_IMAGE_TITLE']['VALUE'] ?>">
+								<figcaption>
+									<span>ДО</span>
+									<span>ПОСЛЕ</span>
+								</figcaption>
+							</figure>
+						</div>
+					<? endforeach; ?>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		<? endif; ?>
 	</div>
 	</div>
 </section>

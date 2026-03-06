@@ -22,6 +22,7 @@ const componentConfigs = {
   licensesSlider: `${COMPONENTS_PATH}/news.list/licenses-slider/`,
   videoReviews: `${COMPONENTS_PATH}/news.list/video-reviews-new/`,
   reviewsPreview: `${COMPONENTS_PATH}/news.list/reviews-preview/`,
+  portfolioDetail: `${COMPONENTS_PATH}/news/portfolio/bitrix/news.detail/.default/`,
 };
 
 // Создаем пути компонентов
