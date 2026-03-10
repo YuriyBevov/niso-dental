@@ -1,5 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
+
+$link = $_GET['section'] ?? '';
 ?>
 
 <? if ($arResult["ITEMS"]): ?>
@@ -31,6 +33,14 @@ $this->setFrameMode(true);
 				</span>
 				<? if ($arParams["CUSTOM_IS_SLIDER_VIEW"] === "Y"): ?>
 					<a class="main-btn main-btn--outlined portfolio_show-all portfolio_show-all--desktop" href="/portfolio/">Все работы</a>
+				<? endif; ?>
+				<? if ($arResult["SECTION_LIST"] && ($arParams["FILTER_NAME"] === "sectionFilter")): ?>
+					<div class="tag-list">
+						<a class="tag <?= ($link === "") ? ' active' : '' ?>" href="/portfolio/">Смотреть все</a>
+						<? foreach ($arResult["SECTION_LIST"] as $section): ?>
+							<a class="tag <?= (('?section=' . $link) === ('?section=' . $section['SECTION_ID'])) ? ' active' : '' ?>" href=" ?section=<?= $section["SECTION_ID"] ?>"><?= $section["SECTION_TITLE"] ?></a>
+						<? endforeach; ?>
+					</div>
 				<? endif; ?>
 			</div>
 

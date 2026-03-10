@@ -25,15 +25,15 @@ endif;
 
 if ($arParams["USE_SEARCH"] == "Y"): ?>
 	<?= GetMessage("SEARCH_LABEL") ?><?php
-																	$APPLICATION->IncludeComponent(
-																		"bitrix:search.form",
-																		"flat",
-																		[
-																			"PAGE" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["search"]
-																		],
-																		$component,
-																		['HIDE_ICONS' => 'Y']
-																	); ?>
+										$APPLICATION->IncludeComponent(
+											"bitrix:search.form",
+											"flat",
+											[
+												"PAGE" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["search"]
+											],
+											$component,
+											['HIDE_ICONS' => 'Y']
+										); ?>
 	<br />
 <?php
 endif;
@@ -58,11 +58,46 @@ if ($arParams["USE_FILTER"] == "Y"):
 ?>
 	<br />
 <?php
-endif;
+endif; ?>
+
+<?
+
+$sectionParam = $_GET['section'] ?? '';
+$iblockId = 13; // ID инфоблока
+
+$rsElements = CIBlockElement::GetList(
+	['SORT' => 'ASC', 'ID' => 'DESC'], // Сортировка
+	[
+		'IBLOCK_ID' => $iblockId,
+		'SECTION_ID' => $sectionParam,      // Только элементы, где этот раздел — основной
+		'ACTIVE' => 'Y',                 // Только активные
+		'ACTIVE_DATE' => 'Y',            // С учётом дат активности
+		'CHECK_PERMISSIONS' => 'Y'       // Проверка прав доступа
+	],
+	false, // Навигация не нужна, если берём все
+	false, // Количество элементов (false = все)
+	['ID', 'NAME', 'PREVIEW_TEXT', 'DETAIL_PAGE_URL', 'IBLOCK_SECTION_ID'] // Поля
+);
+
+$arElements = [];
+while ($arElement = $rsElements->Fetch()) {
+	$arElements[] = $arElement["ID"];
+}
+
+global $sectionFilter;
+if (!empty($sectionParam)) {
+	$sectionFilter = [
+		"ID" => $arElements
+	];
+} else {
+	$sectionFilter = [];
+}
+
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"portfolio-list",
 	[
+		"FILTER_NAME" => "sectionFilter",
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 		"NEWS_COUNT" => $arParams["NEWS_COUNT"],
@@ -105,9 +140,10 @@ $APPLICATION->IncludeComponent(
 		"ACTIVE_DATE_FORMAT" => $arParams["LIST_ACTIVE_DATE_FORMAT"],
 		"USE_PERMISSIONS" => $arParams["USE_PERMISSIONS"],
 		"GROUP_PERMISSIONS" => $arParams["GROUP_PERMISSIONS"],
-		"FILTER_NAME" => $arParams["FILTER_NAME"],
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
 	],
 	$component
 );
+
+unset($sectionFilter);

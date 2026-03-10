@@ -20,6 +20,12 @@
   transition: opacity 0.3s ease-in-out;
 }
 
+.tag.active {
+  background-color: var(--secondary);
+  color: var(--white);
+  border-color: var(--secondary);
+}
+
 .tag:focus,
 .tag:hover {
   opacity: 0.6;
@@ -75,7 +81,6 @@ p img {
 
 .portfolio .base-section__header {
   position: relative;
-  padding-right: 180px;
 }
 
 .portfolio__slider-wrapper {

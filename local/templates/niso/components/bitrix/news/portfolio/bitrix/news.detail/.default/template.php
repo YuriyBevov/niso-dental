@@ -4,7 +4,7 @@ $pathBefore = CFile::GetPath($arResult["PROPERTIES"]["IMAGE_BEFORE"]["VALUE"]);
 $pathAfter = CFile::GetPath($arResult["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
 ?>
 
-<section class="base-section portfolio">
+<section class="base-section portfolio-detail">
 	<div class="container">
 		<div class="base-section__header">
 			<span class="base-text base-section__headline">
@@ -67,7 +67,7 @@ $pathAfter = CFile::GetPath($arResult["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
 						<? $imgSrc = $arFile['SRC'] ?>
 						<div class="swiper-slide">
 							<figure class="portfolio-detail__more-img">
-								<img src="<?= $imgSrc ?>" alt="<?= $arItem["NAME"] ?>, <?= $arImage['SUB_VALUES']['MORE_IMAGE_TITLE']['VALUE'] ?>">
+								<img src="<?= $imgSrc ?>" alt="<?= $arResult["NAME"] ?>">
 								<figcaption>
 									<span>ДО</span>
 									<span>ПОСЛЕ</span>
