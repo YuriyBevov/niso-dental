@@ -141,4 +141,12 @@
       font-weight: 700;
     }
   }
+
+  &__pin {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: var(--base-box-shadow);
+  }
 }
