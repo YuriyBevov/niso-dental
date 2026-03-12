@@ -13,10 +13,7 @@
   left: 10px;
   border-radius: var(--border-radius-sm);
   width: calc(100% - 20px);
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  max-height: 175px;
+  height: auto;
   background-color: var(--cookie-bg-color);
   color: var(--cookie-text-color);
   padding: var(--cookie-offset-size);
