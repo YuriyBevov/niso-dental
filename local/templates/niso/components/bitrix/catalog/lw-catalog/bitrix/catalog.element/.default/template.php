@@ -898,3 +898,5 @@ unset($GLOBALS['arFaqFilter']);
 <!-- map -->
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/sections/map/map.php");  ?>
 <!-- map -->
+
+<button class="open-modal-btn" type="button" data-form-tpl="quiz-form-popup" data-form-id="12" style="opacity:0"><span>Пройдите опрос</span></button>

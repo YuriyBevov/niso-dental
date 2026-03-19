@@ -5,41 +5,35 @@
   background-color: var(--white);
 
   label {
-    position: relative;
     display: flex;
     align-items: center;
     gap: 8px;
     font-family: var(--site-base-font-family);
-    font-size: clamp(16px, 2.2vw, 18px);
+    font-size: clamp(16px, 3.2vw, 18px);
     width: 100%;
+    height: 100%;
     color: var(--dark);
     cursor: pointer;
 
     span {
-      &:first-of-type {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 18px;
-        height: 18px;
+      position: relative;
+      padding-left: 24px;
+      font-size: 16px;
+      line-height: 1;
+      text-align: left;
+      color: var(--dark);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
-        border: 2px solid var(--light);
+        border: 1px solid var(--light);
       }
-
-      &:last-of-type {
-        font-size: 16px;
-        line-height: 1;
-        text-align: left;
-        color: var(--dark);
-      }
-    }
-
-    a {
-      font-weight: 400;
-      text-decoration: underline;
-      color: var(--primary);
-
-      @extend %hover-opacity;
     }
   }
 
@@ -47,24 +41,26 @@
     display: none;
   }
 
-  &:has(input:checked) label span:first-of-type::after {
+  &:has(input:checked) label span::before {
+    border-color: var(--secondary);
+  }
+
+  &:has(input:checked) label span::after {
     content: "";
-    display: block;
+    position: absolute;
     width: 8px;
     height: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4px;
     border-radius: 50%;
-    background-color: var(--light);
+    background-color: var(--secondary);
   }
 
   /* purgecss start ignore */
   &.invalid-fld {
-    label {
-      span:first-of-type {
-        border-color: var(--danger);
-      }
-      span:last-of-type {
-        color: var(--danger);
-      }
+    label span {
+      color: var(--danger);
     }
 
     animation: shaker var(--main-transition);

@@ -1,0 +1,41 @@
+.status-line {
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+
+  span {
+    display: flex;
+    align-items: center;
+    width: 40px;
+
+    &:last-child {
+      width: 20px;
+    }
+
+    &::before {
+      content: "";
+      flex-basis: 20px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid var(--muted);
+    }
+
+    &:not(:last-child)::after {
+      content: "";
+      flex-basis: 20px;
+      height: 1px;
+      background-color: var(--muted);
+    }
+
+    &.active {
+      &::before {
+        border-color: var(--secondary);
+        background-color: var(--secondary);
+      }
+
+      &:not(:last-child)::after {
+        background-color: var(--secondary);
+      }
+    }
+  }
+}

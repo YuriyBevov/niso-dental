@@ -42,7 +42,20 @@
   60% {
     transform: translateY(-1px) scale(1.01);
   }
-  75%, 100% {
+  75%,
+  100% {
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes glare {
+  0% {
+    left: -120px;
+    margin-left: 0;
+  }
+
+  100% {
+    left: 110%;
+    margin-left: 40px;
   }
 }

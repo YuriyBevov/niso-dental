@@ -3,8 +3,10 @@ require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.
 
 // 1. Получаем ID из GET
 $formId = $_GET['form_id'] ?? null;
+$formTpl = $_GET['form_template'] ?? 'reviews-form-popup';
 $service = $_GET['service_name'] ?? null;
 $doctor = $_GET['doctor_name'] ?? null;
+
 
 if (!$formId) {
   http_response_code(400);
@@ -14,7 +16,7 @@ if (!$formId) {
 
 $APPLICATION->IncludeComponent(
   "bitrix:form.result.new",
-  "reviews-form-popup",
+  $formTpl,
   array(
     "AJAX_MODE" => "Y", // включаем AJAX-режим
     "AJAX_OPTION_JUMP" => "N",
@@ -33,8 +35,8 @@ $APPLICATION->IncludeComponent(
     "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
     "WEB_FORM_ID" => $formId,
     "CUSTOM_FIELDS" => [
-      "DOCTOR" => $doctor,
-      "SERVICE" => $service
+      "DOCTOR" => $doctor ?? "",
+      "SERVICE" => $service ?? ""
     ]
   )
 );

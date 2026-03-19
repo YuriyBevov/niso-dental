@@ -1,0 +1,110 @@
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
+
+<?
+$step = 1;
+$length = count($arResult["QUIZ_QUESTIONS"]) + 2 ?>
+
+<? if ($arResult["isFormErrors"] == "Y"): ?>
+	<?= $arResult["FORM_ERRORS_TEXT"]; ?>
+<? endif; ?>
+
+
+<div class="quiz-form-popup">
+	<? if ($arResult["FORM_NOTE"]): ?>
+		<div class="quiz-form-popup__screen --success">
+			<div class="status-line">
+				<?
+				for ($i = 1; $i <= $length; $i++) : ?>
+					<span class="active"></span>
+				<? endfor; ?>
+			</div>
+			<svg class="quiz-form-popup__success" width="48" height="48" viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
+				<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-success-circle"></use>
+			</svg>
+			<span class="quiz-form-popup__success">Готово! Вы прошли опрос.</span>
+			<span>Наш менеджер уже получил ваши данные и скоро свяжется с вами.</span>
+		</div>
+	<? else: ?>
+		<?= $arResult["FORM_HEADER"] ?>
+		<? foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
+			<? if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden'): ?>
+				<?= $arQuestion["HTML_CODE"]; ?>
+			<? endif; ?>
+		<? endforeach; ?>
+
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				<? foreach ($arResult["QUIZ_QUESTIONS"] as $arQuestion): ?>
+					<div class="swiper-slide">
+						<div class="quiz-form-popup__screen --question">
+							<div class="status-line">
+								<?
+								for ($i = 1; $i <= $length; $i++) : ?>
+									<span class="<?= ($i <= $step) ? 'active' : ''; ?>"></span>
+								<? endfor; ?>
+								<? $step++ ?>
+							</div>
+							<fieldset>
+								<legend class="base-title"><?= $arQuestion["CAPTION"] ?></legend>
+								<?= $arQuestion["HTML_CODE"] ?>
+							</fieldset>
+						</div>
+					</div>
+				<? endforeach; ?>
+
+				<div class="swiper-slide">
+					<div class="quiz-form-popup__screen">
+						<div class="status-line">
+							<?
+							for ($i = 1; $i <= $length; $i++) : ?>
+								<span class="<?= ($i <= $length - 1) ? 'active' : ''; ?>"></span>
+							<? endfor; ?>
+						</div>
+						<span class="base-title">Как хотите получить расчёт?</span>
+						<? foreach ($arResult["USER_DATA"] as $FIELD_SID => $arQuestion): ?>
+
+							<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] === "text"): ?>
+								<div class="main-input-wrapper<?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? ' invalid-fld' : '') ?>">
+									<label>
+										<?= $arQuestion["HTML_CODE"] ?>
+									</label>
+								</div>
+							<? endif; ?>
+							<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] === "checkbox"): ?>
+								<div class="main-checkbox-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
+									<input type="checkbox" id="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>" name="form_checkbox_<?= $FIELD_SID ?>[]" value="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
+									<label class="main-checkbox" for="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
+										<span><?= $arQuestion["CAPTION"] ?><?= ($arQuestion["REQUIRED"] == "Y" ? '*' : '') ?></span>
+									</label>
+								</div>
+							<? endif; ?>
+						<? endforeach; ?>
+						<? if ($arResult["isUseCaptcha"] == "Y"): ?>
+							<input type="hidden" name="captcha_sid" value="<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>" />
+							<img src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>" width="180" height="40" alt="" />
+							<?= GetMessage("FORM_CAPTCHA_FIELD_TITLE") ?><?= $arResult["REQUIRED_SIGN"]; ?>
+							<input type="text" name="captcha_word" size="30" maxlength="50" value="" class="inputtext" />
+						<? endif; ?>
+						<input type="hidden" name="web_form_apply" value="Y" />
+						<input class="main-btn" type="submit" disabled name="web_form_submit" value="<?= htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]); ?>" />
+					</div>
+				</div>
+			</div>
+			<div class="swiper-navigation">
+				<button class="swiper-button swiper-button-prev" type="button" aria-label="Назад">
+					<svg width="20" height="20" viewBox="0 0 20 20" role="img" aria-hidden="true" focusable="false">
+						<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
+					</svg>
+				</button>
+				<button class="swiper-button swiper-button-next" type="button" aria-label="Вперед">
+					<svg width="20" height="20" viewBox="0 0 20 20" role="img" aria-hidden="true" focusable="false">
+						<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+
+		<?= $arResult["FORM_FOOTER"] ?>
+
+	<? endif; ?>
+</div>

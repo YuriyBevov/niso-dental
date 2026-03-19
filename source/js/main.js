@@ -22,3 +22,4 @@ import "./modules/staff-reviews-slider";
 import "./modules/staff-docs-slider";
 import "./modules/bx-popup";
 import "./modules/swiper-instance";
+import "./modules/quiz-form-popup.js";

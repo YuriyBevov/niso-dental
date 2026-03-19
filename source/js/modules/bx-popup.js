@@ -19,6 +19,11 @@ BX.ready(function () {
         url += formId;
       }
 
+      var formTpl = opener.getAttribute("data-form-tpl");
+      if (formTpl) {
+        url += "&form_template=" + formTpl;
+      }
+
       BX.ajax({
         url, // путь к файлу с компонентом формы
         method: "GET",
@@ -38,7 +43,10 @@ BX.ready(function () {
             },
           });
 
-          console.log(popup);
+          // console.log(popup);
+          if (formId === "12") {
+            initQuiz();
+          }
 
           window.initImask();
 
