@@ -12,7 +12,10 @@
   font-weight: 600;
   font-family: var(--secondary-font);
   overflow: hidden;
-  transition: opacity var(--main-transition);
+  transform: translateX(-110%);
+  transition:
+    opacity var(--main-transition),
+    transform 0.5s linear;
 
   &::before {
     content: "";

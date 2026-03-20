@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (button) {
     const showButton = () => {
-      button.style.opacity = "1";
+      button.style.transform = "translateX(" + 0 + ")";
     };
 
     setTimeout(showButton, 8000);
