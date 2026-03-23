@@ -1,4 +1,4 @@
-BX.ready(function () {
+document.addEventListener("DOMContentLoaded", () => {
   const slidePanel = document.querySelector(".slide-panel");
 
   if (slidePanel) {
