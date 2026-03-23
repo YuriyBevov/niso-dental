@@ -900,4 +900,11 @@ unset($GLOBALS['arFaqFilter']);
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/sections/map/map.php");  ?>
 <!-- map -->
 
-<button class="open-modal-btn" type="button" data-form-tpl="quiz-form-popup" data-form-id="12" style="left:4px"><span>Пройдите опрос</span></button>
+<div class="slide-panel">
+	<button class="slide-panel__trigger" type="button" data-form-tpl="quiz-form-popup" data-form-id="12"><span>Пройдите опрос</span></button>
+	<button class="slide-panel__closer">
+		<svg width="20" height="20" viewBox="0 0 20 20" role="img" aria-hidden="true" focusable="false">
+			<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-cross"></use>
+		</svg>
+	</button>
+</div>

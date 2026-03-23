@@ -22,4 +22,8 @@
   background-position: center;
 
   z-index: 89;
+
+  @media (min-width: 1700px) {
+    right: calc((100vw - var(--content-width)) / 2 - 100px);
+  }
 }

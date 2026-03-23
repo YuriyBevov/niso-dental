@@ -59,3 +59,39 @@
     margin-left: 40px;
   }
 }
+
+@keyframes pulsation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes closer-animation {
+  0% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes showWidget {
+  0% {
+    opacity: 1;
+    transform: translateY(110%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
