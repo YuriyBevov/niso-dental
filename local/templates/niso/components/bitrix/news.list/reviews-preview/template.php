@@ -48,7 +48,7 @@ $yandexReviewsWidgetLink = \Bitrix\Main\Config\Option::get("askaron.settings", "
 <div class="modal-overlay">
 	<div class="modal main-modal review-modal" id="review-modal">
 		<div class="modal-wrapper">
-			<button class="modal-closer s" type="button" aria-label="Закрыть">
+			<button class="modal-closer" type="button" aria-label="Закрыть">
 				<svg width="14" height="14">
 					<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-close"></use>
 				</svg>

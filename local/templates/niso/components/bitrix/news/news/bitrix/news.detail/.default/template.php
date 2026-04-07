@@ -18,6 +18,9 @@ $this->setFrameMode(true);
 		</div>
 		<div class="news-detail__grid">
 			<div class="news-detail__grid-item news-detail__grid-item--content">
+				<? if ($arResult["DETAIL_PICTURE"]): ?>
+					<img class="news-detail__image" src="<?= $arResult["DETAIL_PICTURE"]["SRC"] ?>" alt="<?= $arResult["DETAIL_PICTURE"]["DESCRIPTION"] ?>" width="<?= $arResult["DETAIL_PICTURE"]["WIDTH"] ?>" height="<?= $arResult["DETAIL_PICTURE"]["HEIGHT"] ?>">
+				<? endif; ?>
 				<div class="content">
 					<?= $arResult["DETAIL_TEXT"] ?>
 				</div>
