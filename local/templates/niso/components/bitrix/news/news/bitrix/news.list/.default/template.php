@@ -1,6 +1,9 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
 ?>
+<? /*if ($USER->isAdmin()): ?>
+	<? debug($arParams) ?>
+<? endif;*/ ?>
 
 <section class="base-section news">
 	<div class="container">

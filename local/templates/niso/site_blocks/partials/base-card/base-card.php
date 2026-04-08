@@ -7,6 +7,7 @@ if (!isset($stylesIncluded['base-card'])) {
 }
 ?>
 
+
 <div class="base-card-wrapper">
   <div class="base-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 
@@ -24,7 +25,6 @@ if (!isset($stylesIncluded['base-card'])) {
     endif; ?>
 
     <div class="base-card__content">
-
       <? if ($arItem["DATE_ACTIVE_TO"]) {
         $dateActiveTo = strtotime($arItem["DATE_ACTIVE_TO"]);
         $now = time();
@@ -40,6 +40,9 @@ if (!isset($stylesIncluded['base-card'])) {
       <? endif; ?>
       <span class="base-subtitle"><?= $arItem["NAME"] ?></span>
 
+      <? if ($arItem["DISPLAY_ACTIVE_FROM"] && $arParams["DISPLAY_DATE"] === "Y"): ?>
+        <span class="base-card__headline">Опубликовано: <time><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></time></span>
+      <? endif;  ?>
       <? if ($arItem["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"]): ?>
         <div class="price-badge"><span><?= $arItem["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"] ?> руб.</span></div>
       <? endif; ?>

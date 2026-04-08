@@ -37,6 +37,7 @@
   ul {
     margin: 8px 0;
     padding-left: 30px;
+    clear: both;
   }
 
   & * > a {
@@ -94,6 +95,7 @@
     border-radius: 10px;
     padding: clamp(10px, 2.4vw, 20px);
     border-left: 4px solid var(--accent);
+    clear: both;
   }
 
   .bg-rounded {

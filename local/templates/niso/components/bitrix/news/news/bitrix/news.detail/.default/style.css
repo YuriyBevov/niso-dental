@@ -151,11 +151,26 @@
   max-width: 600px;
   height: auto;
   aspect-ratio: 3/2;
-  float: left;
-  margin-right: 8px;
   margin-bottom: 8px;
+  border-radius: var(--base-border-radius);
+}
+
+@media (min-width: 700px) {
+  .news-detail__image {
+    width: 600px;
+    max-width: 50%;
+    float: left;
+    margin-right: 8px;
+  }
 }
 
 .news-detail:has(.news-detail__image) .content {
   display: block;
+}
+
+.news-detail__date {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--accent);
 }

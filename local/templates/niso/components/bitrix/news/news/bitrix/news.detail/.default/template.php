@@ -1,8 +1,28 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
-
 ?>
-<section class="base-section news-detail">
+
+<?
+// Преобразуем даты в ISO 8061
+
+/* Дата создания */
+$creatingDate = new DateTime(
+	$arResult['ACTIVE_FROM_X'],
+	new DateTimeZone('Europe/Moscow')
+);
+$isoСreatingDate = $creatingDate->format(DateTime::ATOM);
+/* Дата создания */
+
+/* Дата изменения */
+$modifyingDate = new DateTime(
+	$arResult['TIMESTAMP_X'],
+	new DateTimeZone('Europe/Moscow')
+);
+$isoModifyingDate = $modifyingDate->format(DateTime::ATOM);
+/* Дата изменения */
+?>
+
+<section class="base-section news-detail" itemscope itemtype="https://schema.org/BlogPosting">
 	<div class="container">
 		<div class="base-section__header">
 			<span class="base-text base-section__headline">
@@ -14,7 +34,11 @@ $this->setFrameMode(true);
 				);
 				?>
 			</span>
-			<h1 class="base-title"><?= (!empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) ? $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'] : $arResult["NAME"]) ?></h1>
+			<h1 class="base-title" itemprop="headline"><?= (!empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) ? $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'] : $arResult["NAME"]) ?></h1>
+			<meta itemprop="url" content="<?= 'https://niso-dental.ru' . $arResult['DETAIL_PAGE_URL'] ?>">
+			<meta itemprop="datePublished" content="<?= $isoСreatingDate ?>">
+			<meta itemprop="dateModified" content="<?= $isoModifyingDate ?>">
+			<span class="news-detail__date">Опубликовано: <time><?= $arResult["DISPLAY_ACTIVE_FROM"] ?></time></span>
 		</div>
 		<div class="news-detail__grid">
 			<div class="news-detail__grid-item news-detail__grid-item--content">
@@ -88,7 +112,7 @@ $this->setFrameMode(true);
 				<? endif; ?>
 
 				<? if ($arResult['AUTHOR']): ?>
-					<div class="news-detail__author" itemscope itemtype="https://schema.org/Person">
+					<div class="news-detail__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
 						<img class="news-detail__author-photo" src="<?= ($arResult['AUTHOR']['PREVIEW_PICTURE']) ?>" alt="<?= $arResult['AUTHOR']['NAME'] ?>" width="300" height="300" itemprop="image">
 						<div class="news-detail__author-content">
 							<p class="news-detail__author-about">
@@ -168,12 +192,12 @@ $this->setFrameMode(true);
 							"PAGER_BASE_LINK_ENABLE" => $arParams["PAGER_BASE_LINK_ENABLE"],
 							"PAGER_BASE_LINK" => $arParams["PAGER_BASE_LINK"],
 							"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
-							"DISPLAY_DATE" => $arParams["DISPLAY_DATE"],
+							"DISPLAY_DATE" => "Y",
 							"DISPLAY_NAME" => "Y",
 							"DISPLAY_PICTURE" => $arParams["DISPLAY_PICTURE"],
 							"DISPLAY_PREVIEW_TEXT" => $arParams["DISPLAY_PREVIEW_TEXT"],
 							"PREVIEW_TRUNCATE_LEN" => $arParams["PREVIEW_TRUNCATE_LEN"],
-							"ACTIVE_DATE_FORMAT" => $arParams["LIST_ACTIVE_DATE_FORMAT"],
+							"ACTIVE_DATE_FORMAT" => "j F Y",
 							"USE_PERMISSIONS" => $arParams["USE_PERMISSIONS"],
 							"GROUP_PERMISSIONS" => $arParams["GROUP_PERMISSIONS"],
 							"FILTER_NAME" => "arLinkedFilter",
