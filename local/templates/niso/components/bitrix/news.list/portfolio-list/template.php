@@ -22,11 +22,11 @@ $link = $_GET['section'] ?? '';
 				<? endif; ?>
 				<? if ($arParams["CUSTOM_TITLE"]): ?>
 					<h2 class="base-title"><?= $arParams["CUSTOM_TITLE"] ?></h2>
-				<? elseif (!empty($arParams["FILTER_NAME"])): ?>
+				<? elseif (!empty($arParams["FILTER_NAME"]) && $arParams["FILTER_NAME"] !== "sectionFilter"): ?>
 					<h2 class="base-title"><?= $arResult["NAME"] ?></h2>
-				<? else: ?>
+				<? else:  ?>
 					<h1 class="base-title"><?= $arResult["NAME"] ?></h1>
-				<? endif; ?>
+				<? endif;  ?>
 
 				<span class="base-text">
 					<?= $arResult["DESCRIPTION"] ?>
