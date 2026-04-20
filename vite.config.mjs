@@ -17,12 +17,12 @@ const componentConfigs = {
   quizForm: `${COMPONENTS_PATH}/form.result.new/quiz-form`,
   catalogDetailPage: `${COMPONENTS_PATH}/catalog/lw-catalog/bitrix/catalog.element/.default`,
   reviewsProDoctorov: `${COMPONENTS_PATH}/news.list/staff-reviews/`,
-  staffDetailPage: `${COMPONENTS_PATH}/news/staff/bitrix/news.detail/.default`,
   gallery: `${COMPONENTS_PATH}/news.list/gallery/`,
   licensesSlider: `${COMPONENTS_PATH}/news.list/licenses-slider/`,
   videoReviews: `${COMPONENTS_PATH}/news.list/video-reviews-new/`,
   reviewsPreview: `${COMPONENTS_PATH}/news.list/reviews-preview/`,
   portfolioDetail: `${COMPONENTS_PATH}/news/portfolio/bitrix/news.detail/.default/`,
+  awardsList: `${COMPONENTS_PATH}/news.list/awards-list/`,
 };
 
 // Создаем пути компонентов
