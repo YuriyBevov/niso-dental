@@ -76,6 +76,11 @@ $inner-padding: clamp(16px, 2.4vw, 30px);
       overflow: hidden;
       transition: padding var(--main-transition);
 
+      a {
+        color: var(--warning);
+        text-decoration: underline;
+      }
+
       & > * {
         margin-top: 0;
 
