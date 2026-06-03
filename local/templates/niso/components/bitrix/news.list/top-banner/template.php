@@ -22,10 +22,10 @@ $this->setFrameMode(true);
         <div class="swiper-slide" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
           <div class="top-banner-wrapper">
             <div class="top-banner
-            <?= ($arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"]) ? $arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"] : '--overlay-dark' ?> <?= $arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"] ?> <?= $arItem["PROPERTIES"]["TEXT_OUTLINE"]["VALUE_XML_ID"] ?>"
-              <?php if (!empty($arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"])): ?>
+            <?= ($arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"]) ? $arItem["PROPERTIES"]["UNDERLAY"]["VALUE_XML_ID"] : '--overlay-dark' ?> <?= $arItem["PROPERTIES"]["TEXT_OUTLINE"]["VALUE_XML_ID"] ?>"
+              <? if (!empty($arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"])): ?>
               style="background-color: <?= $arItem["PROPERTIES"]["BACKGROUND_COLOR"]["VALUE_XML_ID"] ?>;"
-              <?php endif; ?>>
+              <? endif; ?>>
 
               <div class="top-banner__content">
 
