@@ -42,8 +42,15 @@
 		}
 	}
 
-	&__btn {
+	.main-btn {
+		min-height: 44px;
+		padding: 5px;
+	}
+
+	.top-services__btn {
 		margin: 0 auto;
+		width: 100%;
+		max-width: 280px;
 	}
 }
 
@@ -86,7 +93,6 @@
 		.main-btn {
 			min-width: fit-content;
 			flex-basis: 50%;
-			padding: 10px;
 		}
 	}
 
@@ -96,7 +102,6 @@
 		width: 100%;
 		margin: 0;
 		margin-bottom: 6px;
-
 		font-family: var(--secondary-font);
 		font-weight: 700;
 		font-size: clamp(18px, 2.2vw, 20px);
