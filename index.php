@@ -9,13 +9,13 @@ $APPLICATION->SetTitle("Стоматологическая клиника “Н�
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/top-section/top-section.php"); ?>
 <!-- top-section -->
 
-<!-- features -->
-<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/features/features.php"); ?>
-<!-- features -->
-
 <!-- top-services -->
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/top-services/top-services.php"); ?>
 <!-- top-services -->
+
+<!-- features -->
+<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/features/features.php"); ?>
+<!-- features -->
 
 <!-- catalog-preview -->
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/catalog-preview/catalog-preview.php");  ?>

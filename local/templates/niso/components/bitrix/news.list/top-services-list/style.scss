@@ -19,10 +19,9 @@
 		}
 
 		&-pagination {
-			display: flex;
 			position: static;
-			justify-content: center;
 			margin: 0 auto;
+			padding: 4px 0;
 			transform: none !important;
 
 			@include container-up("top-services", 768px) {

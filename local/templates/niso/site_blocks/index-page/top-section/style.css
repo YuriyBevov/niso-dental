@@ -6,7 +6,7 @@ div:has(.hero__grid-item--side) {
 
 .hero {
 	container: hero/inline-size;
-	padding: clamp(20px, 5vw, 80px) 0;
+	padding: clamp(20px, 5vw, 80px) 0 20px 0;
 }
 .hero__grid {
 	display: grid;
