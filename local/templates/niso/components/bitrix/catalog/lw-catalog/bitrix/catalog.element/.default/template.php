@@ -377,7 +377,7 @@ $itemIds = array(
 						<div class="accordeon">
 							<? foreach ($arResult["PROPERTIES"]["ACCORDEON"]["VALUE"] as $arValue): ?>
 								<? if ($arValue["SUB_VALUES"]["TITLE"]["VALUE"] && $arValue["SUB_VALUES"]["CONTENT"]["~VALUE"]["TEXT"]): ?>
-									<div class="accordeon-item">
+									<div class="accordeon-item <?= ($arValue["SUB_VALUES"]['IS_EXPANDED']['VALUE'] == "Y") ? "expanded" : "" ?>">
 										<div class="accordeon-header">
 											<h2><strong><?= $arValue["SUB_VALUES"]["TITLE"]["VALUE"] ?></strong></h2>
 											<div class="accordeon-opener">
