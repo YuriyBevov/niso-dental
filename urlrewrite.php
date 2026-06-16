@@ -16,7 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/services/detail.php',
     'SORT' => 100,
   ),
-  16 => 
+  25 => 
   array (
     'CONDITION' => '#^/portfolio/#',
     'RULE' => '',
@@ -32,7 +32,7 @@ $arUrlRewrite=array (
     'PATH' => '/services/index.php',
     'SORT' => 100,
   ),
-  15 => 
+  26 => 
   array (
     'CONDITION' => '#^/staff/#',
     'RULE' => '',
@@ -40,7 +40,7 @@ $arUrlRewrite=array (
     'PATH' => '/staff/index.php',
     'SORT' => 100,
   ),
-  22 => 
+  31 => 
   array (
     'CONDITION' => '#^/sales/#',
     'RULE' => '',
@@ -56,7 +56,7 @@ $arUrlRewrite=array (
     'PATH' => '/bitrix/services/rest/index.php',
     'SORT' => 100,
   ),
-  18 => 
+  30 => 
   array (
     'CONDITION' => '#^/blog/#',
     'RULE' => '',
@@ -64,7 +64,7 @@ $arUrlRewrite=array (
     'PATH' => '/blog/index.php',
     'SORT' => 100,
   ),
-  21 => 
+  32 => 
   array (
     'CONDITION' => '#^/news/#',
     'RULE' => '',

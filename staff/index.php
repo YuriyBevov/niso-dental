@@ -1,12 +1,12 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetPageProperty("description", "Наши врачи - высококвалифицированные специалисты с многолетним опытом работы. Стоматологи высшей категории, кандидаты медицинских наук. Запишитесь на бесплатную консультацию: 8 (812) 327-51-54");
+$APPLICATION->SetPageProperty("description", "Наши врачи - высококвалифицированные специалисты с многолетним опытом работы. Стоматологи высшей категории, кандидаты медицинских наук. Запишитесь на бесплатную консультацию: +7 (812) 509-54-25");
 $APPLICATION->SetPageProperty("title", "Врачи стоматологической клиники НИСО | Опытные стоматологи Санкт-Петербурга");
 $APPLICATION->SetTitle("Врачи");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"staff", 
-	array(
+	[
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
@@ -23,20 +23,20 @@ $APPLICATION->SetTitle("Врачи");
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
-		"DETAIL_FIELD_CODE" => array(
+		"DETAIL_FIELD_CODE" => [
 			0 => "",
 			1 => "",
-		),
+		],
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => array(
+		"DETAIL_PROPERTY_CODE" => [
 			0 => "POSITION",
 			1 => "EDUCATION",
 			2 => "EXPERIENCE",
 			3 => "SPECIALIZATION",
 			4 => "",
-		),
+		],
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -49,18 +49,18 @@ $APPLICATION->SetTitle("Врачи");
 		"IBLOCK_TYPE" => "site_content",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array(
+		"LIST_FIELD_CODE" => [
 			0 => "PREVIEW_PICTURE",
 			1 => "DETAIL_PICTURE",
 			2 => "",
-		),
-		"LIST_PROPERTY_CODE" => array(
+		],
+		"LIST_PROPERTY_CODE" => [
 			0 => "POSITION",
 			1 => "EDUCATION",
 			2 => "EXPERIENCE",
 			3 => "SPECIALIZATION",
 			4 => "",
-		),
+		],
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -75,9 +75,9 @@ $APPLICATION->SetTitle("Врачи");
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"SEF_MODE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
-		"SET_STATUS_404" => "N",
+		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
-		"SHOW_404" => "N",
+		"SHOW_404" => "Y",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
@@ -93,11 +93,12 @@ $APPLICATION->SetTitle("Врачи");
 		"USE_SHARE" => "N",
 		"COMPONENT_TEMPLATE" => "staff",
 		"SEF_FOLDER" => "/staff/",
-		"SEF_URL_TEMPLATES" => array(
+		"FILE_404" => "",
+		"SEF_URL_TEMPLATES" => [
 			"news" => "",
 			"section" => "#SECTION_CODE#/",
 			"detail" => "#ELEMENT_CODE#/",
-		)
-	),
+		]
+	],
 	false
 );?><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

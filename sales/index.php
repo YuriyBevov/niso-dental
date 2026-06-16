@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetPageProperty("description", "Выгодные акции на все виды стоматологических услуг. Регулярные спецпредложения для пациентов. Программа лояльности. Успей получить выгоду звоните по телефону для получения подробной консультации: 8 (812) 327-51-54");
+$APPLICATION->SetPageProperty("description", "Выгодные акции на все виды стоматологических услуг. Регулярные спецпредложения для пациентов. Программа лояльности. Успей получить выгоду звоните по телефону для получения подробной консультации: +7 (812) 509-54-25");
 $APPLICATION->SetPageProperty("title", "Акции и скидки стоматологической клиники НИСО | Выгодные предложения");
 $APPLICATION->SetTitle("Акции");
 ?>
@@ -30,9 +30,8 @@ $APPLICATION->SetTitle("Акции");
 			1 => "PREVIEW_TEXT",
 			2 => "DETAIL_TEXT",
 			3 => "DETAIL_PICTURE",
-			4 => "DATE_ACTIVE_FROM",
-			5 => "DATE_ACTIVE_TO",
-			6 => "",
+			4 => "DATE_ACTIVE_TO",
+			5 => "",
 		],
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
@@ -44,7 +43,7 @@ $APPLICATION->SetTitle("Акции");
 		],
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"DISPLAY_DATE" => "Y",
+		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "Y",
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
@@ -58,9 +57,8 @@ $APPLICATION->SetTitle("Акции");
 			0 => "PREVIEW_TEXT",
 			1 => "DETAIL_TEXT",
 			2 => "DETAIL_PICTURE",
-			3 => "DATE_ACTIVE_FROM",
-			4 => "DATE_ACTIVE_TO",
-			5 => "",
+			3 => "DATE_ACTIVE_TO",
+			4 => "",
 		],
 		"LIST_PROPERTY_CODE" => [
 			0 => "PRICE",

@@ -61,3 +61,4 @@ RewriteRule ^(.*[^\/])$ /$1/ [R=301,L]
 	ExpiresByType image/jpeg "access plus 3 day"
 	ExpiresByType image/gif "access plus 3 day"
 </IfModule>
+Header always set Content-Security-Policy "upgrade-insecure-requests"

@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetPageProperty("description", "Экспертный блог о стоматологии от клиники НИСО: актуальные статьи о здоровье зубов, советы по уходу, новости отрасли и ответы на частые вопросы пациентов. Запишитесь на бесплатную консультацию: 8 (812) 327-51-54.");
+$APPLICATION->SetPageProperty("description", "Экспертный блог о стоматологии от клиники НИСО: актуальные статьи о здоровье зубов, советы по уходу, новости отрасли и ответы на частые вопросы пациентов.");
 $APPLICATION->SetPageProperty("title", "Блог стоматологической клиники НИСО | Статьи и советы от ведущих специалистов");
 $APPLICATION->SetTitle("Новости");
 ?>
@@ -8,7 +8,7 @@ $APPLICATION->SetTitle("Новости");
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"news", 
-	array(
+	[
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -24,20 +24,21 @@ $APPLICATION->SetTitle("Новости");
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
 		"COMPONENT_TEMPLATE" => "news",
-		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"DETAIL_ACTIVE_DATE_FORMAT" => "j F Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
-		"DETAIL_FIELD_CODE" => array(
+		"DETAIL_FIELD_CODE" => [
 			0 => "TAGS",
-			1 => "",
-		),
+			1 => "DATE_ACTIVE_FROM",
+			2 => "",
+		],
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => array(
+		"DETAIL_PROPERTY_CODE" => [
 			0 => "LINKED",
 			1 => "",
-		),
+		],
 		"DETAIL_URL" => "/blog/#ELEMENT_CODE#/",
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -46,25 +47,26 @@ $APPLICATION->SetTitle("Новости");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(
+		"FIELD_CODE" => [
 			0 => "",
 			1 => "",
-		),
+		],
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "15",
 		"IBLOCK_TYPE" => "site_content",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"INCLUDE_SUBSECTIONS" => "Y",
-		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array(
+		"LIST_ACTIVE_DATE_FORMAT" => "j F Y",
+		"LIST_FIELD_CODE" => [
 			0 => "TAGS",
-			1 => "",
-		),
-		"LIST_PROPERTY_CODE" => array(
+			1 => "DETAIL_PICTURE",
+			2 => "",
+		],
+		"LIST_PROPERTY_CODE" => [
 			0 => "LINKED",
 			1 => "",
-		),
+		],
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -79,18 +81,18 @@ $APPLICATION->SetTitle("Новости");
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(
+		"PROPERTY_CODE" => [
 			0 => "",
 			1 => "",
-		),
+		],
 		"SEF_MODE" => "Y",
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "Y",
 		"SET_META_KEYWORDS" => "Y",
-		"SET_STATUS_404" => "N",
+		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
-		"SHOW_404" => "N",
+		"SHOW_404" => "Y",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
@@ -105,12 +107,13 @@ $APPLICATION->SetTitle("Новости");
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
 		"SEF_FOLDER" => "/blog/",
-		"SEF_URL_TEMPLATES" => array(
+		"FILE_404" => "",
+		"SEF_URL_TEMPLATES" => [
 			"news" => "",
 			"section" => "",
 			"detail" => "#ELEMENT_CODE#/",
-		)
-	),
+		]
+	],
 	false
 ); ?>
 

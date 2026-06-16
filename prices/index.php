@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetPageProperty("description", "Цены на услуги стоматологической клиники НИСО. Запись на бесплатную консультацию осуществляется по телефону: +7 (812) 327-51-54");
+$APPLICATION->SetPageProperty("description", "Цены на услуги стоматологической клиники НИСО. Запись на бесплатную консультацию осуществляется по телефону: +7 (812) 509-54-25");
 $APPLICATION->SetPageProperty("title", "Цены на услуги стоматологической клиники НИСО");
 $APPLICATION->SetTitle("Цены на услуги");
 ?><?$APPLICATION->IncludeComponent(
