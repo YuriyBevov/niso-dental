@@ -89,3 +89,16 @@
 		width: fit-content;
 	}
 }
+
+.base-card__link {
+	-webkit-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+	opacity: 1;
+}
+.base-card__link:focus,
+.base-card__link:hover {
+	opacity: 0.6;
+}
+.base-card__link:active {
+	opacity: 0.4;
+}

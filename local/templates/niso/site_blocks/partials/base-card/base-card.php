@@ -19,7 +19,9 @@ if (!isset($stylesIncluded['base-card'])) {
         BX_RESIZE_IMAGE_EXACT
       );
     ?>
-      <img src="<?= $resImage['src'] ?>" alt="<?= $arItem["NAME"] ?>" width="480" height="240">
+      <a class="base-card__link" href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
+        <img src="<?= $resImage['src'] ?>" alt="<?= $arItem["NAME"] ?>" width="480" height="240">
+      </a>
     <?
       $hideImg = false;
     endif; ?>
@@ -38,7 +40,9 @@ if (!isset($stylesIncluded['base-card'])) {
           <? endif; ?>
         </small>
       <? endif; ?>
-      <span class="base-subtitle"><?= $arItem["NAME"] ?></span>
+      <a class="base-card__link" href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
+        <span class="base-subtitle"><?= $arItem["NAME"] ?></span>
+      </a>
 
       <? if ($arItem["DISPLAY_ACTIVE_FROM"] && $arParams["DISPLAY_DATE"] === "Y"): ?>
         <span class="base-card__headline">Опубликовано: <time><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></time></span>
