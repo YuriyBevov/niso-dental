@@ -78,9 +78,14 @@
 		-ms-flex-align: center;
 		align-items: center;
 	}
-	.base-card img {
+
+	.base-card__link:has(img) {
+		flex-shrink: 0;
 		width: 50%;
-		max-width: 480;
+		max-width: 480px;
+	}
+
+	.base-card img {
 		max-height: 240px;
 	}
 	.base-card .main-btn {
