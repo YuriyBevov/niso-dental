@@ -73,12 +73,12 @@ $this->setFrameMode(true);
 					<? endforeach; ?>
 				</div>
 				<div class="top-services__navigation">
-					<button class="swiper-button swiper-button-prev">
+					<button class="swiper-button swiper-button-prev" type="button" aria-label="Назад">
 						<svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
 							<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
 						</svg>
 					</button>
-					<button class="swiper-button swiper-button-next">
+					<button class="swiper-button swiper-button-next" type="button" aria-label="Вперед">
 						<svg width="22" height="22" role="img" aria-hidden="true" focusable="false">
 							<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
 						</svg>
