@@ -2,6 +2,8 @@
 $this->setFrameMode(true);
 ?>
 
+<? $slideIndex = 1 ?>
+
 <? if ($arResult["ITEMS"]): ?>
   <div class="swiper top-banner-slider">
     <div class="swiper-wrapper">
@@ -79,10 +81,13 @@ $this->setFrameMode(true);
 
               <img class="top-banner__img"
                 src="<?= ($arItem["PREVIEW_PICTURE"]["SRC"] ? $arItem["PREVIEW_PICTURE"]["SRC"] : '/img/tooth-banner-bg-paddings.png') ?>"
-                alt="<? $arItem["NAME"] ?>" width="602" height="550">
+                alt="<?= $arItem["NAME"] ?>" width="602" height="550"
+                <?= ($slideIndex == 1) ? 'loading="eager" fetchpriority="high"' : "loading = lazy" ?>>
             </div>
           </div>
         </div>
+
+        <? $slideIndex++ ?>
       <? endforeach; ?>
     </div>
     <div class="swiper__navigation-wrapper">
