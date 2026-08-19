@@ -23,7 +23,7 @@ $this->setFrameMode(true);
 									<a class="services-linked__item" href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
 										<img src="/img/tooth-img.svg" alt="Иконка" width="40" height="40">
 										<span class="base-subtitle"><?= $arItem["NAME"] ?></span>
-										<small class="base-text">Подробнее о услуге</small>
+										<small class="base-text">Подробнее об услуге</small>
 									</a>
 								</div>
 							</div>
