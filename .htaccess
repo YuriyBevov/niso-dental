@@ -25,7 +25,7 @@ RewriteRule ^(.*)$ %1/ [R=301,L]
 # Удалить index.php из URL.
 RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
 	# Проверяем, содержит ли домен www (в начале URL).
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 	# Перенаправляем URL на домен без www.
 
 
