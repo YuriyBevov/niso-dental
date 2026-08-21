@@ -7,7 +7,7 @@
       $previousLevel = 0;
       foreach ($arResult as $arItem): ?>
         <? if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel): ?>
-          <?= str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
+          <?= str_repeat("</ul></div></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
         <? endif ?>
         <? if ($arItem["IS_PARENT"]): ?>
           <? if ($arItem["DEPTH_LEVEL"] == 1): ?>
@@ -34,14 +34,14 @@
                         </div>
                       </a>
                     <? else: ?>
-                      <span>
+                      <div class="top-menu-inner-item">
                         <?= $arItem["TEXT"] ?>
                         <div class="top-menu-inner-opener">
                           <svg width="12" height="12" role="img" aria-hidden="true" focusable="false">
                             <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-menu-arrow"></use>
                           </svg>
                         </div>
-                      </span>
+                      </div>
                     <? endif; ?>
                     <div class="top-menu__inner-wrapper">
                       <ul>
