@@ -43,14 +43,13 @@ if (!isset($stylesIncluded['base-card'])) {
       <a class="base-card__link" href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
         <span class="base-subtitle"><?= $arItem["NAME"] ?></span>
       </a>
-
       <? if ($arItem["DISPLAY_ACTIVE_FROM"] && $arParams["DISPLAY_DATE"] === "Y"): ?>
-        <span class="base-card__headline">Опубликовано: <time><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></time></span>
+        <span class="base-card__headline">Опубликовано: <time datetime="<?= $arItem["ACTIVE_FROM_X"] ?>"><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></time></span>
       <? endif;  ?>
       <? if ($arItem["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"]): ?>
         <div class="price-badge"><span><?= $arItem["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"] ?> руб.</span></div>
       <? endif; ?>
-      <span class="base-text"><?= $arItem["PREVIEW_TEXT"] ?></span>
+      <div class="base-text"><?= $arItem["PREVIEW_TEXT"] ?></div>
       <a class="main-btn" href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
         <span>Подробнее</span>
       </a>
