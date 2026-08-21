@@ -9,8 +9,8 @@ if (!isset($stylesIncluded['image-comparison-slider'])) {
 
 <div class="image-comparison" data-component="image-comparison-slider">
   <div class="image-comparison__slider-wrapper">
-    <label for="image-comparison-range" class="image-comparison__label">
-      <input type="range" min="0" max="100" value="50" class="image-comparison__range" id="image-compare-range" data-image-comparison-range="">
+    <label class="image-comparison__label">
+      <input type="range" min="0" max="100" value="50" class="image-comparison__range" data-image-comparison-range="">
     </label>
 
     <div class="image-comparison__image-wrapper  image-comparison__image-wrapper--overlay" data-image-comparison-overlay="">
