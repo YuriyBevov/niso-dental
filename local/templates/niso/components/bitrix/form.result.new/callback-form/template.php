@@ -1,7 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
 <? if ($arParams["IS_MODAL"] != "Y"): ?>
-	<section class="base-section callback">
+	<div class="base-section callback">
 		<div class="container">
 		<? endif; ?>
 
@@ -89,7 +89,7 @@
 
 		<? if ($arParams["IS_MODAL"] != "Y"): ?>
 		</div>
-	</section>
+	</div>
 <? endif; ?>
 
 <? if ($_REQUEST['AJAX_CALL'] == 'Y'): ?>
