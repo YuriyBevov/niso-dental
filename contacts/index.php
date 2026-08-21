@@ -81,7 +81,7 @@ $APPLICATION->SetTitle("Контактная информация");
           </span>
           <h1 class="base-title">Наши контакты</h1>
 
-          <span class="base-text">
+          <div class="base-text">
             <?
             $APPLICATION->IncludeFile(
               SITE_DIR . 'include/contacts/contacts-text.php',
@@ -89,7 +89,7 @@ $APPLICATION->SetTitle("Контактная информация");
               array('MODE' => 'html', 'NAME' => 'описание', 'SHOW_BORDER' => true)
             );
             ?>
-          </span>
+          </div>
         </div>
 
         <div class="contacts__field">
