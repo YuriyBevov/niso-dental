@@ -38,9 +38,9 @@ $isoModifyingDate = $modifyingDate->format(DateTime::ATOM);
 			<meta itemprop="url" content="<?= 'https://niso-dental.ru' . $arResult['DETAIL_PAGE_URL'] ?>">
 			<meta itemprop="datePublished" content="<?= $isoСreatingDate ?>">
 			<meta itemprop="dateModified" content="<?= $isoModifyingDate ?>">
-			<span class="news-detail__date">Опубликовано: <time><?= $arResult["DISPLAY_ACTIVE_FROM"] ?></time></span>
+			<span class="news-detail__date">Опубликовано: <time datetime="<?= $arResult['ACTIVE_FROM_X'] ?>"><?= $arResult["DISPLAY_ACTIVE_FROM"] ?></time></span>
 		</div>
-		<div class="news-detail__grid">
+		<div class=" news-detail__grid">
 			<div class="news-detail__grid-item news-detail__grid-item--content">
 				<? if ($arResult["DETAIL_PICTURE"]): ?>
 					<img class="news-detail__image" src="<?= $arResult["DETAIL_PICTURE"]["SRC"] ?>" alt="<?= $arResult["DETAIL_PICTURE"]["DESCRIPTION"] ?>" width="<?= $arResult["DETAIL_PICTURE"]["WIDTH"] ?>" height="<?= $arResult["DETAIL_PICTURE"]["HEIGHT"] ?>">
