@@ -80,7 +80,6 @@ $pathAfter = CFile::GetPath($arResult["PROPERTIES"]["IMAGE_AFTER"]["VALUE"]);
 			</div>
 		<? endif; ?>
 	</div>
-	</div>
 </section>
 
 <?
