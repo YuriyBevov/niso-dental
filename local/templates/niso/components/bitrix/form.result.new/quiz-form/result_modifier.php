@@ -29,6 +29,9 @@ function FillInput($strType, $strName, $strValue, $strCmp, $strPrintValue = fals
 		($bCheck ? ' checked' : '') . '>' . ($strPrintValue ? $strValue : $strPrint) . ($bLabel ? '</label>' : '');
 }
 
+
+
+
 foreach ($arResult["arAnswers"] as $FIELD_SID => $arAns) {
 	$res = '';
 	// debug($FIELD_SID);
@@ -43,15 +46,11 @@ foreach ($arResult["arAnswers"] as $FIELD_SID => $arAns) {
 
 			$value = CForm::GetRadioValue($FIELD_SID, $arAnswer, $arResult["arrVALUES"]);
 
-			if ($arResult["isFormErrors"] == 'Y') {
-				if (
-					mb_strpos(mb_strtolower($arAnswer["FIELD_PARAM"]), "selected") !== false
-					||
-					mb_strpos(mb_strtolower($arAnswer["FIELD_PARAM"]), "checked") !== false
-				) {
-					$arAnswer["FIELD_PARAM"] = preg_replace("/checked|selected/i", "", $arAnswer["FIELD_PARAM"]);
-				}
-			}
+			$arAnswer["FIELD_PARAM"] = preg_replace(
+				"/(?:^|\s+)checked(?:\s*=\s*(?:\"[^\"]*\"|'[^']*'|[^\s>]+))?/i",
+				"",
+				$arAnswer["FIELD_PARAM"]
+			);
 
 			$input = FillInput("radio", "form_radio_" . $FIELD_SID, $arAnswer["ID"], $value, false, "", $arAnswer["FIELD_PARAM"]);
 

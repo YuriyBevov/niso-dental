@@ -8,7 +8,7 @@ $length = count($arResult["QUIZ_QUESTIONS"]) + 2 ?>
 	<?= $arResult["FORM_ERRORS_TEXT"]; ?>
 <? endif; ?>
 
-<section class="base-section quiz-form">
+<div class="base-section quiz-form">
 	<div class="container">
 		<div class="quiz-form__wrapper">
 			<? if ($arResult["FORM_NOTE"]): ?>
@@ -124,13 +124,13 @@ $length = count($arResult["QUIZ_QUESTIONS"]) + 2 ?>
 
 							</div>
 							<div class="quiz-form__gift">
-								 <?
-									$APPLICATION->IncludeFile(
-										SITE_DIR . 'include/quiz/index.php',
-										array(),
-										array('MODE' => 'html', 'NAME' => 'Название подарка', 'SHOW_BORDER' => true)
-									);
-									?>
+								<?
+								$APPLICATION->IncludeFile(
+									SITE_DIR . 'include/quiz/index.php',
+									array(),
+									array('MODE' => 'html', 'NAME' => 'Название подарка', 'SHOW_BORDER' => true)
+								);
+								?>
 							</div>
 						</div>
 					</div>
@@ -141,4 +141,4 @@ $length = count($arResult["QUIZ_QUESTIONS"]) + 2 ?>
 			<? endif; ?>
 		</div>
 	</div>
-</section>
+</div>
