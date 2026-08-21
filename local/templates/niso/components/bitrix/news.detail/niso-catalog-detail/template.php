@@ -80,7 +80,7 @@ if ($arElement = $rsElement->GetNext()) {
 						"ALLOW_MULTI_SELECT" => "N",
 						"CHILD_MENU_TYPE" => "left",
 						"DELAY" => "N",
-						"MAX_LEVEL" => "2",
+						"MAX_LEVEL" => "3",
 						"MENU_CACHE_GET_VARS" => array(),
 						"MENU_CACHE_TIME" => "0",
 						"MENU_CACHE_TYPE" => "N",
@@ -192,7 +192,7 @@ if ($arElement = $rsElement->GetNext()) {
 						</table>
 					<? endif; ?>
 
-test
+					test
 
 					<? if (!empty($arResult["PROPERTIES"]["DETAIL_TEXT_BOTTOM"]["~VALUE"]["TEXT"])): ?>
 						<?= $arResult["PROPERTIES"]["DETAIL_TEXT_BOTTOM"]["~VALUE"]["TEXT"] ?>
