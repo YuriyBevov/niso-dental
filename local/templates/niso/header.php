@@ -254,14 +254,14 @@ $curPage = $APPLICATION->GetCurPage();
         <button class="main-btn" type="button" data-modal-opener="callback-modal">
           <span>Записаться</span>
         </button>
-        <div class="burger-btn mobile-menu-opener">
+        <button class="burger-btn mobile-menu-opener" type="button" aria-label="Кнопка открытия меню">
           <img src="/img/burger.svg" alt="Открыть меню" width="24" height="24">
-        </div>
+        </button>
       </div>
       <div class="header__section header__section--bottom mobile-menu">
         <div class="mobile-menu__wrapper">
           <div class="mobile-menu__header"><a class="main-logo" href="/" aria-label="Название сайта для скринридера"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/logo.svg" alt="Название сайта" width="180" height="40"></a>
-            <button class="burger-btn mobile-menu-closer active" aria-label="Кнопка открытия меню">
+            <button class="burger-btn mobile-menu-closer active" aria-label="Кнопка закрытия меню">
               <svg width="20" height="20" viewBox="0 0 20 20" role="img" aria-hidden="true" focusable="false">
                 <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-cross"></use>
               </svg>
