@@ -10,6 +10,7 @@
 /local/logs/
 /local/php_interface/dbconn.php
 /node_modules/
+/include/
 
 /local/templates/niso-implant/
 /local/templates/niso/template_styles.css
