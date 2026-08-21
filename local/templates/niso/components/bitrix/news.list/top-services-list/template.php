@@ -86,7 +86,7 @@ $this->setFrameMode(true);
 				</div>
 				<div class="swiper-pagination"></div>
 			</div>
-			<a class="main-btn main-btn--outlined top-services__btn" href="/prices">Смотреть все цены</a>
+			<a class="main-btn main-btn--outlined top-services__btn" href="/prices/">Смотреть все цены</a>
 		</div>
 	</section>
 <? endif; ?>
