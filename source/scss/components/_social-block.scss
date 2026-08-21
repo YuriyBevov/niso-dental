@@ -2,20 +2,20 @@
 @forward "@scss-root/_extends/effects.scss";
 
 .social-block {
-  @extend %flex-align;
-  gap: 12px;
+	@extend %flex-align;
+	gap: 12px;
 
-  &__item {
-    @extend %flex-center;
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    @extend %hover-opacity;
+	&__item {
+		@extend %flex-center;
+		width: 40px;
+		height: 40px;
+		border-radius: 5px;
+		@extend %hover-opacity;
 
-    img {
-      width: 40px;
-      height: auto;
-      object-fit: contain;
-    }
-  }
+		img {
+			width: 40px;
+			height: auto;
+			object-fit: contain;
+		}
+	}
 }
