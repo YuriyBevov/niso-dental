@@ -611,7 +611,43 @@ unset($GLOBALS['arLinkedExamplesFilter']);
 ?>
 
 <!-- features -->
-<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/features/features.php");  ?>
+<? if ($arResult["PROPERTIES"]["HIDE_FEATURES"]["VALUE"] !== "Y"): ?>
+	<? if (!empty($arResult["PROPERTIES"]["FEATURE"]["VALUE"])): ?>
+		<section class="base-section service-features">
+			<div class="container">
+				<div class="base-section__header">
+					<span class="base-text base-section__headline"><?= $arResult["PROPERTIES"]["FEATURES_HEADLINE"]["VALUE"] ?? "Почему выбирают нас" ?></span>
+					<h2 class="base-title"><?= $arResult["PROPERTIES"]["FEATURES_TITLE"]["VALUE"] ?? "Наши преимущества" ?></h2>
+					<? if (!empty($arResult["PROPERTIES"]["FEATURES_DESC"]["~VALUE"]["TEXT"])): ?>
+						<span class="base-text service-features__desc"><?= $arResult["PROPERTIES"]["FEATURES_DESC"]["~VALUE"]["TEXT"] ?></span>
+					<? endif; ?>
+					<div class="service-features__grid">
+						<? foreach ($arResult["PROPERTIES"]["FEATURE"]["VALUE"] as $arItem): ?>
+							<?
+							$element = $arItem["SUB_VALUES"];
+							$elementImgId = $element["FEATURE_IMG"]["VALUE"] ?? "";
+							$src = $elementImgId ? CFile::GetPath($elementImgId) : "";
+							?>
+							<div class="service-features__item">
+								<div class="service-feature__card-wrapper">
+									<div class="service-feature__card">
+										<? if ($elementImgId): ?>
+											<img loading="lazy" src="<?= $src ?>" alt="<?= $element["FEATURE_IMG_ALT"]["VALUE"] ?? $element["FEATURE_TITLE"]["VALUE"] ?>" width="80" height="80">
+										<? endif; ?>
+										<h3 class="base-subtitle"><?= $element["FEATURE_TITLE"]["~VALUE"] ?></h3>
+										<p class="base-text"><?= $element["FEATURE_DESC"]["~VALUE"]["TEXT"] ?></p>
+									</div>
+								</div>
+							</div>
+						<? endforeach; ?>
+					</div>
+				</div>
+			</div>
+		</section>
+	<? else: ?>
+		<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/features/features.php");  ?>
+	<? endif; ?>
+<? endif; ?>
 <!-- features -->
 
 <!-- reviews-preview -->
