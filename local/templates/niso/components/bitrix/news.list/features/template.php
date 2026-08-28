@@ -43,8 +43,8 @@ $this->setFrameMode(true);
                 <? if ($arItem["PREVIEW_PICTURE"]): ?>
                   <img loading="lazy" src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="80" height="80">
                 <? endif; ?>
-                <span class="base-subtitle"><?= $arItem["NAME"] ?></span>
-                <span class="base-text"><?= $arItem["PREVIEW_TEXT"] ?></span>
+                <h3 class="base-subtitle"><?= $arItem["NAME"] ?></h3>
+                <p class="base-text"><?= $arItem["PREVIEW_TEXT"] ?></p>
               </div>
             </div>
           </div>
