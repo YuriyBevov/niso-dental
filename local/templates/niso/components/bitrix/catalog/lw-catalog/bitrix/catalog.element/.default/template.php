@@ -621,26 +621,26 @@ unset($GLOBALS['arLinkedExamplesFilter']);
 					<? if (!empty($arResult["PROPERTIES"]["FEATURES_DESC"]["~VALUE"]["TEXT"])): ?>
 						<span class="base-text service-features__desc"><?= $arResult["PROPERTIES"]["FEATURES_DESC"]["~VALUE"]["TEXT"] ?></span>
 					<? endif; ?>
-					<div class="service-features__grid">
-						<? foreach ($arResult["PROPERTIES"]["FEATURE"]["VALUE"] as $arItem): ?>
-							<?
-							$element = $arItem["SUB_VALUES"];
-							$elementImgId = $element["FEATURE_IMG"]["VALUE"] ?? "";
-							$src = $elementImgId ? CFile::GetPath($elementImgId) : "";
-							?>
-							<div class="service-features__item">
-								<div class="service-feature__card-wrapper">
-									<div class="service-feature__card">
-										<? if ($elementImgId): ?>
-											<img loading="lazy" src="<?= $src ?>" alt="<?= $element["FEATURE_IMG_ALT"]["VALUE"] ?? $element["FEATURE_TITLE"]["VALUE"] ?>" width="80" height="80">
-										<? endif; ?>
-										<h3 class="base-subtitle"><?= $element["FEATURE_TITLE"]["~VALUE"] ?></h3>
-										<p class="base-text"><?= $element["FEATURE_DESC"]["~VALUE"]["TEXT"] ?></p>
-									</div>
+				</div>
+				<div class="service-features__grid">
+					<? foreach ($arResult["PROPERTIES"]["FEATURE"]["VALUE"] as $arItem): ?>
+						<?
+						$element = $arItem["SUB_VALUES"];
+						$elementImgId = $element["FEATURE_IMG"]["VALUE"] ?? "";
+						$src = $elementImgId ? CFile::GetPath($elementImgId) : "";
+						?>
+						<div class="service-features__item">
+							<div class="service-feature__card-wrapper">
+								<div class="service-feature__card">
+									<? if ($elementImgId): ?>
+										<img loading="lazy" src="<?= $src ?>" alt="<?= $element["FEATURE_IMG_ALT"]["VALUE"] ?? $element["FEATURE_TITLE"]["VALUE"] ?>" width="80" height="80">
+									<? endif; ?>
+									<h3 class="base-subtitle"><?= $element["FEATURE_TITLE"]["~VALUE"] ?></h3>
+									<p class="base-text"><?= $element["FEATURE_DESC"]["~VALUE"]["TEXT"] ?></p>
 								</div>
 							</div>
-						<? endforeach; ?>
-					</div>
+						</div>
+					<? endforeach; ?>
 				</div>
 			</div>
 		</section>
