@@ -56,7 +56,6 @@ $itemIds = array(
 		<?
 		if ($arResult["PROPERTIES"]["BANNERS"]["VALUE"]):
 			$GLOBALS["arBannersFilter"] = array("ID" => $arResult["PROPERTIES"]["BANNERS"]["VALUE"]);
-
 			// Вызываем компонент
 			$APPLICATION->IncludeComponent(
 				"bitrix:news.list",
@@ -95,6 +94,7 @@ $itemIds = array(
 				),
 				$component
 			);
+			unset($GLOBALS['arBannersFilter']);
 		endif;
 		?>
 
@@ -361,6 +361,7 @@ $itemIds = array(
 							),
 							$component
 						);
+						unset($GLOBALS['arLinkedPricesFilter']);
 						?>
 						<? if (!empty($arResult["PROPERTIES"]["PRICE_LIST_TEXT_AFTER"]["~VALUE"]["TEXT"])): ?>
 							<div class="content">
@@ -542,8 +543,7 @@ $APPLICATION->IncludeComponent(
 unset($GLOBALS['arLinkedServicesFilter']);
 ?>
 
-<? if (!empty($arResult['PROPERTIES']['LINKED_EXAMPLES'])) {
-
+<? if (!empty($arResult['PROPERTIES']['LINKED_EXAMPLES']['VALUE'])) {
 	$GLOBALS['arLinkedExamplesFilter'] = array('ID' => $arResult['PROPERTIES']['LINKED_EXAMPLES']['VALUE']);
 	$APPLICATION->IncludeComponent(
 		"bitrix:news.list",
@@ -651,73 +651,160 @@ unset($GLOBALS['arLinkedExamplesFilter']);
 <!-- features -->
 
 <!-- reviews-preview -->
-<?
-$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"reviews-preview",
-	array(
-		"ACTIVE_DATE_FORMAT" => "j F Y",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "N",
-		"CACHE_FILTER" => "N",
-		"CACHE_GROUPS" => "N",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "Y",
-		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"DISPLAY_DATE" => "N",
-		"DISPLAY_NAME" => "N",
-		"DISPLAY_PICTURE" => "N",
-		"DISPLAY_PREVIEW_TEXT" => "N",
-		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+
+<? if (!empty($arResult["PROPERTIES"]["LINKED_REVIEWS"]["VALUE"])) : ?>
+	<section class="base-section customer-reviews">
+		<div class="container">
+			<div class="base-section__header">
+				<span class="base-text base-section__headline">Наши отзывы</span>
+				<h2 class="base-title"><?= $arResult["PROPERTIES"]["REVIEWS_TITLE"]["~VALUE"] ?? "Что о нас говорят" ?></h2>
+			</div>
+			<?
+			$GLOBALS['arLinkedReviewsFilter'] = array('ID' => $arResult['PROPERTIES']['LINKED_REVIEWS']['VALUE']);
+			$APPLICATION->IncludeComponent(
+				"bitrix:news.list",
+				"customer-reviews-list",
+				array(
+					"ACTIVE_DATE_FORMAT" => "j F Y",
+					"ADD_SECTIONS_CHAIN" => "N",
+					"AJAX_MODE" => "N",
+					"AJAX_OPTION_ADDITIONAL" => "",
+					"AJAX_OPTION_HISTORY" => "N",
+					"AJAX_OPTION_JUMP" => "N",
+					"AJAX_OPTION_STYLE" => "Y",
+					"CACHE_FILTER" => "Y",
+					"CACHE_GROUPS" => "Y",
+					"CACHE_TIME" => "36000000",
+					"CACHE_TYPE" => "A",
+					"CHECK_DATES" => "Y",
+					"DETAIL_URL" => "",
+					"DISPLAY_BOTTOM_PAGER" => "Y",
+					"DISPLAY_DATE" => "Y",
+					"DISPLAY_NAME" => "Y",
+					"DISPLAY_PICTURE" => "Y",
+					"DISPLAY_PREVIEW_TEXT" => "Y",
+					"DISPLAY_TOP_PAGER" => "N",
+					"FIELD_CODE" => array("DATE_ACTIVE_FROM", ""),
+					"FILTER_NAME" => "arLinkedReviewsFilter",
+					"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+					"IBLOCK_ID" => "10",
+					"IBLOCK_TYPE" => "site_content",
+					"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+					"INCLUDE_SUBSECTIONS" => "Y",
+					"MESSAGE_404" => "",
+					"NEWS_COUNT" => "20",
+					"PAGER_BASE_LINK_ENABLE" => "N",
+					"PAGER_DESC_NUMBERING" => "N",
+					"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+					"PAGER_SHOW_ALL" => "N",
+					"PAGER_SHOW_ALWAYS" => "N",
+					"PAGER_TEMPLATE" => ".default",
+					"PAGER_TITLE" => "Новости",
+					"PARENT_SECTION" => "",
+					"PARENT_SECTION_CODE" => "",
+					"PREVIEW_TRUNCATE_LEN" => "",
+					"PROPERTY_CODE" => array("RATE", ""),
+					"SET_BROWSER_TITLE" => "N",
+					"SET_LAST_MODIFIED" => "N",
+					"SET_META_DESCRIPTION" => "N",
+					"SET_META_KEYWORDS" => "N",
+					"SET_STATUS_404" => "N",
+					"SET_TITLE" => "N",
+					"SHOW_404" => "N",
+					"SORT_BY1" => "ACTIVE_FROM",
+					"SORT_BY2" => "SORT",
+					"SORT_ORDER1" => "DESC",
+					"SORT_ORDER2" => "ASC",
+					"STRICT_SECTION_CHECK" => "N"
+				),
+				$component
+			);
+			unset($GLOBALS['arLinkedReviewsFilter']);
+			?>
+			<div class="customer-reviews__banner">
+				<div class="customer-reviews__banner-icon">
+					<svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
+						<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-chat"></use>
+					</svg>
+				</div>
+				<div class="customer-reviews__banner-content">
+					<span class="customer-reviews__banner-title">Оставьте свой отзыв</span>
+					<p class="customer-reviews__banner-text">Ваше мнение помогает нам становиться лучше и делать лечение ещё комфортнее.</p>
+				</div>
+				<button type="button" class="main-btn" data-form-id="2">Оставить отзыв</button>
+			</div>
+		</div>
+	</section>
+<? else: ?>
+	<?
+	$APPLICATION->IncludeComponent(
+		"bitrix:news.list",
+		"reviews-preview",
+		array(
+			"ACTIVE_DATE_FORMAT" => "j F Y",
+			"ADD_SECTIONS_CHAIN" => "N",
+			"AJAX_MODE" => "N",
+			"AJAX_OPTION_ADDITIONAL" => "",
+			"AJAX_OPTION_HISTORY" => "N",
+			"AJAX_OPTION_JUMP" => "N",
+			"AJAX_OPTION_STYLE" => "N",
+			"CACHE_FILTER" => "N",
+			"CACHE_GROUPS" => "N",
+			"CACHE_TIME" => "36000000",
+			"CACHE_TYPE" => "Y",
+			"CHECK_DATES" => "Y",
+			"DETAIL_URL" => "",
+			"DISPLAY_BOTTOM_PAGER" => "Y",
+			"DISPLAY_DATE" => "N",
+			"DISPLAY_NAME" => "N",
+			"DISPLAY_PICTURE" => "N",
+			"DISPLAY_PREVIEW_TEXT" => "N",
+			"DISPLAY_TOP_PAGER" => "N",
+			"FIELD_CODE" => array(
+				0 => "",
+				1 => "",
+			),
+			"FILTER_NAME" => "",
+			"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+			"IBLOCK_ID" => "10",
+			"IBLOCK_TYPE" => "site_content",
+			"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+			"INCLUDE_SUBSECTIONS" => "N",
+			"MESSAGE_404" => "",
+			"NEWS_COUNT" => "",
+			"PAGER_BASE_LINK_ENABLE" => "N",
+			"PAGER_DESC_NUMBERING" => "N",
+			"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+			"PAGER_SHOW_ALL" => "N",
+			"PAGER_SHOW_ALWAYS" => "N",
+			"PAGER_TEMPLATE" => ".default",
+			"PAGER_TITLE" => "Новости",
+			"PARENT_SECTION" => "",
+			"PARENT_SECTION_CODE" => "",
+			"PREVIEW_TRUNCATE_LEN" => "",
+			"PROPERTY_CODE" => array(
+				0 => "RATE",
+				1 => "",
+			),
+			"SET_BROWSER_TITLE" => "N",
+			"SET_LAST_MODIFIED" => "N",
+			"SET_META_DESCRIPTION" => "N",
+			"SET_META_KEYWORDS" => "N",
+			"SET_STATUS_404" => "N",
+			"SET_TITLE" => "N",
+			"SHOW_404" => "N",
+			"SORT_BY1" => "ACTIVE_FROM",
+			"SORT_BY2" => "SORT",
+			"SORT_ORDER1" => "DESC",
+			"SORT_ORDER2" => "ASC",
+			"STRICT_SECTION_CHECK" => "N",
+			"COMPONENT_TEMPLATE" => "reviews-preview"
 		),
-		"FILTER_NAME" => "",
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "10",
-		"IBLOCK_TYPE" => "site_content",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"INCLUDE_SUBSECTIONS" => "N",
-		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => ".default",
-		"PAGER_TITLE" => "Новости",
-		"PARENT_SECTION" => "",
-		"PARENT_SECTION_CODE" => "",
-		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(
-			0 => "RATE",
-			1 => "",
-		),
-		"SET_BROWSER_TITLE" => "N",
-		"SET_LAST_MODIFIED" => "N",
-		"SET_META_DESCRIPTION" => "N",
-		"SET_META_KEYWORDS" => "N",
-		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "N",
-		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "reviews-preview"
-	),
-	$component
-);
-?>
+		$component
+	);
+	?>
+<? endif; ?>
+
 <!-- reviews-preview -->
 
 <!-- video-reviews -->
@@ -940,7 +1027,7 @@ unset($GLOBALS['arFaqFilter']);
 
 <div class="slide-panel">
 	<button class="slide-panel__trigger" type="button" data-form-tpl="quiz-form-popup" data-form-id="12"><span>Пройдите опрос</span></button>
-	<button class="slide-panel__closer">
+	<button class="slide-panel__closer" type="button">
 		<svg width="20" height="20" viewBox="0 0 20 20" role="img" aria-hidden="true" focusable="false">
 			<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-cross"></use>
 		</svg>

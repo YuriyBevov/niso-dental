@@ -306,3 +306,93 @@
 		container: feature-card/inline-size;
 	}
 }
+
+.customer-reviews {
+	container: customer-reviews / inline-size;
+	display: flex;
+
+	&__banner {
+		display: grid;
+		gap: 8px;
+		padding: 24px;
+		background-image: url("@img/customer-reviews-banner-bg.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-radius: var(--border-radius-lg);
+
+		@include container-up("customer-reviews", 560px) {
+			grid-template-columns: auto 1fr;
+			gap: 24px 32px;
+		}
+
+		@include container-up("customer-reviews", 960px) {
+			grid-template-columns: auto 1fr auto;
+			align-items: center;
+		}
+
+		&-icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: #b0c7dc;
+
+			svg {
+				object-fit: contain;
+				width: 24px;
+				height: 24px;
+				fill: var(--primary);
+			}
+
+			@include container-up("customer-reviews", 560px) {
+				width: 80px;
+				height: 80px;
+
+				svg {
+					width: 50px;
+					height: 50px;
+				}
+			}
+
+			@include container-up("customer-reviews", 960px) {
+				width: 100px;
+				height: 100px;
+
+				svg {
+					width: 60px;
+					height: 60px;
+				}
+			}
+		}
+
+		&-content {
+			display: flex;
+			flex-direction: column;
+			gap: clamp(8px, 3vw, 16px);
+		}
+
+		&-title {
+			font-size: clamp(24px, 3vw, 32px);
+			color: var(--primary);
+		}
+
+		&-text {
+			margin: 0;
+			color: var(--dark);
+		}
+
+		.main-btn {
+			@include container-up("customer-reviews", 560px) {
+				width: 100%;
+				grid-column: 1/-1;
+			}
+
+			@include container-up("customer-reviews", 960px) {
+				width: fit-content;
+				grid-column: -1/-2;
+			}
+		}
+	}
+}
