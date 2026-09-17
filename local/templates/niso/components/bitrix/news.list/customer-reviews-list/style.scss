@@ -1,0 +1,18 @@
+@use "@scss-root/_mixins/container-queries" as *;
+
+.swiper.customer-reviews-slider {
+	width: calc(100% + var(--container-offset) * 2);
+	padding: 20px var(--container-offset);
+	margin: -20px calc(var(--container-offset) * -1) 0;
+
+	.swiper-slide {
+		height: auto;
+		box-shadow: var(--base-box-shadow);
+		border-radius: var(--base-border-radius);
+	}
+	.swiper-pagination {
+		position: static;
+		margin: 0 auto;
+		padding-top: 20px;
+	}
+}
