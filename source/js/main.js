@@ -24,3 +24,4 @@ import "./modules/bx-popup";
 import "./modules/swiper-instance";
 import "./modules/quiz-form-popup.js";
 import "./modules/slide-panel.js";
+import "./modules/customer-reviews-slider.js";
