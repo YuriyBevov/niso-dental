@@ -79,7 +79,15 @@ $APPLICATION->SetTitle("Стоматология у метро Петрогра�
             );
             ?>
           </span>
-          <h1 class="base-title">Стоматология у метро Петроградская в Санкт-Петербурге</h1>
+          <h1 class="base-title">
+            <?
+            $APPLICATION->IncludeFile(
+              SITE_DIR . 'include/contacts/contacts-title.php',
+              array(),
+              array('MODE' => 'html', 'NAME' => 'заголовок', 'SHOW_BORDER' => true)
+            );
+            ?>
+          </h1>
 
           <div class="base-text">
             <?
@@ -116,13 +124,15 @@ $APPLICATION->SetTitle("Стоматология у метро Петрогра�
             <svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
               <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-info"></use>
             </svg>
-            <?
-            $APPLICATION->IncludeFile(
-              SITE_DIR . 'include/schedule.php',
-              array(),
-              array('MODE' => 'html', 'NAME' => 'время работы', 'SHOW_BORDER' => true)
-            );
-            ?>
+            <span>
+              <?
+              $APPLICATION->IncludeFile(
+                SITE_DIR . 'include/schedule.php',
+                array(),
+                array('MODE' => 'html', 'NAME' => 'время работы', 'SHOW_BORDER' => true)
+              );
+              ?>
+            </span>
           </div>
         </div>
 
