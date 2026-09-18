@@ -1,1 +1,1 @@
-<iframe src="https://yandex.ru/map-widget/v1/?z=17&ol=biz&oid=159276084724" width="1440" height="600" style="border:none; width: 100%"></iframe>
+<iframe src="https://yandex.ru/map-widget/v1/?z=17&ol=biz&oid=159276084724" width="1440" height="600" style="border:none; width: 100%" loading="lazy" title="Карта проезда к стоматологии НИСО у метро Петроградская."></iframe>
