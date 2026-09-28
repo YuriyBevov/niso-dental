@@ -6,7 +6,10 @@ $APPLICATION->SetTitle("Стоматология у метро Петрогра�
 ?>
 <link rel="stylesheet" href="/contacts/style.css" />
 
-<section class="base-section contacts">
+<section class="base-section contacts" itemscope itemtype="https://schema.org/Dentist">
+  <meta itemprop="name" content="Стоматологическая клиника НИСО">
+  <link itemprop="url" href="https://niso-dental.ru/contacts/">
+  <link itemprop="logo" href="<?= SITE_TEMPLATE_PATH ?>/assets/img/logo.svg">
   <div class="container">
     <div class="contacts__grid">
       <div class="contacts__grid-item contacts__grid-item--gallery">
@@ -106,7 +109,10 @@ $APPLICATION->SetTitle("Стоматология у метро Петрогра�
             <svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
               <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-pin"></use>
             </svg>
-            <address>
+            <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+              <meta itemprop="addressLocality" content="Санкт-Петербург">
+              <meta itemprop="addressCountry" content="RU">
+              <meta itemprop="streetAddress" content="ул. Профессора Попова, д. 27">
               <?
               $APPLICATION->IncludeFile(
                 SITE_DIR . 'include/address.php',
@@ -125,6 +131,7 @@ $APPLICATION->SetTitle("Стоматология у метро Петрогра�
               <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-info"></use>
             </svg>
             <span>
+              <meta itemprop="openingHours" content="Mo-Su 09:00-21:00">
               <?
               $APPLICATION->IncludeFile(
                 SITE_DIR . 'include/schedule.php',
@@ -142,6 +149,9 @@ $APPLICATION->SetTitle("Стоматология у метро Петрогра�
             <svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
               <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-phone"></use>
             </svg>
+            <meta itemprop="telephone" content="+7-981-768-54-25">
+            <meta itemprop="telephone" content="+7-981-861-12-12">
+            <meta itemprop="telephone" content="+7-812-509-54-25">
             <?
             $APPLICATION->IncludeFile(
               SITE_DIR . 'include/phone.php',
@@ -149,6 +159,7 @@ $APPLICATION->SetTitle("Стоматология у метро Петрогра�
               array('MODE' => 'html', 'NAME' => 'телефон', 'SHOW_BORDER' => true)
             );
             ?>
+
           </div>
         </div>
 
@@ -158,13 +169,15 @@ $APPLICATION->SetTitle("Стоматология у метро Петрогра�
             <svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
               <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-mail"></use>
             </svg>
-            <?
-            $APPLICATION->IncludeFile(
-              SITE_DIR . 'include/mail.php',
-              array(),
-              array('MODE' => 'html', 'NAME' => 'эл.почту', 'SHOW_BORDER' => true)
-            );
-            ?>
+            <div itemprop="email">
+              <?
+              $APPLICATION->IncludeFile(
+                SITE_DIR . 'include/mail.php',
+                array(),
+                array('MODE' => 'html', 'NAME' => 'эл.почту', 'SHOW_BORDER' => true)
+              );
+              ?>
+            </div>
           </div>
         </div>
 
