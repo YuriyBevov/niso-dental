@@ -42,7 +42,7 @@ if (!empty($arItem['ACTIVE_FROM'])) {
           BX_RESIZE_IMAGE_EXACT
         ); ?>
         <img src="<?= $resImage['src'] ?>" alt="<?= $arItem["NAME"] ?>" width="180" height="200">
-        <? if ($USER->isAdmin()): ?>
+        <? if (!empty($arItem["PROPERTIES"]["JOB_TITLE"]["VALUE"]) || $experienceText !== '' || !empty($arItem["PROPERTIES"]["RATING"]["VALUE"])): ?>
           <div class="staff-preview-card__labels">
             <? if (!empty($arItem["PROPERTIES"]["JOB_TITLE"]["VALUE"])): ?>
               <span class="staff-preview-card__label staff-preview-card__label--job"><?= $arItem["PROPERTIES"]["JOB_TITLE"]["VALUE"] ?></span>
