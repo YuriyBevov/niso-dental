@@ -1,6 +1,30 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true); ?>
 
+<?php
+$experienceText = '';
+
+if (!empty($arResult['ACTIVE_FROM'])) {
+	$timestamp = MakeTimeStamp($arResult['ACTIVE_FROM']);
+
+	if ($timestamp) {
+		$currentYear = (int) date('Y');
+		$activeFromYear = (int) date('Y', $timestamp);
+		$experience = max(0, $currentYear - $activeFromYear);
+
+		if ($experience === 1) {
+			$experienceText = '1 год';
+		} elseif ($experience === 0) {
+			$experienceText = "менее года";
+		} elseif ($experience >= 2 && $experience <= 4) {
+			$experienceText = $experience . ' года';
+		} else {
+			$experienceText = $experience . ' лет';
+		}
+	}
+}
+?>
+
 <section class="base-section staff-detail">
 	<div class="container">
 		<div class="base-section__header">
@@ -19,6 +43,27 @@ $this->setFrameMode(true); ?>
 			<div class="staff-detail__grid-item staff-detail__grid-item--side">
 				<div class="staff-detail__img-wrapper">
 					<img src="<?= $arResult["DETAIL_PICTURE"]["SRC"] ?>" alt="<?= $arResult["NAME"] ?>" width="500" height="500">
+
+					<? if (!empty($arResult["PROPERTIES"]["JOB_TITLE"]["VALUE"]) || $experienceText !== '' || !empty($arResult["PROPERTIES"]["RATING"]["VALUE"])): ?>
+						<div class="staff-detail__labels">
+							<? if (!empty($arResult["PROPERTIES"]["JOB_TITLE"]["VALUE"])): ?>
+								<span class="staff-detail__label staff-detail__label--job"><?= $arResult["PROPERTIES"]["JOB_TITLE"]["VALUE"] ?></span>
+							<? endif; ?>
+							<? if ($experienceText !== ''): ?>
+								<span class="staff-detail__label staff-detail__label--experience">Стаж <?= $experienceText ?>
+								</span>
+							<? endif; ?>
+							<? if (!empty($arResult["PROPERTIES"]["RATING"]["VALUE"])): ?>
+								<span class="staff-detail__label staff-detail__label--rating">
+									<svg width="15" height="15" role="img" aria-hidden="true" focusable="false">
+										<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-star"></use>
+									</svg>
+									</label>
+									<span>Рейтинг <?= $arResult["PROPERTIES"]["RATING"]["VALUE"] ?></span>
+								</span>
+							<? endif; ?>
+						</div>
+					<? endif; ?>
 				</div>
 			</div>
 			<div class="staff-detail__grid-item">

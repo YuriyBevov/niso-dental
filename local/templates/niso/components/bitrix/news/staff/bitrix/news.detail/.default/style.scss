@@ -1,88 +1,139 @@
 .staff-detail {
-  padding: 40px 0;
+	padding: 40px 0;
 
-  &__section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
+	&__section {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px 40px;
-    min-width: 0;
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 30px 40px;
+		min-width: 0;
 
-    @media (min-width: 960px) {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-    }
+		@media (min-width: 960px) {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+		}
 
-    &-item {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      height: -webkit-fit-content;
-      height: -moz-fit-content;
-      height: fit-content;
-      min-width: 0;
+		&-item {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			height: -webkit-fit-content;
+			height: -moz-fit-content;
+			height: fit-content;
+			min-width: 0;
 
-      .main-btn {
-        margin: 24px 0;
-      }
-    }
-  }
+			.main-btn {
+				margin: 24px 0;
+			}
+		}
+	}
 
-  &__img-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    background-image: url("/img/background.png");
-    background-size: cover;
-    padding: 20px;
-    padding-bottom: 0;
-    border-radius: var(--base-border-radius);
+	&__img-wrapper {
+		position: relative;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		background-image: url("/img/background.png");
+		background-size: cover;
+		padding: 20px;
+		padding-bottom: 0;
+		border-radius: var(--base-border-radius);
 
-    img {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      -o-object-position: center;
-      object-position: center;
-    }
-  }
+		img {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			width: 100%;
+			max-width: 300px;
+			height: auto;
+			-o-object-position: center;
+			object-position: center;
+		}
+	}
 
-  .staff-docs-slider {
-    &:has(.swiper-pagination) {
-      padding-bottom: 30px;
-    }
+	&__labels {
+		position: absolute;
+		padding: 10px;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 4px;
+	}
 
-    .swiper-slide {
-      width: fit-content;
-      height: inherit;
-      max-height: inherit;
-    }
+	&__label {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 4px 8px;
+		border-radius: 8px;
+		font-size: 12px;
+		line-height: 1;
+		font-weight: 600;
+		border: 2px solid transparent;
 
-    img {
-      width: 100%;
-      max-height: 300px;
-    }
-  }
+		&--job {
+			background-color: var(--primary);
+			border-color: var(--primary);
+			color: var(--white);
+		}
+
+		&--experience {
+			background-color: var(--secondary);
+			border-color: var(--secondary);
+			color: var(--white);
+		}
+
+		&--rating {
+			position: relative;
+			gap: 4px;
+			border-color: var(--secondary);
+			background-color: var(--white);
+			padding-left: 27px;
+
+			svg {
+				position: absolute;
+				top: 2px;
+				left: 8px;
+				fill: #faba47;
+			}
+		}
+	}
+
+	.staff-docs-slider {
+		&:has(.swiper-pagination) {
+			padding-bottom: 30px;
+		}
+
+		.swiper-slide {
+			width: fit-content;
+			height: inherit;
+			max-height: inherit;
+		}
+
+		img {
+			width: 100%;
+			max-height: 300px;
+		}
+	}
 }
