@@ -150,7 +150,7 @@ $isoModifyingDate = $modifyingDate->format(DateTime::ATOM);
 			</div>
 			<? if (!empty($arResult['PROPERTIES']['LINKED']['VALUE'])): ?>
 				<div class="news-detail__grid-item news-detail__grid-item--side">
-					<span class="base-subtitle">Похожие новости</span>
+					<h2 class="base-subtitle">Статьи по теме</h2>
 
 					<?
 					$GLOBALS['arLinkedFilter'] = array('ID' => $arResult['PROPERTIES']['LINKED']['VALUE']);
