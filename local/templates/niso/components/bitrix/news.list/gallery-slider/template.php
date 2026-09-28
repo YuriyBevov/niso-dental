@@ -3,14 +3,14 @@ $this->setFrameMode(true);
 ?>
 
 <? if ($arResult["ITEMS"]): ?>
-  <div class="swiper main-slider">
+  <div class="swiper main-slider main-slider--autoplay">
     <div class="swiper-wrapper">
       <? foreach ($arResult["ITEMS"] as $arItem):
         $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
         $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
       ?>
         <div class="swiper-slide" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-          <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $ARITEM["NAME"] ?>" width="400" height="300">
+          <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?? $arItem["NAME"] ?>" width="400" height="300">
         </div>
       <? endforeach; ?>
     </div>
