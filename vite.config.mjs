@@ -25,6 +25,7 @@ const componentConfigs = {
 	awardsList: `${COMPONENTS_PATH}/news.list/awards-list/`,
 	topServicesList: `${COMPONENTS_PATH}/news.list/top-services-list/`,
 	customerReviewsList: `${COMPONENTS_PATH}/news.list/customer-reviews-list/`,
+	staffDetail: `${COMPONENTS_PATH}/news/staff/bitrix/news.detail/.default/`,
 };
 
 // Создаем пути компонентов
