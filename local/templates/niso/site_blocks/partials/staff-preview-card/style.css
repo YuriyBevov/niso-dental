@@ -19,7 +19,8 @@
 	-webkit-transition: -webkit-box-shadow var(--main-transition);
 	transition: -webkit-box-shadow var(--main-transition);
 	transition: box-shadow var(--main-transition);
-	transition: box-shadow var(--main-transition),
+	transition:
+		box-shadow var(--main-transition),
 		-webkit-box-shadow var(--main-transition);
 	-webkit-box-shadow: var(--base-box-shadow);
 	box-shadow: var(--base-box-shadow);
@@ -44,6 +45,7 @@
 	}
 }
 .staff-preview-card__img-wrapper {
+	position: relative;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -108,4 +110,54 @@
 }
 .staff-preview-card__footer .main-btn {
 	width: 100%;
+}
+
+.staff-preview-card__labels {
+	position: absolute;
+	padding: 10px;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 4px;
+}
+
+.staff-preview-card__label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 4px 8px;
+	border-radius: 8px;
+	font-size: 12px;
+	line-height: 1;
+	font-weight: 600;
+	border: 2px solid transparent;
+}
+
+.staff-preview-card__label--job {
+	background-color: var(--primary);
+	border-color: var(--primary);
+	color: var(--white);
+}
+
+.staff-preview-card__label--experience {
+	background-color: var(--secondary);
+	border-color: var(--secondary);
+	color: var(--white);
+}
+
+.staff-preview-card__label--rating {
+	position: relative;
+	gap: 4px;
+	border-color: var(--secondary);
+	background-color: var(--white);
+	padding-left: 27px;
+}
+
+.staff-preview-card__label--rating svg {
+	position: absolute;
+	top: 2px;
+	left: 8px;
+	fill: #faba47;
 }

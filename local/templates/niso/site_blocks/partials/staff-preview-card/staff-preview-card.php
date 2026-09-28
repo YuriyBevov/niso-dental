@@ -7,6 +7,30 @@ if (!isset($stylesIncluded['staff-preview-card'])) {
 }
 ?>
 
+<?php
+$experienceText = '';
+
+if (!empty($arItem['ACTIVE_FROM'])) {
+  $timestamp = MakeTimeStamp($arItem['ACTIVE_FROM']);
+
+  if ($timestamp) {
+    $currentYear = (int) date('Y');
+    $activeFromYear = (int) date('Y', $timestamp);
+    $experience = max(0, $currentYear - $activeFromYear);
+
+    if ($experience === 1) {
+      $experienceText = '1 год';
+    } elseif ($experience === 0) {
+      $experienceText = "менее года";
+    } elseif ($experience >= 2 && $experience <= 4) {
+      $experienceText = $experience . ' года';
+    } else {
+      $experienceText = $experience . ' лет';
+    }
+  }
+}
+?>
+
 <div class="staff-preview-card-wrapper">
   <div class="staff-preview-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
     <div class="staff-preview-card__header">
@@ -18,9 +42,29 @@ if (!isset($stylesIncluded['staff-preview-card'])) {
           BX_RESIZE_IMAGE_EXACT
         ); ?>
         <img src="<?= $resImage['src'] ?>" alt="<?= $arItem["NAME"] ?>" width="180" height="200">
+        <? if ($USER->isAdmin()): ?>
+          <div class="staff-preview-card__labels">
+            <? if (!empty($arItem["PROPERTIES"]["JOB_TITLE"]["VALUE"])): ?>
+              <span class="staff-preview-card__label staff-preview-card__label--job"><?= $arItem["PROPERTIES"]["JOB_TITLE"]["VALUE"] ?></span>
+            <? endif; ?>
+            <? if ($experienceText !== ''): ?>
+              <span class="staff-preview-card__label staff-preview-card__label--experience">Стаж <?= $experienceText ?>
+              </span>
+            <? endif; ?>
+            <? if (!empty($arItem["PROPERTIES"]["RATING"]["VALUE"])): ?>
+              <span class="staff-preview-card__label staff-preview-card__label--rating">
+                <svg width="15" height="15" role="img" aria-hidden="true" focusable="false">
+                  <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-star"></use>
+                </svg>
+                </label>
+                <span>Рейтинг <?= $arItem["PROPERTIES"]["RATING"]["VALUE"] ?></span>
+              </span>
+            <? endif; ?>
+          </div>
+        <? endif; ?>
       </div>
     </div>
-    <div class="staff-preview-card__content">
+    <div class=" staff-preview-card__content">
       <span class="base-subtitle"><?= $arItem["NAME"] ?></span>
       <? if ($arItem["PROPERTIES"]["POSITION"]["VALUE"]): ?>
         <span class="base-text"><?= $arItem["PROPERTIES"]["POSITION"]["VALUE"] ?></span>
