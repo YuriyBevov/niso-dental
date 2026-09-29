@@ -32,7 +32,7 @@ if (!empty($arItem['ACTIVE_FROM'])) {
 ?>
 
 <div class="staff-preview-card-wrapper">
-  <div class="staff-preview-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+  <article class="staff-preview-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
     <div class="staff-preview-card__header">
       <div class="staff-preview-card__img-wrapper">
         <?
@@ -65,7 +65,7 @@ if (!empty($arItem['ACTIVE_FROM'])) {
       </div>
     </div>
     <div class=" staff-preview-card__content">
-      <span class="base-subtitle"><?= $arItem["NAME"] ?></span>
+      <h3 class="base-subtitle"><?= $arItem["NAME"] ?></h3>
       <? if ($arItem["PROPERTIES"]["POSITION"]["VALUE"]): ?>
         <span class="base-text"><?= $arItem["PROPERTIES"]["POSITION"]["VALUE"] ?></span>
       <? endif; ?>
@@ -86,5 +86,5 @@ if (!empty($arItem['ACTIVE_FROM'])) {
         <span>Подробнее о специалисте</span>
       </a>
     </div>
-  </div>
+  </article>
 </div>

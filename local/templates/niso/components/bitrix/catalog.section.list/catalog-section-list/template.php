@@ -39,12 +39,12 @@ $curPage = $APPLICATION->GetCurPage();
 										<? if ($arSection["PICTURE"]["SRC"]): ?>
 											<img loading="lazy" src="<?= $arSection["PICTURE"]["SRC"] ?>" alt="<?= $arSection["NAME"] ?>" width="240" height="96">
 										<? endif; ?>
-										<span class="base-subtitle">
+										<h3 class="base-subtitle">
 											<?= $arSection["NAME"] ?>
 											<? if ($arParams["COUNT_ELEMENTS"] && $arSection['ELEMENT_CNT'] !== null): ?>
 												<small>(<?= $arSection['ELEMENT_CNT'] ?>)</small>
 											<? endif; ?>
-										</span>
+										</h3>
 									</div>
 									<span class="base-text"><?= $arSection["DESCRIPTION"] ?></span>
 									<ul>

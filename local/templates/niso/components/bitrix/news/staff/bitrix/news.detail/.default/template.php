@@ -43,7 +43,6 @@ if (!empty($arResult['ACTIVE_FROM'])) {
 			<div class="staff-detail__grid-item staff-detail__grid-item--side">
 				<div class="staff-detail__img-wrapper">
 					<img src="<?= $arResult["DETAIL_PICTURE"]["SRC"] ?>" alt="<?= $arResult["NAME"] ?>" width="500" height="500">
-
 					<? if (!empty($arResult["PROPERTIES"]["JOB_TITLE"]["VALUE"]) || $experienceText !== '' || !empty($arResult["PROPERTIES"]["RATING"]["VALUE"])): ?>
 						<div class="staff-detail__labels">
 							<? if (!empty($arResult["PROPERTIES"]["JOB_TITLE"]["VALUE"])): ?>
