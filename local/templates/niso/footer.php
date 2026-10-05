@@ -612,7 +612,7 @@ $APPLICATION->IncludeFile(
 		"logo": "https://niso-dental.ru/local/templates/niso/assets/img/logo.svg",
 		"image": [
 			"https://niso-dental.ru/upload/dev2fun.imagecompress/webp/iblock/14f/lmocg91y34hcxklumj6vd2h1574pcjyr.webp",
-			"https://niso-dental.ru//upload/dev2fun.imagecompress/webp/medialibrary/891/om1vzd2qqjcsiwk1rnko3xdtu3506b37.webp"
+			"https://niso-dental.ru/upload/dev2fun.imagecompress/webp/medialibrary/891/om1vzd2qqjcsiwk1rnko3xdtu3506b37.webp"
 		],
 		"telephone": [
 			"+79817685425",
