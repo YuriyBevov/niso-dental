@@ -601,6 +601,52 @@ $APPLICATION->IncludeFile(
 	<div><img src="https://mc.yandex.ru/watch/102970436" style="position:absolute; left:-9999px;" alt="" /></div>
 </noscript>
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/cookie/template.php"); ?>
+
+<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Dentist",
+		"@id": "https://niso-dental.ru/#dentist",
+		"name": "Стоматологическая клиника НИСО",
+		"url": "https://niso-dental.ru/",
+		"logo": "https://niso-dental.ru/local/templates/niso/assets/img/logo.svg",
+		"image": [
+			"https://niso-dental.ru/upload/dev2fun.imagecompress/webp/iblock/14f/lmocg91y34hcxklumj6vd2h1574pcjyr.webp",
+			"https://niso-dental.ru//upload/dev2fun.imagecompress/webp/medialibrary/891/om1vzd2qqjcsiwk1rnko3xdtu3506b37.webp"
+		],
+		"telephone": [
+			"+79817685425",
+			"+79818611212",
+			"+78125095425"
+		],
+		"email": "info@niso-dental.ru",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "ул. Профессора Попова, д. 27",
+			"addressLocality": "Санкт-Петербург",
+			"addressCountry": "RU"
+		},
+		"openingHoursSpecification": {
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": [
+				"Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday",
+				"Friday",
+				"Saturday",
+				"Sunday"
+			],
+			"opens": "09:00",
+			"closes": "21:00"
+		},
+		"sameAs": [
+			"https://t.me/nisodental",
+			"https://max.ru/u/f9LHodD0cOL8TOLXiVU_kQHjLghcfBHkXu-_HcbdrZp-A1x4hl6kjSDrHwA"
+		]
+	}
+</script>
+
 </body>
 
 </html>
