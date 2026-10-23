@@ -23,6 +23,7 @@ if ($iblock) {
 $elements = \Bitrix\Iblock\Elements\ElementCatalogTable::getList([
 	'select' => ['IBLOCK_SECTION_ID', 'NAME', 'CODE'],
 	'filter' => ['=ACTIVE' => 'Y'],
+	'order' => ['SORT' => 'ASC', 'ID' => 'ASC'],
 ])->fetchAll();
 
 foreach ($arResult['SECTIONS'] as $key => $arSection) {
