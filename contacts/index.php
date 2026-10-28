@@ -244,13 +244,7 @@ $APPLICATION->SetTitle("Стоматология у метро Петрогра�
       </div>
 
       <div class="contacts__grid-item contacts__grid-item--map">
-        <?
-        $APPLICATION->IncludeFile(
-          SITE_DIR . 'include/map.php',
-          array(),
-          array('MODE' => 'html', 'NAME' => 'карту', 'SHOW_BORDER' => true)
-        );
-        ?>
+        <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/sections/map/map.php"); ?>
       </div>
     </div>
   </div>

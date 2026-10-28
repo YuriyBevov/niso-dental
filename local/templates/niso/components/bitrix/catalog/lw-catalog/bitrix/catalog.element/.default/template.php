@@ -1022,7 +1022,7 @@ unset($GLOBALS['arFaqFilter']);
 <!-- faq -->
 
 <!-- map -->
-<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/sections/map/map.php");  ?>
+<? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site_blocks/index-page/map/map.php");  ?>
 <!-- map -->
 
 <div class="slide-panel">
